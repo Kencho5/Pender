@@ -1,6 +1,6 @@
 # Pet Website
 
-![Pet Website Logo](https://pender.ge/assets/images/logo.svg)
+![Pet Website Logo](https://pender.ge/assets/images/footer-logo.svg)
 
 Brief description or tagline about your pet-related website.
 
@@ -34,17 +34,3 @@ functionalities, usage examples, or important details.
 
 Encourage others to contribute to your project. Provide guidelines for raising
 issues, submitting pull requests, and contributing code.
-
-## License
-
-Specify the license under which your project is released.
-
-## Acknowledgements
-
-Give credit or mention any contributors, libraries, or resources that have been
-instrumental in building your website.
-
-## Contact Information
-
-Provide ways for users or contributors to contact you for questions, feedback,
-or support.
