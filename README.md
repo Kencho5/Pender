@@ -15,22 +15,12 @@ Brief description or tagline about your pet-related website.
 
 ## Technologies Used
 
-- **Frontend:** Qwik (or your chosen frontend technology).
-- **Backend:** Rust (or your chosen backend language).
-- **Database:** PostgreSQL (or your chosen database system).
-- **CI/CD:** GitHub Actions (or your chosen CI/CD setup).
+- **Frontend:** HTMX.
+- **Backend:** Rust (Actix).
+- **Database:** PostgreSQL.
+- **CI/CD:** GitHub Actions.
 
-## Installation and Setup
+## Dev
 
-Provide concise steps for developers to set up and run your project locally.
-Include prerequisites, installation commands, and configuration instructions.
-
-## Usage
-
-Explain how users can interact with your website. Include any specific
-functionalities, usage examples, or important details.
-
-## Contributing
-
-Encourage others to contribute to your project. Provide guidelines for raising
-issues, submitting pull requests, and contributing code.
+- **Frontend:** npx http-server.
+- **Backend:** cargo watch -x run.
