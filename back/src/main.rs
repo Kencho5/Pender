@@ -7,6 +7,7 @@ use tide::Response;
 async fn main() -> tide::Result<()> {
     let mut app = tide::new();
 
+    app.at("/assets").serve_dir("../front/assets/")?;
     app.at("/").get(home);
     app.at("/api/test").post(test);
 
@@ -15,7 +16,7 @@ async fn main() -> tide::Result<()> {
 }
 
 async fn home(_req: Request<()>) -> tide::Result {
-    let html = fs::read_to_string("templates/index.html").expect("HTML Not Found");
+    let html = fs::read_to_string("../front/index.html").expect("HTML Not Found");
 
     Ok(Response::builder(200)
         .body(html)
