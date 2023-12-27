@@ -73,9 +73,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.76"
+version = "1.0.77"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59d2a3357dde987206219e78ecfbbb6e8dad06cbb65292758d3270e6254f7355"
+checksum = "c9d19de80eff169429ac1e9f48fffb163916b448a44e8e046186232046d9e1f9"
 
 [[package]]
 name = "arrayref"
@@ -370,9 +370,7 @@ name = "back"
 version = "0.1.0"
 dependencies = [
  "async-std",
- "cors",
  "serde",
- "serde_json",
  "tide",
 ]
 
@@ -549,12 +547,6 @@ name = "core-foundation-sys"
 version = "0.8.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "06ea2b9bc92be3c2baa9334a323ebca2d6f074ff852cd1d7b11064035cd3868f"
-
-[[package]]
-name = "cors"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d2dacfa7c8e6a88bacdbd500047e86ac32f67a3706d5b55a1d7b36c80efbc2f"
 
 [[package]]
 name = "cpufeatures"
