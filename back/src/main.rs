@@ -1,6 +1,4 @@
 use tide::Request;
-use tide::prelude::*;
-use std::fs;
 use tide::Response;
 
 #[async_std::main]
@@ -8,20 +6,11 @@ async fn main() -> tide::Result<()> {
     let mut app = tide::new();
 
     app.at("/assets").serve_dir("../front/assets/")?;
-    app.at("/").get(home);
+    app.at("/").serve_file("../front/home.html")?;
     app.at("/api/test").post(test);
 
     app.listen("127.0.0.1:8080").await?;
     Ok(())
-}
-
-async fn home(_req: Request<()>) -> tide::Result {
-    let html = fs::read_to_string("../front/index.html").expect("HTML Not Found");
-
-    Ok(Response::builder(200)
-        .body(html)
-        .content_type("text/html")
-        .build())
 }
 
 async fn test(_req: Request<()>) -> tide::Result {
