@@ -1,22 +1,20 @@
-use tide::Request;
-use tide::Response;
+#[macro_use]
+extern crate rocket;
+use rocket::fs::FileServer;
+use rocket_dyn_templates::Template;
+use std::fs;
 
-#[async_std::main]
-async fn main() -> tide::Result<()> {
-    let mut app = tide::new();
-
-    app.at("/assets").serve_dir("../front/assets/")?;
-    app.at("/static").serve_dir("../front/static/")?;
-
-    app.at("/").serve_file("../front/home.html")?;
-    app.at("/api/navbar").serve_file("../front/navbar.html")?;
-
-    app.listen("127.0.0.1:8080").await?;
-    Ok(())
+#[get("/")]
+fn index() -> Template {
+    let navbar = fs::read_to_string("../front/navbar.html.hbs").expect("Not Found");
+    let context = ("navbar", navbar);
+    Template::render("home", &context)
 }
 
-// async fn navbar(_req: Request<()>) -> tide::Result {
-//     Ok(Response::builder(200)
-//         .body("asd")
-//         .build())
-// }
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+        .mount("/", routes![index])
+        .mount("/static", FileServer::from("../front/static"))
+        .attach(Template::fairing())
+}
