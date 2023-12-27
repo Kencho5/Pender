@@ -7,14 +7,14 @@ async fn main() -> tide::Result<()> {
 
     app.at("/assets").serve_dir("../front/assets/")?;
     app.at("/").serve_file("../front/home.html")?;
-    app.at("/api/test").post(test);
+    app.at("/api/navbar").serve_file("../front/navbar.html")?;
 
     app.listen("127.0.0.1:8080").await?;
     Ok(())
 }
 
-async fn test(_req: Request<()>) -> tide::Result {
-    Ok(Response::builder(200)
-        .body("asd")
-        .build())
-}
+// async fn navbar(_req: Request<()>) -> tide::Result {
+//     Ok(Response::builder(200)
+//         .body("asd")
+//         .build())
+// }
