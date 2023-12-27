@@ -1,0 +1,41 @@
+/* Basic styling for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* Logo styles */
+.navbar-logo {
+  /* No change needed, logo remains on the left */
+}
+
+/* Navigation links styles */
+.navbar-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Aligns links to the center */
+}
+
+.navbar-links li {
+  /* Optional: Customize list item styles */
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Profile picture styles */
+.profile-pic {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
