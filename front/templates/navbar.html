@@ -2,14 +2,12 @@
 
 <nav class="navbar">
   <div class="navbar-logo">
-    <img
-      src="https://pender.ge/assets/images/footer-logo.svg"
-      alt="Logo"
-      width="100"
-    />
+    <a href="/">
+      <img src="/assets/logo.svg" width="70px" alt="Logo" />
+    </a>
   </div>
 
-  <ul class="navbar-links">
+  <ul class="navbar-links" id="navbarLinks">
     <li><a href="/">Home</a></li>
     <li><a href="/search">Posts</a></li>
     <li><a href="/contact">Contact</a></li>
@@ -20,6 +18,33 @@
       src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
       alt="Profile Picture"
       class="profile-pic"
+      id="profilePic"
     />
   </div>
+
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="context-menu" id="contextMenu">
+    <ul class="context-menu-links">
+      <li><a href="/">Home</a></li>
+      <div class="separator"></div>
+      <li><a href="/search">Posts</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
+
+<script>
+  // Get elements
+  const hamburgerMenu = document.getElementById("hamburgerMenu");
+  const contextMenu = document.getElementById("contextMenu");
+
+  // Toggle context menu display on hamburger menu click
+  hamburgerMenu.addEventListener("click", function () {
+    contextMenu.classList.toggle("show-context-menu");
+  });
+</script>

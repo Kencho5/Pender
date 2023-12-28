@@ -1,41 +1,135 @@
-/* Basic styling for the navbar */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
-  color: white;
-  padding: 10px 20px;
+  font-size: 22px;
+  background: rgba(255, 244, 227, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(11.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+  padding: 10px;
 }
 
-/* Logo styles */
 .navbar-logo {
-  /* No change needed, logo remains on the left */
+  margin-left: 80px;
 }
 
-/* Navigation links styles */
+.profile-pic {
+  border: 3px solid #835031;
+  margin-right: 100px;
+}
+
 .navbar-links {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  gap: 20px;
-  justify-content: center; /* Aligns links to the center */
-}
-
-.navbar-links li {
-  /* Optional: Customize list item styles */
+  gap: 60px;
+  justify-content: center;
 }
 
 .navbar-links a {
-  color: white;
+  color: #835031;
   text-decoration: none;
 }
 
-/* Profile picture styles */
 .profile-pic {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.line {
+  width: 30px;
+  height: 4.5px;
+  border-radius: 3px;
+  background-color: #835031;
+  margin: 3px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Media query for mobile responsiveness */
+@media screen and (max-width: 1000px) {
+  .hamburger-menu {
+    margin-right: 100px;
+  }
+  .profile-pic {
+    margin: 0;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .navbar-links a {
+    color: #fff;
+    padding: 15px 0;
+    width: 100%;
+    display: block;
+  }
+
+  .navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+}
+/* Context menu styles */
+.context-menu {
+  display: none;
+  position: absolute;
+  top: 90px; /* Adjust as needed */
+  right: 50px;
+  width: 160px;
+  z-index: 999;
+}
+
+.context-menu-links {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.context-menu-links a {
+  background-color: #835031;
+  border-radius: 35px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  color: #fef2ec;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+}
+
+/* Show context menu when hamburger menu is clicked */
+.show-context-menu {
+  display: block;
 }

@@ -1,3 +1,13 @@
 body {
   margin: 0;
 }
+
+.circle {
+  background-color: #f39d58;
+  width: 400px;
+  height: 400px;
+  border-radius: 100%;
+  filter: blur(11.5rem);
+  opacity: 70%;
+  position: absolute;
+}
