@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="static/navbar.css" />
+
+<nav class="navbar">
+  <div class="navbar-logo">
+    <a href="/">
+      <img src="/assets/logo.svg" width="70px" alt="Logo" />
+    </a>
+  </div>
+
+  <ul class="navbar-links" id="navbarLinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/search">Posts</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+
+  <div class="navbar-profile">
+    <img
+      src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+      alt="Profile Picture"
+      class="profile-pic"
+      id="profilePic"
+    />
+  </div>
+
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="context-menu" id="contextMenu">
+    <ul class="context-menu-links">
+      <li class="context-link"><a href="/">Home</a></li>
+      <li class="context-link"><a href="/search">Posts</a></li>
+      <li class="context-link"><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  function animateContextMenuLinks() {
+    const links = document.querySelectorAll(".context-link");
+
+    links.forEach((link, index) => {
+      setTimeout(() => {
+        link.classList.add("show-link");
+      }, index * 50);
+    });
+  }
+
+  function animateHideContextMenuLinks() {
+    const links = document.querySelectorAll(".context-link");
+    const reversedLinks = Array.from(links).reverse();
+
+    reversedLinks.forEach((link, index) => {
+      setTimeout(() => {
+        link.classList.remove("show-link");
+      }, index * 50);
+    });
+  }
+
+  document.getElementById("hamburgerMenu").addEventListener("click", () => {
+    const contextMenu = document.getElementById("contextMenu");
+    contextMenu.classList.toggle("show-context-menu");
+
+    if (contextMenu.classList.contains("show-context-menu")) {
+      animateContextMenuLinks();
+    } else {
+      animateHideContextMenuLinks();
+    }
+  });
+</script>
