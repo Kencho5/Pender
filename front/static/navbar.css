@@ -103,7 +103,6 @@
 }
 /* Context menu styles */
 .context-menu {
-  display: none;
   position: absolute;
   top: 90px; /* Adjust as needed */
   right: 50px;
@@ -132,4 +131,18 @@
 /* Show context menu when hamburger menu is clicked */
 .show-context-menu {
   display: block;
+}
+
+/* Add animation properties for the context menu links */
+.context-link {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.show-link {
+  opacity: 1;
+  transform: translateY(0);
 }
