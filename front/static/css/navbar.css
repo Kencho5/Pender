@@ -103,6 +103,7 @@
 }
 /* Context menu styles */
 .context-menu {
+  display: none;
   position: absolute;
   top: 90px; /* Adjust as needed */
   right: 50px;
