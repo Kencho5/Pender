@@ -6,7 +6,7 @@ async function animateContextMenuLinks() {
   const links = document.querySelectorAll(".context-link");
 
   for (let index = 0; index < links.length; index++) {
-    await delay(50);
+    await delay(30);
     links[index].classList.add("show-link");
   }
 }
@@ -16,11 +16,11 @@ async function animateHideContextMenuLinks() {
   const reversedLinks = Array.from(links).reverse();
 
   for (let index = 0; index < reversedLinks.length; index++) {
-    await delay(50);
+    await delay(30);
     reversedLinks[index].classList.remove("show-link");
   }
 
-  await delay(200);
+  await delay(150);
   contextMenu.classList.toggle("show-context-menu");
   contextMenu.classList.toggle("hidden");
 }
