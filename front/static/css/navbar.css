@@ -58,7 +58,7 @@
 
 .navbar-links li {
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 40px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -145,7 +145,7 @@
 }
 
 .context-menu-links a {
-  background-color: var(--accent);
+  background: var(--gr-accent);
   border-radius: 35px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   margin-top: 20px;

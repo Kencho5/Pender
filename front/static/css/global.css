@@ -6,6 +6,26 @@
   --primary: #f25a38;
   --secondary: #f2be5c;
   --accent: #39bfb2;
+  --gr-background: linear-gradient(
+    90deg,
+    rgba(255, 255, 235, 1) 0%,
+    rgba(255, 247, 235, 1) 100%
+  );
+  --gr-primary: linear-gradient(
+    90deg,
+    rgba(242, 90, 56, 1) 0%,
+    rgba(242, 113, 56, 1) 100%
+  );
+  --gr-secondary: linear-gradient(
+    90deg,
+    rgba(242, 190, 92, 1) 0%,
+    rgba(242, 206, 92, 1) 100%
+  );
+  --gr-accent: linear-gradient(
+    90deg,
+    rgba(57, 191, 178, 1) 0%,
+    rgba(57, 191, 148, 1) 100%
+  );
 }
 
 body {

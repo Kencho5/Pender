@@ -1,15 +1,22 @@
-const route =
-  window.location.pathname == "/" ? "home" : window.location.pathname.slice(0);
+// INIT FUNCTION
+window.onload = function () {
+  activeRoute();
+};
 
-const links = document.getElementsByClassName("navbar-links")[0].childNodes;
+function activeRoute() {
+  const route =
+    window.location.pathname == "/"
+      ? "home"
+      : window.location.pathname.slice(0);
 
-links.forEach((link) => {
-  if (link.textContent.toLowerCase() == route) {
-    link.classList.add("active");
-    console.log(link);
-  }
-});
+  const links = document.getElementsByClassName("navbar-links")[0].childNodes;
 
+  links.forEach((link) => {
+    if (link.textContent.toLowerCase() == route) {
+      link.classList.add("active");
+    }
+  });
+}
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
