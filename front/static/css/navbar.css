@@ -40,8 +40,20 @@
   text-decoration: none;
 }
 
-.active {
-  color: var(--primary) !important;
+.active a {
+  position: relative;
+  text-decoration: none;
+}
+
+.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--accent);
 }
 
 .navbar-links li {
@@ -51,7 +63,7 @@
 }
 
 .navbar-links li:hover {
-  background-color: var(--secondary);
+  background-color: var(--accent);
   transform: scale(1.1);
 }
 
@@ -133,11 +145,11 @@
 }
 
 .context-menu-links a {
-  background-color: var(--secondary);
+  background-color: var(--accent);
   border-radius: 35px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
-  color: var(--text);
+  color: var(--background);
   text-decoration: none;
   display: block;
   padding: 15px;

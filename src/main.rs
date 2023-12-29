@@ -6,7 +6,7 @@ use std::fs;
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
-    tide::log::start();
+    // tide::log::start();
 
     let mut tera = Tera::new("./front/templates/**/*")?;
     tera.autoescape_on(vec!["html"]);
@@ -20,7 +20,7 @@ async fn main() -> tide::Result<()> {
         let tera = req.state();
         let navbar = fs::read_to_string("./front/templates/navbar.html").expect("Not Found");
 
-        tera.render_response("home.html", &context! { "navbar" => &navbar})
+        tera.render_response("home.html", &context! { "navbar" => &navbar })
     });
 
     app.listen("127.0.0.1:8080").await?;

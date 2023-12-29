@@ -1,3 +1,15 @@
+const route =
+  window.location.pathname == "/" ? "home" : window.location.pathname.slice(0);
+
+const links = document.getElementsByClassName("navbar-links")[0].childNodes;
+
+links.forEach((link) => {
+  if (link.textContent.toLowerCase() == route) {
+    link.classList.add("active");
+    console.log(link);
+  }
+});
+
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
