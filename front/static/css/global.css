@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 :root {
-  --text: #0e4c73;
+  --text: #0b4062;
   --background: #ffffeb;
   --primary: #f25a38;
   --secondary: #f2be5c;
@@ -31,7 +31,7 @@
 body {
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;
-  background-color: #fef2ec;
+  background-color: var(--background);
   animation: fadeIn 0.35s ease-in-out forwards;
   transition: opacity 0.35s ease-in-out;
 }

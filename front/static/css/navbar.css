@@ -22,7 +22,7 @@
 
 .profile-pic {
   cursor: pointer;
-  border: 3px solid var(--text);
+  border: 2.5px solid var(--text);
   margin-right: 100px;
 }
 
