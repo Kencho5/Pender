@@ -26,3 +26,4 @@ async fn main() -> tide::Result<()> {
     app.listen("127.0.0.1:8080").await?;
     Ok(())
 }
+

@@ -8,11 +8,11 @@
   justify-content: space-between;
   align-items: center;
   font-size: 22px;
-  background: rgba(255, 244, 227, 0.35);
+  background: rgba(255, 244, 227, 1);
   border-radius: 16px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(11.6px);
-  -webkit-backdrop-filter: blur(11.6px);
+  /* backdrop-filter: blur(17px); */
+  /* -webkit-backdrop-filter: blur(17px); */
   padding: 10px;
 }
 
@@ -129,51 +129,69 @@
 }
 /* Context menu styles */
 .context-menu {
+  user-select: none;
   display: none;
   position: absolute;
-  top: 90px; /* Adjust as needed */
-  right: 50px;
+  top: 110px;
+  right: 280px;
   width: 160px;
   z-index: 999;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
 }
 
 .context-menu-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 390px;
+  height: 70px;
   text-align: center;
-  list-style: none;
   padding: 0;
   margin: 0;
+  background: rgba(57, 191, 178, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(57, 191, 178, 0.3);
 }
 
 .context-menu-links a {
-  background: var(--gr-accent);
-  border-radius: 35px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
   color: var(--background);
   text-decoration: none;
   display: block;
-  padding: 15px;
+  padding: 25px;
+  transition: color 0.3s ease;
 }
 
-/* Show context menu when hamburger menu is clicked */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .show-context-menu {
-  display: block;
+  display: block !important;
+  animation-name: slideIn;
 }
 
-/* Add animation properties for the context menu links */
-.context-link {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
 
-.context-link:hover {
-  transform: scale(1.1);
-}
-
-.show-link {
-  opacity: 1;
-  transform: translateY(0);
+.hide-context-menu {
+  animation-name: slideOut;
 }
