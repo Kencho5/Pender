@@ -243,17 +243,8 @@
   animation-name: slideOut;
 }
 
-.flag {
-  border-radius: 100%;
-  border: 3px solid var(--accent);
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.flag:hover {
-  transform: scale(1.1);
+.language-menu-links a:hover {
+  transform: scale(1.2);
 }
 
 .navbar-profile {
@@ -263,24 +254,19 @@
 
 .language-selector {
   background-color: var(--accent);
-  width: 70px;
+  width: 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 12px 15px;
   margin-right: 30px;
   border-radius: 30px;
   cursor: pointer;
 }
 
-.language-selector img {
-  border-radius: 100%;
-  width: 32px;
-  height: 32px;
-}
-
 .language-selector i {
   color: var(--background);
+  font-size: 24px;
 }
 
 .mobile-right {

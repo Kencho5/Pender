@@ -3,7 +3,7 @@
 <nav class="navbar">
   <div class="navbar-logo">
     <a href="/">
-      <img src="/assets/logo.png" width="70px" alt="Logo" />
+      <img src="/assets/logo.svg" alt="Logo" />
     </a>
   </div>
 
@@ -15,30 +15,17 @@
 
   <div class="navbar-profile">
     <div class="language-selector lang-full" id="languageSelector">
-      <img
-        src="/assets/translations/flags/{{lang}}.png"
-        id="languageSelector"
-      />
+      <i class="fa-solid fa-language" id="languageSelector"></i>
       <i class="fa-solid fa-caret-down"></i>
     </div>
     <div class="language-menu" id="languageMenu">
       <div class="language-menu-links">
-        <a href="{{route}}">
-          <img
-            hx-post="/set_language/ge"
-            hx-swap="none"
-            src="/assets/translations/flags/ge.png"
-            class="flag"
-          />
-        </a>
-        <a href="{{route}}">
-          <img
-            hx-post="/set_language/en"
-            hx-swap="none"
-            src="/assets/translations/flags/en.png"
-            class="flag"
-          />
-        </a>
+        <div hx-post="/set_language/ge" hx-swap="none">
+          <a href="{{route}}"> Ge </a>
+        </div>
+        <div hx-post="/set_language/en" hx-swap="none">
+          <a href="{{route}}"> En </a>
+        </div>
       </div>
     </div>
 
@@ -52,10 +39,7 @@
 
   <div class="mobile-right">
     <div class="language-selector" id="languageSelectorMobile">
-      <img
-        src="/assets/translations/flags/{{lang}}.png"
-        id="languageSelector"
-      />
+      <i class="fa-solid fa-language" id="languageSelector"></i>
       <i class="fa-solid fa-caret-down"></i>
     </div>
     <div class="hamburger-menu" id="hamburgerMenu">
