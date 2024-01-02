@@ -30,7 +30,7 @@ async fn main() -> tide::Result<()> {
 
     app.at("/").get(routes::home::home_handler);
 
-    app.at("/set_language/:lang").get(utils::language::set_language_handler);
+    app.at("/set_language/:lang").post(utils::language::set_language_handler);
 
 
     app.listen("127.0.0.1:8080").await?;

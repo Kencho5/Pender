@@ -91,7 +91,19 @@
 }
 
 /* Media query for mobile responsiveness */
+@media screen and (min-width: 1000px) {
+  .lang-full {
+    display: block;
+  }
+
+  .mobile-right {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 1000px) {
+  .lang-full {
+    display: none !important;
+  }
   .hamburger-menu {
     margin-right: 100px;
   }
@@ -133,19 +145,48 @@
   display: none;
   position: absolute;
   top: 110px;
-  right: 280px;
-  width: 160px;
+  right: 50px;
   z-index: 999;
   animation-duration: 0.3s;
   animation-timing-function: ease;
+}
+
+.language-menu {
+  user-select: none;
+  display: none;
+  position: absolute;
+  top: 110px;
+  width: 160px;
+  right: 160px;
+  z-index: 999;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  user-select: none;
 }
 
 .context-menu-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 390px;
+  width: 350px;
   height: 70px;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 0;
+  background: rgba(57, 191, 178, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(57, 191, 178, 0.3);
+}
+
+.language-menu-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 160px;
+  height: 80px;
   text-align: center;
   padding: 0;
   margin: 0;
@@ -157,12 +198,16 @@
   border: 1px solid rgba(57, 191, 178, 0.3);
 }
 
-.context-menu-links a {
+.context-menu-links a,
+.language-menu-links a {
   color: var(--background);
   text-decoration: none;
   display: block;
-  padding: 25px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.context-menu-links a:hover {
+  transform: scale(1.1);
 }
 
 @keyframes slideIn {
@@ -176,7 +221,8 @@
   }
 }
 
-.show-context-menu {
+.show-context-menu,
+.show-language-menu {
   display: block !important;
   animation-name: slideIn;
 }
@@ -192,6 +238,52 @@
   }
 }
 
-.hide-context-menu {
+.hide-context-menu,
+.hide-language-menu {
   animation-name: slideOut;
+}
+
+.flag {
+  border-radius: 100%;
+  border: 3px solid var(--accent);
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.flag:hover {
+  transform: scale(1.1);
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+}
+
+.language-selector {
+  background-color: var(--accent);
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-right: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.language-selector img {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+
+.language-selector i {
+  color: var(--background);
+}
+
+.mobile-right {
+  display: flex;
+  align-items: center;
 }

@@ -14,8 +14,33 @@
   </ul>
 
   <div class="navbar-profile">
-    <button hx-get="/set_language/en" hx-swap="none">En</button>
-    <button hx-get="/set_language/ge" hx-swap="none">Ge</button>
+    <div class="language-selector lang-full" id="languageSelector">
+      <img
+        src="/assets/translations/flags/{{lang}}.png"
+        id="languageSelector"
+      />
+      <i class="fa-solid fa-caret-down"></i>
+    </div>
+    <div class="language-menu" id="languageMenu">
+      <div class="language-menu-links">
+        <a href="{{route}}">
+          <img
+            hx-post="/set_language/ge"
+            hx-swap="none"
+            src="/assets/translations/flags/ge.png"
+            class="flag"
+          />
+        </a>
+        <a href="{{route}}">
+          <img
+            hx-post="/set_language/en"
+            hx-swap="none"
+            src="/assets/translations/flags/en.png"
+            class="flag"
+          />
+        </a>
+      </div>
+    </div>
 
     <img
       src="/assets/avatar.png"
@@ -25,10 +50,19 @@
     />
   </div>
 
-  <div class="hamburger-menu" id="hamburgerMenu">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+  <div class="mobile-right">
+    <div class="language-selector" id="languageSelectorMobile">
+      <img
+        src="/assets/translations/flags/{{lang}}.png"
+        id="languageSelector"
+      />
+      <i class="fa-solid fa-caret-down"></i>
+    </div>
+    <div class="hamburger-menu" id="hamburgerMenu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
   </div>
 
   <div class="context-menu" id="contextMenu">
@@ -39,5 +73,8 @@
     </div>
   </div>
 </nav>
-
+<script
+  src="https://kit.fontawesome.com/8ebc974816.js"
+  crossorigin="anonymous"
+></script>
 <script src="/static/js/navbar.js"></script>
