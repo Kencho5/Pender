@@ -6,6 +6,15 @@ use tide::sessions::{Session, MemoryStore};
 use serde_json::Value;
 use std::error::Error;
 
+mod routes {
+    pub mod home;
+}
+
+mod utils {
+    pub mod translations;
+    pub mod language;
+}
+
 #[async_std::main]
 async fn main() -> tide::Result<()> {
     // tide::log::start();
@@ -19,43 +28,12 @@ async fn main() -> tide::Result<()> {
     app.at("/assets").serve_dir("./front/assets/")?;
     app.at("/static").serve_dir("./front/static/")?;
 
-    app.at("/").get(|req: tide::Request<Tera>| async move {
-        let tera = req.state();
-        let navbar = fs::read_to_string("./front/templates/navbar.html").expect("Not Found");
+    app.at("/").get(routes::home::home_handler);
 
-        let session = req.session();
-        let lang = session.get_raw("lang").unwrap_or("en".into());
-        let translations = load_translations(&lang).await.unwrap();
-
-        let context = context! {
-            "navbar" => &navbar,
-            "tr" => &translations, 
-        };
-
-        tera.render_response("home.html", &context)
-    });
-
-    app.at("/set_language/:lang").get(set_language);
+    app.at("/set_language/:lang").get(utils::language::set_language_handler);
 
 
     app.listen("127.0.0.1:8080").await?;
     Ok(())
-}
-
-async fn set_language(mut req: Request<Tera>) -> tide::Result {
-    let language = req.param("lang").unwrap().to_string();
-    let session = req.session_mut();
-    session.insert("lang", language)?;
-
-    Ok(Response::new(StatusCode::Ok))
-}
-
-
-async fn load_translations(lang: &str) -> Result<serde_json::Value, Box<dyn Error>> {
-    let file_path = format!("./front/assets/translations/{}.json", lang.replace("\"", ""));
-    let file = fs::read_to_string(&file_path).expect("Not Found");
-    let json: serde_json::Value = serde_json::from_str(&file)?;
-
-    Ok(json)
 }
 
