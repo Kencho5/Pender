@@ -1,21 +1,37 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <link rel="stylesheet" href="static/css/home.css" />
     <link rel="stylesheet" href="static/css/global.css" />
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Pet Meeting Website" />
+
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
 
     <title>Pender</title>
   </head>
   <body>
     {{ navbar | safe }}
-    <div class="circle"></div>
-    <h1>asdadsaddsdsadasdasdasd</h1>
-    <h1>asdadsaddsdsadasdasdasd</h1>
-    <h1>asdadsaddsdsadasdasdasd</h1>
-    <h1>asdadsaddsdsadasdasdasd</h1>
-    <h1>asdadsaddsdsadasdasdasd</h1>
-    <h1>asdadsaddsdsadasdasdasd</h1>
+    <div class="content-wrapper">
+      <div class="text-content">
+        <h1 class="main-text">Adopt, Sell, Meet <br />Your Pet Here</h1>
+        <p class="main-p">
+          Find Your Perfect Companion! Discover Unconditional Love On Our
+          Website
+        </p>
+        <a href="/upload" class="main-upload">{{tr.upload}}</a>
+      </div>
+      <div class="image-content">
+        <!-- <img src="/assets/logo.png" alt="" /> -->
+      </div>
+    </div>
+
+    <div class="circle blue" style="right: 10px; top: 100px"></div>
+    <div class="circle yellow"></div>
   </body>
 </html>

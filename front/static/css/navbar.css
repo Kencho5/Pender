@@ -8,11 +8,11 @@
   justify-content: space-between;
   align-items: center;
   font-size: 22px;
-  background: rgba(255, 244, 227, 0.35);
+  background: rgba(255, 244, 227, 1);
   border-radius: 16px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(11.6px);
-  -webkit-backdrop-filter: blur(11.6px);
+  /* backdrop-filter: blur(17px); */
+  /* -webkit-backdrop-filter: blur(17px); */
   padding: 10px;
 }
 
@@ -22,7 +22,7 @@
 
 .profile-pic {
   cursor: pointer;
-  border: 3px solid var(--text);
+  border: 2.5px solid var(--text);
   margin-right: 100px;
 }
 
@@ -40,18 +40,30 @@
   text-decoration: none;
 }
 
-.active {
-  color: var(--primary) !important;
+.active a {
+  position: relative;
+  text-decoration: none;
+}
+
+.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--accent);
 }
 
 .navbar-links li {
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 40px;
   transition: all 0.2s ease-in-out;
 }
 
 .navbar-links li:hover {
-  background-color: var(--secondary);
+  background-color: var(--accent);
   transform: scale(1.1);
 }
 
@@ -79,7 +91,19 @@
 }
 
 /* Media query for mobile responsiveness */
+@media screen and (min-width: 1000px) {
+  .lang-full {
+    display: block;
+  }
+
+  .mobile-right {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 1000px) {
+  .lang-full {
+    display: none !important;
+  }
   .hamburger-menu {
     margin-right: 100px;
   }
@@ -117,51 +141,135 @@
 }
 /* Context menu styles */
 .context-menu {
+  user-select: none;
   display: none;
   position: absolute;
-  top: 90px; /* Adjust as needed */
+  top: 110px;
   right: 50px;
-  width: 160px;
   z-index: 999;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+}
+
+.language-menu {
+  user-select: none;
+  display: none;
+  position: absolute;
+  top: 110px;
+  width: 160px;
+  right: 160px;
+  z-index: 999;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  user-select: none;
 }
 
 .context-menu-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  height: 70px;
   text-align: center;
-  list-style: none;
+  padding: 10px 20px;
+  margin: 0;
+  background: rgba(57, 191, 178, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(57, 191, 178, 0.3);
+}
+
+.language-menu-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 160px;
+  height: 80px;
+  text-align: center;
   padding: 0;
   margin: 0;
+  background: rgba(57, 191, 178, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(57, 191, 178, 0.3);
 }
 
-.context-menu-links a {
-  background-color: var(--secondary);
-  border-radius: 35px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-  color: var(--text);
+.context-menu-links a,
+.language-menu-links a {
+  color: var(--background);
   text-decoration: none;
   display: block;
-  padding: 15px;
+  transition: all 0.3s ease;
 }
 
-/* Show context menu when hamburger menu is clicked */
-.show-context-menu {
-  display: block;
-}
-
-/* Add animation properties for the context menu links */
-.context-link {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.context-link:hover {
+.context-menu-links a:hover {
   transform: scale(1.1);
 }
 
-.show-link {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show-context-menu,
+.show-language-menu {
+  display: block !important;
+  animation-name: slideIn;
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.hide-context-menu,
+.hide-language-menu {
+  animation-name: slideOut;
+}
+
+.language-menu-links a:hover {
+  transform: scale(1.2);
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+}
+
+.language-selector {
+  background-color: var(--accent);
+  width: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-right: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.language-selector i {
+  color: var(--background);
+  font-size: 24px;
+}
+
+.mobile-right {
+  display: flex;
+  align-items: center;
 }
