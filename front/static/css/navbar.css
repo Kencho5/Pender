@@ -151,19 +151,6 @@
   animation-timing-function: ease;
 }
 
-.language-menu {
-  user-select: none;
-  display: none;
-  position: absolute;
-  top: 110px;
-  width: 160px;
-  right: 160px;
-  z-index: 999;
-  animation-duration: 0.3s;
-  animation-timing-function: ease;
-  user-select: none;
-}
-
 .context-menu-links {
   display: flex;
   justify-content: space-between;
@@ -181,25 +168,7 @@
   border: 1px solid rgba(57, 191, 178, 0.3);
 }
 
-.language-menu-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 160px;
-  height: 80px;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  background: rgba(57, 191, 178, 0.6);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(57, 191, 178, 0.3);
-}
-
-.context-menu-links a,
-.language-menu-links a {
+.context-menu-links a {
   color: var(--background);
   text-decoration: none;
   display: block;
@@ -221,8 +190,7 @@
   }
 }
 
-.show-context-menu,
-.show-language-menu {
+.show-context-menu {
   display: block !important;
   animation-name: slideIn;
 }
@@ -238,13 +206,8 @@
   }
 }
 
-.hide-context-menu,
-.hide-language-menu {
+.hide-context-menu {
   animation-name: slideOut;
-}
-
-.language-menu-links a:hover {
-  transform: scale(1.2);
 }
 
 .navbar-profile {
@@ -252,24 +215,46 @@
   align-items: center;
 }
 
-.language-selector {
-  background-color: var(--accent);
-  width: 65px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 15px;
-  margin-right: 30px;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.language-selector i {
-  color: var(--background);
-  font-size: 24px;
-}
-
 .mobile-right {
   display: flex;
   align-items: center;
+}
+.radio-inputs {
+  margin-right: 30px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 30px;
+  background-color: var(--accent);
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 130px;
+  font-size: 14px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: var(--background);
+  font-weight: 600;
 }

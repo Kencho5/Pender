@@ -1,5 +1,4 @@
 use std::{error::Error, fs};
-use serde_json::Value;
 
 pub async fn load_translations(lang: &str) -> Result<serde_json::Value, Box<dyn Error>> {
     let file_path = format!("./front/assets/translations/{}.json", lang);

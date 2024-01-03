@@ -1,6 +1,4 @@
-use tide::{Request, Response, StatusCode};
-use crate::utils::translations;
-use tide::sessions::Session;
+use tide::{ Response, StatusCode};
 
 pub async fn set_language_handler(mut req: tide::Request<tera::Tera>) -> tide::Result {
     let language = req.param("lang").unwrap().to_string();

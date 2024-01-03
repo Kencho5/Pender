@@ -1,6 +1,5 @@
-use tide::{Request, Response};
-use tera::{Context, Tera};
-use std::{fs, error::Error};
+use tera::{Tera};
+use std::{fs};
 use tide_tera::prelude::*;
 use crate::utils::translations::load_translations;
 
@@ -9,11 +8,11 @@ pub async fn render_navbar(tera: &Tera, lang: &str, route: &str) -> tide::Result
 
     let translations = load_translations(&lang).await.unwrap();
 
-    let mut navbar_context = context! {
+    let navbar_context = context! {
         "navbar" => &navbar_content,
         "tr" => &translations, 
         "lang" => &lang,
-        "route" => &route
+        "route" => &route,
     };
 
     let rendered_navbar = tera.render("navbar.html", &navbar_context)?;

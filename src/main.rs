@@ -1,10 +1,5 @@
-use tide::{Request, Response, StatusCode};
 use tera::Tera;
-use tide_tera::prelude::*;
-use std::fs;
-use tide::sessions::{Session, MemoryStore};
-use serde_json::Value;
-use std::error::Error;
+use tide::sessions::{MemoryStore};
 
 mod routes {
     pub mod home;
