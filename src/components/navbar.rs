@@ -13,7 +13,7 @@ pub async fn render_navbar(tera: &Tera, lang: &str, route: &str) -> tide::Result
         "navbar" => &navbar_content,
         "tr" => &translations, 
         "lang" => &lang,
-        "route" => &route
+        "route" => &route,
     };
 
     let rendered_navbar = tera.render("navbar.html", &navbar_context)?;

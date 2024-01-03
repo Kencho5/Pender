@@ -32,4 +32,22 @@ body {
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;
   background-color: var(--background);
+  animation: fadeIn 0.35s ease-in-out forwards;
+  transition: opacity 0.35s ease-in-out;
+}
+
+body.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
