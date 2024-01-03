@@ -15,6 +15,10 @@ mod utils {
     pub mod language;
 }
 
+mod components {
+    pub mod navbar;
+}
+
 #[async_std::main]
 async fn main() -> tide::Result<()> {
     // tide::log::start();
