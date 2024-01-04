@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
@@ -15,7 +14,7 @@
 <p align="center">
         A website about adopting, meeting and selling pets
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Built With Rust»</strong></a>
+    <a href="https://pender.ge/"><strong>pender.ge»</strong></a>
     <br />
   </p>
 </div>
