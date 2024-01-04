@@ -38,6 +38,7 @@ body {
   overscroll-behavior: none;
   scroll-behavior: smooth;
   background: url("/assets/grain.svg") center/cover fixed;
+  color: var(--text);
 }
 
 body.active {

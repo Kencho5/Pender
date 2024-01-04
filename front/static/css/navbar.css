@@ -66,15 +66,8 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
-}
-
-.line {
-  width: 30px;
-  height: 4.5px;
-  border-radius: 3px;
-  background-color: var(--text);
-  margin: 3px 0;
-  transition: transform 0.3s ease-in-out;
+  font-size: 32px;
+  user-select: none;
 }
 
 /* Media query for mobile responsiveness */
