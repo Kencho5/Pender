@@ -48,7 +48,7 @@ services._
 ## Contact
 
 Giorgi Kenchadze -
-[LinkedIn](https://www.linkedin.com/in/giorgi-kenchadze-324a33221/)(https://twitter.com/your_username) -
+[LinkedIn](https://www.linkedin.com/in/giorgi-kenchadze-324a33221/) -
 giokenchadze@gmail.com
 
 <!-- ACKNOWLEDGMENTS -->
