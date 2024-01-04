@@ -26,8 +26,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](../../Screenshot 2024-01-04 at
-7.52.02 PM.png)
+[![Product Name Screen Shot](../../directory2/directory3/Screenshot%202024-01-04%20at%207.52.02%20PM.png)](../../directory2/directory3/Screenshot%202024-01-04%20at%207.52.02%20PM.png)
 
 There are many great README templates available on GitHub; however, I didn't
 find one that really suited my needs so I created this enhanced one. I want to
