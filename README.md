@@ -27,13 +27,8 @@ project. Leave any add-ons/plugins for the acknowledgements section. Here are a
 few examples.
 
 - [![HTMX](https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge)](https://htmx.org)
-- [![React][React.js]][React-url]
-- [![Vue][Vue.js]][Vue-url]
-- [![Angular][Angular.io]][Angular-url]
-- [![Svelte][Svelte.dev]][Svelte-url]
-- [![Laravel][Laravel.com]][Laravel-url]
-- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-- [![JQuery][JQuery.com]][JQuery-url]
+- [![Rust](https://img.shields.io/badge/Rust-EF5B03?style=for-the-badge&logo=rust)](https://www.rust-lang.org/)
+- [![Rust Tide]https://img.shields.io/badge/Rust%20Tide-0D1019?style=for-the-badge&logo=rust)](https://github.com/http-rs/tide)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
