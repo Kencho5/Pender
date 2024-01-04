@@ -1,15 +1,13 @@
 body {
   margin: 0;
   margin-top: 150px;
-  height: 100vh;
-  background: url("/assets/grain.svg") center/cover fixed;
 }
 
 .circle {
   width: 700px;
   height: 700px;
   border-radius: 10px;
-  filter: blur(12rem);
+  filter: blur(15rem);
   opacity: 40%;
   position: absolute;
 }
@@ -17,3 +15,7 @@ body {
 .yellow {
   background-color: #fcff45;
 }
+
+/* .blue { */
+/*   background-color: var(--accent); */
+/* } */
