@@ -1,7 +1,7 @@
 .navbar {
   position: fixed;
   top: 20px;
-  left: 50%; /* Shift the left edge of the navbar to the center */
+  left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
   display: flex;
@@ -133,7 +133,7 @@
   display: none;
   position: absolute;
   top: 110px;
-  right: 50px;
+  right: 0;
   z-index: 999;
   animation-duration: 0.3s;
   animation-timing-function: ease;
@@ -143,24 +143,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
-  height: 70px;
   text-align: center;
-  padding: 10px 20px;
   margin: 0;
-  background: rgba(57, 191, 178, 0.6);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(57, 191, 178, 0.3);
 }
 
 .context-menu-links a {
-  color: var(--background);
+  border-radius: 30px;
+  background-color: var(--background);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(57, 191, 178, 0.3);
+  padding: 20px;
+  width: 150px;
+  margin-right: 25px;
+  color: var(--text);
   text-decoration: none;
   display: block;
   transition: all 0.3s ease;
+}
+
+.context-menu-links i {
+  margin-right: 10px;
 }
 
 .context-menu-links a:hover {
