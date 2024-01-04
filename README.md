@@ -27,6 +27,7 @@ and serving HTML files. Frontend is plain Html, Css with a little help of HTMX.
 - [![HTMX](https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge)](https://htmx.org)
 - [![Rust](https://img.shields.io/badge/Rust-EF5B03?style=for-the-badge&logo=rust)](https://www.rust-lang.org/)
 - [![Rust Tide](https://img.shields.io/badge/Rust%20Tide-0D1019?style=for-the-badge&logo=rust)](https://github.com/http-rs/tide)
+- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336790?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
 <!-- GETTING STARTED -->
 
