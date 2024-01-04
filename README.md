@@ -1,11 +1,11 @@
 # Pet Website
 
-![Pet Website Logo](https://pender.ge/assets/images/footer-logo.svg)
+![Pet Website Logo](./front/assets/logo.svg)
 
 ## Technologies Used
 
 - **Frontend:** HTMX.
-- **Backend:** Rust (Tide + Templating).
+- **Backend:** Rust (Tide + Tera).
 - **Database:** PostgreSQL.
 - **CI/CD:** GitHub Actions.
 

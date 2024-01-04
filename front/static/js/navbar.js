@@ -11,7 +11,7 @@ function activeRoute() {
   const links = document.getElementsByClassName("navbar-links")[0].childNodes;
 
   links.forEach((link) => {
-    if (link.textContent.toLowerCase() == route) {
+    if (link.id == route) {
       link.classList.add("active");
     }
   });
