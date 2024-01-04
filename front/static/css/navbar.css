@@ -9,7 +9,7 @@
   align-items: center;
   font-size: 22px;
   border-radius: 40px;
-  width: 95%;
+  width: 90%;
   background: rgba(255, 244, 227, 1);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   padding: 10px;
@@ -133,7 +133,8 @@
   display: none;
   position: absolute;
   top: 110px;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
   animation-duration: 0.3s;
   animation-timing-function: ease;
@@ -145,6 +146,7 @@
   align-items: center;
   text-align: center;
   margin: 0;
+  gap: 20px;
 }
 
 .context-menu-links a {
@@ -153,8 +155,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(57, 191, 178, 0.3);
   padding: 20px;
-  width: 150px;
-  margin-right: 25px;
+  width: 160px;
   color: var(--text);
   text-decoration: none;
   display: block;
@@ -172,11 +173,11 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(-50%);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(-50%);
   }
 }
 
@@ -188,11 +189,11 @@
 @keyframes slideOut {
   from {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(-50%);
   }
   to {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(-50%);
   }
 }
 

@@ -8,9 +8,15 @@
   </div>
 
   <ul class="navbar-links" id="navbarLinks">
-    <li id="home"><a href="/">{{ tr.NAV.home }}</a></li>
-    <li id="posts"><a href="/search">{{ tr.NAV.posts }}</a></li>
-    <li id="profile"><a href="/profile">{{ tr.NAV.profile }}</a></li>
+    <li id="home">
+      <a href="/"> {{ tr.NAV.home }} </a>
+    </li>
+    <li id="posts">
+      <a href="/search"> {{ tr.NAV.posts }}</a>
+    </li>
+    <li id="profile">
+      <a href="/profile">{{ tr.NAV.profile }}</a>
+    </li>
   </ul>
 
   <div class="navbar-profile">
@@ -83,15 +89,15 @@
     <div class="context-menu-links">
       <a href="/">
         <i class="fa-solid fa-house"></i>
-        Home
-      </a>
-      <a href="/contact">
-        <i class="fa-solid fa-message"></i>
-        Contact
+        {{ tr.NAV.home }}
       </a>
       <a href="/search">
         <i class="fa-solid fa-magnifying-glass"></i>
-        Posts
+        {{ tr.NAV.posts }}
+      </a>
+      <a href="/profile">
+        <i class="fa-solid fa-user"></i>
+        {{ tr.NAV.profile }}
       </a>
     </div>
   </div>
