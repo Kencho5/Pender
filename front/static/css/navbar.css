@@ -9,7 +9,6 @@
   align-items: center;
   font-size: 22px;
   background: rgba(255, 244, 227, 1);
-  border-radius: 16px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   padding: 10px;
 }
@@ -211,7 +210,7 @@
   background-color: var(--accent);
   box-sizing: border-box;
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-  padding: 0.25rem;
+  padding: 0.35rem;
   width: 130px;
   font-size: 14px;
 }
@@ -233,7 +232,7 @@
   border-radius: 30px;
   border: none;
   padding: 0.5rem 0;
-  color: rgba(51, 65, 85, 1);
+  color: var(--text);
   transition: all 0.15s ease-in-out;
 }
 
