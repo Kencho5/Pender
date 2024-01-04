@@ -19,11 +19,10 @@
   </p>
 </div>
 
-### Built With
+### Tech Stack
 
-This section should list any major frameworks/libraries used to bootstrap your
-project. Leave any add-ons/plugins for the acknowledgements section. Here are a
-few examples.
+This project is built with Rust as backend using Tide and Tera for templating
+and serving HTML files. Frontend is plain Html, Css with a little help of HTMX.
 
 - [![HTMX](https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge)](https://htmx.org)
 - [![Rust](https://img.shields.io/badge/Rust-EF5B03?style=for-the-badge&logo=rust)](https://www.rust-lang.org/)
