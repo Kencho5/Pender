@@ -34,6 +34,9 @@ body {
   background-color: var(--background);
   animation: fadeIn 0.35s ease-in-out forwards;
   transition: opacity 0.35s ease-in-out;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+  background: url("/assets/grain3.svg") center/cover fixed;
 }
 
 body.active {
