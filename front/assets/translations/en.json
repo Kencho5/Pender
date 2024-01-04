@@ -1,3 +1,7 @@
 {
-  "upload": "Upload Post"
+  "NAV": {
+    "home": "Home",
+    "posts": "Posts",
+    "profile": "Profile"
+  }
 }

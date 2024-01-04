@@ -30,6 +30,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  font-weight: bold;
   letter-spacing: 0.5px;
   background-color: var(--background);
   animation: fadeIn 0.35s ease-in-out forwards;
