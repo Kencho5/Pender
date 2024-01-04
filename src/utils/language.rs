@@ -1,4 +1,4 @@
-use tide::{ Response, StatusCode};
+use tide::{Response, StatusCode};
 
 pub async fn set_language_handler(mut req: tide::Request<tera::Tera>) -> tide::Result {
     let language = req.param("lang").unwrap().to_string();
@@ -7,4 +7,3 @@ pub async fn set_language_handler(mut req: tide::Request<tera::Tera>) -> tide::R
 
     Ok(Response::new(StatusCode::Ok))
 }
-

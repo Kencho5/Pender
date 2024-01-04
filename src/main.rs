@@ -1,13 +1,13 @@
 use tera::Tera;
-use tide::sessions::{MemoryStore};
+use tide::sessions::MemoryStore;
 
 mod routes {
     pub mod home;
 }
 
 mod utils {
-    pub mod translations;
     pub mod language;
+    pub mod translations;
 }
 
 mod components {
@@ -29,10 +29,9 @@ async fn main() -> tide::Result<()> {
 
     app.at("/").get(routes::home::home_handler);
 
-    app.at("/set_language/:lang").post(utils::language::set_language_handler);
-
+    app.at("/set_language/:lang")
+        .post(utils::language::set_language_handler);
 
     app.listen("127.0.0.1:8080").await?;
     Ok(())
 }
-

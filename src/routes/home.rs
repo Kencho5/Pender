@@ -12,7 +12,7 @@ pub async fn home_handler(req: Request<Tera>) -> tide::Result {
     let lang = session.get_raw("lang").unwrap_or("ge".into()).replace("\"", "");
     let translations = load_translations(&lang).await.unwrap();
 
-    let rendered_navbar = render_navbar(&tera, &lang, &route).await?;
+    let rendered_navbar = render_navbar(&tera, &lang, &route, &translations).await?;
 
     let context = context! {
         "navbar" => &rendered_navbar,
