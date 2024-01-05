@@ -68,6 +68,7 @@
   cursor: pointer;
   font-size: 32px;
   user-select: none;
+  width: 30px;
 }
 
 /* Media query for mobile responsiveness */
