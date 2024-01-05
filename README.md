@@ -19,7 +19,7 @@
   </p>
 </div>
 
-### Tech Stack
+### Built With
 
 This project is built with Rust as backend using Tide and Tera for templating
 and serving HTML files. Frontend is plain Html, Css with a little help of HTMX.

@@ -1,7 +1,7 @@
 .navbar {
   position: fixed;
   top: 20px;
-  left: 50%; /* Shift the left edge of the navbar to the center */
+  left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
   display: flex;
@@ -9,7 +9,7 @@
   align-items: center;
   font-size: 22px;
   border-radius: 40px;
-  width: 95%;
+  width: 90%;
   background: rgba(255, 244, 227, 1);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   padding: 10px;
@@ -66,15 +66,9 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
-}
-
-.line {
+  font-size: 32px;
+  user-select: none;
   width: 30px;
-  height: 4.5px;
-  border-radius: 3px;
-  background-color: var(--text);
-  margin: 3px 0;
-  transition: transform 0.3s ease-in-out;
 }
 
 /* Media query for mobile responsiveness */
@@ -133,7 +127,8 @@
   display: none;
   position: absolute;
   top: 110px;
-  right: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
   animation-duration: 0.3s;
   animation-timing-function: ease;
@@ -143,24 +138,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
-  height: 70px;
   text-align: center;
-  padding: 10px 20px;
   margin: 0;
-  background: rgba(57, 191, 178, 0.6);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(57, 191, 178, 0.3);
+  gap: 20px;
 }
 
 .context-menu-links a {
-  color: var(--background);
+  border-radius: 40px;
+  background-color: var(--background);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(57, 191, 178, 0.3);
+  padding: 20px;
+  width: 160px;
+  color: var(--text);
   text-decoration: none;
   display: block;
   transition: all 0.3s ease;
+}
+
+.context-menu-links i {
+  margin-right: 10px;
 }
 
 .context-menu-links a:hover {
@@ -170,11 +167,11 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(-50%);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(-50%);
   }
 }
 
@@ -186,11 +183,11 @@
 @keyframes slideOut {
   from {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(-50%);
   }
   to {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(-50%);
   }
 }
 

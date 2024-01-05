@@ -3,9 +3,9 @@ use tera::Tera;
 use tide::Request;
 use tide_tera::prelude::*;
 
-pub async fn home_handler(req: Request<Tera>) -> tide::Result {
+pub async fn profile_handler(req: Request<Tera>) -> tide::Result {
     let (_lang, context) = load_defaults(&req).await?;
     let tera = req.state();
-    let response = tera.render_response("home.html", &context)?;
+    let response = tera.render_response("profile.html", &context)?;
     Ok(response)
 }

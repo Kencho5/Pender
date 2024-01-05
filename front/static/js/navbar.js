@@ -6,7 +6,7 @@ window.onload = function () {
 function activeRoute() {
   const route = window.location.pathname == "/"
     ? "home"
-    : window.location.pathname.slice(0);
+    : window.location.pathname.slice(0).replace("/", "");
 
   const links = document.getElementsByClassName("navbar-links")[0].childNodes;
 
@@ -22,12 +22,17 @@ function delay(ms) {
 
 document.getElementById("hamburgerMenu").addEventListener("click", async () => {
   const contextMenu = document.getElementById("contextMenu");
+  const menuIcon = document.getElementById("menu-icon");
 
   if (!contextMenu.classList.contains("show-context-menu")) {
     contextMenu.classList.remove("hide-context-menu");
     contextMenu.classList.add("show-context-menu");
+
+    menuIcon.classList = "fa-solid fa-xmark";
   } else {
     contextMenu.classList.add("hide-context-menu");
+    menuIcon.classList = "fa-solid fa-bars";
+
     await delay(100);
     contextMenu.classList.remove("show-context-menu");
   }
