@@ -1,28 +1,17 @@
-<a name="readme-top"></a>
-
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://pender.ge/">
-    <img src="./front/assets/logo.svg" alt="Logo" width="80" height="80">
-  </a>
+<h1 align="center">
+  <br>
+  <a href="https://pender.ge/"><img src="./front/assets/logo.svg" width="200"></a>
+  <br>
+  Pender
+  <br>
+</h1>
 
-<h3 align="center">Pender</h3>
+<h4 align="center">A website about adopting, meeting and selling pets built with <a href="https://www.rust-lang.org/" target="_blank">Rust</a>.</h4>
 
 <p align="center">
-        A website about adopting, meeting and selling pets
-    <br />
-    <a href="https://pender.ge/"><strong>pender.ge»</strong></a>
-    <br />
-  </p>
-</div>
-
-### Built With
-
-<div align="center">
-  <a href="https://htmx.org">
+   <a href="https://htmx.org">
     <img src="https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge" alt="HTMX">
   </a>
   <a href="https://www.rust-lang.org/">
@@ -34,29 +23,42 @@
   <a href="https://www.postgresql.org/">
     <img src="https://img.shields.io/badge/PostgreSQL-336790?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
   </a>
-</div>
 
-This project is built using Rust as a backend with Tide and Tera for templating
-and serving HTML files. The frontend consists of plain HTML and CSS with a
-little help from HTMX.
+</p>
 
-### Usage
+![screenshot](https://imgur.com/ZG4JG8J.png)
 
-1. Clone the repo
-2. Run this command in terminal
-   ```sh
-   cargo run
-   ```
+## Key Features
 
-<!-- CONTACT -->
+- **Home:** Discover the latest user-uploaded posts.
+- **Search:** Explore pets using powerful filters.
+- **Profile:** Manage your details and posts.
+- **Upload:** Upload your own post.
+- **Login/Register:** Register with email and receive confirmation code.
+
+## Development
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and
+[Cargo](https://crates.io/). From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/Kencho5/Pender.git
+
+# Go into the repository
+$ cd Pender
+
+# Run the app
+$ cargo run
+```
 
 ## Contact
 
-Giorgi Kenchadze -
-[LinkedIn](https://www.linkedin.com/in/giorgi-kenchadze-324a33221/) -
-giokenchadze@gmail.com
+For any inquiries or suggestions regarding this project, feel free to reach out:
 
-<!-- ACKNOWLEDGMENTS -->
+- **Email:** giokenchadze@gmail.com
+- **LinkedIn:**
+  [Giorgi Kenchadze](https://www.linkedin.com/in/giorgi-kenchadze-324a33221)
 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
