@@ -3,6 +3,8 @@ use tide::sessions::MemoryStore;
 
 mod routes {
     pub mod home;
+    pub mod profile;
+    pub mod search;
 }
 
 mod utils {
@@ -28,6 +30,8 @@ async fn main() -> tide::Result<()> {
     app.at("/static").serve_dir("./front/static/")?;
 
     app.at("/").get(routes::home::home_handler);
+    app.at("/profile").get(routes::profile::profile_handler);
+    app.at("/search").get(routes::search::search_handler);
 
     app.at("/set_language/:lang")
         .post(utils::language::set_language_handler);

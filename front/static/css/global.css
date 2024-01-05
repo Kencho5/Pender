@@ -39,6 +39,7 @@ body {
   scroll-behavior: smooth;
   background: url("/assets/grain.svg") center/cover fixed;
   color: var(--text);
+  margin-top: 150px;
 }
 
 body.active {
@@ -56,3 +57,20 @@ body.active {
     visibility: visible;
   }
 }
+
+.circle {
+  width: 700px;
+  height: 700px;
+  border-radius: 10px;
+  filter: blur(15rem);
+  opacity: 40%;
+  position: absolute;
+}
+
+.yellow {
+  background-color: #fcff45;
+}
+
+/* .blue { */
+/*   background-color: var(--accent); */
+/* } */

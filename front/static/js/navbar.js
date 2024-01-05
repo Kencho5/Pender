@@ -6,7 +6,7 @@ window.onload = function () {
 function activeRoute() {
   const route = window.location.pathname == "/"
     ? "home"
-    : window.location.pathname.slice(0);
+    : window.location.pathname.slice(0).replace("/", "");
 
   const links = document.getElementsByClassName("navbar-links")[0].childNodes;
 
