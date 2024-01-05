@@ -21,15 +21,24 @@
 
 ### Built With
 
-This project is built with Rust as backend using Tide and Tera for templating
-and serving HTML files. Frontend is plain Html, Css with a little help of HTMX.
+This project is built using Rust as a backend with Tide and Tera for templating
+and serving HTML files. The frontend consists of plain HTML and CSS with a
+little help from HTMX.
 
-- [![HTMX](https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge)](https://htmx.org)
-- [![Rust](https://img.shields.io/badge/Rust-EF5B03?style=for-the-badge&logo=rust)](https://www.rust-lang.org/)
-- [![Rust Tide](https://img.shields.io/badge/Rust%20Tide-0D1019?style=for-the-badge&logo=rust)](https://github.com/http-rs/tide)
-- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336790?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-
-<!-- GETTING STARTED -->
+<div align="center">
+  <a href="https://htmx.org">
+    <img src="https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge" alt="HTMX">
+  </a>
+  <a href="https://www.rust-lang.org/">
+    <img src="https://img.shields.io/badge/Rust-EF5B03?style=for-the-badge&logo=rust" alt="Rust">
+  </a>
+  <a href="https://github.com/http-rs/tide">
+    <img src="https://img.shields.io/badge/Rust%20Tide-0D1019?style=for-the-badge&logo=rust" alt="Rust Tide">
+  </a>
+  <a href="https://www.postgresql.org/">
+    <img src="https://img.shields.io/badge/PostgreSQL-336790?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  </a>
+</div>
 
 ### Usage
 
