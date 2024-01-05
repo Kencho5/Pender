@@ -21,10 +21,6 @@
 
 ### Built With
 
-This project is built using Rust as a backend with Tide and Tera for templating
-and serving HTML files. The frontend consists of plain HTML and CSS with a
-little help from HTMX.
-
 <div align="center">
   <a href="https://htmx.org">
     <img src="https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge" alt="HTMX">
@@ -39,6 +35,10 @@ little help from HTMX.
     <img src="https://img.shields.io/badge/PostgreSQL-336790?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
   </a>
 </div>
+
+This project is built using Rust as a backend with Tide and Tera for templating
+and serving HTML files. The frontend consists of plain HTML and CSS with a
+little help from HTMX.
 
 ### Usage
 
