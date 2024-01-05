@@ -8,6 +8,7 @@ mod routes {
 }
 
 mod utils {
+    pub mod common;
     pub mod language;
     pub mod translations;
 }
