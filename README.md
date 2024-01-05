@@ -1,53 +1,64 @@
-<a name="readme-top"></a>
-
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://pender.ge/">
-    <img src="./front/assets/logo.svg" alt="Logo" width="80" height="80">
-  </a>
+<h1 align="center">
+  <br>
+  <a href="https://pender.ge/"><img src="./front/assets/logo.svg" width="80"></a>
+  <br>
+  Pender
+  <br>
+</h1>
 
-<h3 align="center">Pender</h3>
+<h4 align="center">A website about adopting, meeting and selling pets built with <a href="https://www.rust-lang.org/" target="_blank">Rust</a>.</h4>
 
 <p align="center">
-        A website about adopting, meeting and selling pets
-    <br />
-    <a href="https://pender.ge/"><strong>pender.ge»</strong></a>
-    <br />
-  </p>
-</div>
+   <a href="https://htmx.org">
+    <img src="https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge" alt="HTMX">
+  </a>
+  <a href="https://www.rust-lang.org/">
+    <img src="https://img.shields.io/badge/Rust-EF5B03?style=for-the-badge&logo=rust" alt="Rust">
+  </a>
+  <a href="https://github.com/http-rs/tide">
+    <img src="https://img.shields.io/badge/Rust%20Tide-0D1019?style=for-the-badge&logo=rust" alt="Rust Tide">
+  </a>
+  <a href="https://www.postgresql.org/">
+    <img src="https://img.shields.io/badge/PostgreSQL-336790?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  </a>
 
-### Built With
+</p>
 
-This project is built with Rust as backend using Tide and Tera for templating
-and serving HTML files. Frontend is plain Html, Css with a little help of HTMX.
+![screenshot](https://imgur.com/ZG4JG8J.png)
 
-- [![HTMX](https://img.shields.io/badge/HTMX-3366CC?style=for-the-badge)](https://htmx.org)
-- [![Rust](https://img.shields.io/badge/Rust-EF5B03?style=for-the-badge&logo=rust)](https://www.rust-lang.org/)
-- [![Rust Tide](https://img.shields.io/badge/Rust%20Tide-0D1019?style=for-the-badge&logo=rust)](https://github.com/http-rs/tide)
-- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336790?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+## Key Features
 
-<!-- GETTING STARTED -->
+- **Home:** Discover the latest user-uploaded posts.
+- **Search:** Explore pets using powerful filters.
+- **Profile:** Manage your details and posts.
+- **Upload:** Upload your own post.
+- **Login/Register:** Register with email and receive confirmation code.
 
-### Usage
+## Development
 
-1. Clone the repo
-2. Run this command in terminal
-   ```sh
-   cargo run
-   ```
+To clone and run this application, you'll need [Git](https://git-scm.com) and
+[Cargo](https://crates.io/). From your command line:
 
-<!-- CONTACT -->
+```bash
+# Clone this repository
+$ git clone https://github.com/Kencho5/Pender.git
+
+# Go into the repository
+$ cd Pender
+
+# Run the app
+$ cargo run
+```
 
 ## Contact
 
-Giorgi Kenchadze -
-[LinkedIn](https://www.linkedin.com/in/giorgi-kenchadze-324a33221/) -
-giokenchadze@gmail.com
+For any inquiries or suggestions regarding this project, feel free to reach out:
 
-<!-- ACKNOWLEDGMENTS -->
+- **Email:** giokenchadze@gmail.com
+- **LinkedIn:**
+  [Giorgi Kenchadze](https://www.linkedin.com/in/giorgi-kenchadze-324a33221)
 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
