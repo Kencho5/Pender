@@ -8,7 +8,7 @@
   <br>
 </h1>
 
-<h4 align="center">A website about adopting, meeting and selling pets built with <a href="https://www.rust-lang.org/" target="_blank">Rust</a>.</h4>
+<h4 align="center">A website about adopting, meeting and selling pets built with <a href="https://www.rust-lang.org/" target="_blank">Rust</a> and <a href="https://htmx.org" target="_blank">HTMX</a>.</h4>
 
 <p align="center">
    <a href="https://htmx.org">
