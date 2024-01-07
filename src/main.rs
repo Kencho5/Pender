@@ -5,6 +5,7 @@ mod routes {
     pub mod home;
     pub mod profile;
     pub mod search;
+    pub mod upload;
 }
 
 mod utils {
@@ -33,6 +34,7 @@ async fn main() -> tide::Result<()> {
     app.at("/").get(routes::home::home_handler);
     app.at("/profile").get(routes::profile::profile_handler);
     app.at("/search").get(routes::search::search_handler);
+    app.at("/upload").get(routes::upload::upload_handler);
 
     app.at("/set_language/:lang")
         .post(utils::language::set_language_handler);

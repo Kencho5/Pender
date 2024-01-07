@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://pender.ge/"><img src="./front/assets/logo.svg" width="80"></a>
+  <img src="./front/assets/logo.svg" width="80">
   <br>
   Pender
   <br>

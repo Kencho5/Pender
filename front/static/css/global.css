@@ -71,6 +71,18 @@ body.active {
   background-color: #fcff45;
 }
 
-/* .blue { */
-/*   background-color: var(--accent); */
-/* } */
+.plus-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: var(--background);
+  padding: 15px 25px;
+  font-size: 2rem;
+  border-radius: 100%;
+  color: var(--text);
+  transition: all 0.2s ease-in-out;
+}
+
+.plus-btn:hover {
+  transform: scale(1.1);
+}
