@@ -15,7 +15,8 @@
     <title>Pender</title>
   </head>
   <body>
-    {{ navbar | safe }}
+    {{ navbar | safe }} {% block content %}{% endblock content %}
+
     <div class="circle yellow"></div>
     <a href="/upload" class="plus-btn" aria-label="Upload">
       <i class="fa-solid fa-plus"></i>
