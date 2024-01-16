@@ -1,9 +1,13 @@
 use tera::Tera;
 use tide::sessions::MemoryStore;
 
+mod register_routes;
+
 mod routes {
     pub mod home;
+    pub mod login;
     pub mod profile;
+    pub mod register;
     pub mod search;
     pub mod upload;
 }
@@ -35,17 +39,7 @@ async fn main() -> tide::Result<()> {
     app.at("/assets").serve_dir("./front/assets/")?;
     app.at("/static").serve_dir("./front/static/")?;
 
-    app.at("/").get(routes::home::home_handler);
-    app.at("/profile").get(routes::profile::profile_handler);
-    app.at("/search").get(routes::search::search_handler);
-    app.at("/upload").get(routes::upload::upload_handler);
-
-    // API ROUTES
-    app.at("/api/upload")
-        .post(api::api_upload::api_upload_handler);
-
-    app.at("/set_language/:lang")
-        .post(utils::language::set_language_handler);
+    register_routes::register_routes(&mut app);
 
     app.listen("127.0.0.1:8080").await?;
     Ok(())
