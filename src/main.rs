@@ -34,7 +34,7 @@ async fn main() -> tide::Result<()> {
     tera.autoescape_on(vec!["html"]);
 
     let mut app = tide::with_state(tera);
-    app.with(tide::sessions::SessionMiddleware::new(MemoryStore::new(), b"we recommend you use std::env::var(\"TIDE_SECRET\").unwrap().as_bytes() instead of a fixed value"));
+    app.with(tide::sessions::SessionMiddleware::new(MemoryStore::new(), b"we recommend you use std::env::var(\"TIDE_SECRET\").unwrap().as_bytes() instead of a fixed value."));
 
     app.at("/assets").serve_dir("./front/assets/")?;
     app.at("/static").serve_dir("./front/static/")?;
