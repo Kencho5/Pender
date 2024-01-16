@@ -15,7 +15,7 @@ pub async fn load_defaults(req: &Request<Tera>) -> tide::Result<(String, tera::C
         .replace("\"", "");
     let translations = load_translations(&lang).await.unwrap();
 
-    let rendered_navbar = render_navbar(&tera, &lang, &route, &translations).await?;
+    let rendered_navbar = render_navbar(&tera, &lang, &route, &translations, &req).await?;
 
     let context = context! {
         "navbar" => &rendered_navbar,

@@ -2,6 +2,7 @@
   "NAV": {
     "home": "Home",
     "posts": "Posts",
-    "profile": "Profile"
+    "profile": "Profile",
+    "login": "Login"
   }
 }

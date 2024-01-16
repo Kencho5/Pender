@@ -14,9 +14,15 @@
     <li id="search">
       <a href="/search"> {{ tr.NAV.posts }}</a>
     </li>
+    {% if user %}
     <li id="profile">
       <a href="/profile">{{ tr.NAV.profile }}</a>
     </li>
+    {% else %}
+    <li id="login">
+      <a href="/login">{{ tr.NAV.login }}</a>
+    </li>
+    {% endif %}
   </ul>
 
   <div class="navbar-profile">
@@ -93,15 +99,18 @@
         <i class="fa-solid fa-magnifying-glass"></i>
         {{ tr.NAV.posts }}
       </a>
+      {% if user %}
       <a href="/profile">
         <i class="fa-solid fa-user"></i>
         {{ tr.NAV.profile }}
       </a>
+      {% else %}
+      <a href="/login">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        {{ tr.NAV.login }}
+      </a>
+      {% endif %}
     </div>
   </div>
 </nav>
-<script
-  src="https://kit.fontawesome.com/8ebc974816.js"
-  crossorigin="anonymous"
-></script>
 <script src="/static/js/navbar.js"></script>
