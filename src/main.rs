@@ -5,7 +5,9 @@ mod register_routes;
 
 mod routes {
     pub mod home;
+    pub mod login;
     pub mod profile;
+    pub mod register;
     pub mod search;
     pub mod upload;
 }

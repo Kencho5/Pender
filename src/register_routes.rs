@@ -10,6 +10,8 @@ pub fn register_routes(app: &mut Server<Tera>) {
     app.at("/profile").get(profile::profile_handler);
     app.at("/search").get(search::search_handler);
     app.at("/upload").get(upload::upload_handler);
+    app.at("/register").get(register::register_handler);
+    app.at("/login").get(login::login_handler);
 
     // API ROUTES
     app.at("/api/upload").post(api_upload::api_upload_handler);
