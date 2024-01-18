@@ -1,7 +1,4 @@
-use crate::utils::common::load_defaults;
-use tera::Tera;
-use tide::Request;
-use tide_tera::prelude::*;
+use crate::imports::*;
 
 pub async fn search_handler(req: Request<Tera>) -> tide::Result {
     let (_lang, context) = load_defaults(&req).await?;

@@ -1,8 +1,8 @@
 use tera::Tera;
 use tide::sessions::MemoryStore;
 
+mod imports;
 mod register_routes;
-
 mod routes {
     pub mod home;
     pub mod login;
@@ -17,12 +17,13 @@ mod api {
 }
 
 mod utils {
-    pub mod common;
     pub mod language;
     pub mod translations;
 }
 
-mod components {}
+mod components {
+    pub mod common;
+}
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {

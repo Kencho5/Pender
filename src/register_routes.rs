@@ -1,9 +1,4 @@
-use tera::Tera;
-use tide::Server;
-
-use crate::api::*;
-use crate::routes::*;
-use crate::utils::*;
+use crate::imports::*;
 
 pub fn register_routes(app: &mut Server<Tera>) {
     app.at("/").get(home::home_handler);
