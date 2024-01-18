@@ -22,9 +22,7 @@ mod utils {
     pub mod translations;
 }
 
-mod components {
-    pub mod navbar;
-}
+mod components {}
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
