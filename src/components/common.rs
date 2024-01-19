@@ -1,7 +1,4 @@
-use crate::utils::translations::load_translations;
-use tera::Tera;
-use tide::Request;
-use tide_tera::prelude::*;
+use crate::imports::*;
 
 pub async fn load_defaults(req: &Request<Tera>) -> tide::Result<(String, tera::Context)> {
     let session = req.session();
@@ -9,7 +6,7 @@ pub async fn load_defaults(req: &Request<Tera>) -> tide::Result<(String, tera::C
         .get_raw("lang")
         .unwrap_or("ge".into())
         .replace("\"", "");
-    let translations = load_translations(&lang).await.unwrap();
+    let translations = translations::load_translations(&lang).await.unwrap();
 
     let context = context! {
         "tr" => &translations,
