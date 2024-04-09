@@ -1,0 +1,18 @@
+{
+  "EN": {
+    "NAV": {
+      "home": "Home",
+      "posts": "Posts",
+      "profile": "Profile",
+      "login": "Login"
+    }
+  },
+  "GE": {
+    "NAV": {
+      "home": "მთავარი",
+      "posts": "პოსტები",
+      "profile": "პროფილი",
+      "login": "შესვლა"
+    }
+  }
+}

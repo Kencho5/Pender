@@ -1,0 +1,245 @@
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  border-radius: 40px;
+  width: 90%;
+  background: rgba(255, 244, 227, 1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+}
+
+.navbar-logo {
+  width: 130px;
+  margin-left: 30px;
+}
+
+.navbar-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.navbar-links a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.active a {
+  position: relative;
+  text-decoration: none;
+}
+
+.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--accent);
+}
+
+.navbar-links li {
+  padding: 10px 20px;
+  border-radius: 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-links li:hover {
+  background-color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  font-size: 32px;
+  user-select: none;
+  width: 30px;
+}
+
+/* Media query for mobile responsiveness */
+@media screen and (min-width: 1000px) {
+  .lang-full {
+    display: block;
+  }
+
+  .mobile-right {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .lang-full {
+    display: none !important;
+  }
+  .hamburger-menu {
+    margin-right: 30px;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .navbar-links a {
+    color: var(--text);
+    padding: 15px 0;
+    width: 100%;
+    display: block;
+  }
+
+  .navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .radio-inputs {
+    margin-right: 30px;
+  }
+}
+/* Context menu styles */
+.context-menu {
+  user-select: none;
+  display: none;
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+}
+
+.context-menu-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  gap: 20px;
+}
+
+.context-menu-links a {
+  border-radius: 40px;
+  background-color: var(--background);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(57, 191, 178, 0.3);
+  padding: 20px;
+  width: 160px;
+  color: var(--text);
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.context-menu-links i {
+  margin-right: 10px;
+}
+
+.context-menu-links a:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+.show-context-menu {
+  display: block !important;
+  animation-name: slideIn;
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+.hide-context-menu {
+  animation-name: slideOut;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.mobile-right {
+  display: flex;
+  align-items: center;
+}
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 30px;
+  background-color: var(--accent);
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.35rem;
+  width: 130px;
+  font-size: 14px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  border: none;
+  padding: 0.5rem 0;
+  color: var(--text);
+  transition: all 0.15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: var(--background);
+  font-weight: 600;
+}
