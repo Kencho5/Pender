@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <img src="./front/assets/logo.svg" width="80">
+  <img src="./public/assets/logo.svg" width="80">
   <br>
   Pender
   <br>
