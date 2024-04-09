@@ -17,7 +17,6 @@
       src="https://kit.fontawesome.com/8ebc974816.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/static/js/navbar.js"></script>
 
     <title>Pender</title>
   </head>
@@ -82,11 +81,11 @@
           <label class="radio">
             <!-- prettier-ignore -->
             <input
-          hx-post="/api/set_language/ge"
+          hx-post="/api/set_language/GE"
           hx-swap="none"
           type="radio"
           name="radio2"
-          {% if lang == 'ge' %} checked="" {% endif %}
+          {% if lang == 'GE' %} checked="" {% endif %}
           onclick="reloadPage(100)"
         />
             <span class="name">GE</span>
@@ -94,11 +93,11 @@
           <label class="radio">
             <!-- prettier-ignore -->
             <input
-          hx-post="/api/set_language/en"
+          hx-post="/api/set_language/EN"
           hx-swap="none"
           type="radio"
           name="radio2"
-          {% if lang == 'en' %} checked="" {% endif %}
+          {% if lang == 'EN' %} checked="" {% endif %}
           onclick="reloadPage(100)"
         />
 
@@ -143,5 +142,7 @@
     <a href="/upload" class="plus-btn" aria-label="Upload">
       <i class="fa-solid fa-plus"></i>
     </a>
+
+    <script src="/static/js/navbar.js"></script>
   </body>
 </html>
