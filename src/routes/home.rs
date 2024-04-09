@@ -14,5 +14,6 @@ pub async fn home_handler(req: Request<AppState>) -> tide::Result {
             "lang" => lang
         },
     )?;
+
     Ok(response)
 }
