@@ -14,6 +14,7 @@ async fn main() -> tide::Result<()> {
     let translations = utils::translations::load_translations().await.unwrap();
 
     let mut app = tide::with_state(AppState { tera, translations });
+
     let secret_key =
         std::env::var("TIDE_SECRET").expect("TIDE_SECRET environment variable not set");
     app.with(tide::sessions::SessionMiddleware::new(
