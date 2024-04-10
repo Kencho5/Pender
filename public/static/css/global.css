@@ -33,8 +33,8 @@ body {
   font-weight: bold;
   letter-spacing: 0.5px;
   background-color: var(--background);
-  animation: fadeIn 0.35s ease-in-out forwards;
-  transition: opacity 0.35s ease-in-out;
+  animation: fadeIn 0.65s ease-in-out forwards;
+  transition: opacity 0.65s ease-in-out;
   overscroll-behavior: none;
   scroll-behavior: smooth;
   background: url("/assets/grain.svg") center/cover fixed;
