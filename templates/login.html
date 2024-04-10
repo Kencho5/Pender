@@ -5,5 +5,11 @@
 {% block content %}
 <link rel="stylesheet" href="static/css/login.css" />
 
-<body></body>
+<body>
+  <form action="/login" method="POST">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit">
+  </form>
+</body>
 {% endblock content %}
