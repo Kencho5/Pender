@@ -15,22 +15,24 @@ async fn main() -> tide::Result<()> {
     tera.autoescape_on(vec!["html"]);
     let translations = utils::translations::load_translations().await.unwrap();
 
-    let mut app = tide::with_state(AppState { tera, translations });
+    let mut app = tide::with_state(AppState {
+        tera,
+        translations,
+        config: config.clone(),
+    });
 
-    let secret_key =
-        std::env::var("TIDE_SECRET").expect("TIDE_SECRET environment variable not set");
     app.with(tide::sessions::SessionMiddleware::new(
         MemoryStore::new(),
-        secret_key.as_bytes(),
+        config.tide_secret.as_bytes(),
     ));
 
     let connection_url = format!(
         "postgres://{}:{}@{}:{}/{}",
-        &config.database.username,
-        &config.database.password,
-        &config.database.host,
-        &config.database.port,
-        &config.database.db_name
+        config.database.username,
+        config.database.password,
+        config.database.host,
+        config.database.port,
+        config.database.db_name
     );
     app.with(SQLxMiddleware::<Postgres>::new(&connection_url).await?);
 

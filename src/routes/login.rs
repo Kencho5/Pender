@@ -12,8 +12,7 @@ pub async fn login_handler(req: Request<AppState>) -> tide::Result {
 pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
     let user: auth_struct::LoginData = req.body_form().await?;
 
-    let secret = std::env::var("TIDE_SECRET")?;
-    let key: Hmac<Sha256> = Hmac::new_from_slice(secret.as_bytes())?;
+    let key: Hmac<Sha256> = Hmac::new_from_slice(req.state().config.tide_secret.as_bytes())?;
 
     let mut claims = BTreeMap::new();
     claims.insert("email", user.email);

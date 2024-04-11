@@ -2,13 +2,13 @@ use serde::Deserialize;
 use std::fs::File;
 use std::io::Read;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct Config {
     pub database: DatabaseConfig,
     pub tide_secret: String,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct DatabaseConfig {
     pub username: String,
     pub password: String,
