@@ -1,0 +1,5 @@
+CREATE TABLE users(
+    email TEXT,
+    password TEXT
+);
+

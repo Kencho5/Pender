@@ -10,18 +10,19 @@ pub async fn register_handler(req: Request<AppState>) -> tide::Result {
 }
 
 pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
-    // let user: auth_struct::LoginData = req.body_form().await?;
-    //
-    // let secret = std::env::var("TIDE_SECRET")?;
-    // let key: Hmac<Sha256> = Hmac::new_from_slice(secret.as_bytes())?;
-    //
-    // let mut claims = BTreeMap::new();
-    // claims.insert("email", user.email);
-    //
-    // let token = claims.sign_with_key(&key)?;
-    //
-    // let session = req.session_mut();
-    // session.insert("_jwt", token)?;
-    //
-    Ok(tide::Redirect::new("/").into())
+    let user: auth_struct::LoginData = req.body_form().await?;
+    let mut pg_conn = req.sqlx_conn::<Postgres>().await;
+
+    let result = sqlx::query("INSERT INTO users(email, password) VALUES($1, $2)")
+        .bind(user.email)
+        .bind(user.password)
+        .execute(pg_conn.acquire().await?)
+        .await;
+
+    match result {
+        Ok(_) => println!("Row inserted"),
+        Err(e) => println!("Error inserting row: {}", e),
+    }
+
+    Ok(tide::Redirect::new("/register").into())
 }
