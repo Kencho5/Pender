@@ -10,7 +10,7 @@ pub async fn register_handler(req: Request<AppState>) -> tide::Result {
 }
 
 pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
-    let user: auth_struct::LoginData = req.body_form().await?;
+    let user: auth_struct::RegisterData = req.body_form().await?;
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
 
     let result = sqlx::query("INSERT INTO users(email, password) VALUES($1, $2)")

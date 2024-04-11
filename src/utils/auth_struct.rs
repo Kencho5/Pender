@@ -6,6 +6,15 @@ pub struct LoginData {
     pub password: String,
 }
 
+#[derive(Deserialize)]
+pub struct RegisterData {
+    pub email: String,
+    pub name: String,
+    pub phone: String,
+    pub city: String,
+    pub password: String,
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Claims {
     // sub: String,
