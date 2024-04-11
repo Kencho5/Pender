@@ -41,3 +41,5 @@ lerna-debug.log*
 !.yarn/releases
 target
 Cargo.lock
+
+config.json
