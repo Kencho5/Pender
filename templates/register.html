@@ -8,44 +8,44 @@
 <body>
   <div class="form-div">
     <form action="/register" method="POST" class="auth-form">
-      <p class="auth-form-title">Register</p>
+      <p class="auth-form-title">{{ tr.AUTH.register }}</p>
 
       <!-- EMAIL INPUT -->
-      <label for="email" class="input-label">Email</label>
+      <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
       <div class="input-group">
         <i class="fa fa-envelope icon"></i>
         <input type="text" name="email" />
       </div>
 
       <!-- NAME INPUT -->
-      <label for="name" class="input-label">Name</label>
+      <label for="name" class="input-label">{{ tr.AUTH.name }}</label>
       <div class="input-group">
         <i class="fa fa-user icon"></i>
         <input type="text" name="name" />
       </div>
 
       <!-- PHONE INPUT -->
-      <label for="phone" class="input-label">Phone</label>
+      <label for="phone" class="input-label">{{ tr.AUTH.phone }}</label>
       <div class="input-group">
         <i class="fa fa-phone icon"></i>
         <input type="text" name="phone" />
       </div>
 
       <!-- CITY INPUT -->
-      <label for="city" class="input-label">City</label>
+      <label for="city" class="input-label">{{ tr.AUTH.city }}</label>
       <div class="input-group">
         <i class="fa fa-location-dot icon"></i>
         <input type="text" name="city" />
       </div>
 
       <!-- PASSWORD INPUT -->
-      <label for="password" class="input-label">Password</label>
+      <label for="password" class="input-label">{{ tr.AUTH.password }}</label>
       <div class="input-group">
         <i class="fa-solid fa-lock icon"></i>
         <input type="password" name="password" />
       </div>
 
-      <input type="submit" value="Register" />
+      <input type="submit" value="{{ tr.AUTH.register }}" />
     </form>
   </div>
 </body>

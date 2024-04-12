@@ -5,6 +5,14 @@
       "posts": "Posts",
       "profile": "Profile",
       "login": "Login"
+    },
+    "AUTH": {
+      "register": "Register",
+      "email": "Email",
+      "name": "Name",
+      "phone": "Phone",
+      "city": "City",
+      "password": "Password"
     }
   },
   "GE": {
@@ -13,6 +21,14 @@
       "posts": "პოსტები",
       "profile": "პროფილი",
       "login": "შესვლა"
+    },
+    "AUTH": {
+      "register": "რეგისტრაცია",
+      "email": "ელ. ფოსტა",
+      "name": "სახელი",
+      "phone": "ტელ. ნომერი",
+      "city": "ქალაქი",
+      "password": "პაროლი"
     }
   }
 }
