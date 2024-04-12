@@ -8,11 +8,13 @@
     },
     "AUTH": {
       "register": "Register",
+      "login": "Log In",
       "email": "Email",
       "name": "Name",
       "phone": "Phone",
       "city": "City",
-      "password": "Password"
+      "password": "Password",
+      "auth_option": "Have an account?"
     }
   },
   "GE": {
@@ -24,11 +26,13 @@
     },
     "AUTH": {
       "register": "რეგისტრაცია",
+      "login": "შესვლა",
       "email": "ელ. ფოსტა",
       "name": "სახელი",
       "phone": "ტელ. ნომერი",
       "city": "ქალაქი",
-      "password": "პაროლი"
+      "password": "პაროლი",
+      "auth_option": "გაქვთ ანგარიში?"
     }
   }
 }

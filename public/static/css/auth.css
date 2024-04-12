@@ -8,7 +8,7 @@
   margin: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-weight: bold;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 600px) {
@@ -63,4 +63,14 @@ input[type="password"] {
 
 .input-label {
   margin-bottom: 5px;
+}
+
+.auth-option {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.auth-option a {
+  color: var(--primary);
+  text-decoration: underline;
 }
