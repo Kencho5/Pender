@@ -28,7 +28,8 @@
   position: relative;
 }
 
-.auth-form input {
+.auth-form input,
+.city-input {
   padding: 12px;
   background-color: var(--accent);
   color: var(--text);
@@ -39,6 +40,43 @@
   outline-color: var(--text);
   width: 100%;
   box-sizing: border-box;
+  font-weight: bold;
+}
+
+.city-input {
+  height: 45px;
+  cursor: pointer;
+  padding-left: 35px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--background);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-content p {
+  text-align: center;
+  color: var(--text);
+  padding: 8px;
+  display: block;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.dropdown-content p:last-child {
+  border-bottom: none;
 }
 
 .icon {
@@ -48,6 +86,15 @@
   transform: translateY(-50%);
   z-index: 1;
   font-size: 16px;
+}
+
+.right-icon {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 18px;
 }
 
 .auth-form input[type="text"],
@@ -73,4 +120,8 @@ input[type="password"] {
 .auth-option a {
   color: var(--primary);
   text-decoration: underline;
+}
+
+.show {
+  display: block;
 }
