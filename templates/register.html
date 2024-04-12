@@ -35,20 +35,7 @@
       <label for="city" class="input-label">{{ tr.AUTH.city }}</label>
       <div class="input-group">
         <i class="fa fa-location-dot icon"></i>
-        <div
-          class="city-input"
-          onclick="showDropdown()"
-          hx-get="/get-cities"
-          hx-trigger="click"
-          hx-target=".dropdown-content"
-        ></div>
-        <input type="hidden" name="city" />
-        <i class="fa-solid fa-chevron-down right-icon"></i>
-      </div>
-
-      <!-- CITY DROPDOWN -->
-      <div class="dropdown">
-        <div class="dropdown-content"></div>
+        <input type="text" name="city" />
       </div>
 
       <!-- PASSWORD INPUT -->
@@ -60,11 +47,7 @@
 
       <input type="submit" value="{{ tr.AUTH.register }}" />
     </form>
-    <p class="auth-option">
-      {{ tr.AUTH.auth_option }} <a href="/login">{{ tr.AUTH.login }}</a>
-    </p>
+    <p class="auth-option">{{ tr.AUTH.auth_option }} <a href="/login">{{ tr.AUTH.login }}</a> </p>
   </div>
-
-  <script src="/static/js/auth.js"></script>
 </body>
 {% endblock content %}
