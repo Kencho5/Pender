@@ -89,3 +89,9 @@ body.active {
 .plus-btn:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 600px) {
+  .plus-btn {
+    padding: 5px 15px;
+  }
+}
