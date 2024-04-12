@@ -40,6 +40,7 @@ body {
   background: url("/assets/grain.svg") center/cover fixed;
   color: var(--text);
   margin-top: 150px;
+  /* background: var(--accent); */
 }
 
 body.active {
@@ -64,7 +65,8 @@ body.active {
   border-radius: 10px;
   filter: blur(15rem);
   opacity: 40%;
-  position: absolute;
+  position: fixed;
+  z-index: -1;
 }
 
 .yellow {

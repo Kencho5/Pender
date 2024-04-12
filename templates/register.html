@@ -3,13 +3,56 @@
 {% endraw %}
 
 {% block content %}
-<link rel="stylesheet" href="static/css/login.css" />
+<link rel="stylesheet" href="static/css/auth.css" />
 
 <body>
-  <form action="/register" method="POST">
-    <input type="text" name="email" placeholder="email" />
-    <input type="password" name="password" placeholder="password" />
-    <input type="submit" />
-  </form>
+  <div class="form-div">
+    <form action="/register" method="POST" class="auth-form">
+      <p class="auth-form-title">Register</p>
+
+      <!-- EMAIL INPUT -->
+      <label for="email" class="input-label">Email</label>
+      <div class="input-group">
+        <i class="fa fa-envelope icon"></i>
+        <input type="text" name="email" />
+      </div>
+
+      <!-- NAME INPUT -->
+      <label for="name" class="input-label">Name</label>
+      <div class="input-group">
+        <i class="fa fa-user icon"></i>
+        <input type="text" name="name" />
+      </div>
+
+            <!-- NAME INPUT -->
+      <label for="name" class="input-label">Name</label>
+      <div class="input-group">
+        <i class="fa fa-user icon"></i>
+        <input type="text" name="name" />
+      </div>
+      <!-- NAME INPUT -->
+      <label for="name" class="input-label">Name</label>
+      <div class="input-group">
+        <i class="fa fa-user icon"></i>
+        <input type="text" name="name" />
+      </div>
+      <!-- NAME INPUT -->
+      <label for="name" class="input-label">Name</label>
+      <div class="input-group">
+        <i class="fa fa-user icon"></i>
+        <input type="text" name="name" />
+      </div>
+
+
+      <!-- PASSWORD INPUT -->
+      <label for="password" class="input-label">Password</label>
+      <div class="input-group">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="password" name="password" />
+      </div>
+
+      <input type="submit" value="Register" />
+    </form>
+  </div>
 </body>
 {% endblock content %}

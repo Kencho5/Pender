@@ -4,9 +4,10 @@ window.onload = function () {
 };
 
 function activeRoute() {
-  const route = window.location.pathname == "/"
+  let route = window.location.pathname == "/"
     ? "home"
     : window.location.pathname.slice(0).replace("/", "");
+  if (route == "register") route = "login";
 
   const links = document.getElementsByClassName("navbar-links")[0].childNodes;
 
