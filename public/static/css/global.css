@@ -60,13 +60,14 @@ body.active {
 }
 
 .circle {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
   border-radius: 10px;
   filter: blur(15rem);
   opacity: 40%;
   position: fixed;
   z-index: -1;
+  top: 40%;
 }
 
 .yellow {
