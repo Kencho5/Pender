@@ -18,7 +18,10 @@ pub async fn get_context(req: &Request<AppState>) -> tide::Result<tera::Context>
 }
 
 pub async fn get_claims(req: &Request<AppState>) -> tide::Result<BTreeMap<String, String>> {
-    let jwt = req.cookie("_jwt").unwrap();
+    let jwt = match req.cookie("_jwt") {
+        Some(jwt) => jwt,
+        None => return Ok(BTreeMap::new()),
+    };
 
     let key: Hmac<Sha256> = Hmac::new_from_slice(req.state().config.tide_secret.as_bytes())?;
 
