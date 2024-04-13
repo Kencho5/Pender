@@ -4,10 +4,34 @@
 <link rel="stylesheet" href="static/css/auth.css" />
 
 <body>
-  <form action="/login" method="POST">
-    <input type="text" name="email" placeholder="email">
-    <input type="password" name="password" placeholder="password">
-    <input type="submit">
-  </form>
+  <div class="form-div">
+    <form hx-post="/register" hx-target=".msg" class="auth-form" onsubmit="return validateForm()" name="registerForm">
+      <p class="auth-form-title">{{ tr.AUTH.register }}</p>
+
+      <!-- EMAIL INPUT -->
+      <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
+      <div class="input-group">
+        <i class="fa fa-envelope icon"></i>
+        <input type="text" name="email" />
+      </div>
+
+      <!-- PASSWORD INPUT -->
+      <label for="password" class="input-label">{{ tr.AUTH.password }}</label>
+      <div class="input-group">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="password" name="password" />
+      </div>
+
+      <input type="submit" value="{{ tr.AUTH.register }}" />
+
+      <div class="msg"></div>
+      <div class="lds-dual-ring spinner" style="display:none"></div>
+    </form>
+    <p class="auth-option">
+      {{ tr.AUTH.auth_option_login }} <a href="/register">{{ tr.AUTH.register }}</a>
+    </p>
+  </div>
+
+  <script src="/static/js/auth.js"></script>
 </body>
 {% endblock content %}
