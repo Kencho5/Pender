@@ -1,5 +1,11 @@
-CREATE TABLE users(
-    email TEXT,
-    password TEXT
+CREATE TABLE users (
+    id TEXT PRIMARY KEY,
+    email VARCHAR NOT NULL CHECK (LENGTH(email) > 0),
+    name VARCHAR NOT NULL CHECK (LENGTH(name) > 0),
+    phone VARCHAR NOT NULL CHECK (LENGTH(phone) > 0),
+    city VARCHAR NOT NULL CHECK (LENGTH(city) > 0),
+    password VARCHAR NOT NULL CHECK (LENGTH(password) > 0)
 );
 
+CREATE INDEX email_index
+ON users(email);

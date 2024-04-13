@@ -2,7 +2,7 @@ pub use crate::app_state::AppState;
 pub use crate::utils::auth_struct;
 pub use hmac::{Hmac, Mac};
 pub use jwt::{SignWithKey, VerifyWithKey};
-pub use pwhash::bcrypt;
+pub use pwhash::{bcrypt, unix};
 pub use serde::{Deserialize, Serialize};
 pub use sha2::Sha256;
 pub use sqlx::postgres::Postgres;

@@ -6,7 +6,7 @@ pub struct LoginData {
     pub password: String,
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, sqlx::FromRow)]
 pub struct RegisterData {
     pub email: String,
     pub name: String,
