@@ -10,21 +10,21 @@
       <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
       <div class="input-group">
         <i class="fa fa-envelope icon"></i>
-        <input type="text" name="email" />
+        <input type="text" name="email" aria-label="Email" />
       </div>
 
       <!-- NAME INPUT -->
       <label for="name" class="input-label">{{ tr.AUTH.name }}</label>
       <div class="input-group">
         <i class="fa fa-user icon"></i>
-        <input type="text" name="name" />
+        <input type="text" name="name" aria-label="Name" />
       </div>
 
       <!-- PHONE INPUT -->
       <label for="phone" class="input-label">{{ tr.AUTH.phone }}</label>
       <div class="input-group">
         <i class="fa fa-phone icon"></i>
-        <input type="text" name="phone" />
+        <input type="text" name="phone" aria-label="Phone" />
       </div>
 
       <!-- CITY INPUT -->
@@ -41,6 +41,7 @@
           onkeyup="showCities()"
           form="dummy-form"
           autocomplete="off"
+          aria-label="City"
         />
         <input type="hidden" name="city" />
       </div>
@@ -53,7 +54,7 @@
       <label for="password" class="input-label">{{ tr.AUTH.password }}</label>
       <div class="input-group">
         <i class="fa-solid fa-lock icon"></i>
-        <input type="password" name="password" />
+        <input type="password" name="password" aria-label="Password" />
       </div>
 
       <input type="submit" value="{{ tr.AUTH.register }}" />

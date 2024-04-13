@@ -20,9 +20,9 @@ async function showCities() {
   input.style.outline = "none";
 }
 
-document.querySelector(".cities-div").addEventListener(
-  "click",
-  function (event) {
+var citiesDiv = document.querySelector(".cities-div");
+if (citiesDiv) {
+  citiesDiv.addEventListener("click", function (event) {
     if (event.target.tagName === "P") {
       var cityName = event.target.textContent;
       var cityValue = event.target.classList[0];
@@ -35,12 +35,11 @@ document.querySelector(".cities-div").addEventListener(
       document.getElementsByClassName("cities-dropdown")[0].style.display =
         "none";
     }
-  },
-);
+  });
+}
 
 function validateForm() {
   const form = document.forms["registerForm"].getElementsByTagName("input");
-  console.log(form);
 }
 
 const targetDiv = document.getElementsByClassName("msg")[0];

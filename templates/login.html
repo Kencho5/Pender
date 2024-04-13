@@ -12,14 +12,14 @@
       <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
       <div class="input-group">
         <i class="fa fa-envelope icon"></i>
-        <input type="text" name="email" />
+        <input type="text" name="email" aria-label="Email" />
       </div>
 
       <!-- PASSWORD INPUT -->
       <label for="password" class="input-label">{{ tr.AUTH.password }}</label>
       <div class="input-group">
         <i class="fa-solid fa-lock icon"></i>
-        <input type="password" name="password" />
+        <input type="password" name="password" aria-label="Password" />
       </div>
 
       <input type="submit" value="{{ tr.AUTH.register }}" />
