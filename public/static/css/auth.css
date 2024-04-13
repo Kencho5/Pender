@@ -39,6 +39,7 @@
   outline-color: var(--text);
   width: 100%;
   box-sizing: border-box;
+  font-weight: bold;
 }
 
 .icon {
@@ -73,4 +74,38 @@ input[type="password"] {
 .auth-option a {
   color: var(--primary);
   text-decoration: underline;
+}
+
+.cities-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.cities-div {
+  position: absolute;
+  background-color: var(--accent);
+  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+  z-index: 10;
+  text-align: center;
+  font-size: 20px;
+  left: 50%;
+  top: -30px;
+  transform: translateX(-50%);
+  min-height: 200px;
+}
+
+.cities-div p {
+  padding: 5px;
+  background-color: var(--background);
+  width: 70%;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cities-div p:first-child {
+  margin-top: 20px;
 }

@@ -35,7 +35,22 @@
       <label for="city" class="input-label">{{ tr.AUTH.city }}</label>
       <div class="input-group">
         <i class="fa fa-location-dot icon"></i>
-        <input type="text" name="city" />
+        <input
+          type="text"
+          name="city"
+          hx-get="/get-cities"
+          hx-trigger="keyup delay:200ms changed"
+          hx-params="*"
+          hx-target=".cities-div"
+          onkeyup="showCities()"
+          form="dummy-form"
+          autocomplete="off"
+        />
+        <input type="hidden" name="city-real" />
+      </div>
+
+      <div class="cities-dropdown" style="display: none">
+        <div class="cities-div"></div>
       </div>
 
       <!-- PASSWORD INPUT -->
@@ -47,7 +62,11 @@
 
       <input type="submit" value="{{ tr.AUTH.register }}" />
     </form>
-    <p class="auth-option">{{ tr.AUTH.auth_option }} <a href="/login">{{ tr.AUTH.login }}</a> </p>
+    <p class="auth-option">
+      {{ tr.AUTH.auth_option }} <a href="/login">{{ tr.AUTH.login }}</a>
+    </p>
   </div>
+
+  <script src="/static/js/auth.js"></script>
 </body>
 {% endblock content %}
