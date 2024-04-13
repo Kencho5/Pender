@@ -31,10 +31,17 @@ fn match_cities(
     input: &Search,
 ) -> tide::Result<String> {
     let mut result = String::new();
+    let mut count = 0;
+
     for (key, value) in cities {
         let city_name = value.as_str().unwrap();
         if city_name.to_lowercase().contains(&input.city) {
             result.push_str(format!("<p class='{}'>{}</p>", key, city_name).as_str());
+
+            count += 1;
+            if count >= 3 {
+                break;
+            }
         }
     }
     Ok(result)
