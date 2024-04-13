@@ -109,3 +109,8 @@ input[type="password"] {
 .cities-div p:first-child {
   margin-top: 20px;
 }
+
+.error {
+  text-align: center;
+  color: #e83e36;
+}

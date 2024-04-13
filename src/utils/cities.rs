@@ -3,7 +3,7 @@ use std::fs;
 
 #[derive(Deserialize)]
 struct Search {
-    city: String,
+    city_dummy: String,
 }
 
 pub async fn get_cities(req: tide::Request<AppState>) -> tide::Result {
@@ -35,7 +35,7 @@ fn match_cities(
 
     for (key, value) in cities {
         let city_name = value.as_str().unwrap();
-        if city_name.to_lowercase().contains(&input.city) {
+        if city_name.to_lowercase().contains(&input.city_dummy) {
             result.push_str(format!("<p class='{}'>{}</p>", key, city_name).as_str());
 
             count += 1;

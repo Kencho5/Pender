@@ -14,7 +14,8 @@
       "phone": "Phone",
       "city": "City",
       "password": "Password",
-      "auth_option": "Have an account?"
+      "auth_option": "Have an account?",
+      "in_use": "Email address already in use"
     }
   },
   "GE": {
@@ -32,7 +33,8 @@
       "phone": "ტელ. ნომერი",
       "city": "ქალაქი",
       "password": "პაროლი",
-      "auth_option": "გაქვთ ანგარიში?"
+      "auth_option": "გაქვთ ანგარიში?",
+      "in_use": "ელ. ფოსტა უკვე გამოყენებულია"
     }
   }
 }
