@@ -36,7 +36,7 @@
           <li id="search">
             <a href="/search"> {{ tr.NAV.posts }}</a>
           </li>
-          {% if user %}
+          {% if claims %}
           <li id="profile">
             <a href="/profile">{{ tr.NAV.profile }}</a>
           </li>
@@ -121,7 +121,7 @@
               <i class="fa-solid fa-magnifying-glass"></i>
               {{ tr.NAV.posts }}
             </a>
-            {% if user %}
+            {% if claims %}
             <a href="/profile">
               <i class="fa-solid fa-user"></i>
               {{ tr.NAV.profile }}
