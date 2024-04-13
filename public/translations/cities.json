@@ -6,10 +6,20 @@
     "rustavi": "რუსთავი",
     "zugdidi": "ზუგდიდი",
     "gori": "გორი",
-    "poti": "ფოთი",
+    "poti": "პოტი",
     "samtredia": "სამტრედია",
     "khashuri": "ხაშური",
-    "telavi": "თელავი"
+    "telavi": "თელავი",
+    "mtskheta": "მცხეთა",
+    "zestaponi": "ზესტაფონი",
+    "chiatura": "ჭიათურა",
+    "akhaltsikhe": "ახალციხე",
+    "akhalkalaki": "ახალქალაქი",
+    "ambrolauri": "ამბროლაური",
+    "dmanisi": "დმანისი",
+    "ozurgeti": "ოზურგეთი",
+    "signagi": "სიღნაღი",
+    "marneuli": "მარნეული"
   },
   "EN": {
     "tbilisi": "Tbilisi",
@@ -21,6 +31,16 @@
     "poti": "Poti",
     "samtredia": "Samtredia",
     "khashuri": "Khashuri",
-    "telavi": "Telavi"
+    "telavi": "Telavi",
+    "mtskheta": "Mtskheta",
+    "zestaponi": "Zestaponi",
+    "chiatura": "Chiatura",
+    "akhaltsikhe": "Akhaltsikhe",
+    "akhalkalaki": "Akhalkalaki",
+    "ambrolauri": "Ambrolauri",
+    "dmanisi": "Dmanisi",
+    "ozurgeti": "Ozurgeti",
+    "signagi": "Signagi",
+    "marneuli": "Marneuli"
   }
 }
