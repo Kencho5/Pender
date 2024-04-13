@@ -1,0 +1,26 @@
+{
+  "GE": {
+    "tbilisi": "თბილისი",
+    "kutaisi": "ქუთაისი",
+    "batumi": "ბათუმი",
+    "rustavi": "რუსთავი",
+    "zugdidi": "ზუგდიდი",
+    "gori": "გორი",
+    "poti": "ფოთი",
+    "samtredia": "სამტრედია",
+    "khashuri": "ხაშური",
+    "telavi": "თელავი"
+  },
+  "EN": {
+    "tbilisi": "Tbilisi",
+    "kutaisi": "Kutaisi",
+    "batumi": "Batumi",
+    "rustavi": "Rustavi",
+    "zugdidi": "Zugdidi",
+    "gori": "Gori",
+    "poti": "Poti",
+    "samtredia": "Samtredia",
+    "khashuri": "Khashuri",
+    "telavi": "Telavi"
+  }
+}
