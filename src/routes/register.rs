@@ -17,6 +17,7 @@ async fn render_register_page(
 pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
     let user: auth_struct::RegisterData = req.body_form().await?;
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
+    let mut response_body = "<p class='success'>Account Created!</p>";
 
     let check_existing = sqlx::query("SELECT id FROM users WHERE email = $1")
         .bind(&user.email)
@@ -25,9 +26,7 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
 
     match check_existing {
         Ok(_) => {
-            let mut context = utils::common::get_context(&req).await.unwrap();
-            context.insert("error", "in_use");
-            return Ok(render_register_page(&req, &mut context).await?);
+            response_body = "<p class='error'>Email address already in use</p>";
         }
         Err(_) => {}
     }
@@ -50,11 +49,11 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
     match registration_result {
         Ok(_) => {}
         Err(_) => {
-            let mut context = utils::common::get_context(&req).await.unwrap();
-            context.insert("error", "fill_form");
-            return Ok(render_register_page(&req, &mut context).await?);
+            response_body = "<p class='error'>Fill in the form</p>";
         }
     }
 
-    Ok(tide::Redirect::new("/register").into())
+    let response = Response::builder(200).body(response_body).build();
+
+    Ok(response)
 }

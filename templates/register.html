@@ -3,7 +3,7 @@
 
 <body>
   <div class="form-div">
-    <form action="/register" method="POST" class="auth-form">
+    <form hx-post="/register" hx-target=".msg" class="auth-form" onsubmit="return validateForm()" name="registerForm">
       <p class="auth-form-title">{{ tr.AUTH.register }}</p>
 
       <!-- EMAIL INPUT -->
@@ -58,9 +58,7 @@
 
       <input type="submit" value="{{ tr.AUTH.register }}" />
 
-      {% if error %}
-      <p class="error">{{ tr.AUTH[error] }}</p>
-      {% endif %}
+      <div class="msg"></div>
     </form>
     <p class="auth-option">
       {{ tr.AUTH.auth_option }} <a href="/login">{{ tr.AUTH.login }}</a>

@@ -1,3 +1,7 @@
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function showCities() {
   while (true) {
     await delay(50);
@@ -25,7 +29,7 @@ document.querySelector(".cities-div").addEventListener(
       const cityInput = document.getElementsByName("city_dummy")[0];
 
       cityInput.value = cityName;
-      document.getElementsByName("city_dummy")[0].value = cityValue;
+      document.getElementsByName("city")[0].value = cityValue;
 
       cityInput.style.borderRadius = "10px";
       document.getElementsByClassName("cities-dropdown")[0].style.display =
@@ -34,6 +38,8 @@ document.querySelector(".cities-div").addEventListener(
   },
 );
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+function validateForm() {
+  const form = document.forms["registerForm"].getElementsByTagName("input");
+
+  console.log(form);
 }

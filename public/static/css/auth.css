@@ -111,6 +111,20 @@ input[type="password"] {
 }
 
 .error {
-  text-align: center;
   color: #e83e36;
+}
+
+.success {
+  color: var(--accent);
+}
+
+.error,
+.success {
+  text-align: center;
+  display: none;
+}
+
+.error:not(:empty),
+.success:not(:empty) {
+  display: block;
 }
