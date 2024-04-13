@@ -154,6 +154,12 @@
   gap: 20px;
 }
 
+@media (max-width: 600px) {
+  .context-menu-links {
+    flex-direction: column;
+  }
+}
+
 .context-menu-links a {
   border-radius: 40px;
   background-color: var(--background);

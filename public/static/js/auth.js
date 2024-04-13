@@ -49,7 +49,7 @@ const observer = new MutationObserver(async function (mutationsList, observer) {
     if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
       if (targetDiv.childNodes[0].classList[0] == "success") {
         document.getElementsByClassName("spinner")[0].style.display = "block";
-        await delay(1500);
+        await delay(1000);
         window.location.href = "/login";
       }
     }
