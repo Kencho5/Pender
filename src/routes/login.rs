@@ -17,7 +17,7 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
 
     let find_user = {
         let mut pg_conn = req.sqlx_conn::<Postgres>().await;
-        sqlx::query_as::<_, auth_struct::RegisterData>("SELECT * FROM users WHERE email = $1")
+        sqlx::query_as::<_, auth_struct::UserStruct>("SELECT * FROM users WHERE email = $1")
             .bind(&user.email)
             .fetch_one(pg_conn.acquire().await?)
             .await
@@ -25,15 +25,20 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
 
     match find_user {
         Ok(_) => {
-            if unix::verify(user.password, &find_user.unwrap().password) {
+            let user_db = find_user.unwrap();
+
+            if unix::verify(user.password, &user_db.password) {
                 let key: Hmac<Sha256> =
                     Hmac::new_from_slice(req.state().config.tide_secret.as_bytes())?;
 
                 let mut claims = BTreeMap::new();
-                claims.insert("email", user.email);
+                claims.insert("id", user_db.id);
+                claims.insert("email", user_db.email);
+                claims.insert("name", user_db.name);
+                claims.insert("phone", user_db.phone);
+                claims.insert("city", user_db.city);
 
                 let token = claims.sign_with_key(&key)?;
-
                 response.insert_header("Set-Cookie", format!("_jwt={}", token));
 
                 response.set_body("<p class='success'>Logged in!</p>");
