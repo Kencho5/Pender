@@ -35,7 +35,7 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
     let pass_hash = bcrypt::hash(user.password).unwrap();
     let user_id = Uuid::new_v4();
 
-    let result = sqlx::query(
+    let registration_result = sqlx::query(
         "INSERT INTO users(id, email, name, phone, city, password) VALUES($1, $2, $3, $4, $5, $6)",
     )
     .bind(user_id.to_string())
@@ -46,6 +46,15 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
     .bind(pass_hash)
     .execute(pg_conn.acquire().await?)
     .await;
+
+    match registration_result {
+        Ok(_) => {}
+        Err(_) => {
+            let mut context = utils::common::get_context(&req).await.unwrap();
+            context.insert("error", "fill_form");
+            return Ok(render_register_page(&req, &mut context).await?);
+        }
+    }
 
     Ok(tide::Redirect::new("/register").into())
 }

@@ -15,7 +15,8 @@
       "city": "City",
       "password": "Password",
       "auth_option": "Have an account?",
-      "in_use": "Email address already in use"
+      "in_use": "Email address already in use",
+      "fill_form": "Fill in the form"
     }
   },
   "GE": {
@@ -34,7 +35,8 @@
       "city": "ქალაქი",
       "password": "პაროლი",
       "auth_option": "გაქვთ ანგარიში?",
-      "in_use": "ელ. ფოსტა უკვე გამოყენებულია"
+      "in_use": "ელ. ფოსტა უკვე გამოყენებულია",
+      "fill_form": "შეავსეთ ფორმა"
     }
   }
 }
