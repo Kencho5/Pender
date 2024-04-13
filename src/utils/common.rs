@@ -17,15 +17,11 @@ pub async fn get_context(req: &Request<AppState>) -> tide::Result<tera::Context>
 }
 
 pub async fn get_claims(req: &Request<AppState>) -> tide::Result<BTreeMap<String, String>> {
-    let session = req.session();
-    let jwt = session
-        .get::<String>("_jwt")
-        .unwrap_or("not found".to_string());
+    let jwt = req.cookie("_jwt").unwrap();
 
-    let secret = std::env::var("TIDE_SECRET")?;
-    let key: Hmac<Sha256> = Hmac::new_from_slice(secret.as_bytes())?;
+    let key: Hmac<Sha256> = Hmac::new_from_slice(req.state().config.tide_secret.as_bytes())?;
 
-    let claims: BTreeMap<String, String> = jwt.verify_with_key(&key)?;
+    let claims: BTreeMap<String, String> = jwt.value().verify_with_key(&key)?;
 
     Ok(claims)
 }
