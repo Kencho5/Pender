@@ -10,7 +10,8 @@ pub async fn get_context(req: &Request<AppState>) -> tide::Result<tera::Context>
     let context = context! {
         "tr" => translations,
         "lang" => lang,
-        "route" => req.url().path()
+        "route" => req.url().path(),
+        "claims" => json!(get_claims(req).await?)
     };
 
     Ok(context)
