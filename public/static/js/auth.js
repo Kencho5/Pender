@@ -40,6 +40,21 @@ document.querySelector(".cities-div").addEventListener(
 
 function validateForm() {
   const form = document.forms["registerForm"].getElementsByTagName("input");
-
   console.log(form);
 }
+
+const targetDiv = document.getElementsByClassName("msg")[0];
+const observer = new MutationObserver(async function (mutationsList, observer) {
+  for (const mutation of mutationsList) {
+    if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+      if (targetDiv.childNodes[0].classList[0] == "success") {
+        document.getElementsByClassName("spinner")[0].style.display = "block";
+        await delay(1500);
+        window.location.href = "/login";
+      }
+    }
+  }
+});
+
+const config = { childList: true, subtree: true };
+observer.observe(targetDiv, config);
