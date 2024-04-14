@@ -14,6 +14,7 @@ pub use tide::http::Cookie;
 pub use tide::sessions::MemoryStore;
 pub use tide::Server;
 pub use tide::{Request, Response, StatusCode};
+pub use tide_governor::GovernorMiddleware;
 pub use tide_sqlx::{SQLxMiddleware, SQLxRequestExt};
 pub use tide_tera::prelude::*;
 pub use uuid::Uuid;
