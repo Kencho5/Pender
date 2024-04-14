@@ -6,7 +6,7 @@
 <body>
   <div class="form-div">
     <form hx-post="/login" hx-target=".msg" class="auth-form" onsubmit="return validateForm()" name="loginForm">
-      <p class="auth-form-title">{{ tr.AUTH.register }}</p>
+      <p class="auth-form-title">{{ tr.AUTH.login }}</p>
 
       <!-- EMAIL INPUT -->
       <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
@@ -22,7 +22,7 @@
         <input type="password" name="password" aria-label="Password" />
       </div>
 
-      <input type="submit" value="{{ tr.AUTH.register }}" />
+      <input type="submit" value="{{ tr.AUTH.login }}" />
 
       <div class="msg"></div>
       <div class="lds-dual-ring spinner" style="display:none"></div>

@@ -43,7 +43,7 @@ function validateForm() {
 }
 
 const targetDiv = document.getElementsByClassName("msg")[0];
-const observer = new MutationObserver(async function (mutationsList, observer) {
+const observer = new MutationObserver(async function (mutationsList) {
   for (const mutation of mutationsList) {
     if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
       if (targetDiv.childNodes[0].classList[0] == "success") {

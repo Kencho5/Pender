@@ -34,6 +34,11 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
         Err(_) => {}
     }
 
+    if user.password.is_empty() {
+        response.set_body("<p class='error'>Fill in the form</p>");
+        return Ok(response);
+    }
+
     let pass_hash = bcrypt::hash(user.password).unwrap();
     let user_id = Uuid::new_v4();
 
