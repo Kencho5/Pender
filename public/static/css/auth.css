@@ -163,5 +163,5 @@ input[type="password"] {
 }
 
 .invalid {
-  border: 3px solid #e83e36 !important;
+  outline: 3px solid #e83e36 !important;
 }

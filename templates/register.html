@@ -3,7 +3,13 @@
 
 <body>
   <div class="form-div">
-    <form hx-post="/register" hx-target=".msg" class="auth-form" onsubmit="return validateForm('registerForm')" name="registerForm">
+    <form
+      hx-post="/register"
+      hx-target=".msg"
+      hx-trigger="submit[validateForm('registerForm')]"
+      class="auth-form"
+      name="registerForm"
+    >
       <p class="auth-form-title">{{ tr.AUTH.register }}</p>
 
       <!-- EMAIL INPUT -->
@@ -60,10 +66,11 @@
       <input type="submit" value="{{ tr.AUTH.register }}" />
 
       <div class="msg"></div>
-      <div class="lds-dual-ring spinner" style="display:none"></div>
+      <div class="lds-dual-ring spinner" style="display: none"></div>
     </form>
     <p class="auth-option">
-      {{ tr.AUTH.auth_option_register }} <a href="/login">{{ tr.AUTH.login }}</a>
+      {{ tr.AUTH.auth_option_register }}
+      <a href="/login">{{ tr.AUTH.login }}</a>
     </p>
   </div>
 

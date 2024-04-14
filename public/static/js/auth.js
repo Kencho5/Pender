@@ -76,6 +76,9 @@ const observer = new MutationObserver(async function (mutationsList) {
 const config = { childList: true, subtree: true };
 observer.observe(targetDiv, config);
 
-function removeBorder(inputElement) {
-  inputElement.classList.remove("invalid");
-}
+var inputs = document.querySelectorAll("input");
+inputs.forEach(function (input) {
+  input.addEventListener("input", function () {
+    this.classList.remove("invalid");
+  });
+});
