@@ -161,3 +161,7 @@ input[type="password"] {
     transform: rotate(360deg);
   }
 }
+
+.invalid {
+  border: 3px solid #e83e36 !important;
+}

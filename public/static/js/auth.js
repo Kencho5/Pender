@@ -38,8 +38,26 @@ if (citiesDiv) {
   });
 }
 
-function validateForm() {
-  const form = document.forms["registerForm"].getElementsByTagName("input");
+function validateForm(formName) {
+  const form = document.forms[formName].getElementsByTagName("input");
+  let isValid = true;
+
+  Array.from(form).forEach((input) => {
+    if (!input.value) {
+      input.classList.add("invalid");
+
+      isValid = false;
+    } else {
+      input.classList.remove("invalid");
+    }
+  });
+
+  if (!isValid) {
+    const msgDiv = document.getElementsByClassName("msg")[0];
+    msgDiv.innerHTML = '<p class="error">Fill in the form</p>';
+  }
+
+  return isValid;
 }
 
 const targetDiv = document.getElementsByClassName("msg")[0];
@@ -57,3 +75,7 @@ const observer = new MutationObserver(async function (mutationsList) {
 
 const config = { childList: true, subtree: true };
 observer.observe(targetDiv, config);
+
+function removeBorder(inputElement) {
+  inputElement.classList.remove("invalid");
+}

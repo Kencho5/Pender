@@ -1,18 +1,27 @@
-{% extends "components/layout.html" %}
-
-{% block content %}
+{% extends "components/layout.html" %} {% block content %}
 <link rel="stylesheet" href="static/css/auth.css" />
 
 <body>
   <div class="form-div">
-    <form hx-post="/login" hx-target=".msg" class="auth-form" onsubmit="return validateForm()" name="loginForm">
+    <form
+      hx-post="/login"
+      hx-target=".msg"
+      hx-trigger="submit[validateForm('loginForm')]"
+      class="auth-form"
+      name="loginForm"
+    >
       <p class="auth-form-title">{{ tr.AUTH.login }}</p>
 
       <!-- EMAIL INPUT -->
       <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
       <div class="input-group">
         <i class="fa fa-envelope icon"></i>
-        <input type="text" name="email" aria-label="Email" />
+        <input
+          type="text"
+          name="email"
+          aria-label="Email"
+          oninput="this.classList.remove('invalid')"
+        />
       </div>
 
       <!-- PASSWORD INPUT -->
@@ -25,10 +34,10 @@
       <input type="submit" value="{{ tr.AUTH.login }}" />
 
       <div class="msg"></div>
-      <div class="lds-dual-ring spinner" style="display:none"></div>
     </form>
     <p class="auth-option">
-      {{ tr.AUTH.auth_option_login }} <a href="/register">{{ tr.AUTH.register }}</a>
+      {{ tr.AUTH.auth_option_login }}
+      <a href="/register">{{ tr.AUTH.register }}</a>
     </p>
   </div>
 

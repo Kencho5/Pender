@@ -3,7 +3,7 @@
 
 <body>
   <div class="form-div">
-    <form hx-post="/register" hx-target=".msg" class="auth-form" onsubmit="return validateForm()" name="registerForm">
+    <form hx-post="/register" hx-target=".msg" class="auth-form" onsubmit="return validateForm('registerForm')" name="registerForm">
       <p class="auth-form-title">{{ tr.AUTH.register }}</p>
 
       <!-- EMAIL INPUT -->
