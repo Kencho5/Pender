@@ -26,6 +26,11 @@
   padding: 10px;
 }
 
+.navbar-logo,
+.navbar-profile {
+  flex: 0 0 200px;
+}
+
 .navbar-logo {
   width: 130px;
   margin-left: 30px;
@@ -38,6 +43,8 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .navbar-links a {
