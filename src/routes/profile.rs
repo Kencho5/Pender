@@ -1,12 +1,13 @@
-use crate::{imports::*, utils};
+use crate::{
+    imports::*,
+    utils::{self, common::logged_in},
+};
 
 pub async fn profile_handler(req: Request<AppState>) -> tide::Result {
     let context = utils::common::get_context(&req).await?;
 
-    if let Some(claims) = context.get("claims") {
-        if claims.is_object() && claims.as_object().unwrap().is_empty() {
-            return Ok(tide::Redirect::see_other("/login").into());
-        }
+    if !logged_in(&context).await? {
+        return Ok(tide::Redirect::see_other("/login").into());
     }
 
     let state = req.state();

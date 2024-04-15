@@ -29,3 +29,13 @@ pub async fn get_claims(req: &Request<AppState>) -> tide::Result<BTreeMap<String
 
     Ok(claims)
 }
+
+pub async fn logged_in(context: &tera::Context) -> tide::Result<bool> {
+    if let Some(claims) = context.get("claims") {
+        if claims.is_object() && claims.as_object().unwrap().is_empty() {
+            return Ok(false);
+        }
+    }
+
+    Ok(true)
+}
