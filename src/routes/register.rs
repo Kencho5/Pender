@@ -1,16 +1,10 @@
 use crate::{imports::*, utils};
 
 pub async fn register_handler(req: Request<AppState>) -> tide::Result {
-    let mut context = utils::common::get_context(&req).await.unwrap();
-    render_register_page(&req, &mut context).await
-}
+    let context = utils::common::get_context(&req).await.unwrap();
 
-async fn render_register_page(
-    req: &Request<AppState>,
-    context: &mut tera::Context,
-) -> tide::Result {
     let state = req.state();
-    let response = state.tera.render_response("register.html", context)?;
+    let response = state.tera.render_response("register.html", &context)?;
     Ok(response)
 }
 
