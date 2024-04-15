@@ -21,6 +21,10 @@
     <title>Pender</title>
   </head>
   <body>
+    <div class="overlay">
+      <span class="loader"></span>
+    </div>
+
     <div class="navbar-div">
       <nav class="navbar">
         <div class="navbar-logo">
@@ -148,6 +152,11 @@
     </a>
     {% endif %}
 
+    <script>
+      window.addEventListener("load", async function () {
+        document.querySelector(".overlay").style.display = "none";
+      });
+    </script>
     <script src="/static/js/navbar.js"></script>
   </body>
 </html>

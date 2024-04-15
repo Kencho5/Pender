@@ -17,9 +17,6 @@ function activeRoute() {
     }
   });
 }
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 document.getElementById("hamburgerMenu").addEventListener("click", async () => {
   const contextMenu = document.getElementById("contextMenu");
@@ -43,3 +40,5 @@ async function reloadPage(ms) {
   await delay(ms);
   location.reload();
 }
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

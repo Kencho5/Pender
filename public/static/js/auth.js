@@ -1,5 +1,3 @@
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 async function showCities() {
   while (!document.querySelector(".cities-div > *")) {
     await delay(50);

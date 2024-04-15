@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100px;
-  z-index: 10000;
+  z-index: 1000;
   background: url("/assets/grain.svg") center/cover fixed;
   border-radius: 0px 0px 45px 45px;
 }
