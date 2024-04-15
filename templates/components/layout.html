@@ -80,7 +80,7 @@
             </label>
           </div>
           {% if claims %}
-          <a hx-post="/logout" class="logout-btn">
+          <a hx-post="/logout" class="logout-btn" hx-swap="none">
             <i class="fa-solid fa-right-from-bracket"></i>
           </a>
           {% endif %}
@@ -135,7 +135,7 @@
               <i class="fa-solid fa-user"></i>
               {{ tr.NAV.profile }}
             </a>
-            <a href="/login" hx-post="/logout">
+            <a hx-post="/logout" hx-swap="none">
               <i class="fa-solid fa-right-from-bracket"></i>
               {{ tr.NAV.logout }}
             </a>
