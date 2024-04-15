@@ -17,6 +17,10 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_minute(5).unwrap())
         .post(register::register_post_handler);
 
+    app.at("/profile")
+        .with(GovernorMiddleware::per_hour(120).unwrap())
+        .get(profile::profile_handler);
+
     // API ROUTES
     app.at("/api/set_language/:lang")
         .with(GovernorMiddleware::per_minute(20).unwrap())
