@@ -28,7 +28,7 @@
 
 .navbar-logo,
 .navbar-profile {
-  flex: 0 0 200px;
+  flex: 0 0 150px;
 }
 
 .navbar-logo {
@@ -165,6 +165,10 @@
 @media (max-width: 870px) {
   .context-menu-links {
     flex-direction: column;
+  }
+  .navbar-logo,
+  .navbar-profile {
+    flex: 0;
   }
 }
 
