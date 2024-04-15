@@ -22,7 +22,13 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
         Ok(user_db) => {
             if unix::verify(user.password, &user_db.password) {
                 if let Some(token) = generate_token(&req.state().config, &user_db).await? {
-                    response.insert_header("Set-Cookie", format!("_jwt={}", token));
+                    response.insert_cookie(
+                        Cookie::build("_jwt", token)
+                            .max_age(time::Duration::days(7))
+                            .same_site(tide::http::cookies::SameSite::Lax)
+                            .path("/")
+                            .finish(),
+                    );
                     response.set_body("<p class='success'>Logged in!</p>");
                     return Ok(response);
                 }
