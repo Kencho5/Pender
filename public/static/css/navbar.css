@@ -93,7 +93,8 @@
   }
 }
 @media screen and (max-width: 1000px) {
-  .lang-full {
+  .lang-full,
+  .logout-btn {
     display: none !important;
   }
   .hamburger-menu {
@@ -154,7 +155,7 @@
   gap: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 870px) {
   .context-menu-links {
     flex-direction: column;
   }
@@ -259,4 +260,18 @@
 .radio-inputs .radio input:checked + .name {
   background-color: var(--background);
   font-weight: 600;
+}
+
+.logout-btn {
+  color: var(--text);
+  background-color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 100%;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: scale(1.1);
 }

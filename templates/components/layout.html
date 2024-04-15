@@ -79,6 +79,11 @@
               <span class="name">EN</span>
             </label>
           </div>
+          {% if claims %}
+          <a hx-post="/logout" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+          {% endif %}
         </div>
 
         <div class="mobile-right">
@@ -129,6 +134,10 @@
             <a href="/profile">
               <i class="fa-solid fa-user"></i>
               {{ tr.NAV.profile }}
+            </a>
+            <a href="/login" hx-post="/logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              {{ tr.NAV.logout }}
             </a>
             {% else %}
             <a href="/login">

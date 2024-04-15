@@ -4,7 +4,8 @@
       "home": "Home",
       "posts": "Posts",
       "profile": "Profile",
-      "login": "Login"
+      "login": "Login",
+      "logout": "Log Out"
     },
     "AUTH": {
       "register": "Register",
@@ -24,7 +25,8 @@
       "home": "მთავარი",
       "posts": "პოსტები",
       "profile": "პროფილი",
-      "login": "შესვლა"
+      "login": "შესვლა",
+      "logout": "გასვლა"
     },
     "AUTH": {
       "register": "რეგისტრაცია",
