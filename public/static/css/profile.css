@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 60px;
+}
+
+.left-div {
+  width: 250px;
+  height: 150px;
+  background-color: var(--background);
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-div p {
+  font-size: 20px;
+  width: 70%;
+  margin: auto;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 20px;
+
+  transition: all 0.3s ease;
+}
+
+.left-div p i {
+  margin-right: 10px;
+}
+
+.active-profile-tab {
+  background-color: var(--accent);
+}
+
+.left-div p:hover {
+  background-color: var(--accent);
+  border-radius: 20px;
+}
+
+.right-div {
+  width: 65%;
+  background-color: #e3e3e3;
+  padding: 20px;
+  height: 400px;
+}
