@@ -1,7 +1,7 @@
 .container {
   display: flex;
-  justify-content: space-around;
-  margin: 60px;
+  justify-content: space-evenly;
+  padding-top: 20px;
 }
 
 .left-div {
@@ -16,12 +16,11 @@
 
 .left-div p {
   font-size: 20px;
-  width: 70%;
+  width: 80%;
   margin: auto;
   cursor: pointer;
-  padding: 8px 20px;
+  padding: 8px 15px;
   border-radius: 20px;
-
   transition: all 0.3s ease;
 }
 
@@ -40,7 +39,32 @@
 
 .right-div {
   width: 65%;
-  background-color: #e3e3e3;
-  padding: 20px;
+  background-color: var(--background);
+  border-radius: 20px;
   height: 400px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-div {
+    flex-direction: row;
+    margin: auto;
+    width: 60%;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 10px;
+  }
+
+  .left-div p {
+    width: 40%;
+  }
+
+  .right-div {
+    width: 80%;
+    margin: auto;
+  }
 }

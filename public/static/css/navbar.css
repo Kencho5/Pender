@@ -21,7 +21,8 @@
   font-size: 22px;
   border-radius: 40px;
   width: 90%;
-  background: rgba(255, 244, 227, 1);
+  background-color: var(--background);
+  /* background: rgba(255, 244, 227, 1); */
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 10px;
 }
@@ -90,7 +91,7 @@
 }
 
 /* Media query for mobile responsiveness */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
   .lang-full {
     display: block;
   }
@@ -99,7 +100,7 @@
     display: none !important;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .lang-full,
   .logout-btn {
     display: none !important;

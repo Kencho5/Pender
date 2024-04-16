@@ -84,6 +84,7 @@ body.active {
   border-radius: 100%;
   color: var(--text);
   transition: all 0.2s ease-in-out;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .plus-btn:hover {
