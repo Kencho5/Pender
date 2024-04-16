@@ -4,14 +4,11 @@
 <body>
   <div class="container">
     <div class="left-div">
-      <p
-        class="active-profile-tab"
-        onclick="switchTab('posts-info', 'profile-info')"
-      >
+      <p class="profile-tab active-profile-tab" onclick="switchTab(this)">
         <i class="fa-solid fa-user"></i>
         Profile
       </p>
-      <p onclick="switchTab('profile-info', 'posts-info')">
+      <p class="posts-tab" onclick="switchTab(this)">
         <i class="fa-solid fa-image"></i>
         Posts
       </p>
