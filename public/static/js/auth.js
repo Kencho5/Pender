@@ -45,7 +45,7 @@ function validateForm(formName) {
 
   if (!isValid) {
     document.querySelector(".msg").innerHTML =
-      '<p class="error">Fill in the form</p>';
+      '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>Fill in the form</p>';
   }
 
   return isValid;

@@ -29,15 +29,36 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
                             .path("/")
                             .finish(),
                     );
-                    response.set_body("<p class='success'>Logged in!</p>");
+                    response.set_body(
+                        r#"
+                        <p class='success'>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Logged in!
+                        </p>
+                        "#,
+                    );
                     return Ok(response);
                 }
             }
-            response.set_body("<p class='error'>Wrong password</p>");
+            response.set_body(
+                r#"
+                <p class='error'>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Wrong password
+                </p>
+                "#,
+            );
             return Ok(response);
         }
         Err(_) => {
-            response.set_body("<p class='error'>Email address not found</p>");
+            response.set_body(
+                r#"
+                <p class='error'>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Email address not found
+                </p>
+                "#,
+            );
             return Ok(response);
         }
     }

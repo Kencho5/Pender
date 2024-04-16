@@ -115,6 +115,7 @@ input[type="password"] {
 }
 
 .success {
+  align-items: center;
   color: var(--accent);
 }
 

@@ -12,23 +12,51 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
     let user: auth_struct::RegisterData = req.body_form().await?;
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
     let mut response = Response::builder(200)
-        .body("<p class='success'>Account Created!</p>")
+        .body(
+            r#"
+            <p class='success'>
+                <i class="fa-solid fa-circle-check"></i>
+                Account created!
+            </p>
+            "#,
+        )
         .build();
 
     if email_already_exists(&mut pg_conn, &user.email).await {
-        response.set_body("<p class='error'>Email address already in use</p>");
+        response.set_body(
+            r#"
+            <p class='error'>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Email already in use
+            </p>
+            "#,
+        );
         return Ok(response);
     }
 
     if user.password.is_empty() {
-        response.set_body("<p class='error'>Fill in the form</p>");
+        response.set_body(
+            r#"
+            <p class='error'>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Fill in the form
+            </p>
+            "#,
+        );
         return Ok(response);
     }
 
     let user_id = Uuid::new_v4();
 
     if !register_user(&mut pg_conn, user_id, &user).await {
-        response.set_body("<p class='error'>Failed to register user</p>");
+        response.set_body(
+            r#"
+            <p class='error'>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Failed to register user
+            </p>
+            "#,
+        );
         return Ok(response);
     }
 
