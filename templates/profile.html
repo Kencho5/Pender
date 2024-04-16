@@ -4,16 +4,22 @@
 <body>
   <div class="container">
     <div class="left-div">
-      <p class="active-profile-tab">
+      <p
+        class="active-profile-tab"
+        onclick="switchTab('posts-info', 'profile-info')"
+      >
         <i class="fa-solid fa-user"></i>
         Profile
       </p>
-      <p>
+      <p onclick="switchTab('profile-info', 'posts-info')">
         <i class="fa-solid fa-image"></i>
         Posts
       </p>
     </div>
-    <div class="right-div"></div>
+    <div class="right-div profile-info">profile</div>
+    <div class="right-div posts-info">posts</div>
   </div>
+
+  <script src="/static/js/profile.js"></script>
 </body>
 {% endblock content %}
