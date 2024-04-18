@@ -153,3 +153,12 @@
 button:hover {
   background-color: var(--primary);
 }
+
+.msg {
+  width: 100px;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 30px;
+}

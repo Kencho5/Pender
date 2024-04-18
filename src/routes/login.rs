@@ -16,7 +16,14 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
 
     let user: auth_struct::LoginData = req.body_form().await?;
     let mut response = Response::builder(200)
-        .body("<p class='success'>Account Created!</p>")
+        .body(
+            r#"
+            <p class='success'>
+                <i class="fa-solid fa-circle-check"></i>
+                Logged in!
+            </p>
+            "#,
+        )
         .build();
 
     let find_user_result = find_user(&mut req, &user.email).await;
@@ -67,7 +74,7 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
     }
 }
 
-async fn find_user(
+pub async fn find_user(
     req: &mut Request<AppState>,
     email: &str,
 ) -> tide::Result<auth_struct::UserStruct> {
@@ -79,7 +86,7 @@ async fn find_user(
     Ok(user)
 }
 
-async fn generate_token(
+pub async fn generate_token(
     config: &config_manager::Config,
     user: &auth_struct::UserStruct,
     lang: String,
@@ -100,6 +107,7 @@ async fn generate_token(
     claims.insert("name", &user.name);
     claims.insert("phone", &user.phone);
     claims.insert("city", &city);
+    claims.insert("city_value", &user.city);
 
     let token = claims.sign_with_key(&key)?;
     Ok(Some(token))

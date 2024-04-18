@@ -16,7 +16,7 @@
     <div class="right-div profile-info">
       <div class="form-container">
         <h2>{{tr.PROFILE.edit_details}}</h2>
-        <form hx-post="/api/edit-profile">
+        <form hx-post="/api/edit-profile" hx-target=".msg" hx-swap="outerHTML">
           <!-- NAME INPUT -->
           <div class="form-group">
             <label for="name">{{ tr.AUTH.name }}</label>
@@ -56,8 +56,13 @@
             {% include "components/cities.html" %}
           </div>
 
+          <input type="hidden" name="id" value="{{claims.id}}" />
+          <input type="hidden" name="password" value="" />
+
           <button type="submit">{{ tr.PROFILE.save_changes }}</button>
+
         </form>
+          <p class="msg"></p>
       </div>
     </div>
     <div class="right-div posts-info">posts</div>

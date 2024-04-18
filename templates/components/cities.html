@@ -17,7 +17,13 @@
   value="{{ claims.city }}"
   {% endif %}
 />
-<input type="hidden" name="city" />
+
+<!-- prettier-ignore -->
+<input type="hidden" name="city" 
+  {% if route != '/login' and route != '/register' %}
+  value="{{claims.city_value}}" 
+  {% endif %}
+/>
 
 <div class="cities-dropdown" style="display: none">
   <div class="cities-div"></div>
