@@ -1,7 +1,7 @@
 .auth-form {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 450px;
   background-color: var(--background);
   padding: 30px;
   border-radius: 10px;

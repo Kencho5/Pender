@@ -13,7 +13,9 @@ async fn main() -> tide::Result<()> {
 
     let mut tera = Tera::new("./templates/**/*")?;
     tera.autoescape_on(vec!["html"]);
-    let translations = utils::translations::load_translations().await.unwrap();
+    let translations = utils::translations::load_translations("translations")
+        .await
+        .unwrap();
 
     let mut app = tide::with_state(AppState {
         tera,

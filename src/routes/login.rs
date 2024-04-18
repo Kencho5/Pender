@@ -11,6 +11,9 @@ pub async fn login_handler(req: Request<AppState>) -> tide::Result {
 }
 
 pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
+    let session = req.session();
+    let lang = session.get::<String>("lang").unwrap_or("GE".into());
+
     let user: auth_struct::LoginData = req.body_form().await?;
     let mut response = Response::builder(200)
         .body("<p class='success'>Account Created!</p>")
@@ -21,7 +24,7 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
     match find_user_result {
         Ok(user_db) => {
             if unix::verify(user.password, &user_db.password) {
-                if let Some(token) = generate_token(&req.state().config, &user_db).await? {
+                if let Some(token) = generate_token(&req.state().config, &user_db, lang).await? {
                     response.insert_cookie(
                         Cookie::build("_jwt", token)
                             .max_age(time::Duration::days(7))
@@ -79,15 +82,24 @@ async fn find_user(
 async fn generate_token(
     config: &config_manager::Config,
     user: &auth_struct::UserStruct,
+    lang: String,
 ) -> tide::Result<Option<String>> {
     let key: Hmac<Sha256> = Hmac::new_from_slice(config.tide_secret.as_bytes())?;
+    let city = utils::translations::load_translations("cities")
+        .await
+        .unwrap()[lang]
+        .get(&user.city)
+        .unwrap()
+        .as_str()
+        .unwrap()
+        .to_string();
 
     let mut claims = BTreeMap::new();
     claims.insert("id", &user.id);
     claims.insert("email", &user.email);
     claims.insert("name", &user.name);
     claims.insert("phone", &user.phone);
-    claims.insert("city", &user.city);
+    claims.insert("city", &city);
 
     let token = claims.sign_with_key(&key)?;
     Ok(Some(token))
