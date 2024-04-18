@@ -130,8 +130,8 @@
   box-sizing: border-box;
   font-size: 18px;
   color: var(--text);
-  background-color: var(--accent);
-  border: none;
+  background-color: var(--background);
+  border: 1px solid var(--text);
   outline-color: var(--text);
   font-weight: bold;
   margin-bottom: 30px;
