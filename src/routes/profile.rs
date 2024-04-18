@@ -25,10 +25,8 @@ pub async fn edit_profile(mut req: Request<AppState>) -> tide::Result {
     let mut response = Response::builder(200)
         .body(
             r#"
-            <p class='msg'>
                 <i class="fa-solid fa-circle-check"></i>
                 Saved!
-            </p>
             "#,
         )
         .build();
@@ -36,10 +34,8 @@ pub async fn edit_profile(mut req: Request<AppState>) -> tide::Result {
     if let Err(_) = edit_details(&mut req, &user).await {
         response.set_body(
             r#"
-            <p class='msg'>
                 <i class="fa-solid fa-circle-exclamation"></i>
                 Failed To save.
-            </p>
             "#,
         );
         return Ok(response);
@@ -55,10 +51,8 @@ pub async fn edit_profile(mut req: Request<AppState>) -> tide::Result {
         );
         response.set_body(
             r#"
-            <p class='msg'>
                 <i class="fa-solid fa-circle-check"></i>
                 Saved!
-            </p>
             "#,
         );
     }
