@@ -37,19 +37,7 @@
       <label for="city" class="input-label">{{ tr.AUTH.city }}</label>
       <div class="input-group">
         <i class="fa fa-location-dot icon"></i>
-        <input
-          type="text"
-          name="city_dummy"
-          hx-get="/api/get-cities"
-          hx-trigger="keyup delay:200ms changed"
-          hx-params="*"
-          hx-target=".cities-div"
-          onkeyup="showCities()"
-          form="dummy-form"
-          autocomplete="off"
-          aria-label="City"
-        />
-        <input type="hidden" name="city" />
+        {% include "components/cities.html" %}
       </div>
 
       <div class="cities-dropdown" style="display: none">
