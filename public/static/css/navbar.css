@@ -177,7 +177,7 @@
   border-radius: 40px;
   background-color: var(--background);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(57, 191, 178, 0.3);
+  /* border: 1px solid rgba(57, 191, 178, 0.3); */
   padding: 20px;
   width: 160px;
   color: var(--text);

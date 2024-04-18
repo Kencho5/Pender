@@ -73,6 +73,20 @@
   }
 }
 
+@media screen and (max-width: 460px) {
+  .left-div {
+    width: 90%;
+  }
+
+  .right-div {
+    width: 100%;
+  }
+
+  .left-div p i {
+    margin-right: 0;
+  }
+}
+
 .posts-info {
   display: none;
 }
