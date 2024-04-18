@@ -162,3 +162,7 @@ button:hover {
   position: relative;
   top: 30px;
 }
+
+.form-container i {
+  color: var(--secondary);
+}
