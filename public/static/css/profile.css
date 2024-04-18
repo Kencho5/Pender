@@ -43,6 +43,7 @@
 
 .right-div {
   width: 65%;
+  height: 100vh;
 }
 
 @media screen and (max-width: 900px) {
@@ -114,10 +115,6 @@
   margin-bottom: 30px;
 }
 
-.form-group {
-  margin-bottom: 30px;
-}
-
 .form-container label {
   display: block;
   font-weight: bold;
@@ -137,6 +134,7 @@
   border: none;
   outline-color: var(--text);
   font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .form-container button {

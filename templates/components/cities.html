@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="static/css/cities.css" />
 
+<!-- prettier-ignore -->
 <input
   type="text"
   name="city_dummy"
@@ -11,6 +12,10 @@
   form="dummy-form"
   autocomplete="off"
   aria-label="City"
+
+  {% if route != '/login' and route != '/register' %}
+  value="{{ claims.city }}"
+  {% endif %}
 />
 <input type="hidden" name="city" />
 

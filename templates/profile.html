@@ -50,6 +50,12 @@
             />
           </div>
 
+          <!-- CITY INPUT -->
+          <div class="form-group">
+            <label for="city">{{ tr.AUTH.city }}</label>
+            {% include "components/cities.html" %}
+          </div>
+
           <button type="submit">{{ tr.PROFILE.save_changes }}</button>
         </form>
       </div>
