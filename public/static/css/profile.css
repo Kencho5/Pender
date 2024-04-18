@@ -43,9 +43,6 @@
 
 .right-div {
   width: 65%;
-  background-color: var(--background);
-  border-radius: 20px;
-  height: 420px;
 }
 
 @media screen and (max-width: 900px) {
@@ -99,40 +96,55 @@
   width: 50%;
 }
 
-.input-group {
-  position: relative;
-}
-
-.profile-info input {
-  margin-top: 5px;
-  padding: 12px;
-  background-color: var(--accent);
-  color: var(--text);
-  margin-bottom: 30px;
-  border: none;
-  border-radius: 7px;
-  font-size: 18px;
-  outline-color: var(--text);
-  width: 100%;
-  box-sizing: border-box;
-  font-weight: bold;
-}
-
-.icon {
-  position: absolute;
-  left: 10px;
-  top: 35%;
-  transform: translateY(-50%);
-  z-index: 1;
-  font-size: 16px;
-}
-
-.profile-info input[type="text"],
-input[type="password"] {
-  padding-left: 35px;
-}
-
-.profile-info input[type="submit"] {
+.form-container {
+  background-color: var(--background);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   width: auto;
+  margin: 0 auto;
+  color: var(--text);
+}
+
+.form-container h2 {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-container label {
+  display: block;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.form-container [type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.form-container button {
+  background-color: var(--secondary);
+  color: var(--background);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: var(--primary);
 }

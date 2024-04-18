@@ -14,57 +14,25 @@
       </p>
     </div>
     <div class="right-div profile-info">
-      <form hx-post="/api/profile-details" class="profile-info-form">
-        <!-- NAME INPUT -->
-        <label for="name" class="input-label">{{ tr.AUTH.name }}</label>
-        <div class="input-group">
-          <i class="fa-solid fa-user icon"></i>
-          <input
-            type="text"
-            name="name"
-            aria-label="Name"
-            value="{{ claims.name }}"
-          />
-        </div>
-
-        <!-- EMAIL INPUT -->
-        <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
-        <div class="input-group">
-          <i class="fa fa-envelope icon"></i>
-          <input
-            type="text"
-            name="email"
-            aria-label="Email"
-            value="{{ claims.email }}"
-          />
-        </div>
-
-        <!--  PHONE INPUT -->
-        <label for="phone" class="input-label">{{ tr.AUTH.phone }}</label>
-        <div class="input-group">
-          <i class="fa-solid fa-phone icon"></i>
-          <input
-            type="text"
-            name="phone"
-            aria-label="Phone"
-            value="{{ claims.phone }}"
-          />
-        </div>
-
-        <input type="submit" value="{{ tr.PROFILE.save_changes }}" />
-
-        <!--  CITY DROPDOWN -->
-        <!-- <label for="name" class="input-label">{{ tr.AUTH.name }}</label> -->
-        <!-- <div class="input-group"> -->
-        <!--   <i class="fa-solid fa-user icon"></i> -->
-        <!--   <input -->
-        <!--     type="text" -->
-        <!--     name="name" -->
-        <!--     aria-label="Name" -->
-        <!--     value="{{ claims.name }}" -->
-        <!--   /> -->
-        <!-- </div> -->
-      </form>
+      <div class="form-container">
+        <h2>Edit Profile Details</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="john.doe@example.com"
+            />
+          </div>
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
     </div>
     <div class="right-div posts-info">posts</div>
   </div>
