@@ -5,7 +5,7 @@
 
 .cities-div {
   position: absolute;
-  background-color: var(--accent);
+  background-color: var(--secondary);
   border-radius: 0px 0px 10px 10px;
   width: 100%;
   /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */

@@ -1,4 +1,4 @@
-use crate::routes::login::{find_user, generate_token};
+use crate::routes::login::generate_token;
 use crate::{
     imports::*,
     utils::{self, common::logged_in},
