@@ -15,22 +15,42 @@
     </div>
     <div class="right-div profile-info">
       <div class="form-container">
-        <h2>Edit Profile Details</h2>
-        <form>
+        <h2>{{tr.PROFILE.edit_details}}</h2>
+        <form hx-post="/api/edit-profile">
+          <!-- NAME INPUT -->
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" value="John Doe" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
+            <label for="name">{{ tr.AUTH.name }}</label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              value="john.doe@example.com"
+              type="text"
+              name="name"
+              value="{{ claims.name }}"
+              aria-label="Name"
             />
           </div>
-          <button type="submit">Save Changes</button>
+
+          <!-- EMAIL INPUT -->
+          <div class="form-group">
+            <label for="email">{{ tr.AUTH.email }}</label>
+            <input
+              type="text"
+              name="email"
+              value="{{ claims.email }}"
+              aria-label="Email"
+            />
+          </div>
+
+          <!-- PHONE INPUT -->
+          <div class="form-group">
+            <label for="phone">{{ tr.AUTH.phone }}</label>
+            <input
+              type="text"
+              name="phone"
+              value="{{ claims.phone }}"
+              aria-label="Phone"
+            />
+          </div>
+
+          <button type="submit">{{ tr.PROFILE.save_changes }}</button>
         </form>
       </div>
     </div>

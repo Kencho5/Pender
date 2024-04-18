@@ -20,6 +20,7 @@
       "in_use": "Email address already in use"
     },
     "PROFILE": {
+      "edit_details": "Edit Profile Details",
       "save_changes": "Save Changes"
     }
   },
@@ -44,7 +45,8 @@
       "in_use": "ელ. ფოსტა უკვე გამოყენებულია"
     },
     "PROFILE": {
-      "save_changes": "შენახვა"
+      "edit_details": "პროფილის რედაქტირება",
+      "save_changes": "პროფილის შენახვა"
     }
   }
 }
