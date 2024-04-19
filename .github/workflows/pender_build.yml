@@ -25,7 +25,6 @@ jobs:
         with:
           local_file: /target/release/pender-rust
           remote_path: /root/Pender/target/release/
-        env:
           HOST: ${{ secrets.VPS_HOST }}
           USERNAME: ${{ secrets.VPS_USERNAME }}
           PASSWORD: ${{ secrets.VPS_PASSWORD }}
