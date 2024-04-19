@@ -1,4 +1,4 @@
-name: Pender Build and Deploy
+name: Pender Build
 
 on:
   push:
@@ -8,29 +8,33 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
+      
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
 
-      - name: SSH into VPS
+      - name: Build Rust Program
+        run: cargo build --release
+
+      - name: Copy Executable to VPS
+        uses: appleboy/scp-action@master
+        with:
+          local_file: /target/release/pender-rust
+          remote_path: /root/Pender/target/release/
+        env:
+          HOST: ${{ secrets.VPS_HOST }}
+          USERNAME: ${{ secrets.VPS_USERNAME }}
+          PASSWORD: ${{ secrets.VPS_PASSWORD }}
+
+      - name: SSH into VPS and Restart Service
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           password: ${{ secrets.VPS_PASSWORD }}
-
-      - name: Navigate to project directory
-        run: cd Pender
-
-      - name: Pull latest changes
-        run: git pull
-
-      - name: Build Rust application
-        run: cargo build --release
-
-      - name: Restart service
-        run: |
-          pkill -9 pender-rust
-          ./target/release/pender-rust
-
+          script: |
+            sudo systemctl restart pender
