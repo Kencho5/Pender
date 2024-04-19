@@ -139,7 +139,7 @@
 
 .form-container button {
   background-color: var(--secondary);
-  color: var(--background);
+  color: var(--text);
   padding: 12px 24px;
   border: none;
   border-radius: 10px;
@@ -150,7 +150,7 @@
   font-size: 20px;
 }
 
-button:hover {
+.form-container button:hover {
   background-color: var(--primary);
 }
 

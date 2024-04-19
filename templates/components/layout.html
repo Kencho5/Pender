@@ -14,9 +14,11 @@
       crossorigin="anonymous"
     ></script>
     <script
+      defer
       src="https://kit.fontawesome.com/8ebc974816.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preload" href="/assets/grain.svg" as="image" />
 
     <title>Pender</title>
   </head>
@@ -80,7 +82,7 @@
             </label>
           </div>
           {% if claims %}
-          <a hx-post="/logout" class="logout-btn" hx-swap="none">
+          <a role="button" hx-post="/logout" class="logout-btn" hx-swap="none">
             <i class="fa-solid fa-right-from-bracket"></i>
           </a>
           {% endif %}
@@ -135,7 +137,7 @@
               <i class="fa-solid fa-user"></i>
               {{ tr.NAV.profile }}
             </a>
-            <a hx-post="/logout" hx-swap="none">
+            <a role="button" hx-post="/logout" hx-swap="none">
               <i class="fa-solid fa-right-from-bracket"></i>
               {{ tr.NAV.logout }}
             </a>

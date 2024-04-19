@@ -74,8 +74,8 @@ input[type="password"] {
 }
 
 .auth-option a {
-  color: var(--background);
-  background-color: var(--secondary);
+  color: var(--text);
+  background-color: var(--background);
   padding: 5px;
   border-radius: 10px;
   text-decoration: none;
