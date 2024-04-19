@@ -22,23 +22,24 @@ function validateForm(formName) {
 }
 
 const spinner = document.querySelector(".spinner");
-if (spinner) {
-  const targetDiv = document.querySelector(".msg");
-  const observer = new MutationObserver(async function (mutationsList) {
-    for (const mutation of mutationsList) {
-      if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-        if (targetDiv.childNodes[0].classList.contains("success")) {
-          spinner.style.display = "block";
-          await delay(1000);
-          window.location.href = "/login";
-        }
+const targetDiv = document.querySelector(".msg");
+const observer = new MutationObserver(async function (mutationsList) {
+  for (const mutation of mutationsList) {
+    if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+      if (spinner && targetDiv.childNodes[0].classList.contains("success")) {
+        spinner.style.display = "block";
+        await delay(1000);
+        window.location.href = "/login";
+      } else if (targetDiv.textContent.trim() == "Logged in!") {
+        await delay(700);
+        window.location.href = "/profile";
       }
     }
-  });
+  }
+});
 
-  const config = { childList: true, subtree: true };
-  observer.observe(targetDiv, config);
-}
+const config = { childList: true, subtree: true };
+observer.observe(targetDiv, config);
 
 const inputs = document.querySelectorAll("input");
 inputs.forEach((input) => {
