@@ -23,8 +23,8 @@ jobs:
       - name: Copy Executable to VPS
         uses: appleboy/scp-action@master
         with:
-          source: /target/release/pender-rust
-          target: /root/Pender/target/release/
+          source: "/target/release/pender-rust"
+          target: "/root/Pender/target/release/"
           HOST: ${{ secrets.VPS_HOST }}
           USERNAME: ${{ secrets.VPS_USERNAME }}
           PASSWORD: ${{ secrets.VPS_PASSWORD }}
