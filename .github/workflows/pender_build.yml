@@ -1,0 +1,36 @@
+name: Pender Build and Deploy
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: SSH into VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          password: ${{ secrets.VPS_PASSWORD }}
+
+      - name: Navigate to project directory
+        run: cd Pender
+
+      - name: Pull latest changes
+        run: git pull
+
+      - name: Build Rust application
+        run: cargo build --release
+
+      - name: Restart service
+        run: |
+          pkill -9 pender-rust
+          ./target/release/pender-rust
+
