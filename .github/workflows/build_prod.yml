@@ -1,9 +1,9 @@
-name: Pender Build
+name: Pender Prod Build
 
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
         uses: appleboy/scp-action@master
         with:
           source: "target/release/pender-rust"
-          target: "/root/Pender"
+          target: "/root/pender-prod"
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           password: ${{ secrets.VPS_PASSWORD }}
@@ -36,6 +36,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           password: ${{ secrets.VPS_PASSWORD }}
           script: |
-            cd /root/Pender
+            cd /root/pender-prod
             git pull
-            sudo systemctl restart pender
+            sudo systemctl restart pender-prod
+

@@ -43,6 +43,6 @@ async fn main() -> tide::Result<()> {
 
     register_routes::register_routes(&mut app);
 
-    app.listen("127.0.0.1:8080").await?;
+    app.listen(format!("127.0.0.1:{}", config.port)).await?;
     Ok(())
 }
