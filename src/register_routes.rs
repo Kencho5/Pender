@@ -31,7 +31,7 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .post(language::set_language_handler);
 
     app.at("/api/get-cities")
-        .with(GovernorMiddleware::per_minute(5).unwrap())
+        .with(GovernorMiddleware::per_minute(100).unwrap())
         .get(cities::get_cities);
 
     app.at("/api/edit-profile")
