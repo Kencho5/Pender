@@ -82,7 +82,13 @@
             </label>
           </div>
           {% if claims %}
-          <a role="button" hx-post="/logout" class="logout-btn" hx-swap="none">
+          <a
+            role="button"
+            hx-post="/logout"
+            class="logout-btn"
+            hx-swap="none"
+            aria-label="Logout"
+          >
             <i class="fa-solid fa-right-from-bracket"></i>
           </a>
           {% endif %}
@@ -137,7 +143,12 @@
               <i class="fa-solid fa-user"></i>
               {{ tr.NAV.profile }}
             </a>
-            <a role="button" hx-post="/logout" hx-swap="none">
+            <a
+              role="button"
+              hx-post="/logout"
+              hx-swap="none"
+              aria-label="Logout"
+            >
               <i class="fa-solid fa-right-from-bracket"></i>
               {{ tr.NAV.logout }}
             </a>
