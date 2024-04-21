@@ -79,13 +79,14 @@ async fn register_user(
 ) -> bool {
     let pass_hash = bcrypt::hash(&user.password).unwrap();
     let registration_result = sqlx::query(
-        "INSERT INTO users(id, email, name, phone, city, password) VALUES($1, $2, $3, $4, $5, $6)",
+        "INSERT INTO users(id, email, name, phone, city, facebook, password) VALUES($1, $2, $3, $4, $5, $6, $7)",
     )
     .bind(user_id.to_string())
     .bind(&user.email)
     .bind(&user.name)
     .bind(&user.phone)
     .bind(&user.city)
+    .bind(&user.facebook)
     .bind(&pass_hash)
     .execute(pg_conn)
     .await;

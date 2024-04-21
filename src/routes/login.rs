@@ -108,6 +108,7 @@ pub async fn generate_token(
     claims.insert("phone", &user.phone);
     claims.insert("city", &city);
     claims.insert("city_value", &user.city);
+    claims.insert("facebook", &user.facebook);
 
     let token = claims.sign_with_key(&key)?;
     Ok(Some(token))

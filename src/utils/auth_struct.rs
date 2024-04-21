@@ -12,6 +12,7 @@ pub struct RegisterData {
     pub name: String,
     pub phone: String,
     pub city: String,
+    pub facebook: String,
     pub password: String,
 }
 
@@ -22,5 +23,6 @@ pub struct UserStruct {
     pub name: String,
     pub phone: String,
     pub city: String,
+    pub facebook: String,
     pub password: String,
 }

@@ -4,6 +4,7 @@ CREATE TABLE users (
     name VARCHAR NOT NULL CHECK (LENGTH(name) > 0),
     phone VARCHAR NOT NULL CHECK (LENGTH(phone) > 0),
     city VARCHAR NOT NULL CHECK (LENGTH(city) > 0),
+    facebook VARCHAR,
     password VARCHAR NOT NULL CHECK (LENGTH(password) > 0)
 );
 

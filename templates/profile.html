@@ -56,6 +56,17 @@
             {% include "components/cities.html" %}
           </div>
 
+          <!-- FACEBOOK INPUT -->
+          <div class="form-group">
+            <label for="phone">{{ tr.AUTH.facebook }}</label>
+            <input
+              type="text"
+              name="phone"
+              value="{{ claims.facebook }}"
+              aria-label="Phone"
+            />
+          </div>
+
           <input type="hidden" name="id" value="{{claims.id}}" />
           <input type="hidden" name="password" value="" />
 
