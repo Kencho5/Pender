@@ -66,11 +66,12 @@ async fn edit_details(
 ) -> tide::Result<sqlx::postgres::PgQueryResult> {
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
     let user =
-        sqlx::query("UPDATE users SET name = $1, email = $2, phone = $3, city = $4 WHERE id = $5")
+        sqlx::query("UPDATE users SET name = $1, email = $2, phone = $3, city = $4, facebook = $5 WHERE id = $6")
             .bind(&user.name)
             .bind(&user.email)
             .bind(&user.phone)
             .bind(&user.city)
+            .bind(&user.facebook)
             .bind(&user.id)
             .execute(pg_conn.acquire().await?)
             .await?;

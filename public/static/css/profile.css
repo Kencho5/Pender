@@ -44,6 +44,7 @@
 .right-div {
   width: 65%;
   height: 100vh;
+  margin-bottom: 100px;
 }
 
 @media screen and (max-width: 900px) {
@@ -123,6 +124,17 @@
   font-size: 18px;
 }
 
+.input-group {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  left: 15px;
+}
+
 .form-container input[type="text"] {
   width: 100%;
   padding: 12px;
@@ -135,6 +147,7 @@
   outline-color: var(--text);
   font-weight: bold;
   margin-bottom: 30px;
+  padding-left: 40px;
 }
 
 .form-container button {
