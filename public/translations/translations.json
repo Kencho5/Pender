@@ -2,7 +2,7 @@
   "EN": {
     "NAV": {
       "home": "Home",
-      "posts": "Posts",
+      "upload": "Upload",
       "profile": "Profile",
       "login": "Login",
       "logout": "Log Out"
@@ -27,7 +27,7 @@
   "GE": {
     "NAV": {
       "home": "მთავარი",
-      "posts": "პოსტები",
+      "upload": "ატვირთვა",
       "profile": "პროფილი",
       "login": "შესვლა",
       "logout": "გასვლა"

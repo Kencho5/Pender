@@ -39,8 +39,8 @@
           <li id="home">
             <a href="/"> {{ tr.NAV.home }} </a>
           </li>
-          <li id="search">
-            <a href="/search"> {{ tr.NAV.posts }}</a>
+          <li>
+            <a href="/upload"> {{ tr.NAV.upload }}</a>
           </li>
           {% if claims %}
           <li id="profile">
@@ -134,9 +134,9 @@
               <i class="fa-solid fa-house"></i>
               {{ tr.NAV.home }}
             </a>
-            <a href="/search">
+            <a href="/upload">
               <i class="fa-solid fa-magnifying-glass"></i>
-              {{ tr.NAV.posts }}
+              {{ tr.NAV.upload }}
             </a>
             {% if claims %}
             <a href="/profile">
