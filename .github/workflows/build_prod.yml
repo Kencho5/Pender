@@ -41,7 +41,7 @@ jobs:
       uses: appleboy/scp-action@master
       with:
         source: pender-rust
-        target: "/root/pender-prod"
+        target: "/root/pender-prod/target/release"
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USERNAME }}
         password: ${{ secrets.VPS_PASSWORD }}
