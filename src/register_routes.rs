@@ -7,6 +7,15 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(home::home_handler);
 
+    app.at("/profile")
+        .with(GovernorMiddleware::per_hour(120).unwrap())
+        .get(profile::profile_handler);
+
+    app.at("/upload")
+        .with(GovernorMiddleware::per_hour(240).unwrap())
+        .get(upload::upload_handler);
+
+    // AUTH ROUTES
     app.at("/login")
         .get(login::login_handler)
         .with(GovernorMiddleware::per_minute(5).unwrap())
@@ -17,17 +26,14 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_minute(5).unwrap())
         .post(register::register_post_handler);
 
-    app.at("/profile")
-        .with(GovernorMiddleware::per_hour(120).unwrap())
-        .get(profile::profile_handler);
-
-    app.at("/upload")
-        .with(GovernorMiddleware::per_hour(240).unwrap())
-        .get(upload::upload_handler);
+    app.at("/reset-password")
+        .get(reset_password::reset_password_handler)
+        .with(GovernorMiddleware::per_minute(240).unwrap());
 
     app.at("/logout")
         .with(GovernorMiddleware::per_hour(120).unwrap())
         .post(logout::logout_handler);
+    //////////////
 
     // API ROUTES
     app.at("/api/set_language/:lang")
