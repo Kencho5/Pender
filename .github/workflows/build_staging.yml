@@ -8,38 +8,51 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-20.04
+    
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
       
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        
+    - name: Build Rust Program
+      run: cargo build --release
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: pender-rust-binary
+        path: target/release/pender-rust
 
-      - name: Build Rust Program
-        run: cargo build --release
-
-  Deploy:
-    needs: Build
+  deploy:
+    needs: build
     runs-on: ubuntu-20.04
+    
     steps:
-      - name: Copy Executable to VPS
-        uses: appleboy/scp-action@master
-        with:
-          source: "target/release/pender-rust"
-          target: "/root/pender-staging"
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          password: ${{ secrets.VPS_PASSWORD }}
-
-      - name: SSH into VPS and Restart Service
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          password: ${{ secrets.VPS_PASSWORD }}
-          script: |
-            cd /root/pender-staging
-            git pull
-            sudo systemctl restart pender-staging
+    - name: Download Artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: pender-rust-binary
+        
+    - name: Copy Executable to VPS
+      uses: appleboy/scp-action@master
+      with:
+        source: pender-rust
+        target: "/root/pender-staging/target/release/"
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        
+    - name: SSH into VPS and Restart Service
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USERNAME }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        script: |
+          cd /root/pender-staging
+          git pull
+          sudo systemctl restart pender-staging
