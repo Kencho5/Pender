@@ -119,15 +119,12 @@ input[type="password"] {
   display: block;
 }
 
-.spinner {
-  margin: auto;
-}
-
 .lds-dual-ring,
 .lds-dual-ring:after {
   box-sizing: border-box;
 }
 .lds-dual-ring {
+  margin: auto;
   display: inline-block;
   width: 60px;
   height: 60px;

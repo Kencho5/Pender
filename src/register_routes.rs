@@ -49,6 +49,10 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .post(profile::edit_profile);
 
     app.at("/api/reset-password")
-        .with(GovernorMiddleware::per_minute(5).unwrap())
+        .with(GovernorMiddleware::per_minute(15).unwrap())
         .post(reset_password::reset_post_handler);
+
+    app.at("/api/confirm-code")
+        .with(GovernorMiddleware::per_minute(15).unwrap())
+        .post(reset_password::reset_code_handler);
 }

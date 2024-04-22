@@ -20,3 +20,4 @@ uuid = {version = "1.8.0", features = ["v4"]}
 tide-governor = "1.0.3"
 time = "0.2.0"
 lettre = "0.11.6"
+rand = "0.8.5"

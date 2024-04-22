@@ -12,6 +12,12 @@ pub struct ResetData {
 }
 
 #[derive(Deserialize)]
+pub struct ResetCodeData {
+    pub code: String,
+    pub password: String,
+}
+
+#[derive(Deserialize)]
 pub struct RegisterData {
     pub email: String,
     pub name: String,
