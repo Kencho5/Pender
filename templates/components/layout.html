@@ -168,7 +168,7 @@
     <!-- prettier-ignore -->
     {% block content %}{% endblock content %}
 
-    {% if route != '/register' and route != '/login' %}
+    {% if route not in ['/register', '/login', '/upload'] %}
     <a href="/upload" class="plus-btn" aria-label="Upload">
       <i class="fa-solid fa-plus"></i>
     </a>
