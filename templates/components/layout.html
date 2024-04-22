@@ -22,7 +22,7 @@
 
     <title>Pender</title>
   </head>
-  <body class="preload">
+  <body>
     <div class="overlay">
       <span class="loader"></span>
     </div>
@@ -175,12 +175,9 @@
     {% endif %}
 
     <script>
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          document.body.classList.remove("preload");
-        }, 500);
-      });
       window.addEventListener("load", async function () {
+        const body = document.querySelector("body");
+        body.style.opacity = 1;
         document.querySelector(".overlay").style.display = "none";
       });
     </script>
