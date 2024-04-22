@@ -6,7 +6,7 @@ on:
       - staging
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Repository
@@ -20,6 +20,10 @@ jobs:
       - name: Build Rust Program
         run: cargo build --release
 
+  Deploy:
+    needs: Build
+    runs-on: ubuntu-20.04
+    steps:
       - name: Copy Executable to VPS
         uses: appleboy/scp-action@master
         with:
