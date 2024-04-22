@@ -33,8 +33,6 @@ body {
   font-weight: bold;
   letter-spacing: 0.5px;
   background-color: var(--background);
-  animation: fadeIn 0.65s ease-in-out forwards;
-  transition: opacity 0.65s ease-in-out;
   overscroll-behavior: none;
   scroll-behavior: smooth;
   background: url("/assets/grain.svg") center/cover fixed;
@@ -43,7 +41,14 @@ body {
   /* background: var(--accent); */
 }
 
-body.active {
+.content-wrapper {
+  animation: fadeIn 0.65s ease-in-out forwards;
+  transition: opacity 0.65s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.content-wrapper.active {
   opacity: 1;
   visibility: visible;
 }

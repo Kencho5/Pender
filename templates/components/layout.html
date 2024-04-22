@@ -23,156 +23,158 @@
     <title>Pender</title>
   </head>
   <body>
-    <div class="overlay">
-      <span class="loader"></span>
-    </div>
+    <div class="content-wrapper">
+      <div class="overlay">
+        <span class="loader"></span>
+      </div>
 
-    <div class="navbar-div">
-      <nav class="navbar">
-        <div class="navbar-logo">
-          <a href="/">
-            <img src="/assets/logo.svg" alt="Logo" />
-          </a>
-        </div>
-
-        <ul class="navbar-links" id="navbarLinks">
-          <li id="home">
-            <a href="/"> {{ tr.NAV.home }} </a>
-          </li>
-          <li>
-            <a href="/upload"> {{ tr.NAV.upload }}</a>
-          </li>
-          {% if claims %}
-          <li id="profile">
-            <a href="/profile">{{ tr.NAV.profile }}</a>
-          </li>
-          {% else %}
-          <li id="login">
-            <a href="/login">{{ tr.NAV.login }}</a>
-          </li>
-          {% endif %}
-        </ul>
-
-        <div class="navbar-profile">
-          <div class="radio-inputs lang-full">
-            <label class="radio">
-              <!-- prettier-ignore -->
-              <input
-            hx-post="/api/set_language/GE"
-            hx-swap="none"
-            type="radio"
-            name="radio"
-            {% if lang == 'GE' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
-          />
-              <span class="name">GE</span>
-            </label>
-            <label class="radio">
-              <!-- prettier-ignore -->
-              <input
-            hx-post="/api/set_language/EN"
-            hx-swap="none"
-            type="radio"
-            name="radio"
-            {% if lang == 'EN' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
-          />
-
-              <span class="name">EN</span>
-            </label>
-          </div>
-          {% if claims %}
-          <a
-            role="button"
-            hx-post="/logout"
-            class="logout-btn"
-            hx-swap="none"
-            aria-label="Logout"
-          >
-            <i class="fa-solid fa-right-from-bracket"></i>
-          </a>
-          {% endif %}
-        </div>
-
-        <div class="mobile-right">
-          <div class="radio-inputs lang-mobile">
-            <label class="radio">
-              <!-- prettier-ignore -->
-              <input
-            hx-post="/api/set_language/GE"
-            hx-swap="none"
-            type="radio"
-            name="radio2"
-            {% if lang == 'GE' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
-          />
-              <span class="name">GE</span>
-            </label>
-            <label class="radio">
-              <!-- prettier-ignore -->
-              <input
-            hx-post="/api/set_language/EN"
-            hx-swap="none"
-            type="radio"
-            name="radio2"
-            {% if lang == 'EN' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
-          />
-
-              <span class="name">EN</span>
-            </label>
-          </div>
-
-          <div class="hamburger-menu" id="hamburgerMenu">
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-          </div>
-        </div>
-
-        <div class="context-menu" id="contextMenu">
-          <div class="context-menu-links">
+      <div class="navbar-div">
+        <nav class="navbar">
+          <div class="navbar-logo">
             <a href="/">
-              <i class="fa-solid fa-house"></i>
-              {{ tr.NAV.home }}
+              <img src="/assets/logo.svg" alt="Logo" />
             </a>
-            <a href="/upload">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              {{ tr.NAV.upload }}
-            </a>
+          </div>
+
+          <ul class="navbar-links" id="navbarLinks">
+            <li id="home">
+              <a href="/"> {{ tr.NAV.home }} </a>
+            </li>
+            <li>
+              <a href="/upload"> {{ tr.NAV.upload }}</a>
+            </li>
             {% if claims %}
-            <a href="/profile">
-              <i class="fa-solid fa-user"></i>
-              {{ tr.NAV.profile }}
-            </a>
+            <li id="profile">
+              <a href="/profile">{{ tr.NAV.profile }}</a>
+            </li>
+            {% else %}
+            <li id="login">
+              <a href="/login">{{ tr.NAV.login }}</a>
+            </li>
+            {% endif %}
+          </ul>
+
+          <div class="navbar-profile">
+            <div class="radio-inputs lang-full">
+              <label class="radio">
+                <!-- prettier-ignore -->
+                <input
+            hx-post="/api/set_language/GE"
+            hx-swap="none"
+            type="radio"
+            name="radio"
+            {% if lang == 'GE' %} checked="" {% endif %}
+            onclick="reloadPage(100)"
+          />
+                <span class="name">GE</span>
+              </label>
+              <label class="radio">
+                <!-- prettier-ignore -->
+                <input
+            hx-post="/api/set_language/EN"
+            hx-swap="none"
+            type="radio"
+            name="radio"
+            {% if lang == 'EN' %} checked="" {% endif %}
+            onclick="reloadPage(100)"
+          />
+
+                <span class="name">EN</span>
+              </label>
+            </div>
+            {% if claims %}
             <a
               role="button"
               hx-post="/logout"
+              class="logout-btn"
               hx-swap="none"
               aria-label="Logout"
             >
               <i class="fa-solid fa-right-from-bracket"></i>
-              {{ tr.NAV.logout }}
-            </a>
-            {% else %}
-            <a href="/login">
-              <i class="fa-solid fa-right-to-bracket"></i>
-              {{ tr.NAV.login }}
             </a>
             {% endif %}
           </div>
-        </div>
-      </nav>
-    </div>
 
-    <div class="circle yellow"></div>
+          <div class="mobile-right">
+            <div class="radio-inputs lang-mobile">
+              <label class="radio">
+                <!-- prettier-ignore -->
+                <input
+            hx-post="/api/set_language/GE"
+            hx-swap="none"
+            type="radio"
+            name="radio2"
+            {% if lang == 'GE' %} checked="" {% endif %}
+            onclick="reloadPage(100)"
+          />
+                <span class="name">GE</span>
+              </label>
+              <label class="radio">
+                <!-- prettier-ignore -->
+                <input
+            hx-post="/api/set_language/EN"
+            hx-swap="none"
+            type="radio"
+            name="radio2"
+            {% if lang == 'EN' %} checked="" {% endif %}
+            onclick="reloadPage(100)"
+          />
 
-    <!-- prettier-ignore -->
-    {% block content %}{% endblock content %}
+                <span class="name">EN</span>
+              </label>
+            </div>
+
+            <div class="hamburger-menu" id="hamburgerMenu">
+              <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+          </div>
+
+          <div class="context-menu" id="contextMenu">
+            <div class="context-menu-links">
+              <a href="/">
+                <i class="fa-solid fa-house"></i>
+                {{ tr.NAV.home }}
+              </a>
+              <a href="/upload">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                {{ tr.NAV.upload }}
+              </a>
+              {% if claims %}
+              <a href="/profile">
+                <i class="fa-solid fa-user"></i>
+                {{ tr.NAV.profile }}
+              </a>
+              <a
+                role="button"
+                hx-post="/logout"
+                hx-swap="none"
+                aria-label="Logout"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                {{ tr.NAV.logout }}
+              </a>
+              {% else %}
+              <a href="/login">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                {{ tr.NAV.login }}
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="circle yellow"></div>
+
+      <!-- prettier-ignore -->
+      {% block content %}{% endblock content %}
 
     {% if route not in ['/register', '/login', '/upload'] %}
-    <a href="/upload" class="plus-btn" aria-label="Upload">
-      <i class="fa-solid fa-plus"></i>
-    </a>
-    {% endif %}
+      <a href="/upload" class="plus-btn" aria-label="Upload">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+      {% endif %}
+    </div>
 
     <script>
       window.addEventListener("load", async function () {
