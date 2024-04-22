@@ -155,3 +155,7 @@ input[type="password"] {
 .invalid {
   outline: 3px solid #e83e36 !important;
 }
+
+.msg i {
+  margin-right: 5px;
+}

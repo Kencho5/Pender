@@ -18,7 +18,8 @@
       "auth_option_register": "Have an account?",
       "auth_option_login": "Don't have an account?",
       "in_use": "Email address already in use",
-      "reset_password": "Reset password"
+      "reset_password": "Reset Password",
+      "send_code": "Send code"
     },
     "PROFILE": {
       "facebook": "Link",
@@ -46,7 +47,8 @@
       "auth_option_register": "გაქვთ ანგარიში?",
       "auth_option_login": "არ გაქვთ ანგარიში?",
       "in_use": "ელ. ფოსტა უკვე გამოყენებულია",
-      "reset_password": "პაროლის აღდგენა"
+      "reset_password": "პაროლის აღდგენა",
+      "send_code": "კოდის გაგზავნა"
     },
     "PROFILE": {
       "facebook": "ლინკი",
