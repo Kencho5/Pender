@@ -74,7 +74,7 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
     }
 }
 
-async fn find_user(
+pub async fn find_user(
     req: &mut Request<AppState>,
     email: &str,
 ) -> tide::Result<auth_struct::UserStruct> {
