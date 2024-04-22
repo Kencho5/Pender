@@ -9,7 +9,7 @@ use crate::imports::*;
 #[async_std::main]
 async fn main() -> tide::Result<()> {
     // tide::log::start();
-    let config = config::config_manager::load_config().expect("Config Not Found.");
+    let config = config::config_manager::load_config().expect("Config Error.");
 
     let mut tera = Tera::new("./templates/**/*")?;
     tera.autoescape_on(vec!["html"]);

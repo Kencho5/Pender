@@ -5,6 +5,7 @@ use std::io::Read;
 #[derive(Debug, Deserialize, Clone)]
 pub struct Config {
     pub database: DatabaseConfig,
+    pub smtp: SmtpConfig,
     pub tide_secret: String,
     pub port: String,
 }
@@ -16,6 +17,12 @@ pub struct DatabaseConfig {
     pub host: String,
     pub port: u16,
     pub db_name: String,
+}
+
+#[derive(Debug, Deserialize, Clone)]
+pub struct SmtpConfig {
+    pub username: String,
+    pub password: String,
 }
 
 pub fn load_config() -> Result<Config, Box<dyn std::error::Error>> {
