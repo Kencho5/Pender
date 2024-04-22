@@ -21,6 +21,10 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_hour(120).unwrap())
         .get(profile::profile_handler);
 
+    app.at("/upload")
+        .with(GovernorMiddleware::per_hour(240).unwrap())
+        .get(upload::upload_handler);
+
     app.at("/logout")
         .with(GovernorMiddleware::per_hour(120).unwrap())
         .post(logout::logout_handler);
