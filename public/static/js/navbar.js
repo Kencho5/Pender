@@ -8,7 +8,6 @@ function activeRoute() {
     ? "home"
     : window.location.pathname.slice(0).replace("/", "");
   if (route == "register") route = "login";
-
   const links = document.getElementsByClassName("navbar-links")[0].childNodes;
 
   links.forEach((link) => {
