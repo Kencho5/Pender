@@ -7,6 +7,11 @@ pub struct LoginData {
 }
 
 #[derive(Deserialize)]
+pub struct ResetData {
+    pub email: String,
+}
+
+#[derive(Deserialize)]
 pub struct RegisterData {
     pub email: String,
     pub name: String,

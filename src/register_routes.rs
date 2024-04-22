@@ -8,7 +8,7 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .get(home::home_handler);
 
     app.at("/profile")
-        .with(GovernorMiddleware::per_hour(120).unwrap())
+        .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(profile::profile_handler);
 
     app.at("/upload")
@@ -31,8 +31,8 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_minute(240).unwrap());
 
     app.at("/logout")
-        .with(GovernorMiddleware::per_hour(120).unwrap())
-        .post(logout::logout_handler);
+        .post(logout::logout_handler)
+        .with(GovernorMiddleware::per_hour(120).unwrap());
     //////////////
 
     // API ROUTES
@@ -47,4 +47,8 @@ pub fn register_routes(app: &mut Server<AppState>) {
     app.at("/api/edit-profile")
         .with(GovernorMiddleware::per_minute(5).unwrap())
         .post(profile::edit_profile);
+
+    app.at("/api/reset-password")
+        .with(GovernorMiddleware::per_minute(5).unwrap())
+        .post(reset_password::reset_post_handler);
 }
