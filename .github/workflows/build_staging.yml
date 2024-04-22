@@ -27,8 +27,8 @@ jobs:
         name: pender-rust-binary
         path: target/release/pender-rust
 
-  deploy:
-    needs: build
+  Deploy:
+    needs: Build
     runs-on: ubuntu-20.04
     
     steps:
@@ -41,7 +41,7 @@ jobs:
       uses: appleboy/scp-action@master
       with:
         source: pender-rust
-        target: "/root/pender-staging/target/release/"
+        target: "/root/pender-staging"
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USERNAME }}
         password: ${{ secrets.VPS_PASSWORD }}
