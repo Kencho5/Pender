@@ -25,15 +25,16 @@
         <i class="fa-solid fa-lock icon"></i>
         <input type="password" name="password" aria-label="Password" />
       </div>
-
       <input type="submit" value="{{ tr.AUTH.login }}" />
+      <div class="auth-options">
+        <a href="/reset-password" aria-label="Forgot Password"
+          >{{ tr.AUTH.reset_password }}</a
+        >
+        <a href="/register" aria-label="Register">{{ tr.AUTH.register }}</a>
+      </div>
 
       <div class="msg"></div>
     </form>
-    <p class="auth-option">
-      {{ tr.AUTH.auth_option_login }}
-      <a href="/register">{{ tr.AUTH.register }}</a>
-    </p>
   </div>
 
   <script src="/static/js/auth.js"></script>

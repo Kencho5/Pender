@@ -13,14 +13,14 @@
   autocomplete="off"
   aria-label="City"
 
-  {% if route not in ['/register', '/login'] %}
+  {% if route not in ['/register', '/login', '/upload'] %}
   value="{{ claims.city }}"
   {% endif %}
 />
 
 <!-- prettier-ignore -->
 <input type="hidden" name="city" 
-  {% if route not in ['/register', '/login'] %}
+  {% if route not in ['/register', '/login', '/upload'] %}
   value="{{claims.city_value}}" 
   {% endif %}
 />

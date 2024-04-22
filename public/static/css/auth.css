@@ -15,6 +15,11 @@
   .auth-form {
     width: 270px;
   }
+
+  .auth-options {
+    flex-direction: column;
+    height: 80px;
+  }
 }
 
 .auth-form-title {
@@ -68,8 +73,19 @@ input[type="password"] {
   margin-bottom: 5px;
 }
 
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-options a {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .auth-option {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -82,10 +98,12 @@ input[type="password"] {
 }
 
 .error {
+  margin-top: 50px;
   color: #e83e36;
 }
 
 .success {
+  margin-top: 50px;
   align-items: center;
   color: var(--accent);
 }
