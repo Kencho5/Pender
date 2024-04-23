@@ -1,0 +1,33 @@
+.input-group div,
+.next-btn {
+  padding: 12px;
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  outline-color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-group div {
+  min-height: 45px;
+  padding-left: 35px;
+  margin-bottom: 30px;
+}
+
+.icon-right {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 16px;
+}
+
+.icon {
+  top: 32%;
+}

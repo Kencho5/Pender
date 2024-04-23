@@ -1,5 +1,36 @@
 {% extends "components/layout.html" %} {% block content %}
+<link rel="stylesheet" href="static/css/auth.css" />
 <link rel="stylesheet" href="static/css/upload.css" />
 
-<body></body>
+<body>
+  <div class="form-div">
+    <form hx-post="/upload" class="auth-form" name="uploadForm">
+      <p class="auth-form-title">{{ tr.NAV.upload }}</p>
+
+      <!-- ANIMAl INPUT -->
+      <label for="animal" class="input-label">{{ tr.UPLOAD.animal }}</label>
+      <div class="input-group">
+        <i class="fa fa-paw icon"></i>
+        <div aria-label="Animal" class="form-input"></div>
+        <i class="fa fa-caret-down icon-right"></i>
+      </div>
+
+      <!-- BREED INPUT -->
+      <label for="breed" class="input-label">{{ tr.UPLOAD.breed }}</label>
+      <div class="input-group">
+        <i class="fa-solid fa-dna icon"></i>
+        <input type="text" name="breed" aria-label="Breed" class="form-input" />
+        <i class="fa-solid fa-dna icon"></i>
+      </div>
+
+      <button type="button" class="next-btn" onclick="validateForm()">
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+
+      <div class="msg"></div>
+    </form>
+  </div>
+
+  <script src="/static/js/upload.js"></script>
+</body>
 {% endblock content %}
