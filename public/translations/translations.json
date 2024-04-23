@@ -31,6 +31,9 @@
     "UPLOAD": {
       "animal": "Animal",
       "breed": "Breed"
+    },
+    "ANIMALS": {
+      "dog": "Dog"
     }
   },
   "GE": {
@@ -65,6 +68,9 @@
     "UPLOAD": {
       "animal": "ცხოველი",
       "breed": "ჯიში"
+    },
+    "ANIMALS": {
+      "dog": "ძაღლი"
     }
   }
 }
