@@ -48,7 +48,6 @@ inputs.forEach((input) => {
 const dropdownContent = document.querySelectorAll(".dropdown-content");
 dropdownContent.forEach(function (content) {
   content.addEventListener("click", function (event) {
-    console.log(event.target);
     if (
       event.target.getAttribute("data-target") == "post_type" &&
       event.target.id == "selling"
@@ -84,7 +83,7 @@ function toggleDropdown() {
 }
 
 function changeStep() {
-  if (step > 6) return;
+  if (step >= 6) return;
   const prevStep = document.querySelector(`#step${step - 1}`);
   const activeStep = document.querySelector(`#step${step}`);
 
@@ -108,14 +107,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const files = this.files;
     if (files.length != 3) {
       this.value = "";
-      document.querySelector('[name="photos_arr[]"]').value = "";
+      document.querySelector('[name="photos"]').value = "";
 
       msg.innerHTML =
         '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>3 Photos Min/Max!</p>';
       return;
     }
 
+    msg.innerHTML = "";
     imageContainer.innerHTML = "";
+    photosDiv.innerHTML = "3 Photos Selected";
 
     for (let i = 0; i < this.files.length; i++) {
       const file = this.files[i];
@@ -145,6 +146,8 @@ document.querySelector(".auth-form").addEventListener(
   "submit",
   async function (event) {
     event.preventDefault();
+    if (!validateForm()) return;
+
     var formData = new FormData(this);
 
     var body = {};
