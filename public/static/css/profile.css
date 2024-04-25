@@ -28,7 +28,7 @@
   transition: all 0.3s ease;
 }
 
-.left-div p i {
+.left-div p svg {
   margin-right: 10px;
 }
 
@@ -84,7 +84,7 @@
     width: 100%;
   }
 
-  .left-div p i {
+  .left-div p svg {
     margin-right: 0;
   }
 
@@ -174,8 +174,4 @@
   text-align: center;
   position: relative;
   top: 30px;
-}
-
-.form-container i {
-  color: var(--secondary);
 }

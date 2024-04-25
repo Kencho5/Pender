@@ -133,19 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-async function addPhotos() {
-  const files = document.getElementById("fileInput").files;
-
-  let photos = [];
-  for (let i = 0; i < files.length; i++) {
-    const fileBytes = await toBase64(files[i]);
-    photos.push(i);
-  }
-
-  const photos_arr = document.querySelector('[name="photos_arr"]');
-  photos_arr.value = JSON.stringify(photos);
-}
-
 const toBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -181,9 +168,16 @@ document.querySelector(".auth-form").addEventListener(
       method: "POST",
       body: JSON.stringify(body),
     }).then(function (response) {
-      // Handle response
-    }).catch(function (error) {
-      // Handle error
+      return response.json();
+    }).then(function (data) {
+      const { error, post_id } = data;
+
+      if (error) {
+        const msg = document.querySelector(".msg");
+        msg.innerHTML = error;
+      } else {
+        window.location.href = `/post/${post_id}`;
+      }
     });
   },
 );

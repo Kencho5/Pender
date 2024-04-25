@@ -22,18 +22,17 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     let form_data: upload_struct::UploadForm = req.body_json().await?;
 
     for (index, photo) in form_data.photos.iter().enumerate() {
-        println!("{}", index);
-        if let Err(error) = save_images(post_id, photo, index) {
-            println!("{}", error);
-
-            response.set_body(
-                r#"<p class='error'><i class="fa-solid fa-circle-exclamation"></i>Failed to upload photos</p>"#,
-            );
+        if let Err(_) = save_images(post_id, photo, index) {
+            response.set_body(json!({
+                "error": r#"<p class='error'><i class="fa-solid fa-circle-exclamation"></i>Failed to upload photos</p>"#
+            }));
             return Ok(response);
         }
     }
 
-    response.set_body("success");
+    response.set_body(json!({
+        "post_id": post_id.to_string()
+    }));
     Ok(response)
 }
 

@@ -186,7 +186,7 @@
   transition: all 0.3s ease;
 }
 
-.context-menu-links i {
+.context-menu-links svg {
   margin-right: 10px;
 }
 

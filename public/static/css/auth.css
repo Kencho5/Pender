@@ -153,6 +153,6 @@ input[type="password"] {
   outline: 3px solid #e83e36 !important;
 }
 
-.msg i {
+.msg svg {
   margin-right: 5px;
 }
