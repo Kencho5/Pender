@@ -30,10 +30,29 @@
     },
     "UPLOAD": {
       "animal": "Animal",
-      "breed": "Breed"
+      "breed": "Breed",
+      "post_type": "Post Type",
+      "price": "Price (GEL)",
+      "age_years": "Age (Years)",
+      "age_months": "Age (Months)",
+      "gender": "Sex",
+      "boy": "Boy",
+      "girl": "Girl",
+      "description": "Description",
+      "photos": "Photos (Min/Max 3)",
+      "select_photos": "Select Photos"
     },
     "ANIMALS": {
-      "dog": "Dog"
+      "dog": "Dog",
+      "cat": "Cat",
+      "bird": "Bird",
+      "fish": "Fish",
+      "other": "Other"
+    },
+    "POSTTYPE": {
+      "selling": "Selling",
+      "meeting": "Meeting",
+      "adopting": "Adopting"
     }
   },
   "GE": {
@@ -67,10 +86,29 @@
     },
     "UPLOAD": {
       "animal": "ცხოველი",
-      "breed": "ჯიში"
+      "breed": "ჯიში",
+      "post_type": "პოსტის ტიპი",
+      "price": "ფასი (ლარი)",
+      "age_years": "ასაკი (წელი)",
+      "age_months": "ასაკი (თვე)",
+      "gender": "სქესი",
+      "boy": "ბიჭი",
+      "girl": "გოგო",
+      "description": "აღწერა",
+      "photos": "ფოტოები (მინ/მაქს 3)",
+      "select_photos": "აირჩიეთ ფოტოები"
     },
     "ANIMALS": {
-      "dog": "ძაღლი"
+      "dog": "ძაღლი",
+      "cat": "კატა",
+      "bird": "ფრინველი",
+      "fish": "თევზი",
+      "other": "სხვა"
+    },
+    "POSTTYPE": {
+      "selling": "გაყიდვა",
+      "meeting": "შეხვედრა",
+      "adopting": "შეფარება"
     }
   }
 }

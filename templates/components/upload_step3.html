@@ -1,0 +1,51 @@
+<!-- AGE YEARS INPUT -->
+<label for="age_years" class="input-label">{{ tr.UPLOAD.age_years }}</label>
+<div class="input-group">
+  <i class="fa-solid fa-calendar icon"></i>
+  <input
+    type="text"
+    name="age_years"
+    aria-label="Age Years"
+    class="form-input"
+    value="0"
+  />
+</div>
+
+<!-- AGE MONTHS INPUT -->
+<label for="age_months" class="input-label">{{ tr.UPLOAD.age_months}}</label>
+<div class="input-group">
+  <i class="fa-solid fa-calendar icon"></i>
+  <input
+    type="text"
+    name="age_months"
+    aria-label="Age Months"
+    class="form-input"
+    value="0"
+  />
+</div>
+
+<!-- GENDER INPUT -->
+<label for="gender" class="input-label">{{ tr.UPLOAD.gender }}</label>
+<div class="input-group">
+  <i class="fa fa-venus-mars icon dropdown-icon"></i>
+  <div
+    aria-label="Gender"
+    class="form-input dropdown-div"
+    onclick="toggleDropdown()"
+    target="gender"
+  ></div>
+  <i class="fa fa-caret-down icon-right"></i>
+
+  <input type="hidden" name="gender" value="" class="dropdown-input" />
+</div>
+
+<div class="dropdown">
+  <div class="dropdown-content">
+    <p id="boy" data-target="gender">{{ tr.UPLOAD.boy }}</p>
+    <p id="girl" data-target="gender">{{ tr.UPLOAD.girl }}</p>
+  </div>
+</div>
+
+<button type="button" class="next-btn" onclick="validateForm()">
+  <i class="fa-solid fa-arrow-right-long"></i>
+</button>

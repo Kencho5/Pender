@@ -2,7 +2,7 @@ use serde::Deserialize;
 use std::fs::File;
 use std::io::Read;
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Deserialize, Clone)]
 pub struct Config {
     pub database: DatabaseConfig,
     pub smtp: SmtpConfig,
@@ -10,7 +10,7 @@ pub struct Config {
     pub port: String,
 }
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Deserialize, Clone)]
 pub struct DatabaseConfig {
     pub username: String,
     pub password: String,
@@ -19,7 +19,7 @@ pub struct DatabaseConfig {
     pub db_name: String,
 }
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Deserialize, Clone)]
 pub struct SmtpConfig {
     pub username: String,
     pub password: String,

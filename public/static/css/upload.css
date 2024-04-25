@@ -19,6 +19,10 @@
   margin-bottom: 30px;
 }
 
+.dropdown-icon {
+  padding-top: 17px;
+}
+
 .input-group div:not(:empty) {
   padding: 9px;
   padding-left: 35px;
@@ -31,6 +35,7 @@
   transform: translateY(-50%);
   z-index: 1;
   font-size: 16px;
+  padding-top: 15px;
 }
 
 .icon {
@@ -53,6 +58,7 @@
   z-index: 10;
   text-align: center;
   border-radius: 10px;
+  top: -30px;
 }
 
 .dropdown-content p {
@@ -68,4 +74,95 @@
 
 .active-dropdown {
   display: block;
+}
+
+.input-group {
+  margin-top: 5px;
+}
+
+#step2,
+#step3,
+#step4,
+#step5 {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.description-input {
+  padding: 12px;
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  outline-color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 30px;
+  height: 70px;
+  resize: none;
+  padding-left: 35px;
+}
+
+.textarea-icon {
+  position: absolute;
+  left: 10px;
+  top: 20%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 16px;
+  /* padding-top: 15px; */
+}
+
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.photos-icon {
+  padding-top: 16px;
+}
+
+.images-div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  width: 70%;
+  margin: auto;
+}
+
+.images-div img {
+  margin: auto;
+  margin-bottom: 10px;
+  border: 4px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.images-div i {
+  margin: auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: var(--text);
+  width: 200px;
+  background-color: var(--background);
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.images-div i:hover {
+  transform: scale(1.1);
+}
+
+input[type="submit"] {
+  margin-bottom: 0;
 }

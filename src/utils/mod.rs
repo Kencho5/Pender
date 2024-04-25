@@ -3,3 +3,4 @@ pub mod cities;
 pub mod common;
 pub mod language;
 pub mod translations;
+pub mod upload_struct;

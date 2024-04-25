@@ -4,44 +4,36 @@
 
 <body>
   <div class="form-div">
-    <form hx-post="/upload" class="auth-form" name="uploadForm">
+    <form
+      class="auth-form"
+      name="uploadForm"
+    >
       <p class="auth-form-title">{{ tr.NAV.upload }}</p>
 
-      <!-- ANIMAl INPUT -->
-      <label for="animal" class="input-label">{{ tr.UPLOAD.animal }}</label>
-      <div class="input-group">
-        <i class="fa fa-paw icon"></i>
-        <div
-          aria-label="Animal"
-          class="form-input dropdown-div"
-          onclick="toggleDropdown()"
-        ></div>
-        <i class="fa fa-caret-down icon-right"></i>
-
-        <input type="hidden" name="animal" value="" class="dropdown-input" />
+      <div class="inputs-wrapper" id="step1">
+        {% include "components/upload_step1.html" %}
       </div>
 
-      <div class="dropdown">
-        <div class="dropdown-content">
-          <p id="dog">{{ tr.ANIMALS.dog }}</p>
-        </div>
+      <div class="inputs-wrapper" id="step2">
+        {% include "components/upload_step2.html" %}
       </div>
 
-      <!-- BREED INPUT -->
-      <label for="breed" class="input-label">{{ tr.UPLOAD.breed }}</label>
-      <div class="input-group">
-        <i class="fa-solid fa-dna icon"></i>
-        <input type="text" name="breed" aria-label="Breed" class="form-input" />
-        <i class="fa-solid fa-dna icon"></i>
+      <div class="inputs-wrapper" id="step3">
+        {% include "components/upload_step3.html" %}
       </div>
 
-      <button type="button" class="next-btn" onclick="validateForm()">
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </button>
+      <div class="inputs-wrapper" id="step4">
+        {% include "components/upload_step4.html" %}
+      </div>
+
+      <div class="inputs-wrapper" id="step5">
+        {% include "components/upload_step5.html" %}
+      </div>
 
       <div class="msg"></div>
     </form>
   </div>
+  <div id="imageContainer" class="images-div"></div>
 
   <script src="/static/js/upload.js"></script>
 </body>
