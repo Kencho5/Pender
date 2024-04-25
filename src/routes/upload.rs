@@ -27,7 +27,8 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
                 response.set_body("success");
                 return Ok(response);
             }
-            Err(_) => {
+            Err(error) => {
+                println!("{}", error);
                 response.set_body(
             r#"<p class='error'><i class="fa-solid fa-circle-exclamation"></i>Failed to upload photos</p>"#,
         );
