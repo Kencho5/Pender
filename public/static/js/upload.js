@@ -155,8 +155,11 @@ document.querySelector(".auth-form").addEventListener(
 
     formData.forEach(function (value, key) {
       if (key == "photos") {
-        const bytes = toBase64(value);
-        promises.push(bytes.then(function (result) {
+        const compressedFile = compressImage(value, {
+          quality: 0.5,
+          type: "image/jpeg",
+        });
+        promises.push(compressedFile.then(function (result) {
           if (!body["photos"]) body["photos"] = [result];
           else body["photos"].push(result);
         }));
@@ -184,3 +187,20 @@ document.querySelector(".auth-form").addEventListener(
     });
   },
 );
+
+const compressImage = async (file, { quality = 1, type = file.type }) => {
+  // Get as image data
+  const imageBitmap = await createImageBitmap(file);
+
+  // Draw to canvas
+  const canvas = document.createElement("canvas");
+  canvas.width = imageBitmap.width;
+  canvas.height = imageBitmap.height;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(imageBitmap, 0, 0);
+
+  // Get base64 representation
+  const base64 = canvas.toDataURL(type, quality);
+
+  return base64;
+};
