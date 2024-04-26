@@ -149,60 +149,33 @@ input[type="submit"] {
   margin-bottom: 0;
 }
 
+.success {
+  margin-top: 0;
+}
+
 /* PROGRESS BAR */
-@keyframes progress {
-  0% {
-    --percentage: 0;
-  }
-  100% {
-    --percentage: var(--value);
-  }
-}
-
-@property --percentage {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
-}
-
-[role="progressbar"] {
-  --percentage: var(--value);
-  --primary: #f2be5c;
-  --secondary: #39bfb2;
-  --size: 100px;
-  animation: progress 1s 0.5s forwards;
-  width: var(--size);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
+.progress-div {
   display: none;
-  place-items: center;
+}
+
+.progress-bar {
   margin: auto;
   margin-top: 30px;
-}
-
-[role="progressbar"]::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background: conic-gradient(
-    var(--primary) calc(var(--percentage) * 1%),
-    var(--secondary) 0
-  );
-  mask: radial-gradient(white 55%, transparent 0);
-  mask-mode: alpha;
-  -webkit-mask: radial-gradient(#0000 55%, #000 0);
-  -webkit-mask-mode: alpha;
+  height: 20px;
+  background-color: var(--accent);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-[role="progressbar"]::after {
-  counter-reset: percentage var(--value);
-  content: counter(percentage) "%";
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: calc(var(--size) / 5);
-  color: var(--primary);
+.progress {
+  height: 100%;
+  background-color: var(--secondary);
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
 }

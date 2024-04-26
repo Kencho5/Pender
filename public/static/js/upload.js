@@ -195,22 +195,28 @@ function uploadPost(body) {
   xhr.upload.addEventListener("progress", (event) => {
     if (event.lengthComputable) {
       const percent = (event.loaded / event.total) * 100;
-      const progressBar = document.querySelector('[role="progressbar"]');
+      const progressDiv = document.querySelector(".progress-div");
+      const progressBar = document.querySelector(".progress");
+      const progressInfo = document.querySelector(".progress-percentage");
 
-      progressBar.style.display = "grid";
-      progressBar.style.setProperty("--value", percent);
-      progressBar.setAttribute("aria-valuenow", percent);
+      progressDiv.style.display = "block";
+      progressBar.style.width = percent;
+      progressInfo.textContent = `${percent}%`;
     }
   });
 
   xhr.onload = async function () {
+    const progressStatus = document.querySelector(".progress-status");
+    progressStatus.textContent = "Done!";
+
     const data = JSON.parse(xhr.responseText);
     const { error, post_id } = data;
 
+    const msg = document.querySelector(".msg");
     if (error) {
-      showFormMessage(error, "error");
+      msg.innerHTML =
+        '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>Error uploading post</p>';
     } else {
-      const msg = document.querySelector(".msg");
       msg.innerHTML =
         `<p class='success'><i class="fa-solid fa-circle-check"></i>Upload complete!</p>`;
       await delay(700);
