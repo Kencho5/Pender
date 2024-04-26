@@ -1,6 +1,8 @@
 #[derive(serde::Deserialize)]
 pub struct UploadForm {
     pub photos: Vec<String>,
+    pub animal: String,
+    pub breed: String,
     pub post_type: String,
     pub price: String,
     pub age_years: String,

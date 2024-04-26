@@ -22,12 +22,17 @@
 </div>
 
 <!-- PRICE INPUT -->
-<label for="price" class="input-label price-hidden" style="display: none"
+<label for="price" class="input-label price-hidden hidden"
   >{{ tr.UPLOAD.price }}</label
 >
-<div class="input-group price-hidden" style="display: none">
+<div class="input-group price-hidden hidden">
   <i class="fa-solid fa-tag icon"></i>
-  <input type="hidden" name="price" aria-label="Price" class="form-input" />
+  <input
+    type="text"
+    name="price"
+    aria-label="Price"
+    class="form-input price-hidden"
+  />
 </div>
 
 <button

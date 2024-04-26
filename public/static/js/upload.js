@@ -9,7 +9,8 @@ function validateForm() {
 
     return (
       (input.tagName === "DIV" && !input.innerHTML) ||
-      (input.tagName === "INPUT" && !input.value && input.type !== "hidden")
+      (input.tagName === "INPUT" && !input.value &&
+        !input.classList.contains("hidden"))
     );
   };
 
@@ -57,16 +58,16 @@ function handleDropdownSelection() {
   const dropdownContent = document.querySelectorAll(".dropdown-content");
 
   const handlePostTypeSelection = (event) => {
-    if (
-      event.target.getAttribute("data-target") === "post_type" &&
-      event.target.id === "selling"
-    ) {
-      const priceInputs = Array.from(
-        document.getElementsByClassName("price-hidden"),
-      );
-      document.getElementsByName("price")[0].type = "text";
+    const priceInputs = Array.from(
+      document.getElementsByClassName("price-hidden"),
+    );
+    if (event.target.id == "selling") {
       priceInputs.forEach((element) => {
-        element.style.display = "block";
+        element.classList.remove("hidden");
+      });
+    } else if (event.target.id != "selling") {
+      priceInputs.forEach((element) => {
+        element.classList.add("hidden");
       });
     }
   };
@@ -247,7 +248,7 @@ function uploadPost(body) {
       msg.innerHTML =
         `<p class='success'><i class="fa-solid fa-circle-check"></i>Upload complete!</p>`;
       await delay(700);
-      // window.location.href = `/post/${post_id}`;
+      window.location.href = `/post/${post_id}`;
     }
   };
 
