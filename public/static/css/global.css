@@ -33,7 +33,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.5px;
   background-color: var(--background);
-  transition: opacity 0.65s ease-out;
+  transition: opacity 0.45s ease-out;
   opacity: 0;
   overscroll-behavior: none;
   scroll-behavior: smooth;
