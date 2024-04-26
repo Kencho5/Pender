@@ -180,27 +180,29 @@ document.querySelector(".auth-form").addEventListener(
   },
 );
 
-async function uploadPost(body) {
-  const response = await fetch("/upload", {
-    method: "POST",
-    body: JSON.stringify(body),
-  });
-  let total = 0;
+function uploadPost(body) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "/upload", true);
 
-  for await (const chunk of response.body) {
-    total += chunk.length;
-    console.log(total);
-  }
-  // .then(function (response) {
-  //   return response.json();
-  // })
-  // .then(function (data) {
-  //   const { error, post_id } = data;
-  //
-  //   if (error) {
-  //     showFormMessage(error, "error");
-  //   } else {
-  //     // window.location.href = `/post/${post_id}`;
-  //   }
-  // });
+  // Upload progress
+  xhr.upload.addEventListener("progress", (event) => {
+    if (event.lengthComputable) {
+      const percentComplete = (event.loaded / event.total) * 100;
+      console.log(`Upload Progress: ${percentComplete.toFixed(2)}%`);
+    }
+  });
+
+  // Response handling
+  xhr.onload = function () {
+    const data = JSON.parse(xhr.responseText);
+    const { error, post_id } = data;
+
+    if (error) {
+      showFormMessage(error, "error");
+    } else {
+      // window.location.href = `/post/${post_id}`;
+    }
+  };
+
+  xhr.send(JSON.stringify(body));
 }
