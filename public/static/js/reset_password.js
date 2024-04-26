@@ -20,3 +20,7 @@ document.body.addEventListener("htmx:beforeSend", function () {
   spinnerDiv.style.display = "block";
   msgDiv.style.display = "none";
 });
+
+window.onload = function () {
+  document.getElementsByName("resetForm")[0].reset();
+};
