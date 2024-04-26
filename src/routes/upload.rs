@@ -1,11 +1,14 @@
 use crate::imports::*;
-use crate::utils::{self, upload_struct};
+use crate::utils::{self, common::logged_in, upload_struct};
 
 use std::fs::File;
 use std::io::Write;
 
 pub async fn upload_handler(req: Request<AppState>) -> tide::Result {
     let context = utils::common::get_context(&req).await?;
+    if !logged_in(&context).await? {
+        return Ok(tide::Redirect::see_other("/login").into());
+    }
 
     let state = req.state();
     let response = state

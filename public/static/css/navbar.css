@@ -27,10 +27,10 @@
   padding: 10px;
 }
 
-.navbar-logo,
-.navbar-profile {
-  flex: 0 0 150px;
-}
+/* .navbar-logo, */
+/* .navbar-profile { */
+/*   flex: 0 0 150px; */
+/* } */
 
 .navbar-logo {
   width: 190px;
