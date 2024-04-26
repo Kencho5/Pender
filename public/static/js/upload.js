@@ -194,14 +194,19 @@ function uploadPost(body) {
 
   xhr.upload.addEventListener("progress", (event) => {
     if (event.lengthComputable) {
+      let threshold = 20;
       const percent = Math.floor((event.loaded / event.total) * 100);
       const progressDiv = document.querySelector(".progress-div");
       const progressBar = document.querySelector(".progress");
       const progressInfo = document.querySelector(".progress-percentage");
 
-      progressDiv.style.display = "block";
-      progressBar.style.width = percent;
-      progressInfo.textContent = `${percent}%`;
+      if (percent >= threshold) {
+        progressDiv.style.display = "block";
+        progressBar.style.width = `${percent}%`;
+        progressInfo.textContent = `${percent}%`;
+
+        threshold += 20;
+      }
     }
   });
 
