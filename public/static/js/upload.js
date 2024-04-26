@@ -168,7 +168,7 @@ function handleFormSubmit() {
       formData.forEach(function (value, key) {
         if (key === "photos") {
           const compressedFile = compressImage(value, {
-            quality: 0.4,
+            quality: 0.6,
             type: "image/jpeg",
           });
           promises.push(
