@@ -1,17 +1,25 @@
 <!-- PHOTOS INPUT -->
-<!-- <label for="photos" class="input-label">{{ tr.UPLOAD.photos }}</label> -->
-<!-- <div class="input-group"> -->
-<!--   <i class="fa-solid fa-image icon photos-icon"></i> -->
-<!--   <div aria-label="Photos Div" class="form-input" id="photosDiv"></div> -->
-<!---->
-<!--   <input -->
-<!--     type="file" -->
-<!--     name="photos" -->
-<!--     aria-label="Photos" -->
-<!--     accept="image/*" -->
-<!--     id="fileInput" -->
-<!--     multiple -->
-<!--   /> -->
-<!-- </div> -->
-<!---->
-<!-- <input type="submit" value="Upload" /> -->
+<label for="photos" class="input-label">{{ tr.UPLOAD.photos }}</label>
+<div class="input-group">
+  <i class="fa-solid fa-image icon photos-icon"></i>
+  <div aria-label="Photos Div" class="form-input" id="photosDiv"></div>
+
+  <input
+    type="file"
+    name="photos"
+    aria-label="Photos"
+    accept="image/*"
+    id="fileInput"
+    multiple
+  />
+</div>
+
+<input type="submit" value="Upload" />
+
+<div
+  role="progressbar"
+  aria-valuenow="0"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  style="--value: 0"
+></div>
