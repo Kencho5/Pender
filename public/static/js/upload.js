@@ -194,7 +194,7 @@ function uploadPost(body) {
 
   xhr.upload.addEventListener("progress", (event) => {
     if (event.lengthComputable) {
-      const percent = (event.loaded / event.total) * 100;
+      const percent = Math.floor((event.loaded / event.total) * 100);
       const progressDiv = document.querySelector(".progress-div");
       const progressBar = document.querySelector(".progress");
       const progressInfo = document.querySelector(".progress-percentage");
