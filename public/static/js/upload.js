@@ -156,7 +156,7 @@ document.querySelector(".auth-form").addEventListener(
     formData.forEach(function (value, key) {
       if (key == "photos") {
         const compressedFile = compressImage(value, {
-          quality: 0.5,
+          quality: 0.3,
           type: "image/jpeg",
         });
         promises.push(compressedFile.then(function (result) {
