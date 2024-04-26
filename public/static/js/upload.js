@@ -163,7 +163,7 @@ document.querySelector(".auth-form").addEventListener(
     formData.forEach(function (value, key) {
       if (key === "photos") {
         const compressedFile = compressImage(value, {
-          quality: 0.5,
+          quality: 1,
           type: "image/jpeg",
         });
         promises.push(compressedFile.then(function (result) {
@@ -180,29 +180,27 @@ document.querySelector(".auth-form").addEventListener(
   },
 );
 
-function uploadPost(body) {
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "/upload", true);
-
-  // Upload progress
-  xhr.upload.addEventListener("progress", (event) => {
-    if (event.lengthComputable) {
-      const percentComplete = (event.loaded / event.total) * 100;
-      console.log(`Upload Progress: ${percentComplete.toFixed(2)}%`);
-    }
+async function uploadPost(body) {
+  const response = await fetch("/upload", {
+    method: "POST",
+    body: JSON.stringify(body),
   });
+  let total = 0;
 
-  // Response handling
-  xhr.onload = function () {
-    const data = JSON.parse(xhr.responseText);
-    const { error, post_id } = data;
-
-    if (error) {
-      showFormMessage(error, "error");
-    } else {
-      // window.location.href = `/post/${post_id}`;
-    }
-  };
-
-  xhr.send(JSON.stringify(body));
+  for await (const chunk of response.body) {
+    total += chunk.length;
+    console.log(total);
+  }
+  // .then(function (response) {
+  //   return response.json();
+  // })
+  // .then(function (data) {
+  //   const { error, post_id } = data;
+  //
+  //   if (error) {
+  //     showFormMessage(error, "error");
+  //   } else {
+  //     // window.location.href = `/post/${post_id}`;
+  //   }
+  // });
 }
