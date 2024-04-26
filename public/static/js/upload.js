@@ -1,22 +1,31 @@
 let step = 1;
 
 function validateForm() {
-  const inputs = document.querySelectorAll(".form-input");
+  const inputs = Array.from(document.querySelectorAll(".form-input"));
   let isValid = true;
 
+  const isEmptyInput = (input) => {
+    if (input.parentNode.parentNode.id !== `step${step}`) return false;
+
+    return (
+      (input.tagName === "DIV" && !input.innerHTML) ||
+      (input.tagName === "INPUT" && !input.value && input.type !== "hidden")
+    );
+  };
+
+  const handleInvalidInput = (input) => {
+    input.classList.add("invalid");
+    isValid = false;
+  };
+
   inputs.forEach((input) => {
-    if (input.parentNode.parentNode.id !== `step${step}`) return;
-
-    const isEmptyInput = (input.tagName === "DIV" && !input.innerHTML) ||
-      (input.tagName === "INPUT" && !input.value && input.type !== "hidden");
-
-    if (isEmptyInput) {
-      input.classList.add("invalid");
-      isValid = false;
+    if (isEmptyInput(input)) {
+      handleInvalidInput(input);
     }
   });
 
   const msg = document.querySelector(".msg");
+
   if (!isValid) {
     msg.innerHTML =
       '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>Fill in the form</p>';
@@ -46,32 +55,37 @@ function handleInputChange() {
 
 function handleDropdownSelection() {
   const dropdownContent = document.querySelectorAll(".dropdown-content");
-  dropdownContent.forEach(function (content) {
-    content.addEventListener("click", function (event) {
-      if (
-        event.target.getAttribute("data-target") === "post_type" &&
-        event.target.id === "selling"
-      ) {
-        const priceInputs = Array.from(
-          document.getElementsByClassName("price-hidden"),
-        );
-        document.getElementsByName("price")[0].type = "text";
 
-        priceInputs.forEach((element) => {
-          element.style.display = "block";
-        });
-      }
-      if (event.target.tagName === "P") {
-        const selectedText = event.target.textContent;
-        const selectedId = event.target.id;
-        const selectedData = event.target.getAttribute("data-target");
+  const handlePostTypeSelection = (event) => {
+    if (
+      event.target.getAttribute("data-target") === "post_type" &&
+      event.target.id === "selling"
+    ) {
+      const priceInputs = Array.from(
+        document.getElementsByClassName("price-hidden"),
+      );
+      document.getElementsByName("price")[0].type = "text";
+      priceInputs.forEach((element) => {
+        element.style.display = "block";
+      });
+    }
+  };
 
-        document.querySelector(`div[target="${selectedData}"]`).textContent =
-          selectedText;
-        document.getElementsByName(selectedData)[0].value = selectedId;
-        toggleDropdown();
-      }
-    });
+  const handleDropdownItemClick = (event) => {
+    if (event.target.tagName === "P") {
+      const selectedText = event.target.textContent;
+      const selectedId = event.target.id;
+      const selectedData = event.target.getAttribute("data-target");
+      document.querySelector(`div[target="${selectedData}"]`).textContent =
+        selectedText;
+      document.getElementsByName(selectedData)[0].value = selectedId;
+      toggleDropdown();
+    }
+  };
+
+  dropdownContent.forEach((content) => {
+    content.addEventListener("click", handlePostTypeSelection);
+    content.addEventListener("click", handleDropdownItemClick);
   });
 }
 
@@ -99,14 +113,15 @@ function handleFileUpload() {
   const photosDiv = document.getElementById("photosDiv");
   const imageContainer = document.getElementById("imageContainer");
 
-  photosDiv.addEventListener("click", function () {
+  const handlePhotoDivClick = () => {
     fileInput.click();
-  });
+  };
 
-  fileInput.addEventListener("change", function () {
-    const files = this.files;
+  const handleFileChange = () => {
+    const files = fileInput.files;
+
     if (files.length !== 3) {
-      this.value = "";
+      fileInput.value = "";
       document.querySelector('[name="photos"]').value = "";
       msg.innerHTML =
         '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>3 Photos Min/Max!</p>';
@@ -117,18 +132,25 @@ function handleFileUpload() {
     imageContainer.innerHTML = "";
     photosDiv.innerHTML = "3 Photos Selected";
 
-    for (let i = 0; i < this.files.length; i++) {
-      const file = this.files[i];
-
+    for (const file of files) {
       if (file.type.startsWith("image/")) {
         const img = document.createElement("img");
         img.src = URL.createObjectURL(file);
         img.width = 200;
         img.height = 150;
         imageContainer.appendChild(img);
+      } else {
+        fileInput.value = "";
+        document.querySelector('[name="photos"]').value = "";
+        msg.innerHTML =
+          '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>Only photos allowed</p>';
+        return;
       }
     }
-  });
+  };
+
+  photosDiv.addEventListener("click", handlePhotoDivClick);
+  fileInput.addEventListener("change", handleFileChange);
 }
 
 function toBase64(file) {
