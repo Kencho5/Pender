@@ -33,6 +33,19 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
         }
     }
 
+    let mut pg_conn = req.sqlx_conn::<Postgres>().await;
+    if !insert_post(&mut pg_conn, post_id, &form_data).await {
+        response.set_body(
+            r#"
+            <p class='error'>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Failed to upload
+            </p>
+            "#,
+        );
+        return Ok(response);
+    }
+
     response.set_body(json!({
         "post_id": post_id.to_string()
     }));
@@ -51,4 +64,28 @@ fn save_images(post_id: Uuid, photo: &String, index: usize) -> Result<(), std::i
     file.write_all(&image)?;
 
     Ok(())
+}
+
+async fn insert_post(
+    pg_conn: &mut sqlx::PgConnection,
+    post_id: Uuid,
+    post: &upload_struct::UploadForm,
+) -> bool {
+    let insert_result = sqlx::query(
+        "INSERT INTO posts(id, animal, breed, post_type, price, age_years, age_months, gender, phone, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)",
+    )
+    .bind(post_id.to_string())
+    .bind(&post.animal)
+    .bind(&post.breed)
+    .bind(&post.post_type)
+    .bind(&post.price)
+    .bind(&post.age_years)
+    .bind(&post.age_months)
+    .bind(&post.gender)
+    .bind(&post.phone)
+    .bind(&post.description)
+    .execute(pg_conn)
+    .await;
+
+    insert_result.is_ok()
 }
