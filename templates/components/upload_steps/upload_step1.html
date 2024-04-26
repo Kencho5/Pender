@@ -1,40 +1,58 @@
 <!-- ANIMAl INPUT -->
-<label for="animal" class="input-label">{{ tr.UPLOAD.animal }}</label>
-<div class="input-group">
-  <i class="fa fa-paw icon dropdown-icon"></i>
-  <div
-    aria-label="Animal"
-    class="form-input dropdown-div"
-    onclick="toggleDropdown()"
-    target="animal"
-  ></div>
-  <i class="fa fa-caret-down icon-right"></i>
-
-  <input type="hidden" name="animal" value="" class="dropdown-input" />
-</div>
-
-<div class="dropdown">
-  <div class="dropdown-content">
-    <p id="dog" data-target="animal">{{ tr.ANIMALS.dog }}</p>
-    <p id="cat" data-target="animal">{{ tr.ANIMALS.cat }}</p>
-    <p id="bird" data-target="animal">{{ tr.ANIMALS.bird }}</p>
-    <p id="fish" data-target="animal">{{ tr.ANIMALS.fish }}</p>
-    <p id="other" data-target="animal">{{ tr.ANIMALS.other }}</p>
-  </div>
-</div>
+<!-- <label for="animal" class="input-label">{{ tr.UPLOAD.animal }}</label> -->
+<!-- <div class="input-group"> -->
+<!--   <i class="fa fa-paw icon dropdown-icon"></i> -->
+<!--   <div -->
+<!--     aria-label="Animal" -->
+<!--     class="form-input dropdown-div" -->
+<!--     onclick="toggleDropdown()" -->
+<!--     target="animal" -->
+<!--   ></div> -->
+<!--   <i class="fa fa-caret-down icon-right"></i> -->
+<!---->
+<!--   <input type="hidden" name="animal" value="" class="dropdown-input" /> -->
+<!-- </div> -->
+<!---->
+<!-- <div class="dropdown"> -->
+<!--   <div class="dropdown-content"> -->
+<!--     <p id="dog" data-target="animal">{{ tr.ANIMALS.dog }}</p> -->
+<!--     <p id="cat" data-target="animal">{{ tr.ANIMALS.cat }}</p> -->
+<!--     <p id="bird" data-target="animal">{{ tr.ANIMALS.bird }}</p> -->
+<!--     <p id="fish" data-target="animal">{{ tr.ANIMALS.fish }}</p> -->
+<!--     <p id="other" data-target="animal">{{ tr.ANIMALS.other }}</p> -->
+<!--   </div> -->
+<!-- </div> -->
 
 <!-- BREED INPUT -->
-<label for="breed" class="input-label">{{ tr.UPLOAD.breed }}</label>
+<!-- <label for="breed" class="input-label">{{ tr.UPLOAD.breed }}</label> -->
+<!-- <div class="input-group"> -->
+<!--   <i class="fa-solid fa-dna icon"></i> -->
+<!--   <input type="text" name="breed" aria-label="Breed" class="form-input" /> -->
+<!-- </div> -->
+<!---->
+<!-- <button -->
+<!--   type="button" -->
+<!--   class="next-btn" -->
+<!--   onclick="validateForm()" -->
+<!--   aria-label="Next" -->
+<!-- > -->
+<!--   <i class="fa-solid fa-arrow-right-long"></i> -->
+<!-- </button> -->
+
+<!-- PHOTOS INPUT -->
+<label for="photos" class="input-label">{{ tr.UPLOAD.photos }}</label>
 <div class="input-group">
-  <i class="fa-solid fa-dna icon"></i>
-  <input type="text" name="breed" aria-label="Breed" class="form-input" />
+  <i class="fa-solid fa-image icon photos-icon"></i>
+  <div aria-label="Photos Div" class="form-input" id="photosDiv"></div>
+
+  <input
+    type="file"
+    name="photos"
+    aria-label="Photos"
+    accept="image/*"
+    id="fileInput"
+    multiple
+  />
 </div>
 
-<button
-  type="button"
-  class="next-btn"
-  onclick="validateForm()"
-  aria-label="Next"
->
-  <i class="fa-solid fa-arrow-right-long"></i>
-</button>
+<input type="submit" value="Upload" />

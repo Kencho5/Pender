@@ -1,88 +1,36 @@
-let step = 1;
-
-function validateForm() {
+// form-validation.js
+function validateForm(step) {
   const inputs = document.querySelectorAll(".form-input");
   let isValid = true;
 
   inputs.forEach((input) => {
-    if (
-      input.parentNode.parentNode.id != `step${step}`
-    ) return;
+    if (input.parentNode.parentNode.id !== `step${step}`) return;
 
     if (
-      (input.tagName == "DIV" && !input.innerHTML) ||
-      (input.tagName == "INPUT" && !input.value) &&
-        input.type != "hidden"
+      (input.tagName === "DIV" && !input.innerHTML) ||
+      (input.tagName === "INPUT" && !input.value && input.type !== "hidden")
     ) {
       input.classList.add("invalid");
       isValid = false;
     }
   });
 
-  const msg = document.querySelector(".msg");
-  if (!isValid) {
-    msg.innerHTML =
-      '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>Fill in the form</p>';
-  } else {
-    msg.innerHTML = "";
-    step++;
-    changeStep();
-  }
-
   return isValid;
 }
 
-const inputs = document.querySelectorAll(".form-input");
-inputs.forEach((input) => {
-  input.addEventListener("input", function () {
-    this.classList.remove("invalid");
-  });
-
-  if (input.tagName == "DIV") {
-    input.addEventListener("click", function () {
-      this.classList.remove("invalid");
-    });
-  }
-});
-
-const dropdownContent = document.querySelectorAll(".dropdown-content");
-dropdownContent.forEach(function (content) {
-  content.addEventListener("click", function (event) {
-    if (
-      event.target.getAttribute("data-target") == "post_type" &&
-      event.target.id == "selling"
-    ) {
-      const priceInputs = Array.from(
-        document.getElementsByClassName("price-hidden"),
-      );
-      document.getElementsByName("price")[0].type = "text";
-
-      priceInputs.forEach((element) => {
-        element.style.display = "block";
-      });
-    }
-    if (event.target.tagName === "P") {
-      const selectedText = event.target.textContent;
-      const selectedId = event.target.id;
-      const selectedData = event.target.getAttribute("data-target");
-
-      document.querySelector(`div[target="${selectedData}"]`).textContent =
-        selectedText;
-      document.getElementsByName(selectedData)[0].value = selectedId;
-      toggleDropdown();
-    }
-  });
-});
+// ui-helpers.js
+function showFormMessage(message, type) {
+  const msg = document.querySelector(".msg");
+  msg.innerHTML = `<p class="${type}">${message}</p>`;
+}
 
 function toggleDropdown() {
-  dropdownContent.forEach(function (content) {
-    content.classList.toggle(
-      "active-dropdown",
-    );
+  dropdownContent.forEach((content) => {
+    content.classList.toggle("active-dropdown");
   });
 }
 
-function changeStep() {
+function changeStep(step) {
   if (step >= 6) return;
   const prevStep = document.querySelector(`#step${step - 1}`);
   const activeStep = document.querySelector(`#step${step}`);
@@ -94,59 +42,118 @@ function changeStep() {
   activeStep.style.opacity = "1";
 }
 
+// event-handlers.js
+const inputs = document.querySelectorAll(".form-input");
+inputs.forEach((input) => {
+  input.addEventListener("input", function () {
+    this.classList.remove("invalid");
+  });
+
+  if (input.tagName === "DIV") {
+    input.addEventListener("click", function () {
+      this.classList.remove("invalid");
+    });
+  }
+});
+
+const dropdownContent = document.querySelectorAll(".dropdown-content");
+dropdownContent.forEach(function (content) {
+  content.addEventListener("click", function (event) {
+    handleDropdownClick(event);
+  });
+});
+
+function handleDropdownClick(event) {
+  if (
+    event.target.getAttribute("data-target") === "post_type" &&
+    event.target.id === "selling"
+  ) {
+    const priceInputs = Array.from(
+      document.getElementsByClassName("price-hidden"),
+    );
+    document.getElementsByName("price")[0].type = "text";
+
+    priceInputs.forEach((element) => {
+      element.style.display = "block";
+    });
+  }
+  if (event.target.tagName === "P") {
+    const selectedText = event.target.textContent;
+    const selectedId = event.target.id;
+    const selectedData = event.target.getAttribute("data-target");
+
+    document.querySelector(`div[target="${selectedData}"]`).textContent =
+      selectedText;
+    document.getElementsByName(selectedData)[0].value = selectedId;
+    toggleDropdown();
+  }
+}
+
+// image-upload.js
 document.addEventListener("DOMContentLoaded", function () {
   const fileInput = document.getElementById("fileInput");
-  const msg = document.querySelector(".msg");
   const photosDiv = document.getElementById("photosDiv");
   const imageContainer = document.getElementById("imageContainer");
 
   photosDiv.addEventListener("click", function () {
     fileInput.click();
   });
-  fileInput.addEventListener("change", function () {
-    const files = this.files;
-    if (files.length != 3) {
-      this.value = "";
-      document.querySelector('[name="photos"]').value = "";
-
-      msg.innerHTML =
-        '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>3 Photos Min/Max!</p>';
-      return;
-    }
-
-    msg.innerHTML = "";
-    imageContainer.innerHTML = "";
-    photosDiv.innerHTML = "3 Photos Selected";
-
-    for (let i = 0; i < this.files.length; i++) {
-      const file = this.files[i];
-
-      if (file.type.startsWith("image/")) {
-        // CREATE IMAGE
-        const img = document.createElement("img");
-        img.src = URL.createObjectURL(file);
-        img.width = 200;
-        img.height = 150;
-
-        imageContainer.appendChild(img);
-      }
-    }
-  });
+  fileInput.addEventListener("change", handleFileUpload);
 });
 
-const toBase64 = (file) =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
-  });
+function handleFileUpload() {
+  const files = this.files;
+  if (files.length !== 3) {
+    this.value = "";
+    document.querySelector('[name="photos"]').value = "";
 
+    showFormMessage(
+      '<i class="fa-solid fa-circle-exclamation"></i>3 Photos Min/Max!',
+      "error",
+    );
+    return;
+  }
+
+  showFormMessage("", "");
+  imageContainer.innerHTML = "";
+  photosDiv.innerHTML = "3 Photos Selected";
+
+  for (let i = 0; i < this.files.length; i++) {
+    const file = this.files[i];
+
+    if (file.type.startsWith("image/")) {
+      const img = document.createElement("img");
+      img.src = URL.createObjectURL(file);
+      img.width = 200;
+      img.height = 150;
+
+      imageContainer.appendChild(img);
+    }
+  }
+}
+
+// image-compression.js
+const compressImage = async (file, { quality = 1, type = file.type }) => {
+  const imageBitmap = await createImageBitmap(file);
+
+  const canvas = document.createElement("canvas");
+  canvas.width = imageBitmap.width;
+  canvas.height = imageBitmap.height;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(imageBitmap, 0, 0);
+
+  const base64 = canvas.toDataURL(type, quality);
+
+  return base64;
+};
+
+// form-submission.js
 document.querySelector(".auth-form").addEventListener(
   "submit",
   async function (event) {
     event.preventDefault();
-    if (!validateForm()) return;
+    const step = 1;
+    if (!validateForm(step)) return;
 
     var formData = new FormData(this);
 
@@ -154,9 +161,9 @@ document.querySelector(".auth-form").addEventListener(
     var promises = [];
 
     formData.forEach(function (value, key) {
-      if (key == "photos") {
+      if (key === "photos") {
         const compressedFile = compressImage(value, {
-          quality: 0.3,
+          quality: 0.5,
           type: "image/jpeg",
         });
         promises.push(compressedFile.then(function (result) {
@@ -169,38 +176,33 @@ document.querySelector(".auth-form").addEventListener(
     });
 
     await Promise.all(promises);
-
-    fetch("/upload", {
-      method: "POST",
-      body: JSON.stringify(body),
-    }).then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      const { error, post_id } = data;
-
-      if (error) {
-        const msg = document.querySelector(".msg");
-        msg.innerHTML = error;
-      } else {
-        window.location.href = `/post/${post_id}`;
-      }
-    });
+    uploadPost(body);
   },
 );
 
-const compressImage = async (file, { quality = 1, type = file.type }) => {
-  // Get as image data
-  const imageBitmap = await createImageBitmap(file);
+function uploadPost(body) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "/upload", true);
 
-  // Draw to canvas
-  const canvas = document.createElement("canvas");
-  canvas.width = imageBitmap.width;
-  canvas.height = imageBitmap.height;
-  const ctx = canvas.getContext("2d");
-  ctx.drawImage(imageBitmap, 0, 0);
+  // Upload progress
+  xhr.upload.addEventListener("progress", (event) => {
+    if (event.lengthComputable) {
+      const percentComplete = (event.loaded / event.total) * 100;
+      console.log(`Upload Progress: ${percentComplete.toFixed(2)}%`);
+    }
+  });
 
-  // Get base64 representation
-  const base64 = canvas.toDataURL(type, quality);
+  // Response handling
+  xhr.onload = function () {
+    const data = JSON.parse(xhr.responseText);
+    const { error, post_id } = data;
 
-  return base64;
-};
+    if (error) {
+      showFormMessage(error, "error");
+    } else {
+      // window.location.href = `/post/${post_id}`;
+    }
+  };
+
+  xhr.send(JSON.stringify(body));
+}
