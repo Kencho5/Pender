@@ -35,22 +35,15 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .container {
+  .footer-container {
     flex-direction: column;
-    align-items: flex-start;
+  }
+
+  .footer-container div {
+    margin: 10px;
   }
 
   .footer-section {
     margin-bottom: 20px;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-links li {
-    margin-right: 0;
-    margin-bottom: 10px;
   }
 }
