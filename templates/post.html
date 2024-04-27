@@ -1,4 +1,11 @@
 {% extends "components/layout.html" %} 
 {% block content %}
-<body></body>
+<link rel="stylesheet" href="/static/css/post.css" />
+
+<body>
+  {% if post == 'error' %}
+  <h1 class="post-error">{{ tr.POST.error }}</h1>
+  {% else %}
+  {% endif %}
+</body>
 {% endblock content %}

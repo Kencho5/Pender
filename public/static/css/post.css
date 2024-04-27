@@ -1,0 +1,11 @@
+.post-error {
+  background-color: var(--background);
+  padding: 10px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

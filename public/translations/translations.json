@@ -53,6 +53,9 @@
       "selling": "Selling",
       "meeting": "Meeting",
       "adopting": "Adopting"
+    },
+    "POST": {
+      "error": "Failed to load post"
     }
   },
   "GE": {
@@ -109,6 +112,9 @@
       "selling": "გაყიდვა",
       "meeting": "შეხვედრა",
       "adopting": "შეფარება"
+    },
+    "POST": {
+      "error": "პოსტი ვერ მოიძებნა"
     }
   }
 }
