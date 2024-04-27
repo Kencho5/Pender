@@ -177,13 +177,18 @@
     <div class="circle yellow"></div>
 
     <!-- prettier-ignore -->
+    <div class="main-content">
     {% block content %}{% endblock content %}
+    </div>
 
     {% if route not in ['/register', '/login', '/upload', '/reset-password'] %}
     <a href="/upload" class="plus-btn" aria-label="Upload">
       <i class="fa-solid fa-plus"></i>
     </a>
     {% endif %}
+
+    <!-- prettier-ignore -->
+    {% include "components/footer.html" %}
 
     <script>
       window.addEventListener("load", async function () {

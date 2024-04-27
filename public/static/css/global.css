@@ -39,8 +39,13 @@ body {
   scroll-behavior: smooth;
   background: url("/assets/grain.svg") center/cover fixed;
   color: var(--text);
+  margin: 0;
   margin-top: 150px;
   /* background: var(--accent); */
+}
+
+.main-content {
+  min-height: 100vh;
 }
 
 .circle {

@@ -150,7 +150,7 @@ input[type="password"] {
 }
 
 .invalid {
-  outline: 3px solid #e83e36 !important;
+  outline: 2px solid #e83e36 !important;
 }
 
 .msg i {
