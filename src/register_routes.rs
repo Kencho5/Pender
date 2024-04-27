@@ -16,6 +16,10 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_minute(5).unwrap())
         .post(upload::upload_post_handler);
 
+    app.at("/post/:post_id")
+        .with(GovernorMiddleware::per_hour(240).unwrap())
+        .get(post::post_handler);
+
     // AUTH ROUTES
     app.at("/login")
         .get(login::login_handler)
