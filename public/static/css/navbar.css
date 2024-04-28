@@ -281,6 +281,8 @@
   display: flex;
   align-items: center;
   margin-right: 30px;
+  width: 190px;
+  justify-content: right;
 }
 
 .mobile-right {
