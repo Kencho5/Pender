@@ -11,9 +11,12 @@ function activeRoute() {
   const links = document.getElementsByClassName("navbar-links")[0].childNodes;
 
   links.forEach((link) => {
-    if (link.id == route) {
-      link.classList.add("active-navbar-link");
-    }
+    if (link.id == route) link.classList.add("active-navbar-link");
+  });
+
+  const mobileLinks = Array.from(document.getElementsByClassName("menu-link"));
+  mobileLinks.forEach((link) => {
+    if (link.id == route) link.classList.add("active-menu-link");
   });
 }
 

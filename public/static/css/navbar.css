@@ -206,7 +206,7 @@
 
 .show-mobile-menu {
   display: block;
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {

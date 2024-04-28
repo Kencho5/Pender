@@ -148,16 +148,16 @@
             placeholder="{{ tr.NAV.search }}"
           />
           <div class="mobile-menu-links">
-            <a href="/" class="menu-link active-menu-link">
+            <a href="/" class="menu-link" id="home">
               <i class="fa-solid fa-house"></i>
               {{ tr.NAV.home }}
             </a>
-            <a href="/upload" class="menu-link">
+            <a href="/upload" class="menu-link" id="upload">
               <i class="fa-solid fa-arrow-up-from-bracket"></i>
               {{ tr.NAV.upload }}
             </a>
             {% if claims %}
-            <a href="/profile" class="menu-link">
+            <a href="/profile" class="menu-link" id="profile">
               <i class="fa-solid fa-user"></i>
               {{ tr.NAV.profile }}
             </a>
