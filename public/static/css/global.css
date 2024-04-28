@@ -45,7 +45,7 @@ body {
 }
 
 .main-content {
-  height: 120vh;
+  min-height: 1000px;
 }
 
 .circle {
