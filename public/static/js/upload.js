@@ -102,6 +102,8 @@ function changeStep() {
   const prevStep = document.querySelector(`#step${step - 1}`);
   const activeStep = document.querySelector(`#step${step}`);
 
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
   prevStep.style.display = "none";
   activeStep.style.display = "block";
   activeStep.offsetHeight; // Force reflow to apply the opacity transition
