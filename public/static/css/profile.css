@@ -1,7 +1,3 @@
-.main-content {
-  height: 120vh;
-}
-
 .container {
   display: flex;
   justify-content: space-evenly;
