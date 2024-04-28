@@ -1,8 +1,11 @@
+.main-content {
+  height: 120vh;
+}
+
 .container {
   display: flex;
   justify-content: space-evenly;
   padding-top: 20px;
-  margin-bottom: 80px;
 }
 
 .left-div {
