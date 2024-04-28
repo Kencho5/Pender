@@ -12,26 +12,29 @@ function activeRoute() {
 
   links.forEach((link) => {
     if (link.id == route) {
-      link.classList.add("active");
+      link.classList.add("active-navbar-link");
     }
   });
 }
 
 document.getElementById("hamburgerMenu").addEventListener("click", async () => {
-  const contextMenu = document.getElementById("contextMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
   const menuIcon = document.getElementById("menu-icon");
 
-  if (!contextMenu.classList.contains("show-context-menu")) {
-    contextMenu.classList.remove("hide-context-menu");
-    contextMenu.classList.add("show-context-menu");
+  if (!mobileMenu.classList.contains("show-mobile-menu")) {
+    mobileMenu.classList.remove("hide-mobile-menu");
+    mobileMenu.classList.add("show-mobile-menu");
 
     menuIcon.classList = "fa-solid fa-xmark";
   } else {
-    contextMenu.classList.add("hide-context-menu");
+    mobileMenu.classList.add("fade-out");
     menuIcon.classList = "fa-solid fa-bars";
 
-    await delay(100);
-    contextMenu.classList.remove("show-context-menu");
+    await delay(300);
+
+    mobileMenu.classList.add("hide-mobile-menu");
+    mobileMenu.classList.remove("fade-out");
+    mobileMenu.classList.remove("show-mobile-menu");
   }
 });
 

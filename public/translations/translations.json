@@ -4,6 +4,7 @@
       "home": "Home",
       "upload": "Upload",
       "profile": "Profile",
+      "search": "Search...",
       "login": "Login",
       "logout": "Log Out"
     },
@@ -63,6 +64,7 @@
       "home": "მთავარი",
       "upload": "ატვირთვა",
       "profile": "პროფილი",
+      "search": "ძიება...",
       "login": "შესვლა",
       "logout": "გასვლა"
     },
