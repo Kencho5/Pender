@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
-@font-face {
-  font-family: "FontAwesome";
-  src: url("/static/css/fontawesome/webfonts/fa-solid-900.woff2")
-    format("woff2");
-  font-display: swap;
-}
-
-.fa,
-.fas {
-  font-family: "FontAwesome", sans-serif;
-}
-
 :root {
   --text: #0b4062;
   --background: #ffffeb;
