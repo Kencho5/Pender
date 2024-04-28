@@ -147,7 +147,7 @@
   right: 30px;
   top: 100px;
   background-color: var(--background);
-  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 20px;
   border-radius: 10px;
   font-size: 18px;
@@ -180,7 +180,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 120px;
+  height: 130px;
 }
 
 .mobile-menu-links i {
@@ -235,6 +235,27 @@
   animation: fadeOut 0.3s ease;
   display: none;
 }
+
+.line {
+  margin-top: 70px;
+  margin-bottom: 10px;
+  height: 2px;
+  background-color: rgba(57, 191, 178, 0.5);
+}
+
+.mobile-profile {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.mobile-profile i {
+  margin-right: 10px;
+}
+
 /* mobile menu styles END */
 
 .active-navbar-link a {
