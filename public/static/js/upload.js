@@ -133,10 +133,13 @@ function handleFileUpload() {
 
     msg.innerHTML = "";
     imageContainer.innerHTML = "";
-    photosDiv.innerHTML = "3 Photos Selected";
+    let totalSize = 0;
 
     for (const file of files) {
       if (file.type.startsWith("image/")) {
+        const size = (file.size / (1024 * 1024)).toFixed(2);
+        totalSize += parseFloat(size);
+
         const img = document.createElement("img");
         img.src = URL.createObjectURL(file);
         img.width = 200;
@@ -150,6 +153,8 @@ function handleFileUpload() {
         return;
       }
     }
+
+    photosDiv.innerHTML = `${totalSize.toFixed(2)}Mb`;
   };
 
   photosDiv.addEventListener("click", handlePhotoDivClick);
