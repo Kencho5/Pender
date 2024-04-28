@@ -155,7 +155,7 @@
 
 .search-icon {
   position: absolute;
-  top: 30px;
+  top: 33px;
   left: 30px;
 }
 
@@ -168,6 +168,7 @@
   font-weight: bold;
   border-radius: 10px;
   padding-left: 35px;
+  font-size: 18px;
 }
 
 .mobile-menu input::placeholder {
