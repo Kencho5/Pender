@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 :root {
-  --text: #4d3d2d;
-  --background: #fff9e8;
-  --primary: #f9906f;
-  --secondary: #ffc183;
-  --accent: #e6a268;
+  --text: #0b4062;
+  --background: #ffffeb;
+  --primary: #f25a38;
+  --secondary: #f2be5c;
+  --accent: #39bfb2;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   opacity: 0;
   overscroll-behavior: none;
   scroll-behavior: smooth;
-  background: url("/assets/grain2.svg") center/cover fixed;
+  background: url("/assets/grain.svg") center/cover fixed;
   color: var(--text);
   margin: 0;
   margin-top: 150px;

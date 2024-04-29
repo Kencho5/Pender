@@ -5,7 +5,7 @@
   width: 100%;
   height: 100px;
   z-index: 1000;
-  background: url("/assets/grain2.svg") center/cover fixed;
+  background: url("/assets/grain.svg") center/cover fixed;
   border-radius: 0px 0px 45px 45px;
 }
 
@@ -202,7 +202,7 @@
 
 .active-menu-link,
 .menu-link:hover {
-  background: rgba(230, 162, 104, 0.2);
+  background: rgba(57, 191, 178, 0.2);
   border-radius: 10px;
   color: var(--accent);
 }
@@ -243,7 +243,7 @@
   margin-top: 70px;
   margin-bottom: 10px;
   height: 2px;
-  background-color: rgba(230, 162, 104, 0.5);
+  background-color: rgba(57, 191, 178, 0.5);
 }
 
 .mobile-profile {
