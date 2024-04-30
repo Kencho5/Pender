@@ -63,6 +63,12 @@ input[type="password"] {
   padding-left: 45px;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+}
+
 .forgot-password {
   position: absolute;
   left: 5%;
