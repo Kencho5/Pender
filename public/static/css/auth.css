@@ -3,8 +3,9 @@
   flex-direction: column;
   width: 450px;
   background-color: var(--background);
-  padding: 30px;
-  border-radius: 10px;
+  padding: 50px;
+  border-radius: 40px;
+  border: 2px solid var(--primary);
   margin: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-weight: bold;
@@ -14,11 +15,6 @@
 @media (max-width: 600px) {
   .auth-form {
     width: 270px;
-  }
-
-  .auth-options {
-    flex-direction: column;
-    height: 80px;
   }
 }
 
@@ -31,26 +27,32 @@
 
 .input-group {
   position: relative;
+  margin-bottom: 30px;
 }
 
 .auth-form input {
   padding: 12px;
-  background-color: var(--accent);
+  background-color: var(--background);
+  border: 2px solid var(--primary);
   color: var(--text);
-  margin-bottom: 30px;
-  border: none;
-  border-radius: 10px;
+  border-radius: 40px;
   font-size: 18px;
   outline-color: var(--text);
   width: 100%;
   box-sizing: border-box;
   font-weight: bold;
+  outline: none;
+}
+
+.auth-form input::placeholder {
+  color: var(--placeholder);
 }
 
 .icon {
   position: absolute;
-  left: 10px;
-  top: 30%;
+  left: 20px;
+  margin-bottom: 30px;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 1;
   font-size: 16px;
@@ -58,47 +60,54 @@
 
 .auth-form input[type="text"],
 input[type="password"] {
-  padding-left: 35px;
+  padding-left: 45px;
+}
+
+.forgot-password {
+  position: absolute;
+  left: 5%;
+  top: 65px;
+  color: var(--placeholder);
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .auth-form input[type="submit"] {
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
-  /* background-color: var(--secondary); */
-  /* color: var(--background); */
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.auth-option {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.auth-option a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.auth-option div {
+  height: 1px;
+  width: 25%;
+  background-color: var(--primary);
+}
+
+.auth-submit {
+  margin-top: 50px;
 }
 
 .input-label {
   margin-bottom: 5px;
 }
 
-.auth-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.auth-options a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.auth-option {
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.auth-option a {
-  color: var(--text);
-  background-color: var(--background);
-  padding: 5px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
 .error {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   color: #e83e36;
 }
 
@@ -150,9 +159,10 @@ input[type="password"] {
 }
 
 .invalid {
-  outline: 2px solid #e83e36 !important;
+  border: 3px solid #e83e36 !important;
 }
 
 .msg i {
   margin-right: 5px;
+  margin-top: 30px;
 }

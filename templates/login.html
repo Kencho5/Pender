@@ -13,25 +13,42 @@
       <p class="auth-form-title">{{ tr.AUTH.login }}</p>
 
       <!-- EMAIL INPUT -->
-      <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
       <div class="input-group">
         <i class="fa fa-envelope icon"></i>
-        <input type="text" name="email" aria-label="Email" />
+        <input
+          type="text"
+          name="email"
+          placeholder="{{ tr.AUTH.email }}"
+          aria-label="Email"
+        />
       </div>
 
       <!-- PASSWORD INPUT -->
-      <label for="password" class="input-label">{{ tr.AUTH.password }}</label>
       <div class="input-group">
         <i class="fa-solid fa-lock icon"></i>
-        <input type="password" name="password" aria-label="Password" />
-      </div>
-      <input type="submit" value="{{ tr.AUTH.login }}" />
-      <div class="auth-options">
-        <a href="/reset-password" aria-label="Forgot Password"
+        <input
+          type="password"
+          name="password"
+          placeholder="{{ tr.AUTH.password }}"
+          aria-label="Password"
+        />
+        <a href="/reset-password" class="forgot-password"
           >{{ tr.AUTH.reset_password }}</a
         >
-        <a href="/register" aria-label="Register">{{ tr.AUTH.register }}</a>
       </div>
+
+      <input type="submit" class="auth-submit" value="{{ tr.AUTH.login }}" />
+      <div class="auth-option">
+        <div class="option-line"></div>
+        <a href="/register">{{ tr.AUTH.register }}</a>
+        <div class="option-line"></div>
+      </div>
+      <!-- <div class="auth-options"> -->
+      <!--   <a href="/reset-password" aria-label="Forgot Password" -->
+      <!--     >{{ tr.AUTH.reset_password }}</a -->
+      <!--   > -->
+      <!--   <a href="/register" aria-label="Register">{{ tr.AUTH.register }}</a> -->
+      <!-- </div> -->
 
       <div class="msg"></div>
     </form>
