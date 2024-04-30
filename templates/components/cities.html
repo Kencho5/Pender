@@ -12,7 +12,7 @@
   form="dummy-form"
   autocomplete="off"
   aria-label="City"
-
+  placeholder="{{ tr.AUTH.city }}"
   {% if route not in ['/register', '/login', '/upload'] %}
   value="{{ claims.city }}"
   {% endif %}

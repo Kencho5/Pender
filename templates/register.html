@@ -13,28 +13,39 @@
       <p class="auth-form-title">{{ tr.AUTH.register }}</p>
 
       <!-- EMAIL INPUT -->
-      <label for="email" class="input-label">{{ tr.AUTH.email }}</label>
       <div class="input-group">
         <i class="fa fa-envelope icon"></i>
-        <input type="text" name="email" aria-label="Email" />
+        <input
+          type="text"
+          name="email"
+          placeholder="{{ tr.AUTH.email }}"
+          aria-label="Email"
+        />
       </div>
 
       <!-- NAME INPUT -->
-      <label for="name" class="input-label">{{ tr.AUTH.name }}</label>
       <div class="input-group">
         <i class="fa fa-user icon"></i>
-        <input type="text" name="name" aria-label="Name" />
+        <input
+          type="text"
+          name="name"
+          placeholder="{{ tr.AUTH.name }}"
+          aria-label="Name"
+        />
       </div>
 
       <!-- PHONE INPUT -->
-      <label for="phone" class="input-label">{{ tr.AUTH.phone }}</label>
       <div class="input-group">
         <i class="fa fa-phone icon"></i>
-        <input type="text" name="phone" aria-label="Phone" />
+        <input
+          type="text"
+          name="phone"
+          placeholder="{{ tr.AUTH.phone }}"
+          aria-label="Phone"
+        />
       </div>
 
       <!-- CITY INPUT -->
-      <label for="city" class="input-label">{{ tr.AUTH.city }}</label>
       <div class="input-group">
         <i class="fa fa-location-dot icon"></i>
         {% include "components/cities.html" %}
@@ -45,23 +56,29 @@
       </div>
 
       <!-- PASSWORD INPUT -->
-      <label for="password" class="input-label">{{ tr.AUTH.password }}</label>
       <div class="input-group">
         <i class="fa-solid fa-lock icon"></i>
-        <input type="password" name="password" aria-label="Password" />
+        <input
+          type="password"
+          name="password"
+          placeholder="{{ tr.AUTH.password }}"
+          aria-label="Password"
+        />
       </div>
 
-      <input type="hidden" name="facebook" value=" ">
+      <input type="hidden" name="facebook" value=" " />
 
       <input type="submit" value="{{ tr.AUTH.register }}" />
+
+      <div class="auth-option">
+        <div class="option-line"></div>
+        <a href="/login">{{ tr.AUTH.login }}</a>
+        <div class="option-line"></div>
+      </div>
 
       <div class="msg"></div>
       <div class="lds-dual-ring spinner" style="display: none"></div>
     </form>
-    <p class="auth-option">
-      {{ tr.AUTH.auth_option_register }}
-      <a href="/login">{{ tr.AUTH.login }}</a>
-    </p>
   </div>
 
   <script src="/static/js/auth.js"></script>

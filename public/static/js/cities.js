@@ -6,7 +6,7 @@ async function showCities() {
   const input = document.getElementsByName("city_dummy")[0];
   document.getElementsByClassName("cities-dropdown")[0].style.display = "block";
 
-  input.style.borderRadius = "10px 10px 0px 0px";
+  input.style.borderRadius = "25px 25px 0px 0px";
   input.style.outline = "none";
 }
 
@@ -21,7 +21,7 @@ if (citiesDiv) {
       cityInput.value = cityName;
       document.getElementsByName("city")[0].value = cityValue;
 
-      cityInput.style.borderRadius = "10px";
+      cityInput.style.borderRadius = "40px";
       document.getElementsByClassName("cities-dropdown")[0].style.display =
         "none";
     }
