@@ -5,10 +5,12 @@ function validateForm() {
   let isValid = true;
 
   const isEmptyInput = (input) => {
+    console.log(input);
     if (input.parentNode.parentNode.id !== `step${step}`) return false;
 
     return (
-      (input.tagName === "DIV" && !input.innerHTML) ||
+      (input.tagName === "DIV" && input.childNodes.length > 1 &&
+        input.childNodes[1].tagName == "P") ||
       (input.tagName === "INPUT" && !input.value &&
         !input.classList.contains("hidden"))
     );

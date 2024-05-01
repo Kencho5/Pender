@@ -155,8 +155,8 @@ input:-webkit-autofill:active {
   height: 44px;
   margin: 8px;
   border-radius: 50%;
-  border: 6.4px solid currentColor;
-  border-color: currentColor transparent currentColor transparent;
+  border: 6.4px solid var(--primary);
+  border-color: var(--primary) transparent var(--primary) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

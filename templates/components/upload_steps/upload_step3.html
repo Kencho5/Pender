@@ -1,5 +1,4 @@
 <!-- AGE YEARS INPUT -->
-<label for="age_years" class="input-label">{{ tr.UPLOAD.age_years }}</label>
 <div class="input-group">
   <i class="fa-solid fa-calendar icon"></i>
   <input
@@ -7,12 +6,11 @@
     name="age_years"
     aria-label="Age Years"
     class="form-input"
-    value="0"
+    placeholder="{{ tr.UPLOAD.age_years }}"
   />
 </div>
 
 <!-- AGE MONTHS INPUT -->
-<label for="age_months" class="input-label">{{ tr.UPLOAD.age_months}}</label>
 <div class="input-group">
   <i class="fa-solid fa-calendar icon"></i>
   <input
@@ -20,12 +18,11 @@
     name="age_months"
     aria-label="Age Months"
     class="form-input"
-    value="0"
+    placeholder="{{ tr.UPLOAD.age_months}}"
   />
 </div>
 
 <!-- GENDER INPUT -->
-<label for="gender" class="input-label">{{ tr.UPLOAD.gender }}</label>
 <div class="input-group">
   <i class="fa fa-venus-mars icon dropdown-icon"></i>
   <div
@@ -33,7 +30,9 @@
     class="form-input dropdown-div"
     onclick="toggleDropdown()"
     target="gender"
-  ></div>
+  >
+    <p style="margin: 0">{{ tr.UPLOAD.gender }}</p>
+  </div>
   <i class="fa fa-caret-down icon-right"></i>
 
   <input type="hidden" name="gender" value="" class="dropdown-input" />

@@ -1,5 +1,4 @@
 <!-- ANIMAl INPUT -->
-<label for="post_type" class="input-label">{{ tr.UPLOAD.post_type }}</label>
 <div class="input-group">
   <i class="fa fa-signs-post icon dropdown-icon"></i>
   <div
@@ -7,7 +6,9 @@
     class="form-input dropdown-div"
     onclick="toggleDropdown()"
     target="post_type"
-  ></div>
+  >
+    <p style="margin: 0">{{ tr.UPLOAD.post_type }}</p>
+  </div>
   <i class="fa fa-caret-down icon-right"></i>
 
   <input type="hidden" name="post_type" value="" class="dropdown-input" />
@@ -22,15 +23,13 @@
 </div>
 
 <!-- PRICE INPUT -->
-<label for="price" class="input-label price-hidden hidden"
-  >{{ tr.UPLOAD.price }}</label
->
 <div class="input-group price-hidden hidden">
   <i class="fa-solid fa-tag icon"></i>
   <input
     type="text"
     name="price"
     aria-label="Price"
+    placeholder="{{ tr.UPLOAD.price }}"
     class="form-input price-hidden"
   />
 </div>

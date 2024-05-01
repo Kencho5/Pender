@@ -1,10 +1,10 @@
 .input-group div,
 .next-btn {
   padding: 12px;
-  background-color: var(--accent);
+  background-color: var(--background);
   color: var(--text);
-  border: none;
-  border-radius: 10px;
+  border: 2px solid var(--primary);
+  border-radius: 40px;
   font-size: 18px;
   outline-color: var(--text);
   width: 100%;
@@ -13,25 +13,27 @@
   cursor: pointer;
 }
 
-.input-group div {
-  min-height: 45px;
-  padding-left: 35px;
-  margin-bottom: 30px;
+.next-btn {
+  background-color: var(--primary);
+  border: none;
+  color: var(--background);
 }
 
-.dropdown-icon {
-  padding-top: 17px;
+.input-group div {
+  min-height: 45px;
+  padding-left: 45px;
+  margin-bottom: 30px;
 }
 
 .input-group div:not(:empty) {
   padding: 9px;
-  padding-left: 35px;
+  padding-left: 45px;
 }
 
 .icon-right {
   position: absolute;
-  right: 10px;
-  top: 30%;
+  right: 20px;
+  top: 35%;
   transform: translateY(-50%);
   z-index: 1;
   font-size: 16px;
@@ -39,7 +41,7 @@
 }
 
 .icon {
-  top: 32%;
+  top: 50%;
 }
 
 .dropdown {
@@ -76,10 +78,6 @@
   display: block;
 }
 
-.input-group {
-  margin-top: 8px;
-}
-
 #step2,
 #step3,
 #step4,
@@ -91,10 +89,10 @@
 
 .description-input {
   padding: 12px;
-  background-color: var(--accent);
+  background-color: var(--background);
   color: var(--text);
-  border: none;
-  border-radius: 10px;
+  border: 2px solid var(--primary);
+  border-radius: 40px;
   font-size: 18px;
   outline-color: var(--text);
   width: 100%;
@@ -104,13 +102,13 @@
   margin-bottom: 30px;
   height: 70px;
   resize: none;
-  padding-left: 35px;
+  padding-left: 45px;
 }
 
 .textarea-icon {
   position: absolute;
-  left: 10px;
-  top: 20%;
+  left: 20px;
+  top: 22%;
   transform: translateY(-50%);
   z-index: 1;
   font-size: 16px;
@@ -122,10 +120,6 @@ input[type="file"] {
   opacity: 0;
   width: 0;
   height: 0;
-}
-
-.photos-icon {
-  padding-top: 16px;
 }
 
 .images-div {

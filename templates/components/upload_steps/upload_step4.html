@@ -1,5 +1,4 @@
 <!-- PHONE INPUT -->
-<label for="age_years" class="input-label">{{ tr.AUTH.phone }}</label>
 <div class="input-group">
   <i class="fa-solid fa-phone icon"></i>
   <input
@@ -7,12 +6,11 @@
     name="phone"
     aria-label="Phone"
     class="form-input"
-    value=""
+    placeholder="{{ tr.AUTH.phone }}"
   />
 </div>
 
-<!-- AGE MONTHS INPUT -->
-<label for="description" class="input-label">{{ tr.UPLOAD.description }}</label>
+<!-- DESCRIPTION INPUT -->
 <div class="input-group">
   <i class="fa-solid fa-clipboard textarea-icon"></i>
   <textarea
@@ -20,6 +18,7 @@
     name="description"
     aria-label="Description"
     class="form-input description-input"
+    placeholder="{{ tr.UPLOAD.description }}"
   ></textarea>
 </div>
 

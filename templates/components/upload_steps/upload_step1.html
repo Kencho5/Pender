@@ -1,5 +1,4 @@
 <!-- ANIMAl INPUT -->
-<label for="animal" class="input-label">{{ tr.UPLOAD.animal }}</label>
 <div class="input-group">
   <i class="fa fa-paw icon dropdown-icon"></i>
   <div
@@ -7,7 +6,9 @@
     class="form-input dropdown-div"
     onclick="toggleDropdown()"
     target="animal"
-  ></div>
+  >
+    <p style="margin: 0">{{ tr.UPLOAD.animal }}</p>
+  </div>
   <i class="fa fa-caret-down icon-right"></i>
 
   <input type="hidden" name="animal" value="" class="dropdown-input" />
@@ -24,10 +25,15 @@
 </div>
 
 <!-- BREED INPUT -->
-<label for="breed" class="input-label">{{ tr.UPLOAD.breed }}</label>
 <div class="input-group">
   <i class="fa-solid fa-dna icon"></i>
-  <input type="text" name="breed" aria-label="Breed" class="form-input" />
+  <input
+    type="text"
+    name="breed"
+    aria-label="Breed"
+    placeholder="{{ tr.UPLOAD.breed }}"
+    class="form-input"
+  />
 </div>
 
 <button
