@@ -26,12 +26,12 @@
 
 </p>
 
-![screenshot](https://imgur.com/ZG4JG8J.png)
+![screenshot](https://i.imgur.com/TDddL5L.png)
 
 ## Key Features
 
 - **Home:** Discover the latest user-uploaded posts.
-- **Search:** Explore pets using powerful filters.
+- **Search:** Explore pets using filters.
 - **Profile:** Manage your details and posts.
 - **Upload:** Upload your own post.
 - **Login/Register:** Register with email and receive confirmation code.
