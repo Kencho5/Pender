@@ -169,7 +169,7 @@ input:-webkit-autofill:active {
 }
 
 .invalid {
-  border: 3px solid #e83e36 !important;
+  border: 2px solid #e83e36 !important;
 }
 
 .msg i {

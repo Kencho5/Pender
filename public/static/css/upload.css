@@ -185,3 +185,8 @@ input[type="submit"] {
 .hidden {
   display: none;
 }
+
+.dropdown-text {
+  margin: 0;
+  color: var(--placeholder);
+}
