@@ -5,7 +5,6 @@ function validateForm() {
   let isValid = true;
 
   const isEmptyInput = (input) => {
-    console.log(input);
     if (input.parentNode.parentNode.id !== `step${step}`) return false;
 
     return (

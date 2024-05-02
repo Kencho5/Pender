@@ -103,6 +103,7 @@
   height: 70px;
   resize: none;
   padding-left: 45px;
+  overflow: auto;
 }
 
 .textarea-icon {
