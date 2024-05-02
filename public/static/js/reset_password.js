@@ -13,6 +13,9 @@ document.body.addEventListener("htmx:afterSwap", async function (event) {
     await delay(1000);
     resetForm.style.display = "none";
     resetCodeForm.style.display = "block";
+  } else if (event.target.textContent.trim() == "Password reset!") {
+    await delay(500);
+    window.location.href = "/login";
   }
 });
 

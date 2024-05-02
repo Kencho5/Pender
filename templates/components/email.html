@@ -9,56 +9,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Reset Code</title>
+    <title>Password Reset Confirmation</title>
     <style>
+      /* Reset Styles */
       body {
+        margin: 0;
+        padding: 0;
         font-family: "Poppins", sans-serif;
-        font-weight: bold;
-        background-color: #fff;
-        color: #0b4062;
-        line-height: 1.6;
       }
 
-      .container {
-        max-width: 600px;
+      .email-container {
+        max-width: 400px;
         margin: 0 auto;
-        background-color: #39bfb2;
-        padding: 20px;
-        border-radius: 20px;
-      }
-
-      .header {
+        background-color: #fff9e8;
+        color: #4d3d2d;
+        padding: 40px;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         text-align: center;
-        padding: 20px 0;
-        background-color: #ffffeb;
-        border-radius: 20px;
-        color: #0b4062;
+        border: 2px solid #8b322c;
       }
 
-      .content {
-        padding: 20px;
-        font-size: 18px;
-        font-weight: bold;
-        color: #0b4062 !important;
-      }
-
-      .reset-code {
-        font-size: 24px;
-        font-weight: bold;
-        color: #ffffeb;
-        text-align: center;
-        margin-bottom: 20px;
-        margin-top: 30px;
+      .code {
+        background-color: #e6a268;
+        padding: 10px;
+        border-radius: 40px;
+        margin-top: 40px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <h1>Confirmation Code</h1>
-      </div>
+    <div class="email-container">
       <div class="content">
-        <div class="reset-code">{{code}}</div>
+        <h1>Confirmation Code</h1>
+        <h2 class="code">{{ code }}</h2>
       </div>
     </div>
   </body>
