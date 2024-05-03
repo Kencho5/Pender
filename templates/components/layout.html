@@ -147,12 +147,15 @@
 
         <div class="mobile-menu hide-mobile-menu" id="mobileMenu">
           <i class="fa-solid fa-magnifying-glass search search-icon"></i>
-          <input
-            type="text"
-            name="search"
-            value=""
-            placeholder="{{ tr.NAV.search }}"
-          />
+          <form action="/search">
+            <input
+              type="text"
+              name="text"
+              onsubmit="search(this)"
+              placeholder="{{ tr.NAV.search }}"
+            />
+          </form>
+
           <div class="mobile-menu-links">
             <a href="/" class="menu-link" id="home">
               <i class="fa-solid fa-house"></i>
