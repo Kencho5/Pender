@@ -145,7 +145,7 @@
           </div>
         </div>
 
-        <div class="mobile-menu hide-mobile-menu" id="mobileMenu">
+        <div class="mobile-menu" id="mobileMenu">
           <i class="fa-solid fa-magnifying-glass search search-icon"></i>
           <form action="/search">
             <input
@@ -154,7 +154,22 @@
               onsubmit="search(this)"
               placeholder="{{ tr.NAV.search }}"
             />
+            <input type="hidden" name="animal" class="animal-input" />
+
+            <div class="animal-dropdown" onclick="showDropdown()">
+              <i class="fa fa-caret-down"></i>
+            </div>
           </form>
+
+          <div class="animal-dropdown-div">
+            <div class="animal-dropdown-content">
+              <p id="dog" class="dog">{{ tr.ANIMALS.dog }}</p>
+              <p id="cat" class="cat">{{ tr.ANIMALS.cat }}</p>
+              <p id="bird" class="dove">{{ tr.ANIMALS.bird }}</p>
+              <p id="fish" class="fish">{{ tr.ANIMALS.fish }}</p>
+              <p id="other" class="ellipsis">{{ tr.ANIMALS.other }}</p>
+            </div>
+          </div>
 
           <div class="mobile-menu-links">
             <a href="/" class="menu-link" id="home">
