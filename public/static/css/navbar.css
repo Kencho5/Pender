@@ -153,18 +153,19 @@
   right: 30px;
   top: 100px;
   background-color: var(--background);
+  border: 2px solid var(--primary);
   box-shadow:
     rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 30px;
+  border-radius: 30px;
   font-size: 18px;
 }
 
 .search-icon {
   position: absolute;
-  top: 33px;
-  left: 30px;
+  top: 43px;
+  left: 40px;
 }
 
 .mobile-menu input {
@@ -259,6 +260,10 @@
   justify-content: space-between;
   padding: 5px;
   cursor: pointer;
+}
+
+.mobile-profile a {
+  width: 100%;
 }
 
 .mobile-profile i {
