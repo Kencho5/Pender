@@ -25,6 +25,10 @@ body {
   /* background: var(--accent); */
 }
 
+i {
+  font-style: normal;
+}
+
 .main-content {
   min-height: 1000px;
 }
