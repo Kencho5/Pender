@@ -18,7 +18,7 @@ body {
   opacity: 0;
   overscroll-behavior: none;
   scroll-behavior: smooth;
-  background: url("/assets/grain2.svg") center/cover fixed;
+  background: url("/assets/bg.svg") center/cover fixed;
   color: var(--text);
   margin: 0;
   margin-top: 150px;
