@@ -26,7 +26,8 @@
 
 </p>
 
-![screenshot](https://i.imgur.com/TDddL5L.png)
+![screenshot](https://i.imgur.com/DPlOpHT.png)
+![screenshot](https://i.imgur.com/kyW3l5g.png)
 
 ## Key Features
 
