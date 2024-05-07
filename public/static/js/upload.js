@@ -192,6 +192,8 @@ function handleFormSubmit() {
       event.preventDefault();
       if (!validateForm(step)) return;
 
+      document.getElementById("submit-input").disabled = true;
+
       const formData = new FormData(this);
       const body = {};
       const promises = [];

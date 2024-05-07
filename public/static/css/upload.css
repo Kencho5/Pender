@@ -196,7 +196,7 @@ input[type="submit"] {
   color: var(--placeholder);
 }
 
-.disabled {
+input[type="submit"]:disabled {
   background-color: var(--disabled);
   cursor: not-allowed;
 }
