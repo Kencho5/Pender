@@ -59,7 +59,7 @@
   padding: 12px 16px;
   z-index: 10;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 30px;
   top: -30px;
 }
 
@@ -199,4 +199,10 @@ input[type="submit"] {
 input[type="submit"]:disabled {
   background-color: var(--disabled);
   cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  #photosDiv {
+    font-size: 16px;
+  }
 }
