@@ -42,9 +42,9 @@
     <title>Pender</title>
   </head>
   <body>
-    <div class="overlay">
-      <span class="loader"></span>
-    </div>
+    <!-- <div class="overlay"> -->
+    <!--   <span class="loader"></span> -->
+    <!-- </div> -->
 
     <div class="navbar-div">
       <nav class="navbar">
@@ -67,7 +67,7 @@
           </li>
           {% else %}
           <li id="login">
-            <a href="/login">{{ tr.NAV.login }}</a>
+            <a href="/login" hx-boost="true">{{ tr.NAV.login }}</a>
           </li>
           {% endif %}
         </ul>
