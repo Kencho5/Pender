@@ -28,7 +28,7 @@ i {
 }
 
 .main-content {
-  min-height: 1000px;
+  min-height: 100vh;
 }
 
 .circle {
