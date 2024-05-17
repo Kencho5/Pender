@@ -13,6 +13,15 @@
 
     <link rel="preload" href="/static/fontawesome/css/solid.css" as="style" />
     <link rel="stylesheet" href="/static/fontawesome/css/solid.css" />
+
+    <link
+      rel="preload"
+      href="/static/css/auth.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/static/css/auth.css" /></noscript>
+
     <!-- <link -->
     <!--   rel="preload" -->
     <!--   href="/static/fontawesome/css/icons.css" -->
@@ -265,7 +274,7 @@
       window.addEventListener("load", async function () {
         const body = document.querySelector("body");
         body.style.opacity = 1;
-        document.querySelector(".overlay").style.display = "none";
+        // document.querySelector(".overlay").style.display = "none";
       });
     </script>
     <script src="/static/js/navbar.js"></script>
