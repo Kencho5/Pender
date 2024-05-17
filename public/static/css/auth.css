@@ -4,8 +4,8 @@
   width: 450px;
   background-color: var(--background);
   padding: 50px;
-  border-radius: 40px;
-  border: 2px solid var(--primary);
+  border-radius: 60px;
+  border: 4px solid var(--faded-primary);
   margin: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-weight: bold;

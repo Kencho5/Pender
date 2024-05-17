@@ -6,6 +6,7 @@
   --accent: #e6a268;
   --placeholder: #7a7171;
   --disabled: #69423f;
+  --faded-primary: rgba(139, 50, 44, 0.4);
 }
 
 body {
