@@ -1,6 +1,10 @@
 activeRoute();
 
-document.body.addEventListener("htmx:afterSwap", function () {
+document.body.addEventListener("htmx:afterSwap", function (evt) {
+  if (evt.target.tagName != "BODY") {
+    return;
+  }
+
   const mainContent = document.querySelector(".main-content");
   mainContent.style.opacity = 0;
 
