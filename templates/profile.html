@@ -81,10 +81,9 @@
               <input
               type="text"
               name="facebook"
-              {% if claims.facebook != ' ' %}
+              {% if claims.facebook != ' ' and claims.facebook != ''  %}
                 value="{{ claims.facebook }}"
               {% else %}
-                value=""
                 placeholder="{{ tr.PROFILE.facebook_ex }}"
               {% endif %}
               aria-label="Facebook"
