@@ -20,18 +20,18 @@
 
         <ul class="navbar-links" id="navbarLinks" hx-boost="true">
           <li id="home">
-            <a href="/"> {{ tr.NAV.home }} </a>
+            <a href="/#"> {{ tr.NAV.home }} </a>
           </li>
           <li id="upload">
-            <a href="/upload"> {{ tr.NAV.upload }}</a>
+            <a href="/upload#"> {{ tr.NAV.upload }}</a>
           </li>
           {% if claims %}
           <li id="profile">
-            <a href="/profile">{{ tr.NAV.profile }}</a>
+            <a href="/profile#">{{ tr.NAV.profile }}</a>
           </li>
           {% else %}
           <li id="login">
-            <a href="/login">{{ tr.NAV.login }}</a>
+            <a href="/login#">{{ tr.NAV.login }}</a>
           </li>
           {% endif %}
         </ul>

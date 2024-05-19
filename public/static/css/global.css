@@ -16,11 +16,12 @@ body {
   background-color: var(--background);
   transition: opacity 0.45s ease-out;
   opacity: 0;
-  overscroll-behavior: none;
+  overscroll-behavior-y: none;
   scroll-behavior: smooth;
   background: url("/assets/bg.avif") center/cover fixed;
   color: var(--text);
   margin: 0;
+  margin-top: 150px;
 }
 
 i {
@@ -28,7 +29,7 @@ i {
 }
 
 .main-content {
-  padding-top: 150px;
+  /* padding-top: 150px; */
   min-height: 100vh;
 }
 
