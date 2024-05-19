@@ -4,6 +4,7 @@ document.body.addEventListener("htmx:afterSwap", function (evt) {
   if (evt.target.tagName != "BODY") {
     return;
   }
+  window.scrollTo(0, 0);
 
   const mainContent = document.querySelector(".main-content");
   mainContent.style.opacity = 0;

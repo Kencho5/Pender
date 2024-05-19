@@ -13,7 +13,7 @@
     <div class="navbar-div">
       <nav class="navbar">
         <div class="navbar-logo">
-          <a href="/">
+          <a href="/#">
             <img src="/assets/logo.svg" alt="Logo" width="74" height="54" />
           </a>
         </div>
@@ -138,21 +138,21 @@
           </div>
 
           <div class="mobile-menu-links" hx-boost="true">
-            <a href="/" class="menu-link" id="home">
+            <a href="/#" class="menu-link" id="home">
               <i class="fa-solid fa-house"></i>
               {{ tr.NAV.home }}
             </a>
-            <a href="/upload" class="menu-link" id="upload">
+            <a href="/upload#" class="menu-link" id="upload">
               <i class="fa-solid fa-cloud-arrow-up"></i>
               {{ tr.NAV.upload }}
             </a>
             {% if claims %}
-            <a href="/profile" class="menu-link" id="profile">
+            <a href="/profile#" class="menu-link" id="profile">
               <i class="fa-solid fa-user"></i>
               {{ tr.NAV.profile }}
             </a>
             {% else %}
-            <a href="/login" class="menu-link" id="login">
+            <a href="/login#" class="menu-link" id="login">
               <i class="fa-solid fa-right-to-bracket"></i>
               {{ tr.NAV.login }}
             </a>
@@ -184,7 +184,7 @@
     </div>
 
     {% if route not in ['/register', '/login', '/upload', '/reset-password'] %}
-    <a href="/upload" class="plus-btn" aria-label="Upload">
+    <a href="/upload#" hx-boost="true" class="plus-btn" aria-label="Upload">
       <i class="fa-solid fa-plus"></i>
     </a>
     {% endif %}
