@@ -265,11 +265,7 @@ function uploadPost(body) {
   xhr.send(JSON.stringify(body));
 }
 
-function init() {
-  handleInputChange();
-  handleDropdownSelection();
-  handleFileUpload();
-  handleFormSubmit();
-}
-
-document.addEventListener("DOMContentLoaded", init);
+handleInputChange();
+handleDropdownSelection();
+handleFileUpload();
+handleFormSubmit();
