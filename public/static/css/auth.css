@@ -176,3 +176,9 @@ input:-webkit-autofill:active {
   margin-right: 5px;
   margin-top: 30px;
 }
+
+@media (max-width: 400px) {
+  .auth-form {
+    width: 230px;
+  }
+}

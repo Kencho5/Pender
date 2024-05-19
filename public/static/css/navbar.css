@@ -147,6 +147,28 @@
     margin-right: 30px;
   }
 }
+
+@media (max-width: 500px) {
+  .navbar {
+    width: 85%;
+  }
+  .radio-inputs {
+    width: 120px !important;
+  }
+  .radio-inputs label {
+    font-size: 12px !important;
+  }
+  .navbar-logo {
+    width: 100px !important;
+    margin-left: 10px;
+  }
+  .mobile-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+  }
+}
+
 /* mobile menu styles */
 .mobile-menu {
   position: absolute;
