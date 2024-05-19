@@ -1,6 +1,9 @@
 {% extends "components/layout.html" %} 
 {% block content %}
-<link rel="stylesheet" href="/static/css/post.css" />
+
+<style>
+  {% include "post.css" %}
+</style>
 
 <body>
   {% if post == 'error' %}

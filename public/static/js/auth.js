@@ -21,9 +21,9 @@ function validateForm(formName) {
   return isValid;
 }
 
-const spinner = document.querySelector(".spinner");
-const targetDiv = document.querySelector(".msg");
-const observer = new MutationObserver(async function (mutationsList) {
+var spinner = document.querySelector(".spinner");
+var targetDiv = document.querySelector(".msg");
+var observer = new MutationObserver(async function (mutationsList) {
   for (const mutation of mutationsList) {
     if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
       if (spinner && targetDiv.childNodes[0].classList.contains("success")) {
@@ -38,10 +38,10 @@ const observer = new MutationObserver(async function (mutationsList) {
   }
 });
 
-const config = { childList: true, subtree: true };
+var config = { childList: true, subtree: true };
 observer.observe(targetDiv, config);
 
-const inputs = document.querySelectorAll("input");
+var inputs = document.querySelectorAll("input");
 inputs.forEach((input) => {
   input.addEventListener("input", function () {
     this.classList.remove("invalid");

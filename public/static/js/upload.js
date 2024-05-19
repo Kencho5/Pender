@@ -1,4 +1,4 @@
-let step = 1;
+var step = 1;
 
 function validateForm() {
   const inputs = Array.from(document.querySelectorAll(".form-input"));

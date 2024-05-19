@@ -10,7 +10,7 @@ async function showCities() {
   input.style.outline = "none";
 }
 
-const citiesDiv = document.querySelector(".cities-div");
+var citiesDiv = document.querySelector(".cities-div");
 if (citiesDiv) {
   citiesDiv.addEventListener("click", function (event) {
     if (event.target.tagName === "P") {

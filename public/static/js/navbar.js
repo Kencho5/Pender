@@ -1,7 +1,5 @@
-// INIT FUNCTION
-window.onload = function () {
-  activeRoute();
-};
+window.addEventListener("popstate", activeRoute());
+activeRoute();
 
 function activeRoute() {
   let route = window.location.pathname == "/"
@@ -70,4 +68,4 @@ async function reloadPage(ms) {
   location.reload();
 }
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+var delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

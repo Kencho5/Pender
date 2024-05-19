@@ -5,6 +5,7 @@ mod register_routes;
 mod routes;
 mod utils;
 use crate::imports::*;
+use std::fs;
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
@@ -12,6 +13,17 @@ async fn main() -> tide::Result<()> {
     let config = config::config_manager::load_config().expect("Config Error.");
 
     let mut tera = Tera::new("./templates/**/*")?;
+
+    let css_dir = "./public/static/css/";
+    for entry in fs::read_dir(css_dir)? {
+        let path = entry?.path();
+
+        let css_content = fs::read_to_string(&path)?;
+        let relative_path = path.strip_prefix(css_dir)?.to_string_lossy().to_string();
+
+        tera.add_raw_templates(vec![(relative_path, &css_content)])?;
+    }
+
     tera.autoescape_on(vec!["html"]);
     let translations = utils::translations::load_translations("translations")
         .await
