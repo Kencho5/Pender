@@ -1,5 +1,16 @@
-window.addEventListener("popstate", activeRoute());
 activeRoute();
+
+document.body.addEventListener("htmx:afterSwap", function () {
+  const mainContent = document.querySelector(".main-content");
+  mainContent.style.opacity = 0;
+
+  mainContent.style.transition = "none";
+
+  mainContent.offsetHeight;
+
+  mainContent.style.transition = "opacity 0.2s ease-in-out";
+  mainContent.style.opacity = 1;
+});
 
 function activeRoute() {
   let route = window.location.pathname == "/"
