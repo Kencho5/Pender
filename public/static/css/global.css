@@ -21,7 +21,6 @@ body {
   background: url("/assets/bg.avif") center/cover fixed;
   color: var(--text);
   margin: 0;
-  margin-top: 150px;
 }
 
 i {
@@ -29,6 +28,7 @@ i {
 }
 
 .main-content {
+  padding-top: 150px;
   min-height: 100vh;
 }
 
@@ -69,35 +69,3 @@ i {
     padding: 5px 15px;
   }
 }
-
-/* .overlay { */
-/*   position: fixed; */
-/*   top: 0; */
-/*   left: 0; */
-/*   width: 100%; */
-/*   height: 100%; */
-/*   background-color: rgba(0, 0, 0, 0.3);  */
-/*   display: flex; */
-/*   justify-content: center; */
-/*   align-items: center; */
-/*   z-index: 9999; */
-/* } */
-
-/* .loader { */
-/*   width: 80px; */
-/*   padding: 12px; */
-/*   aspect-ratio: 1; */
-/*   border-radius: 50%; */
-/*   background: var(--secondary); */
-/*   --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box; */
-/*   -webkit-mask: var(--_m); */
-/*   mask: var(--_m); */
-/*   -webkit-mask-composite: source-out; */
-/*   mask-composite: subtract; */
-/*   animation: l3 0.5s infinite linear; */
-/* } */
-/* @keyframes l3 { */
-/*   to { */
-/*     transform: rotate(1turn); */
-/*   } */
-/* } */

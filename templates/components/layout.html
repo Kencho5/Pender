@@ -10,10 +10,6 @@
     <title>Pender</title>
   </head>
   <body>
-    <!-- <div class="overlay"> -->
-    <!--   <span class="loader"></span> -->
-    <!-- </div> -->
-
     <div class="navbar-div">
       <nav class="navbar">
         <div class="navbar-logo">
@@ -177,39 +173,6 @@
           </div>
           {% endif %}
         </div>
-
-        <!-- <div class="context-menu" id="contextMenu"> -->
-        <!-- <div class="context-menu-links"> -->
-        <!--   <a href="/"> -->
-        <!--     <i class="fa-solid fa-house"></i> -->
-        <!--     {{ tr.NAV.home }} -->
-        <!--   </a> -->
-        <!--   <a href="/upload"> -->
-        <!--     <i class="fa-solid fa-magnifying-glass"></i> -->
-        <!--     {{ tr.NAV.upload }} -->
-        <!--   </a> -->
-        <!--   {% if claims %} -->
-        <!--   <a href="/profile"> -->
-        <!--     <i class="fa-solid fa-user"></i> -->
-        <!--     {{ tr.NAV.profile }} -->
-        <!--   </a> -->
-        <!--   <a -->
-        <!--     role="button" -->
-        <!--     hx-post="/logout" -->
-        <!--     hx-swap="none" -->
-        <!--     aria-label="Logout" -->
-        <!--   > -->
-        <!--     <i class="fa-solid fa-right-from-bracket"></i> -->
-        <!--     {{ tr.NAV.logout }} -->
-        <!--   </a> -->
-        <!--   {% else %} -->
-        <!--   <a href="/login"> -->
-        <!--     <i class="fa-solid fa-right-to-bracket"></i> -->
-        <!--     {{ tr.NAV.login }} -->
-        <!--   </a> -->
-        <!--   {% endif %} -->
-        <!-- </div> -->
-        <!-- </div> -->
       </nav>
     </div>
 
@@ -233,7 +196,6 @@
       window.addEventListener("load", async function () {
         const body = document.querySelector("body");
         body.style.opacity = 1;
-        // document.querySelector(".overlay").style.display = "none";
       });
     </script>
     <script src="/static/js/navbar.js"></script>
