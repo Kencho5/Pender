@@ -41,25 +41,33 @@
             <label class="radio">
               <!-- prettier-ignore -->
               <input
-            hx-post="/api/set_language/GE"
-            hx-swap="none"
-            type="radio"
-            name="radio"
-            {% if lang == 'GE' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
+                hx-get="{{route}}"
+                hx-boost="true"
+                hx-params="none"
+                onclick="changeLang('GE')"
+                hx-trigger="click delay:50ms"
+                hx-target="body"
+                hx-swap="outerHTML"
+                type="radio"
+                name="radio"
+                {% if lang == 'GE' %} checked="" {% endif %}
           />
               <span class="name">GE</span>
             </label>
             <label class="radio">
               <!-- prettier-ignore -->
               <input
-            hx-post="/api/set_language/EN"
-            hx-swap="none"
-            type="radio"
-            name="radio"
-            {% if lang == 'EN' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
-          />
+                hx-get="{{route}}"
+                hx-boost="true"
+                hx-params="none"
+                onclick="changeLang('EN')"
+                hx-trigger="click delay:50ms"
+                hx-target="body"
+                hx-swap="outerHTML"
+                type="radio"
+                name="radio"
+                {% if lang == 'EN' %} checked="" {% endif %}
+              />
 
               <span class="name">EN</span>
             </label>
@@ -82,24 +90,32 @@
             <label class="radio">
               <!-- prettier-ignore -->
               <input
-            hx-post="/api/set_language/GE"
-            hx-swap="none"
-            type="radio"
-            name="radio2"
-            {% if lang == 'GE' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
+                hx-get="{{route}}"
+                hx-boost="true"
+                hx-params="none"
+                onclick="changeLang('GE')"
+                hx-trigger="click delay:50ms"
+                hx-target="body"
+                hx-swap="outerHTML"
+                type="radio"
+                name="radio2"
+                {% if lang == 'GE' %} checked="" {% endif %}
           />
               <span class="name">GE</span>
             </label>
             <label class="radio">
               <!-- prettier-ignore -->
               <input
-            hx-post="/api/set_language/EN"
-            hx-swap="none"
-            type="radio"
-            name="radio2"
-            {% if lang == 'EN' %} checked="" {% endif %}
-            onclick="reloadPage(100)"
+                hx-get="{{route}}"
+                hx-boost="true"
+                hx-params="none"
+                onclick="changeLang('EN')"
+                hx-trigger="click delay:50ms"
+                hx-target="body"
+                hx-swap="outerHTML"
+                type="radio"
+                name="radio2"
+                {% if lang == 'EN' %} checked="" {% endif %}
           />
 
               <span class="name">EN</span>

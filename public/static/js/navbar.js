@@ -79,9 +79,10 @@ document.querySelector(".animal-dropdown-content").addEventListener(
   selectAnimal,
 );
 
-async function reloadPage(ms) {
-  await delay(ms);
-  location.reload();
+function changeLang(lang) {
+  fetch(`/api/set_language/${lang}`, {
+    method: "POST",
+  });
 }
 
 var delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
