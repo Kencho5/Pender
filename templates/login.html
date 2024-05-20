@@ -43,7 +43,12 @@
       <input type="submit" class="auth-submit" value="{{ tr.AUTH.login }}" />
       <div class="auth-option">
         <div class="option-line"></div>
-        <a role="button" hx-get="/register" hx-target="body" hx-swap="outerHTML"
+        <a
+          href="/register#"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
           >{{ tr.AUTH.register }}</a
         >
         <div class="option-line"></div>
