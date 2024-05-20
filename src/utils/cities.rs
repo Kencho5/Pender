@@ -14,7 +14,8 @@ pub async fn get_cities(req: tide::Request<AppState>) -> tide::Result {
     let file = fs::read_to_string(&file_path).expect("Not Found");
     let json: serde_json::Value = serde_json::from_str(&file)?;
 
-    let input: Search = req.query()?;
+    let mut input: Search = req.query()?;
+    input.city_dummy.make_ascii_lowercase();
 
     let mut result = match_cities(&json[lang].as_object().unwrap(), &input)?;
     if result.is_empty() {
