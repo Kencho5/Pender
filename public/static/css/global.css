@@ -13,6 +13,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-smooth: always;
+  -webkit-tap-highlight-color: transparent;
+
   letter-spacing: 0.5px;
   background-color: var(--background);
   transition: opacity 0.45s ease-out;
