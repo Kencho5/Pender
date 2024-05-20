@@ -74,7 +74,7 @@
 
       <div class="auth-option">
         <div class="option-line"></div>
-        <a href="/login">{{ tr.AUTH.login }}</a>
+        <a role="button" hx-get="/login" hx-target="body" hx-swap="outerHTML">{{ tr.AUTH.login }}</a>
         <div class="option-line"></div>
       </div>
 

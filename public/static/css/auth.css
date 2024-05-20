@@ -9,7 +9,7 @@
   margin: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 600px) {
@@ -100,6 +100,7 @@ input:-webkit-autofill:active {
 .auth-option a {
   text-decoration: none;
   color: var(--text);
+  cursor: pointer;
 }
 
 .auth-option div {
