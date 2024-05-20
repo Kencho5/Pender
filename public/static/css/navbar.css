@@ -82,7 +82,7 @@
 }
 
 .navbar-links li:hover {
-  background-color: var(--accent);
+  /* background-color: var(--accent); */
   transform: scale(1.1);
 }
 
