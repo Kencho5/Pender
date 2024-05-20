@@ -82,7 +82,6 @@
 }
 
 .navbar-links li:hover {
-  /* background-color: var(--accent); */
   transform: scale(1.1);
 }
 
@@ -181,8 +180,8 @@
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 30px;
   border-radius: 30px;
-  font-size: 18px;
-  max-width: 250px;
+  font-size: 16px;
+  max-width: 210px;
 }
 
 .mobile-menu form {
@@ -323,13 +322,15 @@
   position: absolute;
   background-color: var(--secondary);
   color: var(--text);
-  min-width: 220px;
+  min-width: 190px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding: 12px 16px;
+  padding: 12px 12px;
   z-index: 10;
   text-align: center;
   border-radius: 30px;
   top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .animal-dropdown-content p {
