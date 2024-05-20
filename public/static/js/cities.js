@@ -1,12 +1,18 @@
-async function showCities() {
+async function showCities(input) {
+  const dropdown = document.querySelector(".cities-dropdown");
+
+  if (input.value.length === 0) {
+    dropdown.style.display = "none";
+    input.style.borderRadius = "40px";
+    return;
+  }
+
   while (!document.querySelector(".cities-div > *")) {
     await delay(50);
   }
 
-  const input = document.getElementsByName("city_dummy")[0];
-  document.getElementsByClassName("cities-dropdown")[0].style.display = "block";
-
-  input.style.borderRadius = "25px 25px 0px 0px";
+  dropdown.style.display = "block";
+  input.style.borderRadius = "25px 25px 0 0";
   input.style.outline = "none";
 }
 
