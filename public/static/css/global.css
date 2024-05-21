@@ -19,7 +19,8 @@ body {
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
   background-color: var(--background);
-  background: url("/assets/bg.avif") center/cover fixed;
+  /* background: url("/assets/bg.avif") center/cover fixed; */
+  background-color: var(--background);
   color: var(--text);
   margin: 0;
   margin-top: 150px;
@@ -54,7 +55,7 @@ a {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: var(--background);
+  background-color: var(--accent);
   padding: 15px 20px;
   font-size: 2rem;
   border-radius: 100%;
