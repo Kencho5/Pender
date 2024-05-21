@@ -10,18 +10,21 @@
     },
     "AUTH": {
       "register": "Register",
+      "title_helper": "Please fill in all required fields",
+      "title_helper_login": "Log in to your account",
       "login": "Log In",
       "email": "Email",
       "name": "Name",
       "phone": "Phone",
       "city": "City",
       "password": "Password",
-      "auth_option_register": "Have an account?",
-      "auth_option_login": "Don't have an account?",
+      "option_register": "Have an account?",
+      "option_login": "Don't have an account?",
       "in_use": "Email address already in use",
       "reset_password": "Forgot password?",
       "send_code": "Send code",
-      "code": "Code"
+      "code": "Code",
+      "main_page": "Main Page"
     },
     "PROFILE": {
       "facebook": "Link",
@@ -71,18 +74,21 @@
     },
     "AUTH": {
       "register": "რეგისტრაცია",
+      "title_helper": "გთხოვთ, შეავსოთ ყველა სავალდებულო ველი",
+      "title_helper_login": "შედით თქვენს ანგარიშზე",
       "login": "შესვლა",
       "email": "ელ. ფოსტა",
       "name": "სახელი",
       "phone": "ტელ. ნომერი",
       "city": "ქალაქი",
       "password": "პაროლი",
-      "auth_option_register": "გაქვთ ანგარიში?",
-      "auth_option_login": "არ გაქვთ ანგარიში?",
+      "option_register": "გაქვთ ანგარიში?",
+      "option_login": "არ გაქვთ ანგარიში?",
       "in_use": "ელ. ფოსტა უკვე გამოყენებულია",
       "reset_password": "დაგავიწყდა პაროლი?",
       "send_code": "კოდის გაგზავნა",
-      "code": "კოდი"
+      "code": "კოდი",
+      "main_page": "მთავარი გვერდი"
     },
     "PROFILE": {
       "facebook": "ლინკი",

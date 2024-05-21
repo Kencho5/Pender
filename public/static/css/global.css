@@ -1,26 +1,24 @@
 :root {
-  --text: #4d3d2d;
-  --background: #fff9e8;
-  --primary: #8b322c;
+  --text: #4f3534;
+  --background: #fff8ed;
+  --primary: #d9625a;
   --secondary: #ffc183;
-  --accent: #e6a268;
-  --placeholder: #7a7171;
+  --accent: #fff;
+  --placeholder: #996e59;
   --disabled: #69423f;
-  --faded-primary: rgba(139, 50, 44, 0.4);
+  --border: #d5c2b3;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: bold;
-  font-smooth: always;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
   -webkit-tap-highlight-color: transparent;
-
-  letter-spacing: 0.5px;
-  background-color: var(--background);
+  letter-spacing: 1px;
   transition: opacity 0.45s ease-out;
   opacity: 0;
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
+  background-color: var(--background);
   background: url("/assets/bg.avif") center/cover fixed;
   color: var(--text);
   margin: 0;
@@ -29,6 +27,11 @@ body {
 
 i {
   font-style: normal;
+}
+
+.icon-svg {
+  width: 18px;
+  height: 18px;
 }
 
 .main-content {
@@ -56,7 +59,7 @@ i {
   bottom: 40px;
   right: 40px;
   background-color: var(--background);
-  padding: 15px 25px;
+  padding: 15px 20px;
   font-size: 2rem;
   border-radius: 100%;
   color: var(--text);
@@ -70,6 +73,6 @@ i {
 
 @media (max-width: 600px) {
   .plus-btn {
-    padding: 5px 15px;
+    padding: 5px 10px;
   }
 }

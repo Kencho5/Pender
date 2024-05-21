@@ -6,18 +6,37 @@
 
 <body>
   <div class="form-div">
+    <div class="header">
+      <a href="/#" hx-boost="true" class="header-logo">
+        <img src="/assets/logo.svg" alt="Logo" />
+        <h1>Pender</h1>
+      </a>
+      <div class="header-lang">
+        <img src="/assets/icons/geo.svg" alt="Geo" />
+        <p>GEO</p>
+      </div>
+    </div>
+
     <form
       hx-post="/login"
       hx-target=".msg"
+      hx-on:htmx:after-request="loginStatus()"
       hx-trigger="submit[validateForm('loginForm')]"
       class="auth-form"
       name="loginForm"
     >
-      <p class="auth-form-title">{{ tr.AUTH.login }}</p>
+      <div class="title-div">
+        <h1 class="auth-form-title">{{ tr.AUTH.login }}</h1>
+        <p>{{tr.AUTH.title_helper_login}}</p>
+      </div>
 
       <!-- EMAIL INPUT -->
       <div class="input-group">
-        <i class="fa fa-envelope icon"></i>
+        <img
+          src="/assets/icons/email.svg"
+          alt="Password"
+          class="icon-svg icon"
+        />
         <input
           type="text"
           name="email"
@@ -28,21 +47,32 @@
 
       <!-- PASSWORD INPUT -->
       <div class="input-group">
-        <i class="fa-solid fa-lock icon"></i>
+        <img
+          src="/assets/icons/password.svg"
+          alt="Password"
+          class="icon-svg icon"
+        />
         <input
           type="password"
           name="password"
           placeholder="{{ tr.AUTH.password }}"
           aria-label="Password"
         />
-        <a href="/reset-password" class="forgot-password"
+        <a
+          href="/reset-password#"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          class="forgot-password"
           >{{ tr.AUTH.reset_password }}</a
         >
       </div>
 
       <input type="submit" class="auth-submit" value="{{ tr.AUTH.login }}" />
+
       <div class="auth-option">
-        <div class="option-line"></div>
+        {{ tr.AUTH.option_login }}
         <a
           href="/register#"
           hx-boost="true"
@@ -51,7 +81,6 @@
           hx-push-url="true"
           >{{ tr.AUTH.register }}</a
         >
-        <div class="option-line"></div>
       </div>
 
       <div class="msg"></div>

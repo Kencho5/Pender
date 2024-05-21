@@ -13,33 +13,8 @@ function validateForm(formName) {
     }
   });
 
-  if (!isValid) {
-    document.querySelector(".msg").innerHTML =
-      '<p class="error"><i class="fa-solid fa-circle-exclamation"></i>Fill in the form</p>';
-  }
-
   return isValid;
 }
-
-var spinner = document.querySelector(".spinner");
-var targetDiv = document.querySelector(".msg");
-var observer = new MutationObserver(async function (mutationsList) {
-  for (const mutation of mutationsList) {
-    if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-      if (spinner && targetDiv.childNodes[0].classList.contains("success")) {
-        spinner.style.display = "block";
-        await delay(1000);
-        window.location.href = "/login";
-      } else if (targetDiv.textContent.trim() == "Logged in!") {
-        await delay(700);
-        window.location.href = "/profile";
-      }
-    }
-  }
-});
-
-var config = { childList: true, subtree: true };
-observer.observe(targetDiv, config);
 
 var inputs = document.querySelectorAll("input");
 inputs.forEach((input) => {
@@ -47,3 +22,26 @@ inputs.forEach((input) => {
     this.classList.remove("invalid");
   });
 });
+
+function loginStatus() {
+  const state = document.querySelector(".msg").childNodes[0].classList[0];
+  if (state != "success") return;
+
+  htmx.ajax("GET", "/profile", {
+    target: document.body,
+    swap: "outerHTML",
+  }).then(() => {
+    history.pushState(null, "", "/profile");
+  });
+}
+
+function registerStatus() {
+  const form = document.querySelector(".auth-form");
+  const successDiv = document.querySelector(".success-div");
+  const state = document.querySelector(".msg").firstChild;
+  if (!state || state.classList[0] != "success") return;
+
+  form.style.display = "none";
+  successDiv.style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}

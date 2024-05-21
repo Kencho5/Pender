@@ -5,18 +5,37 @@
 
 <body>
   <div class="form-div">
+    <div class="header">
+      <a href="/#" hx-boost="true" class="header-logo">
+        <img src="/assets/logo.svg" alt="Logo" />
+        <h1>Pender</h1>
+      </a>
+      <div class="header-lang">
+        <img src="/assets/icons/geo.svg" alt="Geo" />
+        <p>GEO</p>
+      </div>
+    </div>
+
     <form
       hx-post="/register"
-      hx-target=".msg"
       hx-trigger="submit[validateForm('registerForm')]"
+      hx-target=".msg"
+      hx-on:htmx:after-request="registerStatus()"
       class="auth-form"
       name="registerForm"
     >
-      <p class="auth-form-title">{{ tr.AUTH.register }}</p>
+      <div class="title-div">
+        <h1 class="auth-form-title">{{ tr.AUTH.register }}</h1>
+        <p>{{tr.AUTH.title_helper}}</p>
+      </div>
 
       <!-- EMAIL INPUT -->
       <div class="input-group">
-        <i class="fa fa-envelope icon"></i>
+        <img
+          src="/assets/icons/email.svg"
+          alt="Password"
+          class="icon-svg icon"
+        />
         <input
           type="text"
           name="email"
@@ -27,7 +46,11 @@
 
       <!-- NAME INPUT -->
       <div class="input-group">
-        <i class="fa fa-user icon"></i>
+        <img
+          src="/assets/icons/user.svg"
+          alt="Password"
+          class="icon-svg icon"
+        />
         <input
           type="text"
           name="name"
@@ -38,7 +61,11 @@
 
       <!-- PHONE INPUT -->
       <div class="input-group">
-        <i class="fa fa-phone icon"></i>
+        <img
+          src="/assets/icons/phone.svg"
+          alt="Password"
+          class="icon-svg icon"
+        />
         <input
           type="text"
           name="phone"
@@ -49,7 +76,11 @@
 
       <!-- CITY INPUT -->
       <div class="input-group">
-        <i class="fa fa-location-dot icon"></i>
+        <img
+          src="/assets/icons/location.svg"
+          alt="Password"
+          class="icon-svg icon"
+        />
         {% include "components/cities.html" %}
       </div>
 
@@ -59,7 +90,11 @@
 
       <!-- PASSWORD INPUT -->
       <div class="input-group">
-        <i class="fa-solid fa-lock icon"></i>
+        <img
+          src="/assets/icons/password.svg"
+          alt="Password"
+          class="icon-svg icon"
+        />
         <input
           type="password"
           name="password"
@@ -73,7 +108,7 @@
       <input type="submit" value="{{ tr.AUTH.register }}" />
 
       <div class="auth-option">
-        <div class="option-line"></div>
+        {{ tr.AUTH.option_register }}
         <a
           href="/login#"
           hx-boost="true"
@@ -82,12 +117,22 @@
           hx-push-url="true"
           >{{ tr.AUTH.login }}</a
         >
-        <div class="option-line"></div>
       </div>
 
       <div class="msg"></div>
-      <div class="lds-dual-ring spinner" style="display: none"></div>
     </form>
+
+    <div class="success-div">
+      <img src="/assets/icons/register_success.svg" alt="Password" />
+      <div>
+        <h1>თქვენ წარმატებით დარეგისტრირდით</h1>
+        <p>ანგარიშის გამოსაყენებლად, გთხოვთ გაიაროთ ავტორიზაცია</p>
+      </div>
+      <div class="actions">
+        <a href="/login#" hx-boost="true">{{tr.AUTH.login}}</a>
+        <a href="/#" hx-boost="true">{{tr.AUTH.main_page}}</a>
+      </div>
+    </div>
   </div>
 
   <script src="/static/js/auth.js"></script>

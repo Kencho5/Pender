@@ -39,14 +39,7 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
                             .path("/")
                             .finish(),
                     );
-                    response.set_body(
-                        r#"
-                        <p class='success'>
-                            <i class="fa-solid fa-circle-check"></i>
-                            Logged in!
-                        </p>
-                        "#,
-                    );
+
                     return Ok(response);
                 }
             }
