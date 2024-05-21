@@ -24,7 +24,9 @@
       "reset_password": "Forgot password?",
       "send_code": "Send code",
       "code": "Code",
-      "main_page": "Main Page"
+      "main_page": "Main Page",
+      "register_success": "You have successfully registered",
+      "register_success_second": "To use the account, please go through authorization"
     },
     "PROFILE": {
       "facebook": "Link",
@@ -88,7 +90,9 @@
       "reset_password": "დაგავიწყდა პაროლი?",
       "send_code": "კოდის გაგზავნა",
       "code": "კოდი",
-      "main_page": "მთავარი გვერდი"
+      "main_page": "მთავარი გვერდი",
+      "register_success": "თქვენ წარმატებით დარეგისტრირდით",
+      "register_success_second": "ანგარიშის გამოსაყენებლად, გთხოვთ გაიაროთ ავტორიზაცია"
     },
     "PROFILE": {
       "facebook": "ლინკი",

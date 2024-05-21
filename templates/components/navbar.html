@@ -1,0 +1,34 @@
+<div class="navbar-div">
+  <nav class="navbar">
+    <a href="/#" hx-boost="true" class="logo-box">
+      <img src="/assets/logo.svg" alt="Logo" />
+      <h1>Pender</h1>
+    </a>
+
+    <div class="nav-right">
+      <a href="/upload#" hx-boost="true" class="upload">
+        <img src="/assets/icons/upload_nav.svg" alt="Upload" />
+        {{ tr.NAV.upload }}
+      </a>
+      <div class="user-div">
+        <div class="user-icon-div">
+          <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
+        </div>
+        <p>{{ claims.name | split(pat=" ") | first }}</p>
+        <img src="/assets/icons/dropdown.svg" alt="Arrow Down" />
+      </div>
+      <a
+        hx-get="{{route}}"
+        hx-params="none"
+        onclick="changeLang('{{ lang }}')"
+        hx-trigger="click delay:50ms"
+        hx-target="body"
+        hx-swap="outerHTML"
+        class="navbar-lang"
+      >
+        <img src="/assets/icons/{{lang}}.svg" alt="Geo" />
+        <p>{{lang}}</p>
+      </a>
+    </div>
+  </nav>
+</div>

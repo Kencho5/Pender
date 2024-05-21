@@ -10,8 +10,8 @@
 }
 
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 500;
   -webkit-tap-highlight-color: transparent;
   letter-spacing: 1px;
   transition: opacity 0.45s ease-out;
@@ -25,8 +25,8 @@ body {
   margin-top: 150px;
 }
 
-i {
-  font-style: normal;
+a {
+  text-decoration: none;
 }
 
 .icon-svg {
@@ -35,7 +35,7 @@ i {
 }
 
 .main-content {
-  /* padding-top: 150px; */
+  margin-bottom: 50px;
   min-height: 100vh;
 }
 
