@@ -19,7 +19,6 @@ body {
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
   background-color: var(--background);
-  /* background: url("/assets/bg.avif") center/cover fixed; */
   background-color: var(--background);
   color: var(--text);
   margin: 0;
