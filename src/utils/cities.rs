@@ -8,7 +8,7 @@ struct Search {
 
 pub async fn get_cities(req: tide::Request<AppState>) -> tide::Result {
     let session = req.session();
-    let lang = session.get::<String>("lang").unwrap_or("GE".into());
+    let lang = session.get::<String>("lang").unwrap_or("GEO".into());
 
     let file_path = "./public/translations/cities.json";
     let file = fs::read_to_string(&file_path).expect("Not Found");
@@ -19,7 +19,7 @@ pub async fn get_cities(req: tide::Request<AppState>) -> tide::Result {
 
     let mut result = match_cities(&json[lang].as_object().unwrap(), &input)?;
     if result.is_empty() {
-        result = match_cities(&json["EN"].as_object().unwrap(), &input)?;
+        result = match_cities(&json["ENG"].as_object().unwrap(), &input)?;
     }
 
     let response = Response::builder(200).body(result).build();

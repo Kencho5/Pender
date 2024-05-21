@@ -1,5 +1,5 @@
 {
-  "EN": {
+  "ENG": {
     "NAV": {
       "home": "Home",
       "upload": "Upload",
@@ -63,7 +63,7 @@
       "error": "Failed to load post"
     }
   },
-  "GE": {
+  "GEO": {
     "NAV": {
       "home": "მთავარი",
       "upload": "ატვირთვა",

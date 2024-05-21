@@ -1,5 +1,5 @@
 {
-  "GE": {
+  "GEO": {
     "tbilisi": "თბილისი",
     "kutaisi": "ქუთაისი",
     "batumi": "ბათუმი",
@@ -21,7 +21,7 @@
     "signagi": "სიღნაღი",
     "marneuli": "მარნეული"
   },
-  "EN": {
+  "ENG": {
     "tbilisi": "Tbilisi",
     "kutaisi": "Kutaisi",
     "batumi": "Batumi",

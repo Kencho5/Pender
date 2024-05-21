@@ -19,7 +19,7 @@ pub async fn profile_handler(req: Request<AppState>) -> tide::Result {
 
 pub async fn edit_profile(mut req: Request<AppState>) -> tide::Result {
     let session = req.session();
-    let lang = session.get::<String>("lang").unwrap_or("GE".into());
+    let lang = session.get::<String>("lang").unwrap_or("GEO".into());
 
     let user: auth_struct::UserStruct = req.body_form().await?;
     let mut response = Response::builder(200)
