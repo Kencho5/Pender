@@ -80,6 +80,8 @@ document.querySelector(".animal-dropdown-content").addEventListener(
 );
 
 function changeLang(lang) {
+  lang = (lang === "GEO") ? "ENG" : "GEO";
+
   fetch(`/api/set_language/${lang}`, {
     method: "POST",
   });

@@ -5,16 +5,7 @@
 
 <body>
   <div class="form-div">
-    <div class="header">
-      <a href="/#" hx-boost="true" class="header-logo">
-        <img src="/assets/logo.svg" alt="Logo" />
-        <h1>Pender</h1>
-      </a>
-      <div class="header-lang">
-        <img src="/assets/icons/geo.svg" alt="Geo" />
-        <p>GEO</p>
-      </div>
-    </div>
+    {% include "components/auth_header.html" %}
 
     <form
       hx-post="/register"
