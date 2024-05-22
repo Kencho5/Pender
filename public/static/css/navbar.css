@@ -71,6 +71,12 @@
   cursor: pointer;
   padding: 0px 8px;
   font-size: 16px;
+  transition: 0.2s;
+}
+
+.navbar-lang:hover,
+.user-div:hover {
+  border: 1px solid #83594b;
 }
 
 .navbar-lang img {
@@ -91,6 +97,7 @@
   text-decoration: none;
   color: var(--text);
   user-select: none;
+  transition: 0.2s;
 }
 
 .user-icon-div {
@@ -119,6 +126,11 @@
   width: 130px;
   padding: 0px 8px;
   font-size: 16px;
+  transition: 0.2s;
+}
+
+.upload:hover {
+  background-color: #f7d3d1;
 }
 
 .upload img {
