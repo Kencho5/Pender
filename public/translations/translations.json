@@ -33,8 +33,9 @@
       "facebook_ex": "Your facebook profile link",
       "edit_details": "Edit Profile Details",
       "title_helper": "Update your personal information here",
-      "save_changes": "Save Changes",
-      "posts": "Posts"
+      "save_changes": "Save",
+      "posts": "Posts",
+      "cancel": "Cancel"
     },
     "UPLOAD": {
       "animal": "Animal",
@@ -100,8 +101,9 @@
       "facebook_ex": "შენი ფეისბუქის პროფილის ლინკი",
       "edit_details": "პროფილის რედაქტირება",
       "title_helper": "განაახლეთ თქვენი პერსონალური ინფორმაცია აქ",
-      "save_changes": "პროფილის შენახვა",
-      "posts": "პოსტები"
+      "save_changes": "შენახვა",
+      "posts": "პოსტები",
+      "cancel": "გაუქმება"
     },
     "UPLOAD": {
       "animal": "ცხოველი",

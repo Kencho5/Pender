@@ -23,6 +23,96 @@
     <div class="details-div">
       <h1>{{ tr.PROFILE.edit_details }}</h1>
       <p>{{ tr.PROFILE.title_helper }}</p>
+      <form
+        hx-post="/api/edit-profile"
+        hx-trigger="submit"
+        hx-target=".msg"
+        class="details-form"
+      >
+        <!-- NAME INPUT -->
+        <div class="input-div">
+          <label for="name">{{ tr.AUTH.name }}</label>
+          <img
+            src="/assets/icons/user.svg"
+            class="profile-input-icon"
+            alt="User"
+          />
+          <input type="text" name="name" value="{{ claims.name }}" />
+        </div>
+
+        <!-- EMAIL INPUT -->
+        <div class="input-div">
+          <label for="email">{{ tr.AUTH.email }}</label>
+          <img
+            src="/assets/icons/email.svg"
+            class="profile-input-icon"
+            alt="Email"
+          />
+          <input type="text" name="email" value="{{ claims.email }}" />
+        </div>
+
+        <!-- PHONE INPUT -->
+        <div class="input-div">
+          <label for="phone">{{ tr.AUTH.phone }}</label>
+          <img
+            src="/assets/icons/phone.svg"
+            class="profile-input-icon"
+            alt="Phone"
+          />
+          <input type="text" name="phone" value="{{ claims.phone }}" />
+        </div>
+
+        <!-- CITY INPUT -->
+        <div class="input-div">
+          <label for="city">{{ tr.AUTH.city }}</label>
+          <img
+            src="/assets/icons/location.svg"
+            class="profile-input-icon"
+            alt="City"
+          />
+          {% include "components/cities.html" %}
+        </div>
+
+        <!-- FACEBOOK INPUT -->
+        <div class="input-div">
+          <label for="facebook">{{ tr.PROFILE.facebook }}</label>
+          <img
+            src="/assets/icons/facebook.svg"
+            class="profile-input-icon"
+            alt="Facebook"
+          />
+
+          <!-- prettier-ignore -->
+          <input type="text" name="facebook" 
+            {% if claims.facebook != ' ' %}
+            value="{{ claims.facebook }}" 
+            {% else %}
+            placeholder="{{ tr.PROFILE.facebook_ex }}"
+            {% endif %}
+          />
+        </div>
+
+        <div class="profile-line"></div>
+
+        <div class="final-actions">
+          <input
+            type="button"
+            class="save-btn cancel"
+            value="{{ tr.PROFILE.cancel }}"
+          />
+
+          <input
+            type="submit"
+            class="save-btn"
+            value="{{ tr.PROFILE.save_changes }}"
+          />
+        </div>
+
+        <input type="hidden" name="id" value="{{claims.id}}" />
+        <input type="hidden" name="password" value="" />
+
+        <div class="msg"></div>
+      </form>
     </div>
   </div>
   <script src="/static/js/profile.js"></script>

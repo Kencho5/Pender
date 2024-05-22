@@ -98,3 +98,103 @@
     text-align: center;
   }
 }
+
+/* FROM CSS */
+.details-form {
+  margin-top: 40px;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0px;
+  gap: 6px;
+}
+
+.input-div input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 14px;
+  gap: 9px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 70px;
+  width: 100%;
+  padding-left: 46px;
+  outline: none;
+  transition: 0.2s;
+  font-size: 16px;
+}
+
+.input-div input:hover {
+  border-color: #83594b;
+}
+
+.input-div label {
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4f3534;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.profile-input-icon {
+  position: relative;
+  left: 16px;
+  bottom: 36px;
+  width: 18px;
+}
+
+.cities-div {
+  top: 50px;
+}
+
+.profile-line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--border);
+  opacity: 0.8;
+  margin-top: 26px;
+}
+
+.save-btn {
+  outline: none;
+  border: none;
+  width: 104px;
+  height: 48px;
+  font-size: 16px;
+  color: var(--accent);
+  background: var(--primary);
+  border-radius: 50px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.save-btn:hover {
+  background-color: #c4463e;
+}
+
+.cancel:hover {
+  border-color: #83594b;
+  background-color: var(--accent);
+}
+
+.final-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.cancel {
+  background-color: var(--accent);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
