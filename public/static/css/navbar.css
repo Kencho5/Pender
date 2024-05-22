@@ -184,22 +184,23 @@
 }
 
 .user-info {
-  padding: 8px 18px 0px;
-  line-height: 12px;
+  padding: 16px 18px 8px;
 }
 
 .user-name {
+  margin: 0;
   font-size: 16px;
 }
 
 .user-email {
+  margin: 0;
   font-weight: 400;
   font-size: 16px;
   color: var(--placeholder);
   overflow: hidden;
   max-width: 90%;
   text-overflow: ellipsis;
-  padding-bottom: 5px;
+  padding: 8px 0px;
 }
 
 .dropdown-actions {
