@@ -30,6 +30,12 @@
   padding: 10px 14px;
   width: 80%;
   cursor: pointer;
+  border-radius: 38px;
+  transition: 0.2s;
+}
+
+.selector-item:hover {
+  background-color: #f6f3f0;
 }
 
 .selector-item img {
@@ -38,8 +44,11 @@
 
 .active-selector {
   background-color: #f6f3f0;
-  border-radius: 38px;
-  color: var(--text);
+  transition: 0.2s;
+}
+
+.active-selector:hover {
+  background-color: #e9e0d8;
 }
 
 /* DETAILS CSS */
@@ -63,4 +72,29 @@
 }
 
 @media (max-width: 900px) {
+  .profile-main {
+    flex-direction: column;
+  }
+
+  .selector-div {
+    flex-direction: row;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 330px;
+    height: 80px;
+  }
+
+  .details-div {
+    width: 70%;
+    margin: auto;
+  }
+
+  .details-div h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .details-div p {
+    font-size: 14px;
+    text-align: center;
+  }
 }
