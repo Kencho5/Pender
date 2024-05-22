@@ -60,6 +60,7 @@ body {
   width: 84px;
   cursor: pointer;
   padding: 0px 8px;
+  transition: 0.2s;
 }
 
 .header-lang img {
@@ -113,6 +114,12 @@ body {
   box-sizing: border-box;
   outline: none;
   font-weight: lighter;
+  transition: 0.2s;
+}
+
+.auth-form input:hover,
+.header-lang:hover {
+  border-color: #83594b;
 }
 
 .auth-form input::placeholder {
@@ -158,6 +165,11 @@ input:-webkit-autofill:active {
   background-color: var(--primary);
   color: var(--background);
   border: none;
+  transition: 0.3s;
+}
+
+.auth-form input[type="submit"]:hover {
+  background-color: #c4463e;
 }
 
 .auth-option {
