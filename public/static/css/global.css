@@ -54,13 +54,16 @@ a {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: var(--accent);
-  padding: 15px 20px;
-  font-size: 2rem;
-  border-radius: 100%;
-  color: var(--text);
   transition: all 0.2s ease-in-out;
+}
+
+.plus-btn img {
+  background-color: var(--accent);
+  border-radius: 100%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 12px;
+  width: 40px;
+  height: 40px;
 }
 
 .plus-btn:hover {
@@ -69,6 +72,11 @@ a {
 
 @media (max-width: 600px) {
   .plus-btn {
-    padding: 6px 12px;
+    padding: 6px;
+  }
+
+  .plus-btn img {
+    width: 30px;
+    height: 30px;
   }
 }
