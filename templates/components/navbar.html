@@ -12,15 +12,15 @@
       </a>
 
       {% if claims %}
-      <a class="user-div">
+      <a class="user-div" onclick="toggleMenu(this)">
         <div class="user-icon-div">
           <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
         </div>
         <p>{{ claims.name | split(pat=" ") | first }}</p>
-        <img src="/assets/icons/dropdown.svg" alt="Arrow Down" />
+        <img src="/assets/icons/dropdown.svg" id="hidden" alt="Arrow" />
       </a>
       {% else %}
-      <a href="/login#" hx-boost="true" class="user-div">
+      <a href="/login#" hx-boost="true" class="user-div login-div">
         <div class="user-icon-div">
           <img
             src="/assets/icons/login.svg"
@@ -31,6 +31,48 @@
         <p>{{ tr.NAV.login }}</p>
       </a>
       {% endif %}
+
+      <div class="nav-dropdown hide-menu">
+        {% if claims %}
+        <div class="user-info">
+          <p class="user-name">{{ claims.name }}</p>
+          <p class="user-email">{{ claims.email }}</p>
+        </div>
+
+        <div class="dropdown-line"></div>
+        {% endif %}
+        <div class="dropdown-actions">
+          {% if claims %}
+          <a href="/profile#" hx-boost="true">
+            <img src="/assets/icons/user.svg" alt="User" />
+            {{ tr.NAV.profile }}
+          </a>
+          {% else %}
+          <a href="/login#" hx-boost="true">
+            <img src="/assets/icons/login.svg" alt="Log In" />
+            {{ tr.NAV.login }}
+          </a>
+          {% endif %}
+          <a href="/search?animal=all#" hx-boost="true">
+            <img src="/assets/icons/picture.svg" alt="Picture" />
+            {{ tr.PROFILE.posts }}
+          </a>
+          <a href="/upload#" hx-boost="true">
+            <img src="/assets/icons/upload.svg" alt="Upload" />
+            {{ tr.NAV.upload }}
+          </a>
+        </div>
+
+        {% if claims %}
+        <div class="dropdown-line"></div>
+        <div class="dropdown-actions">
+          <a href="/login#" hx-on::before-request="logout()" hx-boost="true">
+            <img src="/assets/icons/logout.svg" alt="Logout" />
+            {{ tr.NAV.logout }}
+          </a>
+        </div>
+        {% endif %}
+      </div>
 
       <a
         hx-get="{{route}}"
@@ -43,6 +85,18 @@
       >
         <img src="/assets/icons/{{lang}}.svg" alt="Geo" />
       </a>
+
+      {% if not claims %}
+      <img
+        src="/assets/icons/hamburger.svg"
+        alt="Menu"
+        width="32"
+        height="32"
+        class="menu-icon"
+        id="hidden"
+        onclick="toggleHamburger(this)"
+      />
+      {% endif %}
     </div>
   </nav>
 </div>

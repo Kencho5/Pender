@@ -23,4 +23,32 @@ function changeLang(lang) {
   });
 }
 
+var menu = document.querySelector(".nav-dropdown");
+
+function toggleHamburger(icon) {
+  menu.classList.toggle("hide-menu");
+
+  const isHidden = icon.id === "hidden";
+  icon.src = isHidden
+    ? "/assets/icons/close.svg"
+    : "/assets/icons/hamburger.svg";
+  icon.id = isHidden ? "open" : "hidden";
+}
+
+function toggleMenu(icon) {
+  menu.classList.toggle("hide-menu");
+
+  icon = icon.childNodes[5];
+  const isHidden = icon.id === "hidden";
+
+  icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
+  icon.id = isHidden ? "open" : "hidden";
+}
+
+function logout() {
+  fetch("/logout", {
+    method: "POST",
+  });
+}
+
 var delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
