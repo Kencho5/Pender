@@ -27,6 +27,7 @@ var menu = document.querySelector(".nav-dropdown");
 
 function toggleHamburger(icon) {
   menu.classList.toggle("hide-menu");
+  menu.classList.toggle("show-menu");
 
   const isHidden = icon.id === "hidden";
   icon.src = isHidden
@@ -37,6 +38,7 @@ function toggleHamburger(icon) {
 
 function toggleMenu(icon) {
   menu.classList.toggle("hide-menu");
+  menu.classList.toggle("show-menu");
 
   icon = icon.childNodes[5];
   const isHidden = icon.id === "hidden";

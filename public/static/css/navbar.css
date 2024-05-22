@@ -127,6 +127,26 @@
   margin-right: 10px;
 }
 
+.hide-menu {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.show-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
 .nav-dropdown {
   position: absolute;
   top: 90px;
@@ -137,10 +157,6 @@
   border: 1px solid var(--border);
   box-shadow: 0px 4px 6px -2px #10182808;
   box-shadow: 0px 12px 16px -4px #10182814;
-}
-
-.hide-menu {
-  display: none;
 }
 
 .user-info {
