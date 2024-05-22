@@ -191,7 +191,7 @@
 }
 
 .dropdown-actions {
-  padding: 4px 18px;
+  padding: 4px 0px;
 }
 
 .dropdown-actions img {
@@ -206,6 +206,12 @@
   display: flex;
   align-items: center;
   height: 48px;
+  padding: 0px 18px;
+  transition: 0.2s;
+}
+
+.dropdown-action:hover {
+  background-color: #f6f3f0;
 }
 
 .menu-icon {

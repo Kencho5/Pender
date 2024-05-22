@@ -43,21 +43,21 @@
         {% endif %}
         <div class="dropdown-actions">
           {% if claims %}
-          <a href="/profile#" hx-boost="true">
+          <a href="/profile#" class="dropdown-action" hx-boost="true">
             <img src="/assets/icons/user.svg" alt="User" />
             {{ tr.NAV.profile }}
           </a>
           {% else %}
-          <a href="/login#" hx-boost="true">
+          <a href="/login#" class="dropdown-action" hx-boost="true">
             <img src="/assets/icons/login.svg" alt="Log In" />
             {{ tr.NAV.login }}
           </a>
           {% endif %}
-          <a href="/search?animal=all#" hx-boost="true">
+          <a href="/search?animal=all#" class="dropdown-action" hx-boost="true">
             <img src="/assets/icons/picture.svg" alt="Picture" />
             {{ tr.PROFILE.posts }}
           </a>
-          <a href="/upload#" hx-boost="true">
+          <a href="/upload#" class="dropdown-action" hx-boost="true">
             <img src="/assets/icons/upload.svg" alt="Upload" />
             {{ tr.NAV.upload }}
           </a>
