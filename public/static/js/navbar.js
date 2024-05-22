@@ -24,8 +24,9 @@ function changeLang(lang) {
 }
 
 var menu = document.querySelector(".nav-dropdown");
+var icon = document.querySelector("#hidden");
 
-function toggleHamburger(icon) {
+function toggleHamburger() {
   menu.classList.toggle("hide-menu");
   menu.classList.toggle("show-menu");
 
@@ -36,16 +37,29 @@ function toggleHamburger(icon) {
   icon.id = isHidden ? "open" : "hidden";
 }
 
-function toggleMenu(icon) {
+function toggleMenu() {
   menu.classList.toggle("hide-menu");
   menu.classList.toggle("show-menu");
 
-  icon = icon.childNodes[5];
   const isHidden = icon.id === "hidden";
 
   icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
   icon.id = isHidden ? "open" : "hidden";
 }
+
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  const menuBtn = document.querySelector(".dropdownBtn");
+  const isClickInside = menu.contains(target) || menuBtn.contains(target);
+
+  if (!isClickInside && !menu.classList.contains("hide-menu")) {
+    if (menuBtn.classList.contains("user-div")) {
+      toggleMenu();
+    } else {
+      toggleHamburger();
+    }
+  }
+});
 
 function logout() {
   fetch("/logout", {

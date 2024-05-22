@@ -12,7 +12,7 @@
       </a>
 
       {% if claims %}
-      <a class="user-div" onclick="toggleMenu(this)">
+      <a class="user-div dropdownBtn" onclick="toggleMenu()">
         <div class="user-icon-div">
           <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
         </div>
@@ -92,9 +92,9 @@
         alt="Menu"
         width="32"
         height="32"
-        class="menu-icon"
+        class="menu-icon dropdownBtn"
         id="hidden"
-        onclick="toggleHamburger(this)"
+        onclick="toggleHamburger()"
       />
       {% endif %}
     </div>
