@@ -4,7 +4,27 @@
 </style>
 
 <body>
-
+  <div class="profile-main">
+    <div class="selector-div">
+      <p class="selector-item active-selector">
+        <img src="/assets/icons/user.svg" alt="User" />
+        {{ tr.NAV.profile }}
+      </p>
+      <p class="selector-item">
+        <img
+          src="/assets/icons/picture.svg"
+          width="18"
+          height="18"
+          alt="User"
+        />
+        {{ tr.PROFILE.posts }}
+      </p>
+    </div>
+    <div class="details-div">
+      <h1>{{ tr.PROFILE.edit_details }}</h1>
+      <p>{{ tr.PROFILE.title_helper }}</p>
+    </div>
+  </div>
   <script src="/static/js/profile.js"></script>
 </body>
 {% endblock content %}

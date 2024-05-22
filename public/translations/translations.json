@@ -32,6 +32,7 @@
       "facebook": "Link",
       "facebook_ex": "Your facebook profile link",
       "edit_details": "Edit Profile Details",
+      "title_helper": "Update your personal information here",
       "save_changes": "Save Changes",
       "posts": "Posts"
     },
@@ -98,6 +99,7 @@
       "facebook": "ლინკი",
       "facebook_ex": "შენი ფეისბუქის პროფილის ლინკი",
       "edit_details": "პროფილის რედაქტირება",
+      "title_helper": "განაახლეთ თქვენი პერსონალური ინფორმაცია აქ",
       "save_changes": "პროფილის შენახვა",
       "posts": "პოსტები"
     },
