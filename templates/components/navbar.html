@@ -10,13 +10,28 @@
         <img src="/assets/icons/upload_nav.svg" alt="Upload" />
         {{ tr.NAV.upload }}
       </a>
-      <div class="user-div">
+
+      {% if claims %}
+      <a class="user-div">
         <div class="user-icon-div">
           <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
         </div>
         <p>{{ claims.name | split(pat=" ") | first }}</p>
         <img src="/assets/icons/dropdown.svg" alt="Arrow Down" />
-      </div>
+      </a>
+      {% else %}
+      <a href="/login#" hx-boost="true" class="user-div">
+        <div class="user-icon-div">
+          <img
+            src="/assets/icons/login.svg"
+            class="user-icon login-icon"
+            alt="User"
+          />
+        </div>
+        <p>{{ tr.NAV.login }}</p>
+      </a>
+      {% endif %}
+
       <a
         hx-get="{{route}}"
         hx-params="none"

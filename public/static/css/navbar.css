@@ -88,6 +88,9 @@
   justify-content: space-evenly;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
+  color: var(--text);
+  user-select: none;
 }
 
 .user-icon-div {
@@ -98,6 +101,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .upload {
@@ -117,4 +125,24 @@
   width: 20px;
   height: 18px;
   margin-right: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .upload {
+    display: none;
+  }
+
+  .logo-box h1 {
+    display: none;
+  }
+
+  .user-div {
+    font-size: 14px;
+    width: 130px;
+  }
+
+  .navbar-lang {
+    height: 43px;
+    width: 30px;
+  }
 }
