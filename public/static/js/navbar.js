@@ -26,24 +26,22 @@ function changeLang(lang) {
 var menu = document.querySelector(".nav-dropdown");
 var icon = document.querySelector("#hidden");
 
-function toggleHamburger() {
-  menu.classList.toggle("hide-menu");
-  menu.classList.toggle("show-menu");
-
-  const isHidden = icon.id === "hidden";
-  icon.src = isHidden
-    ? "/assets/icons/close.svg"
-    : "/assets/icons/hamburger.svg";
-  icon.id = isHidden ? "open" : "hidden";
-}
-
 function toggleMenu() {
   menu.classList.toggle("hide-menu");
   menu.classList.toggle("show-menu");
 
-  const isHidden = icon.id === "hidden";
+  toggleIcon();
+}
 
-  icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
+function toggleIcon() {
+  const isHidden = icon.id === "hidden";
+  if (icon.classList.length == 0) {
+    icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
+  } else {
+    icon.src = isHidden
+      ? "/assets/icons/close.svg"
+      : "/assets/icons/hamburger.svg";
+  }
   icon.id = isHidden ? "open" : "hidden";
 }
 
@@ -53,11 +51,7 @@ document.addEventListener("click", (event) => {
   const isClickInside = menu.contains(target) || menuBtn.contains(target);
 
   if (!isClickInside && !menu.classList.contains("hide-menu")) {
-    if (menuBtn.classList.contains("user-div")) {
-      toggleMenu();
-    } else {
-      toggleHamburger();
-    }
+    toggleMenu();
   }
 });
 
