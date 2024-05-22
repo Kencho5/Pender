@@ -130,7 +130,13 @@
 .hide-menu {
   visibility: hidden;
   opacity: 0;
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
   transform: translateY(-10px);
+  -webkit-transition:
+    opacity 0.2s ease,
+    -webkit-transform 0.2s ease,
+    visibility 0.2s ease;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease,
@@ -140,7 +146,13 @@
 .show-menu {
   visibility: visible;
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
+  -webkit-transition:
+    opacity 0.2s ease,
+    -webkit-transform 0.2s ease,
+    visibility 0.2s ease;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease,
