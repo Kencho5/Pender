@@ -1,25 +1,24 @@
-var spinnerDiv = document.getElementsByClassName("lds-dual-ring")[0];
-var msgDiv = document.getElementsByClassName("msg")[0];
-var resetForm = document.getElementsByName("resetForm")[0];
-var resetCodeForm = document.getElementsByName("resetCodeForm")[0];
-
-document.body.addEventListener("htmx:afterSwap", async function (event) {
-  if (event.detail.xhr.status == 200) {
-    await delay(300);
-    spinnerDiv.style.display = "none";
-    msgDiv.style.display = "block";
-  }
-  if (event.target.textContent.trim() == "Code Sent!") {
-    await delay(1000);
-    resetForm.style.display = "none";
-    resetCodeForm.style.display = "block";
-  } else if (event.target.textContent.trim() == "Password reset!") {
-    await delay(500);
-    window.location.href = "/login";
-  }
-});
+var inputs = document.querySelectorAll('input[type="submit"]');
 
 document.body.addEventListener("htmx:beforeSend", function () {
-  spinnerDiv.style.display = "block";
-  msgDiv.style.display = "none";
+  inputs.forEach((input) => {
+    input.disabled = true;
+    input.style.backgroundColor = "#E78882";
+  });
+});
+
+document.body.addEventListener("htmx:afterSwap", function (evt) {
+  inputs.forEach((input) => {
+    input.disabled = false;
+    input.style.backgroundColor = "#D9625A";
+  });
+
+  const xhr = evt.detail.xhr;
+  const response = xhr.responseText;
+
+  if (response.includes("Code Sent!")) {
+    document.querySelector('form[name="resetForm"]').style.display = "none";
+    document.querySelector('form[name="resetCodeForm"]').style.display =
+      "block";
+  }
 });

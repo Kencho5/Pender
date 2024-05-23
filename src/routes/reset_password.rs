@@ -87,6 +87,7 @@ pub async fn reset_code_handler(mut req: Request<AppState>) -> tide::Result {
             .await?;
 
         response.set_body(r#"<p class='success'>Password reset!</p>"#);
+        response.insert_header("HX-Location", "/login");
     } else {
         response.set_body(r#"<p class='error'>Wrong code!</p>"#);
     }

@@ -26,7 +26,10 @@
       "code": "Code",
       "main_page": "Main Page",
       "register_success": "You have successfully registered",
-      "register_success_second": "To use the account, please go through authorization"
+      "register_success_second": "To use the account, please go through authorization",
+      "reset_helper": "Enter your email and receive code",
+      "check_email": "Check your email",
+      "reset_password_submit": "Change Password"
     },
     "PROFILE": {
       "facebook": "Link",
@@ -94,7 +97,10 @@
       "code": "კოდი",
       "main_page": "მთავარი გვერდი",
       "register_success": "თქვენ წარმატებით დარეგისტრირდით",
-      "register_success_second": "ანგარიშის გამოსაყენებლად, გთხოვთ გაიაროთ ავტორიზაცია"
+      "register_success_second": "ანგარიშის გამოსაყენებლად, გთხოვთ გაიაროთ ავტორიზაცია",
+      "reset_helper": "ჩაწერეთ თქვენი ელ.ფოსტა და მიიღეთ კოდი",
+      "check_email": "შეამოწმეთ თქვენი ელ.ფოსტა",
+      "reset_password_submit": "პაროლის შეცვლა"
     },
     "PROFILE": {
       "facebook": "ლინკი",
