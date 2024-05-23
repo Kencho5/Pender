@@ -86,6 +86,7 @@
 
   .details-div {
     width: 70%;
+    height: 694px;
     margin: auto;
   }
 
@@ -96,6 +97,11 @@
   .details-div p {
     font-size: 14px;
     text-align: center;
+  }
+
+  .final-actions {
+    justify-content: center !important;
+    flex-direction: row-reverse !important;
   }
 }
 

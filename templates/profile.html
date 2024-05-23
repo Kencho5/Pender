@@ -84,7 +84,7 @@
 
           <!-- prettier-ignore -->
           <input type="text" name="facebook" 
-            {% if claims.facebook != ' ' %}
+            {% if claims.facebook != ' ' and claims.facebook != '' %}
             value="{{ claims.facebook }}" 
             {% else %}
             placeholder="{{ tr.PROFILE.facebook_ex }}"
@@ -96,6 +96,9 @@
 
         <div class="final-actions">
           <input
+            hx-get="/profile#"
+            hx-target="body"
+            hx-swap="outerHTML"
             type="button"
             class="save-btn cancel"
             value="{{ tr.PROFILE.cancel }}"
