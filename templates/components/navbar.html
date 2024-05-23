@@ -65,7 +65,7 @@
 
         {% if claims %}
         <div class="dropdown-line"></div>
-        <div class="dropdown-actions">
+        <div class="dropdown-actions logout-action">
           <a href="/login#" hx-on::before-request="logout()" hx-boost="true">
             <img src="/assets/icons/logout.svg" alt="Logout" />
             {{ tr.NAV.logout }}

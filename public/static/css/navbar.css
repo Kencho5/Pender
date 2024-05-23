@@ -271,3 +271,12 @@
     transform: translateX(-50%);
   }
 }
+
+.logout-action {
+  border-radius: 0px 0px 20px 20px;
+  transition: 0.2s;
+}
+
+.logout-action:hover {
+  background-color: #f6f3f0;
+}
