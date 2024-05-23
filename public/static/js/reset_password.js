@@ -17,8 +17,11 @@ document.body.addEventListener("htmx:afterSwap", function (evt) {
   const response = xhr.responseText;
 
   if (response.includes("Code Sent!")) {
-    document.querySelector('form[name="resetForm"]').style.display = "none";
-    document.querySelector('form[name="resetCodeForm"]').style.display =
-      "block";
+    const resetForm = document.querySelector('form[name="resetForm"]');
+    const resetCodeForm = document.querySelector('form[name="resetCodeForm"]');
+
+    resetForm.style.display = "none";
+    resetCodeForm.style.display = "block";
+    resetCodeForm.reset();
   }
 });
