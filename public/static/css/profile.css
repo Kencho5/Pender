@@ -103,6 +103,10 @@
     justify-content: center !important;
     flex-direction: row-reverse !important;
   }
+
+  .cities-div {
+    top: 55px;
+  }
 }
 
 /* FROM CSS */

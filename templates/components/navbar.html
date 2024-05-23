@@ -12,7 +12,7 @@
       </a>
 
       {% if claims %}
-      <a class="user-div dropdownBtn" onclick="toggleMenu()">
+      <a role="button" class="user-div dropdownBtn" onclick="toggleMenu()">
         <div class="user-icon-div">
           <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
         </div>
@@ -80,6 +80,7 @@
       </div>
 
       <a
+        role="button"
         hx-get="{{route}}"
         hx-params="none"
         onclick="changeLang('{{ lang }}')"
