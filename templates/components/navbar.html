@@ -17,7 +17,12 @@
           <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
         </div>
         <p>{{ claims.name | split(pat=" ") | first }}</p>
-        <img src="/assets/icons/dropdown.svg" id="hidden" alt="Arrow" />
+        <img
+          src="/assets/icons/dropdown.svg"
+          id="hidden"
+          alt="Arrow"
+          height="7"
+        />
       </a>
       {% else %}
       <a href="/login#" hx-boost="true" class="user-div login-div">

@@ -15,7 +15,6 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
         .body(
             r#"
             <p class='success'>
-                <i class="fa-solid fa-circle-check"></i>
                 Account created!
             </p>
             "#,
@@ -26,7 +25,6 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
         response.set_body(
             r#"
             <p class='error'>
-                <i class="fa-solid fa-circle-exclamation"></i>
                 Email already in use
             </p>
             "#,
@@ -38,7 +36,6 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
         response.set_body(
             r#"
             <p class='error'>
-                <i class="fa-solid fa-circle-exclamation"></i>
                 Fill in the form
             </p>
             "#,
@@ -52,7 +49,6 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
         response.set_body(
             r#"
             <p class='error'>
-                <i class="fa-solid fa-circle-exclamation"></i>
                 Failed to register user
             </p>
             "#,

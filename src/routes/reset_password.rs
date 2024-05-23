@@ -21,9 +21,7 @@ pub async fn reset_post_handler(mut req: Request<AppState>) -> tide::Result {
     let mut response = Response::builder(200).build();
 
     if login::find_user(&mut req, &user.email).await.is_err() {
-        response.set_body(
-            r#"<p class='error'><i class="fa-solid fa-circle-exclamation"></i>Email not found</p>"#,
-        );
+        response.set_body(r#"<p class='error'>Email not found</p>"#);
         return Ok(response);
     }
 
@@ -60,15 +58,11 @@ pub async fn reset_post_handler(mut req: Request<AppState>) -> tide::Result {
             session.insert("code", code.to_string())?;
             session.insert("email", user.email)?;
 
-            response.set_body(
-                r#"<p class='success'><i class="fa-solid fa-circle-check"></i>Code Sent!</p>"#,
-            );
+            response.set_body(r#"<p class='success'>Code Sent!</p>"#);
             Ok(response)
         }
         Err(_) => {
-            response.set_body(
-                    r#"<p class='error'><i class="fa-solid fa-circle-exclamation"></i>Couldn't send code</p>"#,
-                );
+            response.set_body(r#"<p class='error'>Couldn't send code</p>"#);
             Ok(response)
         }
     }
@@ -92,13 +86,9 @@ pub async fn reset_code_handler(mut req: Request<AppState>) -> tide::Result {
             .execute(pg_conn.acquire().await?)
             .await?;
 
-        response.set_body(
-            r#"<p class='success'><i class="fa-solid fa-circle-check"></i> Password reset!</p>"#,
-        );
+        response.set_body(r#"<p class='success'>Password reset!</p>"#);
     } else {
-        response.set_body(
-            r#"<p class='error'><i class="fa-solid fa-circle-exclamation"></i> Wrong code!</p>"#,
-        );
+        response.set_body(r#"<p class='error'>Wrong code!</p>"#);
     }
 
     Ok(response)
