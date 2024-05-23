@@ -38,7 +38,8 @@
       "title_helper": "Update your personal information here",
       "save_changes": "Save",
       "posts": "Posts",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "saved": "Changes saved"
     },
     "UPLOAD": {
       "animal": "Animal",
@@ -109,7 +110,8 @@
       "title_helper": "განაახლეთ თქვენი პერსონალური ინფორმაცია აქ",
       "save_changes": "შენახვა",
       "posts": "პოსტები",
-      "cancel": "გაუქმება"
+      "cancel": "გაუქმება",
+      "saved": "ცვლილებები შენახულია"
     },
     "UPLOAD": {
       "animal": "ცხოველი",

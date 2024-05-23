@@ -106,7 +106,7 @@
 
           <input
             type="submit"
-            onclick="triggerGlow()"
+            onclick="triggerToast()"
             class="save-btn"
             value="{{ tr.PROFILE.save_changes }}"
           />
@@ -116,8 +116,11 @@
         <input type="hidden" name="id" value="{{claims.id}}" />
         <input type="hidden" name="password" value="" />
       </form>
+
     </div>
   </div>
+  {% include "components/toast.html" %}
+
   <script src="/static/js/profile.js"></script>
 </body>
 {% endblock content %}
