@@ -162,13 +162,13 @@
   -ms-transform: translateY(0);
   transform: translateY(0);
   -webkit-transition:
-    opacity 0.2s ease,
-    -webkit-transform 0.2s ease,
-    visibility 0.2s ease;
+    opacity 0.4s ease,
+    -webkit-transform 0.4s ease,
+    visibility 0.4s ease;
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    visibility 0.2s ease;
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
 }
 
 .nav-dropdown {
