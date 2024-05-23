@@ -61,6 +61,27 @@
   border-radius: 20px;
 }
 
+.details-div.saved {
+  animation: successGlow 1s ease-in-out;
+  border-color: var(--border);
+}
+
+@keyframes successGlow {
+  0% {
+    border-color: var(--border);
+  }
+
+  50% {
+    border-color: #a48afb;
+    box-shadow: 0 0 25px rgba(164, 138, 251, 0.7);
+  }
+
+  100% {
+    border-color: var(--border);
+    box-shadow: none;
+  }
+}
+
 .details-div h1 {
   font-size: 30px;
 }
@@ -86,7 +107,7 @@
 
   .details-div {
     width: 70%;
-    height: 694px;
+    height: 684px;
     margin: auto;
   }
 
@@ -203,4 +224,16 @@
   background-color: var(--accent);
   color: var(--text);
   border: 1px solid var(--border);
+}
+
+.msg-container {
+  position: relative;
+  width: 100%;
+}
+
+.msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-55%, -55%); /* Centers the element */
 }

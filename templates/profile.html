@@ -26,7 +26,7 @@
       <form
         hx-post="/api/edit-profile"
         hx-trigger="submit"
-        hx-target=".msg"
+        hx-swap="none"
         class="details-form"
       >
         <!-- NAME INPUT -->
@@ -106,6 +106,7 @@
 
           <input
             type="submit"
+            onclick="triggerGlow()"
             class="save-btn"
             value="{{ tr.PROFILE.save_changes }}"
           />
@@ -113,11 +114,20 @@
 
         <input type="hidden" name="id" value="{{claims.id}}" />
         <input type="hidden" name="password" value="" />
-
-        <div class="msg"></div>
       </form>
     </div>
   </div>
+  <script>
+    const box = document.querySelector(".details-div");
+
+    // Add the 'success' class to trigger the animation
+    box.classList.add("success");
+
+    // Remove the 'success' class after a certain duration (if needed)
+    setTimeout(() => {
+      box.classList.remove("success");
+    }, 3000); // Remove the class after 3 seconds
+  </script>
   <script src="/static/js/profile.js"></script>
 </body>
 {% endblock content %}
