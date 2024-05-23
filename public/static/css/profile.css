@@ -226,14 +226,6 @@
   border: 1px solid var(--border);
 }
 
-.msg-container {
-  position: relative;
-  width: 100%;
-}
-
 .msg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-55%, -55%); /* Centers the element */
+  display: none;
 }

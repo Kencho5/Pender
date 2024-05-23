@@ -26,7 +26,7 @@
       <form
         hx-post="/api/edit-profile"
         hx-trigger="submit"
-        hx-swap="none"
+        hx-target=".msg"
         class="details-form"
       >
         <!-- NAME INPUT -->
@@ -112,22 +112,12 @@
           />
         </div>
 
+        <div class="msg"></div>
         <input type="hidden" name="id" value="{{claims.id}}" />
         <input type="hidden" name="password" value="" />
       </form>
     </div>
   </div>
-  <script>
-    const box = document.querySelector(".details-div");
-
-    // Add the 'success' class to trigger the animation
-    box.classList.add("success");
-
-    // Remove the 'success' class after a certain duration (if needed)
-    setTimeout(() => {
-      box.classList.remove("success");
-    }, 3000); // Remove the class after 3 seconds
-  </script>
   <script src="/static/js/profile.js"></script>
 </body>
 {% endblock content %}
