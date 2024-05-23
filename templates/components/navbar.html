@@ -21,6 +21,7 @@
           src="/assets/icons/dropdown.svg"
           id="hidden"
           alt="Arrow"
+          width="13"
           height="7"
         />
       </a>
@@ -93,15 +94,18 @@
       </a>
 
       {% if not claims %}
-      <img
-        src="/assets/icons/hamburger.svg"
-        alt="Menu"
-        width="32"
-        height="32"
-        class="menu-icon dropdownBtn"
-        id="hidden"
-        onclick="toggleMenu()"
-      />
+      <div>
+        <img
+          src="/assets/icons/hamburger.svg"
+          alt="Menu"
+          width="32"
+          height="32"
+          class="menu-icon dropdownBtn"
+          id="hidden"
+          onclick="toggleMenu()"
+        />
+      </div>
+
       {% endif %}
     </div>
   </nav>
