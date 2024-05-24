@@ -162,6 +162,8 @@
       </a>
 
       {% if not claims %}
+      <link rel="preload" href="/assets/icons/close.svg" as="image" />
+
       <div class="hamburger-div">
         <img
           src="/assets/icons/hamburger.svg"
@@ -173,7 +175,6 @@
           onmousedown="toggleMenu()"
         />
       </div>
-
       {% endif %}
     </div>
   </nav>
