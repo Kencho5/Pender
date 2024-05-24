@@ -1,6 +1,5 @@
 /* Footer styles */
 .footer {
-  background-color: var(--background);
   color: var(--text);
   padding: 15px;
   margin: 0;
@@ -27,11 +26,16 @@
 
 .footer-name {
   font-size: 18px;
-  font-weight: bold;
 }
 
 .footer-contact {
   font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact img {
+  margin-right: 10px;
 }
 
 /* Responsive styles */
