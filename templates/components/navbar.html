@@ -82,12 +82,7 @@
 
       <a
         role="button"
-        hx-get="{{route}}"
-        hx-params="none"
-        onclick="changeLang('{{ lang }}')"
-        hx-trigger="click delay:50ms"
-        hx-target="body"
-        hx-swap="outerHTML"
+        onmousedown="changeLang('{{ lang }}')"
         class="navbar-lang"
       >
         <img src="/assets/icons/{{lang}}.svg" alt="Geo" />

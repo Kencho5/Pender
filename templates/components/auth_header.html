@@ -3,16 +3,8 @@
     <img src="/assets/logo.svg" alt="Logo" />
     <h1>Pender</h1>
   </a>
-  <a
-    hx-get="{{route}}"
-    hx-params="none"
-    onclick="changeLang('{{ lang }}')"
-    hx-trigger="click delay:50ms"
-    hx-target="body"
-    hx-swap="outerHTML"
-    class="header-lang"
-  >
-    <img src="/assets/icons/{{lang}}.svg" alt="Geo" />
+  <a onmousedown="changeLang('{{ lang }}')" class="header-lang">
+    <img src="/assets/icons/{{lang}}.svg" alt="{{lang}}" />
     <p>{{lang}}</p>
   </a>
 </div>

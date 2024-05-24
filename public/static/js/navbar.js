@@ -15,11 +15,16 @@ document.body.addEventListener("htmx:afterSwap", function (evt) {
   mainContent.style.opacity = 1;
 });
 
-function changeLang(lang) {
+async function changeLang(lang) {
   lang = (lang === "GEO") ? "ENG" : "GEO";
 
-  fetch(`/api/set_language/${lang}`, {
+  await fetch(`/api/set_language/${lang}`, {
     method: "POST",
+  });
+
+  htmx.ajax("GET", window.location.pathname, {
+    target: "body",
+    swap: "outerHTML",
   });
 }
 
