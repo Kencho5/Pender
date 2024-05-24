@@ -1,18 +1,18 @@
 <div class="navbar-div">
   <nav class="navbar">
-    <a href="/#" hx-boost="true" class="logo-box">
+    <a href="/#" hx-boost="true" hx-trigger="mousedown" class="logo-box">
       <img src="/assets/logo.svg" alt="Logo" />
       <h1>Pender</h1>
     </a>
 
     <div class="nav-right">
-      <a href="/upload#" hx-boost="true" class="upload">
+      <a href="/upload#" hx-boost="true" hx-trigger="mousedown" class="upload">
         <img src="/assets/icons/upload_nav.svg" alt="Upload" />
         {{ tr.NAV.upload }}
       </a>
 
       {% if claims %}
-      <a role="button" class="user-div dropdownBtn" onclick="toggleMenu()">
+      <a role="button" class="user-div dropdownBtn" onmousedown="toggleMenu()">
         <div class="user-icon-div">
           <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
         </div>
@@ -26,7 +26,12 @@
         />
       </a>
       {% else %}
-      <a href="/login#" hx-boost="true" class="user-div login-div">
+      <a
+        href="/login#"
+        hx-boost="true"
+        hx-trigger="mousedown"
+        class="user-div login-div"
+      >
         <div class="user-icon-div">
           <img
             src="/assets/icons/login.svg"
@@ -49,21 +54,41 @@
         {% endif %}
         <div class="dropdown-actions">
           {% if claims %}
-          <a href="/profile#" class="dropdown-action" hx-boost="true">
+          <a
+            href="/profile#"
+            hx-trigger="mousedown"
+            class="dropdown-action"
+            hx-boost="true"
+          >
             <img src="/assets/icons/user.svg" alt="User" />
             {{ tr.NAV.profile }}
           </a>
           {% else %}
-          <a href="/login#" class="dropdown-action" hx-boost="true">
+          <a
+            href="/login#"
+            hx-trigger="mousedown"
+            class="dropdown-action"
+            hx-boost="true"
+          >
             <img src="/assets/icons/login.svg" alt="Log In" />
             {{ tr.NAV.login }}
           </a>
           {% endif %}
-          <a href="/search?animal=all#" class="dropdown-action" hx-boost="true">
+          <a
+            href="/search?animal=all#"
+            hx-trigger="mousedown"
+            class="dropdown-action"
+            hx-boost="true"
+          >
             <img src="/assets/icons/picture.svg" alt="Picture" />
             {{ tr.PROFILE.posts }}
           </a>
-          <a href="/upload#" class="dropdown-action" hx-boost="true">
+          <a
+            href="/upload#"
+            hx-trigger="mousedown"
+            class="dropdown-action"
+            hx-boost="true"
+          >
             <img src="/assets/icons/upload.svg" alt="Upload" />
             {{ tr.NAV.upload }}
           </a>
@@ -72,7 +97,12 @@
         {% if claims %}
         <div class="dropdown-line"></div>
         <div class="dropdown-actions logout-action">
-          <a href="/login#" hx-on::before-request="logout()" hx-boost="true">
+          <a
+            href="/login#"
+            hx-trigger="mousedown"
+            hx-on::before-request="logout()"
+            hx-boost="true"
+          >
             <img src="/assets/icons/logout.svg" alt="Logout" />
             {{ tr.NAV.logout }}
           </a>
@@ -97,7 +127,7 @@
           height="32"
           class="menu-icon dropdownBtn"
           id="hidden"
-          onclick="toggleMenu()"
+          onmousedown="toggleMenu()"
         />
       </div>
 

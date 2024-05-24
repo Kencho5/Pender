@@ -50,7 +50,7 @@ function toggleIcon() {
   icon.id = isHidden ? "open" : "hidden";
 }
 
-document.addEventListener("click", (event) => {
+document.addEventListener("mousedown", (event) => {
   const target = event.target;
   const menuBtn = document.querySelector(".dropdownBtn");
   const isClickInside = menu.contains(target) || menuBtn.contains(target);
