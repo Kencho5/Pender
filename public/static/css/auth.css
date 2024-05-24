@@ -216,21 +216,9 @@ input:-webkit-autofill:active {
   display: block;
 }
 
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 0px 0px var(--primary);
-  }
-  50% {
-    box-shadow: 0 0 3px 2px var(--primary);
-  }
-  100% {
-    box-shadow: 0 0 0px 0px var(--primary);
-  }
-}
-
 .invalid {
   border: 1px solid var(--primary) !important;
-  animation: glowPulse 1.8s infinite;
+  box-shadow: 0 0 2px 1px var(--primary);
 }
 
 @media (max-width: 500px) {
