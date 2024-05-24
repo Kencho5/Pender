@@ -23,11 +23,7 @@
 
       <!-- EMAIL INPUT -->
       <div class="input-group">
-        <img
-          src="/assets/icons/email.svg"
-          alt="Email"
-          class="icon-svg icon"
-        />
+        <img src="/assets/icons/email.svg" alt="Email" class="icon-svg icon" />
         <input
           type="text"
           name="email"
@@ -50,11 +46,13 @@
           aria-label="Password"
         />
         <a
-          href="/reset-password#"
+          role="button"
+          hx-get="/reset-password"
           hx-boost="true"
           hx-swap="outerHTML"
           hx-target="body"
           hx-push-url="true"
+          hx-trigger="mousedown"
           class="forgot-password"
           >{{ tr.AUTH.reset_password }}</a
         >
@@ -65,11 +63,13 @@
       <div class="auth-option">
         {{ tr.AUTH.option_login }}
         <a
-          href="/register#"
+          role="button"
+          hx-get="/register"
           hx-boost="true"
           hx-swap="outerHTML"
           hx-target="body"
           hx-push-url="true"
+          hx-trigger="mousedown"
           >{{ tr.AUTH.register }}</a
         >
       </div>

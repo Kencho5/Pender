@@ -1,9 +1,18 @@
-<div class="header">
-  <a href="/#" hx-boost="true" class="header-logo">
+<div class="header" style="cursor: pointer">
+  <a
+    role="button"
+    hx-get="/"
+    hx-boost="true"
+    hx-swap="outerHTML"
+    hx-target="body"
+    hx-push-url="true"
+    hx-trigger="mousedown"
+    class="header-logo"
+  >
     <img src="/assets/logo.svg" alt="Logo" />
     <h1>Pender</h1>
   </a>
-  <a onmousedown="changeLang('{{ lang }}')" class="header-lang">
+  <a role="button" onmousedown="changeLang('{{ lang }}')" class="header-lang">
     <img src="/assets/icons/{{lang}}.svg" alt="{{lang}}" />
     <p>{{lang}}</p>
   </a>

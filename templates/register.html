@@ -101,11 +101,13 @@
       <div class="auth-option">
         {{ tr.AUTH.option_register }}
         <a
-          href="/login#"
+          role="button"
+          hx-get="/login"
           hx-boost="true"
           hx-swap="outerHTML"
           hx-target="body"
           hx-push-url="true"
+          hx-trigger="mousedown"
           >{{ tr.AUTH.login }}</a
         >
       </div>
@@ -120,8 +122,26 @@
         <p>{{ tr.AUTH.register_success_second }}</p>
       </div>
       <div class="actions">
-        <a href="/login#" hx-boost="true">{{tr.AUTH.login}}</a>
-        <a href="/#" hx-boost="true">{{tr.AUTH.main_page}}</a>
+        <a
+          role="button"
+          hx-get="/login"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          >{{tr.AUTH.login}}</a
+        >
+        <a
+          role="button"
+          hx-get="/"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          >{{tr.AUTH.main_page}}</a
+        >
       </div>
     </div>
   </div>
