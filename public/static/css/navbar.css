@@ -282,3 +282,7 @@
 .logout-action:hover {
   background-color: #f6f3f0;
 }
+
+.hamburger-div {
+  display: flex;
+}
