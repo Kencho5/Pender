@@ -22,7 +22,17 @@
     </div>
 
     {% if route not in ['/register', '/login', '/upload', '/reset-password'] %}
-    <a href="/upload#" hx-boost="true" class="plus-btn" aria-label="Upload">
+    <a
+      role="button"
+      hx-get="/upload"
+      hx-boost="true"
+      hx-swap="outerHTML"
+      hx-target="body"
+      hx-push-url="true"
+      hx-trigger="mousedown"
+      class="plus-btn"
+      aria-label="Upload"
+    >
       <img src="/assets/icons/plus.svg" alt="Plus Button" />
     </a>
     {% endif %}
