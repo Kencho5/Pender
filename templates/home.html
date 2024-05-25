@@ -10,14 +10,35 @@
       <h1 class="search-title">იპოვე ოჯახის ახალი მეგობარი</h1>
       <form class="search-form">
         <img src="/assets/icons/search.svg" class="search-icon" alt="Search" />
-        <input type="text" name="breed" placeholder="მაგ: ცხოველის ჯიში" />
-        <button type="button">
+        <input
+          type="text"
+          name="breed"
+          class="search-input"
+          placeholder="მაგ: ცხოველის ჯიში"
+        />
+        <button type="button" class="search-button">
           <img src="/assets/icons/filter.svg" alt="Filter" />
           ფილტრი
         </button>
         <input type="submit" class="search-submit" value="ძებნა" />
       </form>
     </div>
+
+    <!-- MOBILE FORM -->
+    <form class="mobile-search-form">
+      <img src="/assets/icons/search.svg" class="search-icon" alt="Search" />
+      <input
+        type="text"
+        name="breed"
+        class="search-input"
+        placeholder="მაგ: ცხოველის ჯიში"
+      />
+      <button type="button" class="search-button">
+        <img src="/assets/icons/filter.svg" alt="Filter" />
+        ფილტრი
+      </button>
+      <input type="submit" class="search-submit" value="ძებნა" />
+    </form>
   </div>
 </body>
 {% endblock content %}
