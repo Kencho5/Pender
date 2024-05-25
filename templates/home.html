@@ -1,4 +1,23 @@
 {% extends "components/layout.html" %} {% block content %}
+
+<style>
+  {% include "home.css" %}
+</style>
+
 <body>
+  <div class="home-content">
+    <div class="search-content">
+      <h1 class="search-title">იპოვე ოჯახის ახალი მეგობარი</h1>
+      <form class="search-form">
+        <img src="/assets/icons/search.svg" class="search-icon" alt="Search" />
+        <input type="text" name="breed" placeholder="მაგ: ცხოველის ჯიში" />
+        <button type="button">
+          <img src="/assets/icons/filter.svg" alt="Filter" />
+          ფილტრი
+        </button>
+        <input type="submit" class="search-submit" value="ძებნა" />
+      </form>
+    </div>
+  </div>
 </body>
 {% endblock content %}

@@ -133,7 +133,6 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  font-size: 16px;
 }
 
 .auth-form input[type="text"],
