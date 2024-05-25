@@ -44,7 +44,7 @@
   }
 
   .logo-box img {
-    width: 45px;
+    width: 48px;
   }
 }
 
@@ -256,7 +256,13 @@
 
   .user-div {
     font-size: 14px;
-    width: 130px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .user-div p,
+  .arrow-down {
+    display: none;
   }
 
   .login-div {

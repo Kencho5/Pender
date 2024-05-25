@@ -40,7 +40,7 @@ function toggleMenu() {
 
 function toggleIcon() {
   const isHidden = icon.id === "hidden";
-  if (icon.classList.length == 0) {
+  if (icon.classList.contains("arrow-down")) {
     icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
   } else {
     icon.src = isHidden
