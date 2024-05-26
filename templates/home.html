@@ -76,7 +76,7 @@
       </div>
       <div class="modal-line"></div>
 
-      <form onsubmit="saveFilters(this, event)" name="filtersForm">
+      <form onsubmit="event.preventDefault()" name="filtersForm">
         <div class="filter-row">
           <p>ტიპი</p>
           <div
@@ -178,13 +178,22 @@
             </div>
           </div>
         </div>
-
-        <div class="filter-row">
-          <div class="input-div">
-            <input type="submit" value="შენახვა" />
-          </div>
-        </div>
       </form>
+      <div class="modal-line"></div>
+
+      <div class="filter-row">
+        <div class="input-div submit-div">
+          <button type="button">
+            <img src="/assets/icons/trash.svg" alt="Trash" />
+            გასუფთავება
+          </button>
+          <input
+            type="submit"
+            onsubmit="saveFilters(this, event)"
+            value="შენახვა"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <script src="/static/js/home.js"></script>

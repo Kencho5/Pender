@@ -161,7 +161,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.2);
-  display: none;
+  /* display: none; */
   animation: fadeInModal 0.2s ease-in;
 }
 
@@ -180,7 +180,7 @@
 
 @keyframes scaleUpModal {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.7);
   }
   100% {
     transform: scale(1);
@@ -195,6 +195,7 @@
   margin: 20px auto;
   width: 80%;
   max-width: 600px;
+  max-height: 95vh;
   border-radius: 20px;
   animation: scaleUpModal 0.2s ease-in;
   -ms-overflow-style: none; /* IE and Edge */
@@ -224,7 +225,7 @@
   form {
     position: relative;
     top: 12px;
-    height: 85vh;
+    height: 70vh;
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -237,15 +238,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-
-      input[type="submit"] {
-        border: none;
-        background-color: var(--primary);
-        color: var(--accent);
-        padding-left: 20px;
-        margin-top: 16px;
-        cursor: pointer;
-      }
     }
 
     .chip {
@@ -365,6 +357,44 @@
           bottom: 14px;
           left: 16px;
         }
+      }
+    }
+  }
+
+  .submit-div {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    input[type="submit"] {
+      border: none;
+      background-color: var(--primary);
+      color: var(--accent);
+      padding-left: 20px;
+      cursor: pointer;
+      width: 48%;
+      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 50px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border-radius: 50px;
+      width: 48%;
+      border: none;
+      background-color: var(--accent);
+      color: #83594b;
+      padding-left: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin-right: 10px;
       }
     }
   }
