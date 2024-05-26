@@ -52,8 +52,8 @@ function selectAgeType(event) {
   }
 }
 
-function saveFilters(form, event) {
-  event.preventDefault();
+function saveFilters() {
+  const form = document.querySelector("form[name='filtersForm']");
 
   const formData = new FormData(form);
   const filters = {};

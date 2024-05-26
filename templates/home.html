@@ -183,15 +183,11 @@
 
       <div class="filter-row">
         <div class="input-div submit-div">
-          <button type="button">
-            <img src="/assets/icons/trash.svg" alt="Trash" />
-            გასუფთავება
+          <button type="button" onmousedown="toggleFilters()">
+            <img src="/assets/icons/cancel.svg" alt="Cancel" />
+            გაუქმება
           </button>
-          <input
-            type="submit"
-            onsubmit="saveFilters(this, event)"
-            value="შენახვა"
-          />
+          <input type="submit" onmousedown="saveFilters()" value="შენახვა" />
         </div>
       </div>
     </div>

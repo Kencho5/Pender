@@ -161,7 +161,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.2);
-  /* display: none; */
+  display: none;
   animation: fadeInModal 0.2s ease-in;
 }
 
@@ -392,9 +392,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 16px;
 
       img {
         margin-right: 10px;
+        width: 18px;
       }
     }
   }
