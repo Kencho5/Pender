@@ -61,3 +61,13 @@ function selectAgeType(event) {
   localStorage.setItem("filters", JSON.stringify(filters));
   document.querySelector(".age-dropdown").classList.remove("show-age");
 }
+
+function selectCity(event) {
+  const city = event.target;
+  const filters = JSON.parse(localStorage.getItem("filters")) || {};
+
+  if (!city.classList.contains("cities-div")) {
+    filters[city.parentNode.getAttribute("input-name")] = city.classList[0];
+  }
+  localStorage.setItem("filters", JSON.stringify(filters));
+}

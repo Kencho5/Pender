@@ -333,6 +333,24 @@
       .cities-dropdown {
         width: 100%;
       }
+
+      .price-div {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .price-input {
+        position: relative;
+        width: 48%;
+
+        img {
+          width: 18px;
+          position: absolute;
+          bottom: 14px;
+          left: 16px;
+        }
+      }
     }
   }
 }

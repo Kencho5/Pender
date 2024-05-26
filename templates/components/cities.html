@@ -28,7 +28,13 @@
 />
 
 <div class="cities-dropdown" style="display: none">
-  <div class="cities-div"></div>
+  <div 
+    class="cities-div"
+    input-name="city"
+    {% if route == '/' %}
+    onmousedown="selectCity(event)"
+    {% endif %}
+  ></div>
 </div>
 
 <script src="/static/js/cities.js"></script>
