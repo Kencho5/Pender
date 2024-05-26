@@ -77,7 +77,11 @@
       <div class="modal-line"></div>
       <form name="filtersForm" onsubmit="saveFilters(this, event)">
         <p>ტიპი</p>
-        <div class="input-div" onmousedown="selectChip(event)">
+        <div
+          class="input-div"
+          input-name="post_type"
+          onmousedown="selectChip(event)"
+        >
           <div class="chip" id="selling">იყიდება</div>
           <div class="chip" id="adopting">შეფარება</div>
           <div class="chip" id="meeting">შეჯვარება</div>
