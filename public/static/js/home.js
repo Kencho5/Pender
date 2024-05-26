@@ -5,23 +5,32 @@ function toggleFilters() {
 }
 
 function search(form) {
-  const filters = JSON.parse(localStorage.getItem("filters"));
+  let filters = JSON.parse(localStorage.getItem("filters"));
 
   if (filters) {
-    form.setAttribute("hx-vals", JSON.stringify(filters));
+    form.setAttribute("hx-vals", JSON.stringify(cleanFilters(filters)));
   }
 
   return true;
+}
+
+function cleanFilters(filters) {
+  return Object.fromEntries(
+    Object.entries(filters).filter(([_, value]) => {
+      if (typeof value === "string") {
+        return value.trim() !== "";
+      } else if (Array.isArray(value)) {
+        return value.length > 0;
+      }
+      return true;
+    }),
+  );
 }
 
 function selectChip(event) {
   const chip = event.target;
 
   if (!chip.classList.contains("input-div")) {
-    // for (const chips of chip.parentNode.children) {
-    //   chips.classList.remove("active-chip");
-    // }
-
     chip.classList.toggle("active-chip");
   }
 }
@@ -69,7 +78,7 @@ function saveFilters(form, event) {
   // Get age type
   filters["ageType"] = document.querySelector(".age-selector").id;
 
-  console.log(filters);
+  localStorage.setItem("filters", JSON.stringify(filters));
 
   toggleFilters();
 }
