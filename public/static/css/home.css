@@ -206,6 +206,37 @@
 
   form {
     margin-top: 26px;
+
+    p {
+      font-size: 14px;
+    }
+
+    .input-div {
+      display: flex;
+      gap: 14px;
+    }
+
+    .chip {
+      font-size: 16px;
+      width: 86px;
+      text-align: center;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .chip:hover {
+      border-color: #83594b;
+    }
+
+    .active-chip {
+      background-color: #fae7e6;
+      border-color: #8b322c;
+      color: #8b322c;
+    }
   }
 }
 

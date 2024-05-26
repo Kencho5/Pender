@@ -25,3 +25,15 @@ function search(form) {
 
   return true;
 }
+
+function selectChip(event) {
+  const chip = event.target;
+
+  if (!chip.classList.contains("input-div")) {
+    for (const chips of event.target.parentNode.children) {
+      chips.classList.remove("active-chip");
+    }
+
+    chip.classList.toggle("active-chip");
+  }
+}

@@ -63,7 +63,7 @@
   </div>
 
   <!-- FILTERS MODAL -->
-  <div id="filtersModal" class="modal hide-modal">
+  <div id="filtersModal" class="modal">
     <div class="modal-content">
       <div class="modal-title">
         <h1>დამატებით ფილტრი</h1>
@@ -71,10 +71,12 @@
       </div>
       <div class="modal-line"></div>
       <form name="filtersForm" onsubmit="saveFilters(this, event)">
-        <input type="text" name="animal" />
-        <input type="text" name="age" />
-
-        <input type="submit" value="Submit" />
+        <p>ტიპი</p>
+        <div class="input-div" onmousedown="selectChip(event)">
+          <div class="chip" id="selling">იყიდება</div>
+          <div class="chip" id="adopting">შეფარება</div>
+          <div class="chip" id="meeting">შეჯვარება</div>
+        </div>
       </form>
     </div>
   </div>
