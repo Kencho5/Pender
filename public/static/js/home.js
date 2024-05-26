@@ -1,4 +1,4 @@
-// localStorage.removeItem("filters");
+localStorage.removeItem("filters");
 
 function toggleFilters() {
   document.querySelector(".modal").classList.toggle("show-modal");
@@ -37,7 +37,6 @@ function selectChip(event) {
       chips.classList.remove("active-chip");
     }
 
-    // console.log(chip.parentNode.getAttribute("input-name"));
     filters[chip.parentNode.getAttribute("input-name")] = chip.id;
     chip.classList.toggle("active-chip");
   }

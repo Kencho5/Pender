@@ -162,7 +162,7 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
   display: none;
-  animation: fadeInModal 0.3s ease-in-out;
+  animation: fadeInModal 0.2s ease-in;
 }
 
 .modal.show-modal {
@@ -198,7 +198,7 @@
   max-width: 600px;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  animation: scaleUpModal 0.3s ease-in-out;
+  animation: scaleUpModal 0.2s ease-in;
 
   @media (min-width: 768px) {
     top: -100px;
