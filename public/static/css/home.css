@@ -259,6 +259,10 @@
       color: #8b322c;
     }
 
+    .cities {
+      width: 100%;
+    }
+
     .filter-row {
       margin-bottom: 20px;
       position: relative;
@@ -272,14 +276,18 @@
         box-sizing: border-box;
         padding-left: 40px;
         outline: none;
+        transition: 0.2s;
+      }
+
+      input:hover {
+        border-color: #83594b;
       }
 
       .input-icon {
         width: 18px;
         position: absolute;
-        top: 70%;
+        bottom: 14px;
         left: 15px;
-        transform: translateY(-50%);
       }
 
       .age-selector {
@@ -292,6 +300,7 @@
       }
 
       .age-dropdown {
+        z-index: 9;
         opacity: 0;
         display: flex;
         justify-content: space-between;
@@ -299,7 +308,7 @@
         top: 120px;
         right: 0px;
         transform: translateY(-50%) scale(0.95);
-        background-color: var(--accent);
+        background-color: #f6f3f0;
         border: 1px solid var(--border);
         padding: 6px 18px;
         border-radius: 40px;
@@ -319,6 +328,10 @@
       .show-age {
         transform: translateY(-50%) scale(1);
         opacity: 1;
+      }
+
+      .cities-dropdown {
+        width: 100%;
       }
     }
   }

@@ -54,6 +54,10 @@ function selectAgeType(event) {
 
   if (age.classList.length == 0) {
     filters[age.parentNode.getAttribute("input-name")] = age.id;
+    document.querySelector(".age-selector").childNodes[0].textContent =
+      ` ${age.textContent} `;
   }
+
   localStorage.setItem("filters", JSON.stringify(filters));
+  document.querySelector(".age-dropdown").classList.remove("show-age");
 }
