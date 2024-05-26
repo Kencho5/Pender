@@ -8,7 +8,16 @@
   <div class="home-content">
     <div class="search-content">
       <h1 class="search-title">იპოვე ოჯახის ახალი მეგობარი</h1>
-      <form class="search-form">
+      <form
+        class="search-form"
+        hx-get="/search"
+        hx-params="*"
+        hx-push-url="true"
+        hx-boost="true"
+        hx-swap="outerHTML"
+        hx-trigger="submit[search(this)]"
+        hx-target="body"
+      >
         <img src="/assets/icons/search.svg" class="search-icon" alt="Search" />
         <input
           type="text"
@@ -16,7 +25,11 @@
           class="search-input"
           placeholder="მაგ: ცხოველის ჯიში"
         />
-        <button type="button" class="search-button">
+        <button
+          type="button"
+          class="search-button"
+          onmousedown="toggleFilters()"
+        >
           <img src="/assets/icons/filter.svg" alt="Filter" />
           ფილტრი
         </button>
@@ -25,7 +38,16 @@
     </div>
 
     <!-- MOBILE FORM -->
-    <form class="mobile-search-form">
+    <form
+      class="mobile-search-form"
+      hx-get="/search"
+      hx-params="*"
+      hx-push-url="true"
+      hx-boost="true"
+      hx-swap="outerHTML"
+      hx-trigger="submit[search(this)]"
+      hx-target="body"
+    >
       <img src="/assets/icons/search.svg" class="search-icon" alt="Search" />
       <input
         type="text"
@@ -33,13 +55,29 @@
         class="search-input"
         placeholder="მაგ: ცხოველის ჯიში"
       />
-      <button type="button" class="search-button">
+      <button type="button" class="search-button" onmousedown="toggleFilters()">
         <img src="/assets/icons/filter.svg" alt="Filter" />
       </button>
       <input type="submit" class="search-submit" value="ძებნა" />
     </form>
   </div>
 
+  <!-- FILTERS MODAL -->
+  <div id="filtersModal" class="modal hide-modal">
+    <div class="modal-content">
+      <div class="modal-title">
+        <h1>დამატებით ფილტრი</h1>
+        <span class="close" onmousedown="toggleFilters()">&times;</span>
+      </div>
+      <div class="modal-line"></div>
+      <form name="filtersForm" onsubmit="saveFilters(this, event)">
+        <input type="text" name="animal" />
+        <input type="text" name="age" />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </div>
   <script src="/static/js/home.js"></script>
 </body>
 {% endblock content %}
