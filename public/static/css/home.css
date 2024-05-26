@@ -50,7 +50,6 @@
   .search-submit {
     background-color: var(--primary);
     padding: 12px 20px;
-    gap: 8px;
     width: 110px;
     height: 54px;
     border-radius: 50px;
@@ -192,13 +191,14 @@
 .modal-content {
   position: relative;
   background-color: var(--accent);
-  margin: auto;
   padding: 12px 18px;
   margin: 20px auto;
   width: 80%;
   max-width: 600px;
   border-radius: 20px;
   animation: scaleUpModal 0.2s ease-in;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 
   .modal-title {
     display: flex;
@@ -217,15 +217,20 @@
     width: 100%;
     position: absolute;
     left: 0;
+    margin-top: 12px;
     opacity: 0.7;
-    margin-top: 6px;
   }
 
   form {
-    margin-top: 26px;
+    position: relative;
+    top: 12px;
+    height: 85vh;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     p {
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .input-div {
@@ -261,8 +266,8 @@
 
     .active-chip {
       background-color: #fae7e6;
-      border-color: #8b322c;
-      color: #8b322c;
+      border-color: #c4463e;
+      color: #c4463e;
     }
 
     .cities {
@@ -301,7 +306,7 @@
         height: 44.5px;
         margin: 0;
         position: absolute;
-        top: 52px;
+        top: 57px;
         right: 15px;
         transform: translateY(-50%);
         cursor: pointer;

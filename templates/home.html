@@ -75,6 +75,7 @@
         />
       </div>
       <div class="modal-line"></div>
+
       <form onsubmit="saveFilters(this, event)" name="filtersForm">
         <div class="filter-row">
           <p>ტიპი</p>
@@ -126,7 +127,11 @@
               alt="Calendar"
             />
             <input type="text" name="age" placeholder="0-12" />
-            <p class="age-selector" onmousedown="toggleAgeDropdown()">
+            <p
+              class="age-selector"
+              id="years"
+              onmousedown="toggleAgeDropdown()"
+            >
               წლის
               <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
             </p>
