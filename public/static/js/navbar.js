@@ -11,7 +11,7 @@ document.body.addEventListener("htmx:afterSwap", function (evt) {
 
   mainContent.offsetHeight;
 
-  mainContent.style.transition = "opacity 0.2s ease-in-out";
+  mainContent.style.transition = "opacity 0.1s ease-in";
   mainContent.style.opacity = 1;
 });
 

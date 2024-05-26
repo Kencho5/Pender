@@ -14,7 +14,7 @@ body {
   font-weight: 500;
   -webkit-tap-highlight-color: transparent;
   letter-spacing: 1px;
-  transition: opacity 0.45s ease-out;
+  transition: opacity 0.15s ease-out;
   opacity: 0;
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
