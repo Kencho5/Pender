@@ -39,3 +39,9 @@ function selectAgeType(event) {
     document.querySelector(".age-dropdown").classList.remove("show-age");
   }
 }
+
+function saveFilters(form, event) {
+  event.preventDefault();
+
+  toggleFilters();
+}

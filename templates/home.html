@@ -75,7 +75,7 @@
         />
       </div>
       <div class="modal-line"></div>
-      <form name="filtersForm">
+      <form onsubmit="saveFilters(this, event)" name="filtersForm">
         <div class="filter-row">
           <p>ტიპი</p>
           <div
@@ -175,6 +175,12 @@
               />
               <input type="text" name="price-max" placeholder="მდე" />
             </div>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <div class="input-div">
+            <input type="submit" value="შენახვა" />
           </div>
         </div>
       </form>
