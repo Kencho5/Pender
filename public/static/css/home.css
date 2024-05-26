@@ -13,13 +13,14 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
-    height: 250px;
+    height: 400px;
+    box-sizing: border-box;
     border-radius: 16px;
     padding: 38px;
     background: url("/assets/search-img.webp") no-repeat center/cover;
 
     .search-title {
-      font-size: 30px;
+      font-size: 36px;
       text-align: center;
       color: var(--accent);
     }
@@ -94,7 +95,7 @@
 
   @media (max-width: 768px) {
     .search-content {
-      height: 150px;
+      height: 200px;
       gap: 0;
       padding: 28px;
     }
