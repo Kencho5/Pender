@@ -76,28 +76,44 @@
       </div>
       <div class="modal-line"></div>
       <form name="filtersForm" onsubmit="saveFilters(this, event)">
-        <p>ტიპი</p>
-        <div
-          class="input-div"
-          input-name="post_type"
-          onmousedown="selectChip(event)"
-        >
-          <div class="chip" id="selling">იყიდება</div>
-          <div class="chip" id="adopting">შეფარება</div>
-          <div class="chip" id="meeting">შეჯვარება</div>
+        <div class="filter-row">
+          <p>ტიპი</p>
+          <div
+            class="input-div"
+            input-name="post_type"
+            onmousedown="selectChip(event)"
+          >
+            <div class="chip" id="selling">იყიდება</div>
+            <div class="chip" id="adopting">შეფარება</div>
+            <div class="chip" id="meeting">შეჯვარება</div>
+          </div>
         </div>
 
-        <p>ცხოველი</p>
-        <div
-          class="input-div"
-          input-name="animal"
-          onmousedown="selectChip(event)"
-        >
-          <div class="chip" id="dog">ძაღლი</div>
-          <div class="chip" id="cat">კატა</div>
-          <div class="chip" id="bird">ფრინველი</div>
-          <div class="chip" id="fish">თევზი</div>
-          <div class="chip" id="other">სხვა</div>
+        <div class="filter-row">
+          <p>ცხოველი</p>
+          <div
+            class="input-div"
+            input-name="animal"
+            onmousedown="selectChip(event)"
+          >
+            <div class="chip" id="dog">ძაღლი</div>
+            <div class="chip" id="cat">კატა</div>
+            <div class="chip" id="bird">ფრინველი</div>
+            <div class="chip" id="fish">თევზი</div>
+            <div class="chip" id="other">სხვა</div>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <p>სქესი</p>
+          <div
+            class="input-div"
+            input-name="sex"
+            onmousedown="selectChip(event)"
+          >
+            <div class="chip" id="girl">გოგო</div>
+            <div class="chip" id="boy">ბიჭი</div>
+          </div>
         </div>
       </form>
     </div>

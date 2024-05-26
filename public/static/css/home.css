@@ -161,7 +161,7 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  display: none;
+  /* display: none; */
   animation: fadeInModal 0.2s ease-in;
 }
 
@@ -194,7 +194,6 @@
   margin: 15% auto;
   padding: 12px 18px;
   width: 80%;
-  height: 400px;
   max-width: 600px;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -222,7 +221,7 @@
     position: absolute;
     left: 0;
     opacity: 0.7;
-    margin: 6px 0;
+    margin-top: 6px;
   }
 
   form {
@@ -235,12 +234,11 @@
     .input-div {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 16px;
     }
 
     .chip {
       font-size: 16px;
-      width: 86px;
       text-align: center;
       padding: 12px 20px;
       border: 1px solid var(--border);
@@ -258,6 +256,10 @@
       background-color: #fae7e6;
       border-color: #8b322c;
       color: #8b322c;
+    }
+
+    .filter-row {
+      margin-bottom: 20px;
     }
   }
 }
