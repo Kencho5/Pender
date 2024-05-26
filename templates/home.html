@@ -67,7 +67,12 @@
     <div class="modal-content">
       <div class="modal-title">
         <h1>დამატებით ფილტრი</h1>
-        <span class="close" onmousedown="toggleFilters()">&times;</span>
+        <img
+          src="/assets/icons/close.svg"
+          alt="Close"
+          class="close"
+          onmousedown="toggleFilters()"
+        />
       </div>
       <div class="modal-line"></div>
       <form name="filtersForm" onsubmit="saveFilters(this, event)">

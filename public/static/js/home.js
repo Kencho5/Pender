@@ -1,5 +1,5 @@
 function toggleFilters() {
-  document.querySelector(".modal").classList.toggle("hide-modal");
+  document.querySelector(".modal").classList.toggle("show-modal");
 }
 
 function saveFilters(form, ev) {
