@@ -245,6 +245,7 @@
       border-radius: 50px;
       font-weight: 400;
       cursor: pointer;
+      user-select: none;
       transition: 0.3s;
     }
 
@@ -260,6 +261,65 @@
 
     .filter-row {
       margin-bottom: 20px;
+      position: relative;
+
+      input {
+        font-size: 16px;
+        padding: 12px 20px;
+        border: 1px solid var(--border);
+        border-radius: 50px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 40px;
+        outline: none;
+      }
+
+      .input-icon {
+        width: 18px;
+        position: absolute;
+        top: 70%;
+        left: 15px;
+        transform: translateY(-50%);
+      }
+
+      .age-selector {
+        position: absolute;
+        top: 54%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .age-dropdown {
+        opacity: 0;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 120px;
+        right: 0px;
+        transform: translateY(-50%) scale(0.95);
+        background-color: var(--accent);
+        border: 1px solid var(--border);
+        padding: 6px 18px;
+        border-radius: 40px;
+        width: 130px;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+
+        p {
+          cursor: pointer;
+          user-select: none;
+          margin: 0;
+          padding: 12px 0px;
+        }
+      }
+
+      .show-age {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+      }
     }
   }
 }

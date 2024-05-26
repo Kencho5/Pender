@@ -115,6 +115,32 @@
             <div class="chip" id="boy">ბიჭი</div>
           </div>
         </div>
+
+        <div class="filter-row">
+          <p>ასაკი</p>
+
+          <div class="input-div">
+            <img
+              src="/assets/icons/calendar.svg"
+              class="input-icon"
+              alt="Calendar"
+            />
+            <input type="text" name="age" placeholder="0-12" />
+            <p class="age-selector" onmousedown="toggleAgeDropdown()">
+              წლის
+              <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
+            </p>
+
+            <div
+              class="age-dropdown"
+              input-name="ageType"
+              onmousedown="selectAgeType(event)"
+            >
+              <p id="years">წლის</p>
+              <p id="months">თვის</p>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>

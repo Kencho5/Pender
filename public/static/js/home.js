@@ -43,3 +43,17 @@ function selectChip(event) {
 
   localStorage.setItem("filters", JSON.stringify(filters));
 }
+
+function toggleAgeDropdown() {
+  document.querySelector(".age-dropdown").classList.toggle("show-age");
+}
+
+function selectAgeType(event) {
+  const age = event.target;
+  const filters = JSON.parse(localStorage.getItem("filters")) || {};
+
+  if (age.classList.length == 0) {
+    filters[age.parentNode.getAttribute("input-name")] = age.id;
+  }
+  localStorage.setItem("filters", JSON.stringify(filters));
+}
