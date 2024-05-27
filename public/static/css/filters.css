@@ -37,7 +37,7 @@
 .modal-content {
   position: relative;
   background-color: var(--accent);
-  padding: 12px 18px;
+  padding: 24px;
   margin: 20px auto;
   width: 80%;
   max-width: 600px;
@@ -83,7 +83,7 @@
     .input-div {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
     }
 
     .chip {
@@ -126,6 +126,10 @@
         padding-left: 40px;
         outline: none;
         transition: 0.2s;
+      }
+
+      input::placeholder {
+        color: #996e59;
       }
 
       input:hover {
