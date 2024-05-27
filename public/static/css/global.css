@@ -49,7 +49,7 @@ a {
 }
 
 .blurred-img::before {
-  content: "";
+  /* content: ""; */
   position: absolute;
   inset: 0;
   opacity: 0;
