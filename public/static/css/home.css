@@ -1,15 +1,16 @@
-.img-placeholder {
-  background-color: red;
-  width: 100%;
-  height: auto;
-}
-
-@keyframes animatedBackground {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+.blur-load {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 217px;
+  height: 217px;
+  border-radius: 100%;
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: block;
+    object-position: center;
+    object-fit: cover;
   }
 }
 
@@ -33,7 +34,6 @@
     border-radius: 16px;
     padding: 38px;
     background: url("/assets/search-img.webp") no-repeat center/cover;
-    animation: animatedBackground 0.15s;
 
     .search-title {
       font-size: 36px;
