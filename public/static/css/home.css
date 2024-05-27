@@ -225,7 +225,7 @@
   form {
     position: relative;
     top: 12px;
-    height: 70vh;
+    height: 450px;
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;

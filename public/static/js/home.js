@@ -82,3 +82,10 @@ function saveFilters() {
 
   toggleFilters();
 }
+
+var filtersModal = document.getElementById("filtersModal");
+filtersModal.addEventListener("click", function (event) {
+  if (event.target == filtersModal) {
+    toggleFilters();
+  }
+});
