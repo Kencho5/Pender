@@ -35,18 +35,38 @@
     {% include "components/footer.html" %}
 
     <script>
-      var blurredImageDiv = document.querySelector(".blurred-img");
-      var img = blurredImageDiv.querySelector("img");
-      function loaded() {
-        blurredImageDiv.classList.add("loaded");
-        blurredImageDiv.style.filter = "blur(0px)";
-      }
+      // Get all elements with the class "blurred-img"
+      var blurredImageDivs = document.querySelectorAll(".blurred-img");
 
-      if (img.complete) {
-        loaded();
-      } else {
-        img.addEventListener("load", loaded);
-      }
+      // Loop through each element
+      blurredImageDivs.forEach(function (blurredImageDiv) {
+        var img = blurredImageDiv.querySelector("img");
+
+        // Define the loaded function
+        function loaded() {
+          blurredImageDiv.classList.add("loaded");
+          blurredImageDiv.style.filter = "blur(0px)";
+
+          // Check if the element has a data-src attribute
+          var dataSrc = blurredImageDiv.getAttribute("data-src");
+          if (dataSrc) {
+            blurredImageDiv.style.backgroundImage = `url(${dataSrc})`;
+          }
+        }
+
+        // Check if the image is already loaded
+        if (img) {
+          if (img.complete) {
+            loaded();
+          } else {
+            // If not, add an event listener for the 'load' event
+            img.addEventListener("load", loaded);
+          }
+        } else {
+          // If there's no <img> element, apply the loaded function directly
+          loaded();
+        }
+      });
     </script>
     <script src="/static/js/navbar.js"></script>
   </body>
