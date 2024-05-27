@@ -15,56 +15,24 @@
     {% block content %}{% endblock content %}
     </div>
 
-    {% if route not in ['/register', '/login', '/upload', '/reset-password'] %}
-    <a
-      role="button"
-      hx-get="/upload"
-      hx-boost="true"
-      hx-swap="outerHTML"
-      hx-target="body"
-      hx-push-url="true"
-      hx-trigger="mousedown"
-      class="plus-btn"
-      aria-label="Upload"
-    >
-      <img src="/assets/icons/plus.svg" alt="Plus Button" />
-    </a>
-    {% endif %}
-
     <!-- prettier-ignore -->
     {% include "components/footer.html" %}
 
     <script>
-      // Get all elements with the class "blurred-img"
       var blurredImageDivs = document.querySelectorAll(".blurred-img");
 
-      // Loop through each element
       blurredImageDivs.forEach(function (blurredImageDiv) {
         var img = blurredImageDiv.querySelector("img");
 
-        // Define the loaded function
         function loaded() {
           blurredImageDiv.classList.add("loaded");
           blurredImageDiv.style.filter = "blur(0px)";
-
-          // Check if the element has a data-src attribute
-          var dataSrc = blurredImageDiv.getAttribute("data-src");
-          if (dataSrc) {
-            blurredImageDiv.style.backgroundImage = `url(${dataSrc})`;
-          }
         }
 
-        // Check if the image is already loaded
-        if (img) {
-          if (img.complete) {
-            loaded();
-          } else {
-            // If not, add an event listener for the 'load' event
-            img.addEventListener("load", loaded);
-          }
-        } else {
-          // If there's no <img> element, apply the loaded function directly
+        if (img.complete) {
           loaded();
+        } else {
+          img.addEventListener("load", loaded);
         }
       });
     </script>

@@ -38,48 +38,6 @@ a {
   min-height: 100vh;
 }
 
-.circle {
-  width: 600px;
-  height: 600px;
-  border-radius: 10px;
-  filter: blur(15rem);
-  opacity: 40%;
-  position: fixed;
-  z-index: -1;
-  top: 40%;
-}
-
-.plus-btn {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  transition: all 0.2s ease-in-out;
-}
-
-.plus-btn img {
-  background-color: var(--accent);
-  border-radius: 100%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding: 12px;
-  width: 40px;
-  height: 40px;
-}
-
-.plus-btn:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 600px) {
-  .plus-btn {
-    padding: 6px;
-  }
-
-  .plus-btn img {
-    width: 30px;
-    height: 30px;
-  }
-}
-
 .blurred-img {
   background-repeat: no-repeat;
   background-size: cover;
