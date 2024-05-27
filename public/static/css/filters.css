@@ -162,18 +162,21 @@
       }
 
       .age-dropdown {
+        text-align: center;
         z-index: 9;
         opacity: 0;
+        gap: 10px;
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
         position: absolute;
-        top: 120px;
+        top: 150px;
         right: 0px;
         transform: translateY(-50%) scale(0.95);
-        background-color: #f6f3f0;
+        background-color: var(--accent);
         border: 1px solid var(--border);
-        padding: 6px 18px;
-        border-radius: 40px;
+        padding: 10px;
+        border-radius: 30px;
         width: 130px;
         transition:
           opacity 0.2s ease,
@@ -183,7 +186,7 @@
           cursor: pointer;
           user-select: none;
           margin: 0;
-          padding: 12px 0px;
+          padding: 14px;
         }
       }
 
