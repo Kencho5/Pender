@@ -1,6 +1,3 @@
-.search-content.loaded {
-  opacity: 1 !important;
-}
 .home-content {
   width: 85%;
   height: 800px;
@@ -21,8 +18,6 @@
     border-radius: 16px;
     padding: 38px;
     background: url("/assets/search-img.webp") no-repeat center/cover;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
 
     .search-title {
       font-size: 36px;

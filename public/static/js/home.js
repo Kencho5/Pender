@@ -22,8 +22,3 @@ function cleanFilters(filters) {
     }),
   );
 }
-
-window.onload = function () {
-  const searchContent = document.querySelector(".search-content");
-  searchContent.classList.add("loaded");
-};
