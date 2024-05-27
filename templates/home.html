@@ -5,6 +5,13 @@
 </style>
 
 <body>
+  <div
+    class="blurred-img categories"
+    style="background-image: url(/assets/categories/dog-min.webp)"
+  >
+    <img src="/assets/categories/dog.webp" loading="lazy" />
+  </div>
+
   <div class="home-content">
     <div class="search-content">
       <h1 class="search-title">იპოვე ოჯახის ახალი მეგობარი</h1>
@@ -61,14 +68,6 @@
       <input type="submit" class="search-submit" value="ძებნა" />
     </form>
   </div>
-
-  <div
-    class="blur-load"
-    style="background-image: url(/assets/categories-dog-min.webp)"
-  >
-    <img src="/assets/categories-dog.webp" loading="lazy" />
-  </div>
-
   <!-- FILTERS MODAL -->
   {% include "components/filters.html" %}
 

@@ -35,10 +35,18 @@
     {% include "components/footer.html" %}
 
     <script>
-      window.addEventListener("load", async function () {
-        const body = document.querySelector("body");
-        body.style.opacity = 1;
-      });
+      var blurredImageDiv = document.querySelector(".blurred-img");
+      var img = blurredImageDiv.querySelector("img");
+      function loaded() {
+        blurredImageDiv.classList.add("loaded");
+        blurredImageDiv.style.filter = "blur(0px)";
+      }
+
+      if (img.complete) {
+        loaded();
+      } else {
+        img.addEventListener("load", loaded);
+      }
     </script>
     <script src="/static/js/navbar.js"></script>
   </body>

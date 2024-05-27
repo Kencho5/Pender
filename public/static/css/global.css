@@ -14,8 +14,6 @@ body {
   font-weight: 500;
   -webkit-tap-highlight-color: transparent;
   letter-spacing: 1px;
-  transition: opacity 0.15s ease-out;
-  opacity: 0;
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
   background-color: var(--background);
@@ -80,4 +78,45 @@ a {
     width: 30px;
     height: 30px;
   }
+}
+
+.blurred-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(6px);
+
+  img {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+}
+
+.blurred-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: pulse 1s infinite;
+  background-color: white;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blurred-img.loaded::before {
+  animation: none;
+  content: none;
+}
+
+.blurred-img.loaded img {
+  opacity: 1;
 }

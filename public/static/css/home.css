@@ -1,16 +1,9 @@
-.blur-load {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.categories {
   width: 217px;
   height: 217px;
   border-radius: 100%;
   img {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    display: block;
-    object-position: center;
-    object-fit: cover;
   }
 }
 
