@@ -4,6 +4,15 @@
   height: auto;
 }
 
+@keyframes animatedBackground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .home-content {
   width: 85%;
   height: 800px;
@@ -24,6 +33,7 @@
     border-radius: 16px;
     padding: 38px;
     background: url("/assets/search-img.webp") no-repeat center/cover;
+    animation: animatedBackground 0.15s;
 
     .search-title {
       font-size: 36px;
