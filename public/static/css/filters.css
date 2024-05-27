@@ -132,7 +132,8 @@
         color: #996e59;
       }
 
-      input:hover {
+      input:hover,
+      input:focus {
         border-color: #83594b;
       }
 
