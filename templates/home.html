@@ -60,6 +60,83 @@
       </button>
       <input type="submit" class="search-submit" value="ძებნა" />
     </form>
+
+    <div class="categories-div">
+      <p class="category">კატეგორიები</p>
+
+      <div class="images">
+        <a
+          role="button"
+          hx-get="/search?animal=dog"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          class="image blurred-img"
+          style="background-image: url(/assets/categories/dog-min.webp)"
+        >
+          <img src="/assets/categories/dog.webp" loading="lazy" alt="Dog" />
+          <p>ძაღლი</p>
+        </a>
+        <a
+          role="button"
+          hx-get="/search?animal=cat"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          class="image blurred-img"
+          style="background-image: url(/assets/categories/cat-min.webp)"
+        >
+          <img src="/assets/categories/cat.webp" loading="lazy" alt="Cat" />
+          <p>კატა</p>
+        </a>
+        <a
+          role="button"
+          hx-get="/search?animal=bird"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          class="image blurred-img"
+          style="background-image: url(/assets/categories/bird-min.webp)"
+        >
+          <img src="/assets/categories/bird.webp" loading="lazy" alt="Bird" />
+          <p>ფრინველი</p>
+        </a>
+        <a
+          role="button"
+          hx-get="/search?animal=fish"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          class="image blurred-img"
+          style="background-image: url(/assets/categories/fish-min.webp)"
+        >
+          <img src="/assets/categories/fish.webp" loading="lazy" alt="Fish" />
+          <p>თევზი</p>
+        </a>
+        <a
+          role="button"
+          hx-get="/search?animal=other"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          class="image blurred-img"
+          style="background-image: url(/assets/categories/other-min.webp)"
+        >
+          <img src="/assets/categories/other.webp" loading="lazy" alt="Other" />
+          <p>სხვა</p>
+        </a>
+      </div>
+    </div>
   </div>
   <!-- FILTERS MODAL -->
   {% include "components/filters.html" %}
