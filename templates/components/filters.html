@@ -1,0 +1,198 @@
+<style>
+  {% include "filters.css" %}
+</style>
+
+<div id="filtersModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-title">
+      <h1>დამატებით ფილტრი</h1>
+      <img
+        src="/assets/icons/close.svg"
+        alt="Close"
+        class="close"
+        onmousedown="toggleFilters()"
+      />
+    </div>
+    <div class="modal-line"></div>
+
+    <form onsubmit="event.preventDefault()" name="filtersForm">
+      <div class="filter-row">
+        <p>ტიპი</p>
+        <div
+          class="input-div"
+          input-name="post_type"
+          onmousedown="selectChip(event)"
+        >
+          <div class="chip" id="selling">იყიდება</div>
+          <div class="chip" id="adopting">შეფარება</div>
+          <div class="chip" id="meeting">შეჯვარება</div>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <p>ცხოველი</p>
+        <div
+          class="input-div"
+          input-name="animal"
+          onmousedown="selectChip(event)"
+        >
+          <div class="chip" id="dog">ძაღლი</div>
+          <div class="chip" id="cat">კატა</div>
+          <div class="chip" id="bird">ფრინველი</div>
+          <div class="chip" id="fish">თევზი</div>
+          <div class="chip" id="other">სხვა</div>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <p>სქესი</p>
+        <div class="input-div" input-name="sex" onmousedown="selectChip(event)">
+          <div class="chip" id="girl">გოგო</div>
+          <div class="chip" id="boy">ბიჭი</div>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <p>ასაკი</p>
+
+        <div class="input-div">
+          <img
+            src="/assets/icons/calendar.svg"
+            class="input-icon"
+            alt="Calendar"
+          />
+          <input type="text" name="age" placeholder="0-12" />
+          <p class="age-selector" id="all" onmousedown="toggleAgeDropdown()">
+            ასაკის ტიპი
+            <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
+          </p>
+
+          <div
+            class="age-dropdown"
+            input-name="ageType"
+            onmousedown="selectAgeType(event)"
+          >
+            <p id="years">წლის</p>
+            <p id="months">თვის</p>
+          </div>
+        </div>
+      </div>
+      <div class="filter-row">
+        <p>მდებარეობა</p>
+        <div class="input-div">
+          <img
+            src="/assets/icons/location.svg"
+            alt="Location"
+            class="input-icon"
+          />
+          <div class="cities">{% include "components/cities.html" %}</div>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <p>ფასი</p>
+
+        <div class="input-div price-div">
+          <div class="price-input">
+            <img
+              src="/assets/icons/lari.svg"
+              width="12"
+              height="16"
+              alt="Price"
+            />
+            <input type="text" name="price-min" placeholder="დან" />
+          </div>
+          <div class="price-input">
+            <img
+              src="/assets/icons/lari.svg"
+              width="12"
+              height="16"
+              alt="Price"
+            />
+            <input type="text" name="price-max" placeholder="მდე" />
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="modal-line"></div>
+
+    <div class="filter-row">
+      <div class="input-div submit-div">
+        <button type="button" onmousedown="toggleFilters()">
+          <img src="/assets/icons/cancel.svg" alt="Cancel" />
+          გაუქმება
+        </button>
+        <input type="submit" onmousedown="saveFilters()" value="შენახვა" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleFilters() {
+    document.querySelector(".modal").classList.toggle("show-modal");
+  }
+
+  function selectChip(event) {
+    const chip = event.target;
+
+    if (!chip.classList.contains("input-div")) {
+      chip.classList.toggle("active-chip");
+    }
+  }
+
+  function toggleAgeDropdown() {
+    document.querySelector(".age-dropdown").classList.toggle("show-age");
+  }
+
+  function selectAgeType(event) {
+    const age = event.target;
+
+    if (age.classList.length == 0) {
+      const ageSelector = document.querySelector(".age-selector").childNodes[0];
+      const ageDropdown = document.querySelector(".age-dropdown");
+
+      ageSelector.textContent = ` ${age.textContent} `;
+      ageSelector.parentNode.id = age.id;
+      ageDropdown.classList.remove("show-age");
+    }
+  }
+
+  function saveFilters() {
+    const form = document.querySelector("form[name='filtersForm']");
+
+    const formData = new FormData(form);
+    const filters = {};
+
+    // Get the values of input fields
+    for (const [name, value] of formData.entries()) {
+      filters[name] = value;
+    }
+
+    // Get the values of selected chips
+    const chipInputs = form.querySelectorAll(".input-div[input-name]");
+    chipInputs.forEach((chipInput) => {
+      const inputName = chipInput.getAttribute("input-name");
+      const selectedChips = Array.from(
+        chipInput.querySelectorAll(".chip.active-chip"),
+      ).map((chip) => chip.id);
+      if (selectedChips.length > 0) {
+        filters[inputName] = selectedChips;
+      }
+    });
+
+    // Get age type
+    filters["ageType"] = document.querySelector(".age-selector").id;
+
+    localStorage.setItem("filters", JSON.stringify(filters));
+
+    toggleFilters();
+  }
+
+  var filtersModal = document.getElementById("filtersModal");
+  filtersModal.addEventListener("click", function (event) {
+    if (event.target == filtersModal) {
+      toggleFilters();
+    }
+  });
+</script>

@@ -1,0 +1,253 @@
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  animation: fadeInModal 0.2s ease-in;
+}
+
+.modal.show-modal {
+  display: block;
+}
+
+@keyframes fadeInModal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUpModal {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Modal content box */
+.modal-content {
+  position: relative;
+  background-color: var(--accent);
+  padding: 12px 18px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  max-height: 95vh;
+  border-radius: 20px;
+  animation: scaleUpModal 0.2s ease-in;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+
+  .modal-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text);
+
+    h1 {
+      font-size: 18px;
+    }
+  }
+
+  .modal-line {
+    height: 1px;
+    background-color: var(--border);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    margin-top: 12px;
+    opacity: 0.7;
+  }
+
+  form {
+    position: relative;
+    top: 12px;
+    height: 450px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    p {
+      font-size: 16px;
+    }
+
+    .input-div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .chip {
+      font-size: 16px;
+      text-align: center;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-weight: 400;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.3s;
+    }
+
+    .chip:hover {
+      border-color: #83594b;
+    }
+
+    .active-chip {
+      background-color: #fae7e6;
+      border-color: #c4463e;
+      color: #c4463e;
+    }
+
+    .cities {
+      width: 100%;
+    }
+
+    .filter-row {
+      margin-bottom: 20px;
+      position: relative;
+
+      input {
+        font-size: 16px;
+        padding: 12px 20px;
+        border: 1px solid var(--border);
+        border-radius: 50px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 40px;
+        outline: none;
+        transition: 0.2s;
+      }
+
+      input:hover {
+        border-color: #83594b;
+      }
+
+      .input-icon {
+        width: 18px;
+        position: absolute;
+        bottom: 14px;
+        left: 15px;
+      }
+
+      .age-selector {
+        line-height: 44.5px;
+        height: 44.5px;
+        margin: 0;
+        position: absolute;
+        top: 57px;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .age-dropdown {
+        z-index: 9;
+        opacity: 0;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 120px;
+        right: 0px;
+        transform: translateY(-50%) scale(0.95);
+        background-color: #f6f3f0;
+        border: 1px solid var(--border);
+        padding: 6px 18px;
+        border-radius: 40px;
+        width: 130px;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+
+        p {
+          cursor: pointer;
+          user-select: none;
+          margin: 0;
+          padding: 12px 0px;
+        }
+      }
+
+      .show-age {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+      }
+
+      .cities-dropdown {
+        width: 100%;
+      }
+
+      .price-div {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
+
+      .price-input {
+        position: relative;
+        width: 48%;
+
+        img {
+          width: 18px;
+          position: absolute;
+          bottom: 14px;
+          left: 16px;
+        }
+      }
+    }
+  }
+
+  .submit-div {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    input[type="submit"] {
+      border: none;
+      background-color: var(--primary);
+      color: var(--accent);
+      padding-left: 20px;
+      cursor: pointer;
+      width: 48%;
+      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 50px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border-radius: 50px;
+      width: 48%;
+      border: none;
+      background-color: var(--accent);
+      color: #83594b;
+      padding-left: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+
+      img {
+        margin-right: 10px;
+        width: 18px;
+      }
+    }
+  }
+}
+
+.close {
+  cursor: pointer;
+}
