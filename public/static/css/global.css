@@ -71,7 +71,7 @@ a {
 
 .blurred-img.loaded::before {
   animation: none;
-  content: none;
+  /* content: none; */
 }
 
 .blurred-img.loaded img {
