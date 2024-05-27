@@ -41,7 +41,6 @@
   margin: 20px auto;
   width: 80%;
   max-width: 600px;
-  max-height: 95vh;
   border-radius: 20px;
   animation: scaleUpModal 0.2s ease-in;
   -ms-overflow-style: none; /* IE and Edge */
@@ -71,10 +70,16 @@
   form {
     position: relative;
     top: 12px;
-    height: 450px;
+    height: 74vh;
+    max-height: 618px;
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+    @media (max-width: 768px) {
+      max-height: none;
+      height: 450px;
+    }
 
     p {
       font-size: 16px;
