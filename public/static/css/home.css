@@ -46,9 +46,6 @@
       color: #996e59;
     }
   }
-  .search-input:hover {
-    background-color: #f6f3f0;
-  }
 
   .search-submit {
     background-color: var(--primary);
