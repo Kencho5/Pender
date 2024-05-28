@@ -64,4 +64,8 @@ pub fn register_routes(app: &mut Server<AppState>) {
     app.at("/api/confirm-code")
         .with(GovernorMiddleware::per_minute(15).unwrap())
         .post(reset_password::reset_code_handler);
+
+    app.at("/api/load-posts")
+        .with(GovernorMiddleware::per_hour(240).unwrap())
+        .get(load_posts::posts_handler);
 }

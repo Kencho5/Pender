@@ -1,4 +1,5 @@
 pub mod home;
+pub mod load_posts;
 pub mod login;
 pub mod logout;
 pub mod post;
