@@ -1,5 +1,3 @@
-// localStorage.removeItem("filters");
-
 function search(form) {
   let filters = JSON.parse(localStorage.getItem("filters"));
 
