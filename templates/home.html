@@ -7,7 +7,7 @@
 <body>
   <div class="home-content">
     <div class="search-content">
-      <h1 class="search-title">იპოვე ოჯახის ახალი მეგობარი</h1>
+      <h1 class="search-title">{{ tr.HOME.search_title }}</h1>
       <form
         class="search-form"
         hx-get="/search"
@@ -23,7 +23,7 @@
           type="text"
           name="breed"
           class="search-input"
-          placeholder="მაგ: ცხოველის ჯიში"
+          placeholder="{{ tr.HOME.search_input }}"
         />
         <button
           type="button"
@@ -36,9 +36,13 @@
             height="12"
             alt="Filter"
           />
-          ფილტრი
+          {{ tr.HOME.filter }}
         </button>
-        <input type="submit" class="search-submit" value="ძებნა" />
+        <input
+          type="submit"
+          class="search-submit"
+          value="{{ tr.HOME.search }}"
+        />
       </form>
     </div>
 
@@ -58,7 +62,7 @@
         type="text"
         name="breed"
         class="search-input"
-        placeholder="მაგ: ცხოველის ჯიში"
+        placeholder="{{ tr.HOME.search_input }}"
       />
       <button type="button" class="search-button" onmousedown="toggleFilters()">
         <img
@@ -68,12 +72,12 @@
           alt="Filter"
         />
       </button>
-      <input type="submit" class="search-submit" value="ძებნა" />
+      <input type="submit" class="search-submit" value="{{ tr.HOME.search }}" />
     </form>
 
     <!-- CATEGORIES -->
     <div class="categories-div">
-      <p class="category">კატეგორიები</p>
+      <p class="category">{{ tr.HOME.categories }}</p>
 
       <div class="images">
         <a
@@ -88,7 +92,7 @@
           style="background-image: url(/assets/categories/dog-min.webp)"
         >
           <img src="/assets/categories/dog.webp" loading="lazy" alt="Dog" />
-          <p>ძაღლი</p>
+          <p>{{ tr.ANIMALS.dog }}</p>
         </a>
         <a
           role="button"
@@ -102,7 +106,7 @@
           style="background-image: url(/assets/categories/cat-min.webp)"
         >
           <img src="/assets/categories/cat.webp" loading="lazy" alt="Cat" />
-          <p>კატა</p>
+          <p>{{ tr.ANIMALS.cat }}</p>
         </a>
         <a
           role="button"
@@ -116,7 +120,7 @@
           style="background-image: url(/assets/categories/bird-min.webp)"
         >
           <img src="/assets/categories/bird.webp" loading="lazy" alt="Bird" />
-          <p>ფრინველი</p>
+          <p>{{ tr.ANIMALS.bird }}</p>
         </a>
         <a
           role="button"
@@ -130,7 +134,7 @@
           style="background-image: url(/assets/categories/fish-min.webp)"
         >
           <img src="/assets/categories/fish.webp" loading="lazy" alt="Fish" />
-          <p>თევზი</p>
+          <p>{{ tr.ANIMALS.fish }}</p>
         </a>
         <a
           role="button"
@@ -144,7 +148,7 @@
           style="background-image: url(/assets/categories/other-min.webp)"
         >
           <img src="/assets/categories/other.webp" loading="lazy" alt="Other" />
-          <p>სხვა</p>
+          <p>{{ tr.ANIMALS.other }}</p>
         </a>
       </div>
     </div>

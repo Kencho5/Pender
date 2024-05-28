@@ -1,5 +1,27 @@
 {
   "ENG": {
+    "HOME": {
+      "search_title": "Find a new friend for your family",
+      "search_input": "Animal Breed",
+      "filter": "Filter",
+      "search": "Search",
+      "categories": "Categories",
+      "posts": "New Posts"
+    },
+    "FILTERS": {
+      "additional": "Additional Filter",
+      "type": "Type",
+      "age": "Age",
+      "age_type": "Age Type",
+      "years": "Years",
+      "months": "Months",
+      "location": "Location",
+      "price": "Price",
+      "from": "From",
+      "to": "To",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
     "NAV": {
       "home": "Home",
       "upload": "Upload",
@@ -72,6 +94,28 @@
     }
   },
   "GEO": {
+    "HOME": {
+      "search_title": "იპოვე ოჯახის ახალი მეგობარი",
+      "search_input": "ცხოველის ჯიში",
+      "filter": "ფილტრი",
+      "search": "ძებნა",
+      "categories": "კატეგორიები",
+      "posts": "ახალი პოსტები"
+    },
+    "FILTERS": {
+      "additional": "დამატებითი ფილტრი",
+      "type": "ტიპი",
+      "age": "ასაკი",
+      "age_type": "ასაკის ტიპი",
+      "years": "წლის",
+      "months": "თვის",
+      "location": "მდებარეობა",
+      "price": "ფასი",
+      "from": "დან",
+      "to": "მდე",
+      "cancel": "გაუქმება",
+      "save": "შენახვა"
+    },
     "NAV": {
       "home": "მთავარი",
       "upload": "ატვირთვა",
