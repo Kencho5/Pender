@@ -14,8 +14,8 @@ body {
   width: 500px;
   background-color: var(--accent);
   padding: 50px;
-  border-radius: 25px;
-  border: 1px solid var(--border);
+  border-radius: 26px;
+  box-shadow: 0px 4px 6px 2px #10182808;
   margin: auto;
   margin-bottom: 50px;
 }

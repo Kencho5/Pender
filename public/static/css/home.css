@@ -1,9 +1,8 @@
 .home-content {
   width: 85%;
-  height: 1000px;
+  height: 1980px;
   background: var(--accent);
-  /* border: 1px solid var(--border); */
-  border-radius: 20px;
+  border-radius: 26px;
   margin: auto;
   padding: 28px;
   box-shadow: 0px 4px 6px 2px #10182808;
@@ -16,7 +15,7 @@
     gap: 24px;
     height: 400px;
     box-sizing: border-box;
-    border-radius: 16px;
+    border-radius: 22px;
     padding: 38px;
     background: url("/assets/search-img.webp") no-repeat center/cover;
 
@@ -221,6 +220,10 @@
       }
     }
   }
+
+  .posts-div {
+    margin-top: 60px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -230,5 +233,42 @@
 
   .home-content {
     width: 75%;
+  }
+}
+
+/* Placeholder Box */
+.placeholder-box {
+  width: 280px;
+  height: 210px;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+}
+
+/* Animation */
+.placeholder-box::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #fff2cf 50%,
+    transparent 100%
+  );
+  animation: loading 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
   }
 }

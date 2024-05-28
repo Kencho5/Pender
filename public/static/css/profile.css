@@ -17,8 +17,8 @@
   width: 260px;
   height: 128px;
   background: var(--accent);
-  border: 1px solid #d5c2b3;
-  border-radius: 20px;
+  box-shadow: 0px 4px 6px 2px #10182808;
+  border-radius: 26px;
   margin-right: 60px;
   font-weight: bold;
 }
@@ -53,12 +53,13 @@
 
 /* DETAILS CSS */
 .details-div {
+  position: relative;
   width: 969px;
   height: 664px;
   padding: 50px;
   background-color: var(--accent);
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  box-shadow: 0px 4px 6px 2px #10182808;
+  border-radius: 26px;
 }
 
 .details-div h1 {
@@ -165,9 +166,11 @@
 
 .profile-line {
   height: 1px;
-  width: 100%;
   background-color: var(--border);
-  opacity: 0.8;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0.7;
   margin-top: 26px;
 }
 
@@ -201,6 +204,7 @@
   align-items: center;
   gap: 16px;
   width: 100%;
+  margin-top: 28px;
 }
 
 .cancel {
