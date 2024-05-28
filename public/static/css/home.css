@@ -40,11 +40,14 @@
     padding-left: 50px;
     padding-right: 200px;
     margin-right: 20px;
-    transition: 0.2s;
+    transition: 0.3s ease;
 
     &::placeholder {
       color: #996e59;
     }
+  }
+  .search-input:hover {
+    background-color: #f6f3f0;
   }
 
   .search-submit {
@@ -58,6 +61,11 @@
     color: var(--accent);
     font-size: 16px;
     cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .search-submit:hover {
+    scale: 1.03;
   }
 
   .search-icon {
@@ -66,6 +74,7 @@
     top: 46%;
     transform: translateY(-50%);
     width: 18px;
+    z-index: 9;
   }
 
   .search-button {
@@ -90,6 +99,10 @@
       width: 18px;
       margin-right: 10px;
     }
+  }
+
+  .search-button:hover {
+    padding: 16px 20px;
   }
 
   @media (max-width: 768px) {
