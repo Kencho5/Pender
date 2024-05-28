@@ -227,6 +227,11 @@
     .posts {
       display: flex;
       justify-content: space-between;
+      overflow-x: auto;
+      gap: 30px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      user-select: none;
     }
   }
 }
@@ -238,6 +243,13 @@
 
   .home-content {
     width: 75%;
+  }
+
+  .posts {
+    padding-left: 24px;
+    width: calc(100% + 52px);
+    margin: 0 -24px;
+    box-sizing: border-box;
   }
 }
 
@@ -266,7 +278,7 @@
     #ffedef 50%,
     transparent 100%
   );
-  animation: loading 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: loading 0.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes loading {
