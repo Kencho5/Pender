@@ -157,9 +157,10 @@
       <p class="category">{{ tr.HOME.posts }}</p>
       <div
         class="posts"
-        <!-- hx-get="/components/posts.html" -->
-        <!-- hx-trigger="revealed" -->
-        <!-- hx-swap="innerHTML" -->
+        hx-get="/components/posts.html"
+        hx-trigger="revealed"
+        hx-swap="innerHTML"
+        hx-on::after-swap="this.classList.add('fade-in')"
       >
         {% for i in range(end=4) %}
         <div class="placeholder-box"></div>

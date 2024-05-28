@@ -223,6 +223,11 @@
 
   .posts-div {
     margin-top: 60px;
+
+    .posts {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -258,7 +263,7 @@
   background: linear-gradient(
     to right,
     transparent 0%,
-    #fff2cf 50%,
+    #ffedef 50%,
     transparent 100%
   );
   animation: loading 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -270,5 +275,18 @@
   }
   100% {
     left: 100%;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
