@@ -6,6 +6,7 @@
   border-radius: 20px;
   margin: auto;
   padding: 28px;
+  box-shadow: 0px 4px 6px 2px #10182808;
 
   .search-content {
     display: flex;
