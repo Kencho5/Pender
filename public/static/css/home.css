@@ -172,6 +172,16 @@
       width: 217px;
       height: 217px;
       border-radius: 100%;
+      transition: top ease 0.3s;
+    }
+
+    .image {
+      position: relative;
+      top: 0;
+    }
+
+    .image:hover {
+      top: 8px;
     }
 
     .image p {
@@ -193,7 +203,7 @@
       .images {
         padding-left: 24px;
         width: calc(100% + 52px);
-        height: 160px;
+        height: 170px;
         margin: 0 -24px;
         box-sizing: border-box;
         gap: 20px;
