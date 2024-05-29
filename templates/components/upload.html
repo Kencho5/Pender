@@ -129,6 +129,29 @@
         </div>
       </div>
 
+      <div
+        class="upload-row"
+        onmousedown="document.getElementById('fileInput').click()"
+      >
+        <div class="input-div">
+          <img
+            src="/assets/icons/picture.svg"
+            class="input-icon"
+            alt="Picture"
+          />
+          <div class="photos-div">{{ tr.UPLOAD.photos }}</div>
+
+          <input
+            type="file"
+            name="photos"
+            aria-label="Photos"
+            accept="image/*"
+            id="fileInput"
+            multiple
+          />
+        </div>
+      </div>
+
       <button
         type="button"
         onmousedown="upload()"

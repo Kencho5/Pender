@@ -100,7 +100,8 @@
       position: relative;
 
       input,
-      textarea {
+      textarea,
+      .photos-div {
         font-size: 16px;
         padding: 12px 14px;
         height: 48px;
@@ -129,8 +130,19 @@
       }
 
       input:hover,
-      input:focus {
+      input:focus,
+      .photos-div:hover {
         border-color: #83594b;
+      }
+
+      .photos-div {
+        font-weight: 400;
+        color: #996e59;
+        cursor: pointer;
+      }
+
+      #fileInput {
+        display: none;
       }
 
       .input-icon {
