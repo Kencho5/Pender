@@ -56,16 +56,19 @@ function validateForm() {
   const msg = document.querySelector(".msg");
   const chips = document.querySelectorAll(".active-upload-chip");
   const inputs = document.querySelectorAll(".upload-input");
+  const ageType = document.querySelector('[input-name="age-type"]');
 
   inputs.forEach((input) => {
-    console.log(input);
     if (!input.value) isValid = false;
   });
 
   if (chips.length < 3) isValid = false;
+  if (ageType.id == "all") isValid = false;
 
   if (!isValid) {
     msg.style.display = "block";
+  } else {
+    msg.style.display = "none";
   }
 }
 

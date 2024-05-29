@@ -75,7 +75,7 @@
             class="age-selector"
             id="all"
             onmousedown="toggleAgeDropdown()"
-            input-name="age"
+            input-name="age-type"
           >
             {{ tr.FILTERS.age_type }}
             <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
@@ -104,12 +104,25 @@
         </div>
       </div>
 
+      <div class="upload-row price-row">
+        <div class="input-div">
+          <img
+            src="/assets/icons/lari.svg"
+            width="12"
+            height="16"
+            class="input-icon"
+            alt="Gel"
+          />
+          <input type="text" name="price" placeholder="{{ tr.UPLOAD.price }}" />
+        </div>
+      </div>
+
       <div class="upload-row">
         <div class="input-div textarea-div">
           <img
             src="/assets/icons/description.svg"
             class="input-icon"
-            alt="Phone"
+            alt="Description"
           />
           <textarea
             type="text"
@@ -129,19 +142,6 @@
             class="input-icon"
           />
           <div class="cities">{% include "components/cities.html" %}</div>
-        </div>
-      </div>
-
-      <div class="upload-row price-row">
-        <div class="input-div">
-          <img
-            src="/assets/icons/lari.svg"
-            width="12"
-            height="16"
-            class="input-icon"
-            alt="Gel"
-          />
-          <input type="text" name="price" placeholder="{{ tr.UPLOAD.price }}" />
         </div>
       </div>
 
