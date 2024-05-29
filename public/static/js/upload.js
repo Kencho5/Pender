@@ -17,7 +17,9 @@ function selectChip(event) {
   const priceRow = document.querySelector(".price-row");
 
   if (!chip.classList.contains("input-div")) {
-    priceRow.style.display = "none";
+    if (chip.parentNode.getAttribute("input-name") == "post_type") {
+      priceRow.style.display = "none";
+    }
 
     Array.from(chip.parentNode.children).forEach((element) => {
       element.classList.remove("active-upload-chip");
