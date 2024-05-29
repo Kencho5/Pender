@@ -131,6 +131,8 @@
 
       input:hover,
       input:focus,
+      textarea:hover,
+      textarea:focus,
       .photos-div:hover {
         border-color: #83594b;
       }
@@ -169,7 +171,7 @@
         z-index: 9;
         opacity: 0;
         gap: 10px;
-        display: flex;
+        display: none;
         justify-content: space-between;
         flex-direction: column;
         position: absolute;
@@ -194,6 +196,7 @@
       }
 
       .show-age {
+        display: flex;
         transform: translateY(-50%) scale(1);
         opacity: 1;
       }

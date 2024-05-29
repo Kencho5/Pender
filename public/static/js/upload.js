@@ -31,6 +31,7 @@ function selectChip(event) {
 function toggleAgeDropdown() {
   document.querySelector(".age-dropdown").classList.toggle("show-age");
 }
+
 function selectAgeType(event) {
   const age = event.target;
 
