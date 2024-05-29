@@ -1,3 +1,12 @@
+var step = 1;
+
+function changeStep() {
+  document.querySelector(`#step${step}`).style.display = "none";
+  document.querySelector(`#step${step + 1}`).style.display = "flex";
+
+  step++;
+}
+
 async function compressImage(file, { quality = 1, type = file.type }) {
   const imageBitmap = await createImageBitmap(file);
 
@@ -14,10 +23,10 @@ async function compressImage(file, { quality = 1, type = file.type }) {
 
 function selectChip(event) {
   const chip = event.target;
-  const priceRow = document.querySelector(".price-row");
+  const priceRow = document.querySelector(".price-row") || null;
 
   if (!chip.classList.contains("input-div")) {
-    if (chip.parentNode.getAttribute("input-name") == "post_type") {
+    if (priceRow && chip.parentNode.getAttribute("input-name") == "post_type") {
       priceRow.style.display = "none";
       priceRow.querySelector("input").classList.remove("upload-input");
     }
@@ -28,7 +37,7 @@ function selectChip(event) {
     chip.classList.toggle("active-upload-chip");
   }
 
-  if (chip.id == "selling") {
+  if (priceRow && chip.id == "selling") {
     priceRow.style.display = "block";
     priceRow.querySelector("input").classList = "upload-input";
   }
@@ -58,17 +67,20 @@ function validateForm() {
   const inputs = document.querySelectorAll(".upload-input");
   const ageType = document.querySelector('[input-name="age-type"]');
 
-  inputs.forEach((input) => {
-    if (!input.value) isValid = false;
-  });
+  if (step == 1 && chips.length < 3) isValid = false;
 
-  if (chips.length < 3) isValid = false;
-  if (ageType.id == "all") isValid = false;
+  if (step == 2) {
+    inputs.forEach((input) => {
+      if (!input.value) isValid = false;
+    });
+    if (ageType && ageType.id == "all") isValid = false;
+  }
 
   if (!isValid) {
     msg.style.display = "block";
   } else {
     msg.style.display = "none";
+    changeStep();
   }
 }
 

@@ -10,187 +10,22 @@
     <div class="modal-line"></div>
 
     <form name="uploadForm">
-      <div class="upload-row">
-        <p>{{ tr.FILTERS.type }}</p>
-        <div
-          class="input-div"
-          input-name="post_type"
-          onmousedown="selectChip(event)"
-        >
-          <div class="chip" id="selling">{{ tr.POSTTYPE.selling }}</div>
-          <div class="chip" id="adopting">{{ tr.POSTTYPE.adopting }}</div>
-          <div class="chip" id="meeting">{{ tr.POSTTYPE.meeting }}</div>
-        </div>
+      <!-- STEP 1 -->
+      <div class="step-div" id="step1">
+        {% include "components/upload_steps/upload_step1.html" %}
       </div>
 
-      <div class="upload-row">
-        <p>{{ tr.UPLOAD.animal }}</p>
-        <div
-          class="input-div"
-          input-name="animal"
-          onmousedown="selectChip(event)"
-        >
-          <div class="chip" id="dog">{{ tr.ANIMALS.dog }}</div>
-          <div class="chip" id="cat">{{ tr.ANIMALS.cat }}</div>
-          <div class="chip" id="bird">{{ tr.ANIMALS.bird }}</div>
-          <div class="chip" id="fish">{{ tr.ANIMALS.fish }}</div>
-          <div class="chip" id="other">{{ tr.ANIMALS.other }}</div>
-        </div>
+      <!-- STEP 2 -->
+      <div class="step-div" id="step2">
+        {% include "components/upload_steps/upload_step2.html" %}
       </div>
 
-      <div class="upload-row">
-        <p>{{ tr.UPLOAD.gender }}</p>
-        <div class="input-div" input-name="sex" onmousedown="selectChip(event)">
-          <div class="chip" id="girl">{{ tr.UPLOAD.girl }}</div>
-          <div class="chip" id="boy">{{ tr.UPLOAD.boy }}</div>
-        </div>
-      </div>
-
-      <div class="upload-row">
-        <div class="input-div">
-          <img src="/assets/icons/dna.svg" class="input-icon" alt="Dna" />
-          <input
-            type="text"
-            name="breed"
-            placeholder="{{ tr.UPLOAD.breed }}"
-            class="upload-input"
-          />
-        </div>
-      </div>
-
-      <div class="upload-row">
-        <div class="input-div">
-          <img
-            src="/assets/icons/calendar.svg"
-            class="input-icon"
-            alt="Calendar"
-          />
-          <input
-            type="text"
-            name="age"
-            placeholder="{{ tr.UPLOAD.age }}"
-            class="upload-input"
-          />
-          <p
-            class="age-selector"
-            id="all"
-            onmousedown="toggleAgeDropdown()"
-            input-name="age-type"
-          >
-            {{ tr.FILTERS.age_type }}
-            <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
-          </p>
-
-          <div
-            class="age-dropdown"
-            input-name="ageType"
-            onmousedown="selectAgeType(event)"
-          >
-            <p id="years">{{ tr.FILTERS.years }}</p>
-            <p id="months">{{ tr.FILTERS.months }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="upload-row">
-        <div class="input-div">
-          <img src="/assets/icons/phone.svg" class="input-icon" alt="Phone" />
-          <input
-            type="text"
-            name="phone"
-            placeholder="{{ tr.AUTH.phone }}"
-            class="upload-input"
-          />
-        </div>
-      </div>
-
-      <div class="upload-row price-row">
-        <div class="input-div">
-          <img
-            src="/assets/icons/lari.svg"
-            width="12"
-            height="16"
-            class="input-icon"
-            alt="Gel"
-          />
-          <input type="text" name="price" placeholder="{{ tr.UPLOAD.price }}" />
-        </div>
-      </div>
-
-      <div class="upload-row">
-        <div class="input-div textarea-div">
-          <img
-            src="/assets/icons/description.svg"
-            class="input-icon"
-            alt="Description"
-          />
-          <textarea
-            type="text"
-            name="description"
-            aria-label="Description"
-            placeholder="{{ tr.UPLOAD.description }}"
-            class="upload-input"
-          ></textarea>
-        </div>
-      </div>
-
-      <div class="upload-row">
-        <div class="input-div">
-          <img
-            src="/assets/icons/location.svg"
-            alt="Location"
-            class="input-icon"
-          />
-          <div class="cities">{% include "components/cities.html" %}</div>
-        </div>
-      </div>
-
-      <div
-        class="upload-row"
-        onmousedown="document.getElementById('fileInput').click()"
-      >
-        <div class="input-div">
-          <img
-            src="/assets/icons/picture.svg"
-            class="input-icon"
-            alt="Picture"
-          />
-          <div class="photos-div">{{ tr.UPLOAD.photos }}</div>
-
-          <input
-            type="file"
-            name="photos"
-            aria-label="Photos"
-            accept="image/*"
-            id="fileInput"
-            multiple
-          />
-        </div>
+      <!-- STEP 3 -->
+      <div class="step-div" id="step3">
+        {% include "components/upload_steps/upload_step3.html" %}
       </div>
 
       <div class="msg">შეავსეთ ფორმა</div>
-
-      <button
-        type="button"
-        onmousedown="upload()"
-        class="upload-btn"
-        aria-label="Submit"
-      >
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4 16.2422c-1.20599-.8072-2-2.182-2-3.7422 0-2.3436 1.79151-4.26871 4.07974-4.48063C6.54781 5.17213 9.02024 3 12 3c2.9798 0 5.4522 2.17213 5.9203 5.01937C20.2085 8.23129 22 10.1564 22 12.5c0 1.5602-.794 2.935-2 3.7422M8 16l4-4m0 0 4 4m-4-4v9"
-            stroke="#fff"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
     </form>
   </div>
 

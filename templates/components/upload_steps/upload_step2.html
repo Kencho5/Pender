@@ -1,0 +1,113 @@
+<div class="upload-row">
+  <div class="input-div">
+    <img src="/assets/icons/dna.svg" class="input-icon" alt="Dna" />
+    <input
+      type="text"
+      name="breed"
+      placeholder="{{ tr.UPLOAD.breed }}"
+      class="upload-input"
+    />
+  </div>
+</div>
+
+<div class="upload-row">
+  <div class="input-div">
+    <img src="/assets/icons/calendar.svg" class="input-icon" alt="Calendar" />
+    <input
+      type="text"
+      name="age"
+      placeholder="{{ tr.UPLOAD.age }}"
+      class="upload-input"
+    />
+    <p
+      class="age-selector"
+      id="all"
+      onmousedown="toggleAgeDropdown()"
+      input-name="age-type"
+    >
+      {{ tr.FILTERS.age_type }}
+      <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
+    </p>
+
+    <div
+      class="age-dropdown"
+      input-name="ageType"
+      onmousedown="selectAgeType(event)"
+    >
+      <p id="years">{{ tr.FILTERS.years }}</p>
+      <p id="months">{{ tr.FILTERS.months }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="upload-row">
+  <div class="input-div">
+    <img src="/assets/icons/phone.svg" class="input-icon" alt="Phone" />
+    <input
+      type="text"
+      name="phone"
+      placeholder="{{ tr.AUTH.phone }}"
+      class="upload-input"
+    />
+  </div>
+</div>
+
+<div class="upload-row price-row">
+  <div class="input-div">
+    <img
+      src="/assets/icons/lari.svg"
+      width="12"
+      height="16"
+      class="input-icon"
+      alt="Gel"
+    />
+    <input type="text" name="price" placeholder="{{ tr.UPLOAD.price }}" />
+  </div>
+</div>
+
+<div class="upload-row">
+  <div class="input-div">
+    <img src="/assets/icons/location.svg" alt="Location" class="input-icon" />
+    <div class="cities">{% include "components/cities.html" %}</div>
+  </div>
+</div>
+
+<div class="upload-row">
+  <div class="input-div textarea-div">
+    <img
+      src="/assets/icons/description.svg"
+      class="input-icon"
+      alt="Description"
+    />
+    <textarea
+      type="text"
+      name="description"
+      aria-label="Description"
+      placeholder="{{ tr.UPLOAD.description }}"
+      class="upload-input"
+    ></textarea>
+  </div>
+</div>
+
+<button
+  type="button"
+  onmousedown="upload()"
+  class="upload-btn"
+  aria-label="Submit"
+>
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 12H20M20 12L14 6M20 12L14 18"
+      stroke="#fff"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</button>

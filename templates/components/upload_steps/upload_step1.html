@@ -1,0 +1,50 @@
+<div class="upload-row">
+  <p>{{ tr.FILTERS.type }}</p>
+  <div class="input-div" input-name="post_type" onmousedown="selectChip(event)">
+    <div class="chip" id="selling">{{ tr.POSTTYPE.selling }}</div>
+    <div class="chip" id="adopting">{{ tr.POSTTYPE.adopting }}</div>
+    <div class="chip" id="meeting">{{ tr.POSTTYPE.meeting }}</div>
+  </div>
+</div>
+
+<div class="upload-row">
+  <p>{{ tr.UPLOAD.animal }}</p>
+  <div class="input-div" input-name="animal" onmousedown="selectChip(event)">
+    <div class="chip" id="dog">{{ tr.ANIMALS.dog }}</div>
+    <div class="chip" id="cat">{{ tr.ANIMALS.cat }}</div>
+    <div class="chip" id="bird">{{ tr.ANIMALS.bird }}</div>
+    <div class="chip" id="fish">{{ tr.ANIMALS.fish }}</div>
+    <div class="chip" id="other">{{ tr.ANIMALS.other }}</div>
+  </div>
+</div>
+
+<div class="upload-row">
+  <p>{{ tr.UPLOAD.gender }}</p>
+  <div class="input-div" input-name="sex" onmousedown="selectChip(event)">
+    <div class="chip" id="girl">{{ tr.UPLOAD.girl }}</div>
+    <div class="chip" id="boy">{{ tr.UPLOAD.boy }}</div>
+  </div>
+</div>
+
+<button
+  type="button"
+  onmousedown="upload()"
+  class="upload-btn"
+  aria-label="Submit"
+>
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 12H20M20 12L14 6M20 12L14 18"
+      stroke="#fff"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</button>

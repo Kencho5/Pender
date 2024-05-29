@@ -52,6 +52,8 @@ async fn main() -> tide::Result<()> {
 
     app.at("/assets").serve_dir("./public/assets/")?;
     app.at("/static").serve_dir("./public/static/")?;
+    app.at("/upload-steps")
+        .serve_dir("./templates/components/upload_steps/")?;
 
     register_routes::register_routes(&mut app);
 
