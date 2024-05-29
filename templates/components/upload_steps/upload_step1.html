@@ -1,46 +1,10 @@
-<!-- ANIMAl INPUT -->
-<div class="input-group">
-  <i class="fa fa-paw icon dropdown-icon"></i>
-  <div
-    aria-label="Animal"
-    class="form-input dropdown-div"
-    onclick="toggleDropdown()"
-    target="animal"
-  >
-    <p class="dropdown-text">{{ tr.UPLOAD.animal }}</p>
-  </div>
-  <i class="fa fa-caret-down icon-right"></i>
-
-  <input type="hidden" name="animal" value="" class="dropdown-input" />
-</div>
-
-<div class="dropdown">
-  <div class="dropdown-content">
-    <p id="dog" data-target="animal">{{ tr.ANIMALS.dog }}</p>
-    <p id="cat" data-target="animal">{{ tr.ANIMALS.cat }}</p>
-    <p id="bird" data-target="animal">{{ tr.ANIMALS.bird }}</p>
-    <p id="fish" data-target="animal">{{ tr.ANIMALS.fish }}</p>
-    <p id="other" data-target="animal">{{ tr.ANIMALS.other }}</p>
+<div class="filter-row">
+  <p>{{ tr.FILTERS.type }}</p>
+  <div class="input-div" input-name="post_type" onmousedown="selectChip(event)">
+    <div class="chip" id="selling">{{ tr.POSTTYPE.selling }}</div>
+    <div class="chip" id="adopting">{{ tr.POSTTYPE.adopting }}</div>
+    <div class="chip" id="meeting">{{ tr.POSTTYPE.meeting }}</div>
   </div>
 </div>
 
-<!-- BREED INPUT -->
-<div class="input-group">
-  <i class="fa-solid fa-dna icon"></i>
-  <input
-    type="text"
-    name="breed"
-    aria-label="Breed"
-    placeholder="{{ tr.UPLOAD.breed }}"
-    class="form-input"
-  />
-</div>
-
-<button
-  type="button"
-  class="next-btn"
-  onclick="validateForm()"
-  aria-label="Next"
->
-  <i class="fa-solid fa-arrow-right-long"></i>
-</button>
+<input type="text" name="breed" placeholder="{{ tr.UPLOAD.breed }}" />

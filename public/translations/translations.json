@@ -69,8 +69,7 @@
       "breed": "Breed",
       "post_type": "Post Type",
       "price": "Price (GEL)",
-      "age_years": "Age (Years 0-12)",
-      "age_months": "Age (Months 0-12)",
+      "age": "Age",
       "gender": "Sex",
       "boy": "Boy",
       "girl": "Girl",
@@ -86,6 +85,7 @@
       "other": "Other"
     },
     "POSTTYPE": {
+      "buying": "Buying",
       "selling": "Selling",
       "meeting": "Meeting",
       "adopting": "Adopting"
@@ -164,8 +164,7 @@
       "breed": "ჯიში",
       "post_type": "პოსტის ტიპი",
       "price": "ფასი (ლარი)",
-      "age_years": "ასაკი (წელი 0-12)",
-      "age_months": "ასაკი (თვე 0-12)",
+      "age": "ასაკი",
       "gender": "სქესი",
       "boy": "ბიჭი",
       "girl": "გოგო",
@@ -181,8 +180,9 @@
       "other": "სხვა"
     },
     "POSTTYPE": {
+      "buying": "ყიდვა",
       "selling": "გაყიდვა",
-      "meeting": "შეხვედრა",
+      "meeting": "შეჯვარება",
       "adopting": "შეფარება"
     },
     "POST": {

@@ -98,10 +98,6 @@
     }
   }
 
-  .search-button:hover {
-    padding: 16px 20px;
-  }
-
   @media (max-width: 768px) {
     .search-content {
       height: 200px;

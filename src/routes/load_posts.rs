@@ -9,6 +9,7 @@ pub async fn posts_handler(req: Request<AppState>) -> tide::Result {
 
     let context = context! {
         "tr" => translations,
+        // "posts" => get_posts()
     };
 
     let state = req.state();
@@ -18,3 +19,11 @@ pub async fn posts_handler(req: Request<AppState>) -> tide::Result {
 
     Ok(response)
 }
+
+// async fn get_posts(req: &mut Request<AppState>) -> tide::Result {
+//     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
+//     let user = sqlx::query_as::<_, auth_struct::UserStruct>("SELECT * FROM posts WHERE")
+//         .fetch_one(pg_conn.acquire().await?)
+//         .await?;
+//     Ok(user)
+// }
