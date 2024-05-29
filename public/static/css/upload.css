@@ -52,7 +52,7 @@
     scrollbar-width: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 36px;
     margin-top: 40px;
 
     p {
@@ -96,10 +96,11 @@
     }
 
     .upload-row {
-      margin-bottom: 20px;
+      /* margin-bottom: 20px; */
       position: relative;
 
-      input {
+      input,
+      textarea {
         font-size: 16px;
         padding: 12px 14px;
         height: 48px;
@@ -110,6 +111,17 @@
         padding-left: 40px;
         outline: none;
         transition: 0.2s;
+      }
+
+      textarea {
+        resize: none;
+        height: 68px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .textarea-div img {
+        top: 12px;
       }
 
       input::placeholder {
