@@ -19,6 +19,7 @@ function selectChip(event) {
   if (!chip.classList.contains("input-div")) {
     if (chip.parentNode.getAttribute("input-name") == "post_type") {
       priceRow.style.display = "none";
+      priceRow.querySelector("input").classList.remove("upload-input");
     }
 
     Array.from(chip.parentNode.children).forEach((element) => {
@@ -27,7 +28,10 @@ function selectChip(event) {
     chip.classList.toggle("active-upload-chip");
   }
 
-  if (chip.id == "selling") priceRow.style.display = "block";
+  if (chip.id == "selling") {
+    priceRow.style.display = "block";
+    priceRow.querySelector("input").classList = "upload-input";
+  }
 }
 
 function toggleAgeDropdown() {
@@ -51,11 +55,16 @@ function validateForm() {
   let isValid = true;
   const msg = document.querySelector(".msg");
   const chips = document.querySelectorAll(".active-upload-chip");
+  const inputs = document.querySelectorAll(".upload-input");
+
+  inputs.forEach((input) => {
+    console.log(input);
+    if (!input.value) isValid = false;
+  });
 
   if (chips.length < 3) isValid = false;
 
   if (!isValid) {
-    msg.textContent = "შეავსეთ ფორმა";
     msg.style.display = "block";
   }
 }

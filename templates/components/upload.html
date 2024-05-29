@@ -49,7 +49,12 @@
       <div class="upload-row">
         <div class="input-div">
           <img src="/assets/icons/dna.svg" class="input-icon" alt="Dna" />
-          <input type="text" name="breed" placeholder="{{ tr.UPLOAD.breed }}" />
+          <input
+            type="text"
+            name="breed"
+            placeholder="{{ tr.UPLOAD.breed }}"
+            class="upload-input"
+          />
         </div>
       </div>
 
@@ -60,7 +65,12 @@
             class="input-icon"
             alt="Calendar"
           />
-          <input type="text" name="age" placeholder="{{ tr.UPLOAD.age }}" />
+          <input
+            type="text"
+            name="age"
+            placeholder="{{ tr.UPLOAD.age }}"
+            class="upload-input"
+          />
           <p
             class="age-selector"
             id="all"
@@ -85,7 +95,12 @@
       <div class="upload-row">
         <div class="input-div">
           <img src="/assets/icons/phone.svg" class="input-icon" alt="Phone" />
-          <input type="text" name="phone" placeholder="{{ tr.AUTH.phone }}" />
+          <input
+            type="text"
+            name="phone"
+            placeholder="{{ tr.AUTH.phone }}"
+            class="upload-input"
+          />
         </div>
       </div>
 
@@ -101,6 +116,7 @@
             name="description"
             aria-label="Description"
             placeholder="{{ tr.UPLOAD.description }}"
+            class="upload-input"
           ></textarea>
         </div>
       </div>
@@ -152,6 +168,8 @@
         </div>
       </div>
 
+      <div class="msg">შეავსეთ ფორმა</div>
+
       <button
         type="button"
         onmousedown="upload()"
@@ -173,8 +191,6 @@
           />
         </svg>
       </button>
-
-      <div class="msg"></div>
     </form>
   </div>
 

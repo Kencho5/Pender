@@ -24,6 +24,7 @@
 <!-- prettier-ignore -->
 <input type="hidden" name="city" 
   input-name="city"
+  class="upload-input"
   {% if route not in ['/register', '/login', '/upload', '/'] %}
   value="{{claims.city_value}}" 
   {% endif %}
