@@ -77,7 +77,7 @@ function validateForm() {
       if (!input.value) isValid = false;
     });
     if (ageType && ageType.id == "all") isValid = false;
-  } else if (step == 3 && (!body["photos"] || body["photos"].length !== 3)) {
+  } else if (step == 3 && (!body["photos"] || body["photos"].length > 3)) {
     isValid = false;
   }
 
@@ -100,7 +100,7 @@ fileInput.addEventListener("change", async (event) => {
     (files.length + (body["photos"] || []).length > 3)
   ) {
     msg.style.display = "block";
-    msg.textContent = "მხოლოდ 3 ფოტო";
+    msg.textContent = "მაქს. 3 ფოტო";
     scrollIntoViewCenter(msg);
 
     return;

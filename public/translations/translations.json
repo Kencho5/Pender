@@ -74,7 +74,7 @@
       "boy": "Boy",
       "girl": "Girl",
       "description": "Description",
-      "photos": "Photos (Only 3)",
+      "photos": "Photos (Max 3)",
       "select_photos": "Select Photos"
     },
     "ANIMALS": {
@@ -169,7 +169,7 @@
       "boy": "ბიჭი",
       "girl": "გოგო",
       "description": "აღწერა",
-      "photos": "ფოტოები (მხოლოდ 3)",
+      "photos": "ფოტოები (მაქს. 3)",
       "select_photos": "აირჩიეთ ფოტოები"
     },
     "ANIMALS": {
