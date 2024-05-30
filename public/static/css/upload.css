@@ -37,6 +37,11 @@
     scale: 1.01;
   }
 
+  .upload-btn:disabled {
+    background-color: #e78882;
+    cursor: not-allowed;
+  }
+
   .modal-line {
     height: 1px;
     background-color: var(--border);

@@ -1,4 +1,4 @@
-var step = 3;
+var step = 1;
 
 function changeStep() {
   if (step == 3) return;
@@ -77,7 +77,7 @@ function validateForm() {
       if (!input.value) isValid = false;
     });
     if (ageType && ageType.id == "all") isValid = false;
-  } else if (step == 3 && !body["photos"] || body["photos"].length != 3) {
+  } else if (step == 3 && (!body["photos"] || body["photos"].length !== 3)) {
     isValid = false;
   }
 
@@ -86,6 +86,7 @@ function validateForm() {
   } else {
     msg.style.display = "none";
     changeStep();
+    return true;
   }
 }
 
@@ -94,7 +95,10 @@ fileInput.addEventListener("change", async (event) => {
   const files = event.target.files;
   const imagesDiv = document.getElementById("imagesDiv");
 
-  if (body["photos"] && body["photos"].length == 3 || files.length > 3) {
+  if (
+    (body["photos"] && body["photos"].length === 3) ||
+    (files.length + (body["photos"] || []).length > 3)
+  ) {
     msg.style.display = "block";
     msg.textContent = "მხოლოდ 3 ფოტო";
     scrollIntoViewCenter(msg);
@@ -141,21 +145,60 @@ fileInput.addEventListener("change", async (event) => {
   }
 });
 
+function setValues() {
+  const chips = document.querySelectorAll(".active-upload-chip");
+  const inputs = document.querySelectorAll(".upload-input");
+  const ageType = document.querySelector('[input-name="age-type"]');
+
+  chips.forEach((chip) => {
+    body[chip.parentNode.getAttribute("input-name")] = chip.id;
+  });
+
+  inputs.forEach((input) => {
+    body[input.getAttribute("input-name")] = input.value;
+  });
+
+  body["age_type"] = ageType.id;
+}
+
 function upload() {
   if (!validateForm()) return;
-  // const chips = document.querySelectorAll(".active-upload-chip");
-  // const inputs = document.querySelectorAll(".upload-input");
-  // const ageType = document.querySelector('[input-name="age-type"]');
-  //
-  // chips.forEach((chip) => {
-  //   body[chip.parentNode.getAttribute("input-name")] = chip.id;
-  // });
-  //
-  // inputs.forEach((input) => {
-  //   body[input.getAttribute("input-name")] = input.value;
-  // });
-  //
-  // body["age_type"] = ageType.id;
+  setValues();
+
+  const uploadBtn = document.querySelector("#final-btn");
+  uploadBtn.disabled = true;
+
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "/upload", true);
+
+  xhr.upload.addEventListener("progress", (event) => {
+    if (event.lengthComputable) {
+      let threshold = 20;
+      const percent = Math.floor((event.loaded / event.total) * 100);
+      const progressDiv = document.querySelector(".progress-div");
+      const progressBar = document.querySelector(".progress");
+      const progressInfo = document.querySelector(".progress-percentage");
+
+      if (percent >= threshold) {
+        progressDiv.style.display = "block";
+        progressBar.style.width = `${percent}%`;
+        progressInfo.textContent = `${percent}%`;
+
+        threshold += 20;
+      }
+    }
+  });
+
+  xhr.onload = async function () {
+    const progressStatus = document.querySelector(".progress-status");
+    progressStatus.textContent = "Done!";
+
+    const data = JSON.parse(xhr.responseText);
+    const { error, post_id } = data;
+    console.log(error, post_id);
+  };
+
+  xhr.send(JSON.stringify(body));
 }
 
 function scrollIntoViewCenter(element) {

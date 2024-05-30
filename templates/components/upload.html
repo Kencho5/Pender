@@ -12,14 +12,18 @@
     <form name="uploadForm">
       <!-- STEP 1 -->
       <div class="step-div" id="step1">
-        {% include "components/upload_steps/upload_step3.html" %}
+        {% include "components/upload_steps/upload_step1.html" %}
       </div>
 
       <!-- STEP 2 -->
-      <div class="step-div" id="step2"></div>
+      <div class="step-div" id="step2">
+        {% include "components/upload_steps/upload_step2.html" %}
+      </div>
 
       <!-- STEP 3 -->
-      <div class="step-div" id="step3"></div>
+      <div class="step-div" id="step3">
+        {% include "components/upload_steps/upload_step3.html" %}
+      </div>
 
       <div class="msg">შეავსეთ ფორმა</div>
     </form>
