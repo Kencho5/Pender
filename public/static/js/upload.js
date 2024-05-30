@@ -61,9 +61,9 @@ function selectAgeType(event) {
   }
 }
 
+var msg = document.querySelector(".msg");
 function validateForm() {
   let isValid = true;
-  const msg = document.querySelector(".msg");
   const chips = document.querySelectorAll(".active-upload-chip");
   const inputs = document.querySelectorAll(".upload-input");
   const ageType = document.querySelector('[input-name="age-type"]');
@@ -89,8 +89,16 @@ var body = {};
 const fileInput = document.getElementById("fileInput");
 
 fileInput.addEventListener("change", async (event) => {
-  const imagesDiv = document.getElementById("imagesDiv");
   const files = event.target.files;
+  const imagesDiv = document.getElementById("imagesDiv");
+
+  if (body["photos"] && body["photos"].length == 3 || files.length > 3) {
+    msg.style.display = "block";
+    msg.textContent = "მხოლოდ 3 ფოტო";
+    scrollIntoViewCenter(msg);
+
+    return;
+  }
 
   for (const file of files) {
     const imageContainer = document.createElement("div");
@@ -131,4 +139,20 @@ fileInput.addEventListener("change", async (event) => {
 
 function upload() {
   if (!validateForm()) return;
+}
+
+function scrollIntoViewCenter(element) {
+  // Get the element's position relative to the viewport
+  const rect = element.getBoundingClientRect();
+
+  // Calculate the offset required to center the element
+  const offsetY = rect.top - (window.innerHeight / 2) + (rect.height / 2);
+  const offsetX = rect.left - (window.innerWidth / 2) + (rect.width / 2);
+
+  // Scroll the element into view
+  window.scrollTo({
+    top: window.pageYOffset + offsetY,
+    left: window.pageXOffset + offsetX,
+    behavior: "smooth",
+  });
 }
