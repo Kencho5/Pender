@@ -5,6 +5,7 @@ function changeStep() {
   document.querySelector(`#step${step + 1}`).style.display = "flex";
 
   step++;
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 async function compressImage(file, { quality = 1, type = file.type }) {
@@ -83,6 +84,32 @@ function validateForm() {
     changeStep();
   }
 }
+
+const fileInput = document.getElementById("fileInput");
+fileInput.addEventListener("change", (event) => {
+  const imagesDiv = document.getElementById("imagesDiv");
+  const files = event.target.files;
+
+  for (const file of files) {
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("image");
+
+    // Create the first img element
+    const img1 = document.createElement("img");
+    img1.src = URL.createObjectURL(file);
+
+    // Create the second img element (delete icon)
+    const img2 = document.createElement("img");
+    img2.src = "/assets/icons/cancel.svg";
+    img2.classList.add("delete-icon");
+    img2.alt = "Delete";
+
+    imageContainer.appendChild(img1);
+    imageContainer.appendChild(img2);
+
+    imagesDiv.appendChild(imageContainer);
+  }
+});
 
 function upload() {
   if (!validateForm()) return;

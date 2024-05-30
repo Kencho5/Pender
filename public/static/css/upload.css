@@ -206,6 +206,43 @@
     .price-row {
       display: none;
     }
+
+    .images-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 26px;
+
+      .image {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      img {
+        width: 250px;
+        height: auto;
+        border-radius: 26px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .delete-icon {
+        width: 28px;
+        height: 28px;
+        margin-top: 16px;
+        background-color: var(--background);
+        padding: 12px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .delete-icon:hover {
+        scale: 1.1;
+      }
+    }
   }
 }
 
