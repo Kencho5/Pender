@@ -207,8 +207,8 @@
       }
 
       .images {
-        padding-left: 24px;
-        width: calc(100% + 52px);
+        padding: 0 24px;
+        width: calc(100% + 56px);
         height: 170px;
         margin: 0 -28px;
         box-sizing: border-box;
@@ -242,9 +242,9 @@
   }
 
   .posts {
-    padding-left: 24px;
-    width: calc(100% + 52px);
-    margin: 0 -24px;
+    padding: 0 24px;
+    width: calc(100% + 58px);
+    margin: 0 -28px;
     box-sizing: border-box;
   }
 }
