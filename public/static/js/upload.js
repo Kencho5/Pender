@@ -1,6 +1,8 @@
-var step = 1;
+var step = 3;
 
 function changeStep() {
+  if (step == 3) return;
+
   document.querySelector(`#step${step}`).style.display = "none";
   document.querySelector(`#step${step + 1}`).style.display = "flex";
 
@@ -70,12 +72,13 @@ function validateForm() {
   const ageType = document.querySelector('[input-name="age-type"]');
 
   if (step == 1 && chips.length < 3) isValid = false;
-
-  if (step == 2) {
+  else if (step == 2) {
     inputs.forEach((input) => {
       if (!input.value) isValid = false;
     });
     if (ageType && ageType.id == "all") isValid = false;
+  } else if (step == 3 && !body["photos"] || body["photos"].length != 3) {
+    isValid = false;
   }
 
   if (!isValid) {
@@ -140,19 +143,19 @@ fileInput.addEventListener("change", async (event) => {
 
 function upload() {
   if (!validateForm()) return;
-  const chips = document.querySelectorAll(".active-upload-chip");
-  const inputs = document.querySelectorAll(".upload-input");
-  const ageType = document.querySelector('[input-name="age-type"]');
-
-  chips.forEach((chip) => {
-    body[chip.parentNode.getAttribute("input-name")] = chip.id;
-  });
-
-  inputs.forEach((input) => {
-    body[input.getAttribute("input-name")] = input.value;
-  });
-
-  body["age_type"] = ageType.id;
+  // const chips = document.querySelectorAll(".active-upload-chip");
+  // const inputs = document.querySelectorAll(".upload-input");
+  // const ageType = document.querySelector('[input-name="age-type"]');
+  //
+  // chips.forEach((chip) => {
+  //   body[chip.parentNode.getAttribute("input-name")] = chip.id;
+  // });
+  //
+  // inputs.forEach((input) => {
+  //   body[input.getAttribute("input-name")] = input.value;
+  // });
+  //
+  // body["age_type"] = ageType.id;
 }
 
 function scrollIntoViewCenter(element) {
