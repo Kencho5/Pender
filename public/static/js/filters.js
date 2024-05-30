@@ -80,7 +80,10 @@ function saveFilters() {
 
 function clearFilters() {
   localStorage.removeItem("filters");
-  toggleFilters();
+  htmx.ajax("GET", window.location.pathname, {
+    target: "body",
+    swap: "outerHTML",
+  });
 }
 
 var filtersModal = document.getElementById("filtersModal");

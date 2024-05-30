@@ -37,6 +37,8 @@ a {
 .main-content {
   margin-bottom: 50px;
   min-height: 100vh;
+  transition: opacity 0.15s ease-out;
+  opacity: 0;
 }
 
 .blurred-img {
