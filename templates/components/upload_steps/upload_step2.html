@@ -64,7 +64,7 @@
       class="input-icon"
       alt="Gel"
     />
-    <input type="text" name="price" placeholder="{{ tr.UPLOAD.price }}" />
+    <input type="text" input-name="price" placeholder="{{ tr.UPLOAD.price }}" />
   </div>
 </div>
 
@@ -92,6 +92,13 @@
     ></textarea>
   </div>
 </div>
+
+<input
+  type="hidden"
+  value="{{claims.id}}"
+  input-name="user_id"
+  class="upload-input"
+/>
 
 <button
   type="button"

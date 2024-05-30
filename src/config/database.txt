@@ -13,13 +13,16 @@ ON users(email);
 
 CREATE TABLE posts (
     id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
     animal TEXT NOT NULL,
     breed TEXT NOT NULL,
     post_type TEXT NOT NULL,
-    price TEXT NOT NULL,
-    age_years TEXT NOT NULL,
-    age_months TEXT NOT NULL,
-    gender TEXT NOT NULL,
+    price TEXT,
+    age_type TEXT NOT NULL,
+    age TEXT NOT NULL,
+    sex TEXT NOT NULL,
     phone TEXT NOT NULL,
     description TEXT NOT NULL
 );
+CREATE INDEX user_id_index
+ON posts(user_id);

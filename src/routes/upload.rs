@@ -27,7 +27,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     for (index, photo) in form_data.photos.iter().enumerate() {
         if let Err(_) = save_images(post_id, photo, index) {
             response.set_body(json!({
-                "error": r#"<p class='error'>Failed to upload photos</p>"#
+                "error": r#"Failed to upload photos"#
             }));
             return Ok(response);
         }
@@ -37,9 +37,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     if !insert_post(&mut pg_conn, post_id, &form_data).await {
         response.set_body(
             r#"
-            <p class='error'>
-                Failed to upload
-            </p>
+            Failed to upload
             "#,
         );
         return Ok(response);
@@ -71,16 +69,17 @@ async fn insert_post(
     post: &upload_struct::UploadForm,
 ) -> bool {
     let insert_result = sqlx::query(
-        "INSERT INTO posts(id, animal, breed, post_type, price, age_years, age_months, gender, phone, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)",
+        "INSERT INTO posts(id, user_id, animal, breed, post_type, price, age_type, age, sex, phone, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)",
     )
     .bind(post_id.to_string())
+    .bind(&post.user_id)
     .bind(&post.animal)
     .bind(&post.breed)
     .bind(&post.post_type)
     .bind(&post.price)
-    .bind(&post.age_years)
-    .bind(&post.age_months)
-    .bind(&post.gender)
+    .bind(&post.age_type)
+    .bind(&post.age)
+    .bind(&post.sex)
     .bind(&post.phone)
     .bind(&post.description)
     .execute(pg_conn)

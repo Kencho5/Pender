@@ -195,7 +195,14 @@ function upload() {
 
     const data = JSON.parse(xhr.responseText);
     const { error, post_id } = data;
-    console.log(error, post_id);
+
+    if (error) {
+      msg.style.display = "block";
+      msg.textContent = error;
+    } else {
+      await delay(700);
+      window.location.href = `/post/${post_id}`;
+    }
   };
 
   xhr.send(JSON.stringify(body));
