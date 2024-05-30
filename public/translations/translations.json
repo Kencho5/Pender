@@ -7,7 +7,8 @@
       "search": "Search",
       "categories": "Categories",
       "posts": "New Posts",
-      "all_posts": "View All"
+      "all_posts": "View All",
+      "features": "Features"
     },
     "FILTERS": {
       "additional": "Additional Filter",
@@ -104,7 +105,8 @@
       "search": "ძებნა",
       "categories": "კატეგორიები",
       "posts": "ახალი პოსტები",
-      "all_posts": "ყველას ნახვა"
+      "all_posts": "ყველას ნახვა",
+      "features": "უპირატესობები"
     },
     "FILTERS": {
       "additional": "დამატებითი ფილტრი",
