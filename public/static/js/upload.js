@@ -61,6 +61,7 @@ function selectAgeType(event) {
   }
 }
 
+var body = {};
 var msg = document.querySelector(".msg");
 function validateForm() {
   let isValid = true;
@@ -85,9 +86,7 @@ function validateForm() {
   }
 }
 
-var body = {};
-const fileInput = document.getElementById("fileInput");
-
+var fileInput = document.getElementById("fileInput");
 fileInput.addEventListener("change", async (event) => {
   const files = event.target.files;
   const imagesDiv = document.getElementById("imagesDiv");
@@ -98,6 +97,8 @@ fileInput.addEventListener("change", async (event) => {
     scrollIntoViewCenter(msg);
 
     return;
+  } else {
+    msg.style.display = "none";
   }
 
   for (const file of files) {
@@ -139,17 +140,25 @@ fileInput.addEventListener("change", async (event) => {
 
 function upload() {
   if (!validateForm()) return;
+  const chips = document.querySelectorAll(".active-upload-chip");
+  const inputs = document.querySelectorAll(".upload-input");
+  const ageType = document.querySelector('[input-name="age-type"]');
+
+  chips.forEach((chip) => {
+    body[chip.parentNode.getAttribute("input-name")] = chip.id;
+  });
+
+  inputs.forEach((input) => {
+    body[input.getAttribute("input-name")] = input.value;
+  });
+
+  body["age_type"] = ageType.id;
 }
 
 function scrollIntoViewCenter(element) {
-  // Get the element's position relative to the viewport
   const rect = element.getBoundingClientRect();
-
-  // Calculate the offset required to center the element
   const offsetY = rect.top - (window.innerHeight / 2) + (rect.height / 2);
   const offsetX = rect.left - (window.innerWidth / 2) + (rect.width / 2);
-
-  // Scroll the element into view
   window.scrollTo({
     top: window.pageYOffset + offsetY,
     left: window.pageXOffset + offsetX,
