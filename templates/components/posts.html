@@ -3,7 +3,16 @@
 </style>
 
 {% for i in range(end=posts | length) %}
-<div class="post">
+<a
+  role="button"
+  hx-get="/post/{{posts[i].id}}"
+  hx-boost="true"
+  hx-swap="outerHTML"
+  hx-target="body"
+  hx-push-url="true"
+  hx-trigger="mousedown"
+  class="post"
+>
   <img src="/var/uploads/post-images/{{posts[i].id}}/0.jpg" alt="Post image" />
 
   <div class="post-details">
@@ -24,5 +33,5 @@
       <p>{{ tr.UPLOAD[posts[i].sex] }}</p>
     </div>
   </div>
-</div>
+</a>
 {% endfor %}

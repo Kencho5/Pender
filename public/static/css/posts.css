@@ -1,7 +1,6 @@
 .post {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition: top ease 0.3s;
   position: relative;
   top: 0;
