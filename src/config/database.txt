@@ -23,7 +23,8 @@ CREATE TABLE posts (
     sex TEXT NOT NULL,
     phone TEXT NOT NULL,
     city TEXT NOT NULL,
-    description TEXT NOT NULL
+    description TEXT NOT NULL,
+    time_posted TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX user_id_index
 ON posts(user_id);
