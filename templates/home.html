@@ -156,7 +156,21 @@
     </div>
 
     <div class="posts-div">
-      <p class="category">{{ tr.HOME.posts }}</p>
+      <div class="posts-title">
+        <p class="category">{{ tr.HOME.posts }}</p>
+        <a
+          role="button"
+          hx-get="/search?animal=all"
+          hx-boost="true"
+          hx-swap="outerHTML"
+          hx-target="body"
+          hx-push-url="true"
+          hx-trigger="mousedown"
+          class="all-posts"
+          >{{ tr.HOME.all_posts }}</a
+        >
+      </div>
+
       <div
         class="posts"
         hx-get="/api/load-posts"

@@ -1,7 +1,6 @@
 .post {
   display: flex;
   flex-direction: column;
-  transition: top ease 0.3s;
   position: relative;
   top: 0;
   height: 363px;
@@ -81,8 +80,4 @@
       background-color: #ece9fe;
     }
   }
-}
-
-.post:hover {
-  top: 8px;
 }
