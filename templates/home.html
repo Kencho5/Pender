@@ -175,7 +175,7 @@
         class="posts"
         hx-get="/api/load-posts"
         hx-trigger="revealed"
-        hx-swap="innerHTML"
+        hx-swap="innerHTML swap:500ms"
         hx-on::after-swap="this.classList.add('fade-in')"
       >
         {% for i in range(end=4) %}

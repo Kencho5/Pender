@@ -128,7 +128,7 @@ fileInput.addEventListener("change", async (event) => {
     imagesDiv.appendChild(imageContainer);
 
     const compressed = await compressImage(file, {
-      quality: 0.6,
+      quality: 0.5,
       type: "image/jpeg",
     });
     if (!body["photos"]) body["photos"] = [compressed];
