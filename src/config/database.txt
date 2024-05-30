@@ -22,6 +22,7 @@ CREATE TABLE posts (
     age TEXT NOT NULL,
     sex TEXT NOT NULL,
     phone TEXT NOT NULL,
+    city TEXT NOT NULL,
     description TEXT NOT NULL
 );
 CREATE INDEX user_id_index

@@ -1,0 +1,88 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: top ease 0.3s;
+  position: relative;
+  top: 0;
+  height: 363px;
+
+  img {
+    width: 280px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .post-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    width: 280px;
+
+    p {
+      margin: 0;
+    }
+
+    .city {
+      font-size: 14px;
+    }
+
+    .post-type {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .type {
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 6px;
+        width: 83px;
+        text-align: center;
+      }
+
+      .price {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+
+    .chip-div {
+      display: flex;
+      gap: 8px;
+
+      p {
+        background-color: #f6f3f0;
+        color: #6a453e;
+        padding: 2px 10px;
+        border: 1px solid #e9e0d8;
+        border-radius: 16px;
+      }
+    }
+
+    .breed {
+      font-weight: 400;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .selling {
+      color: #4ca30d;
+      background-color: #e4fbcc;
+    }
+    .adopting {
+      color: #d9625a;
+      background-color: #fae7e6;
+    }
+    .meeting {
+      color: #875bf7;
+      background-color: #ece9fe;
+    }
+  }
+}
+
+.post:hover {
+  top: 8px;
+}

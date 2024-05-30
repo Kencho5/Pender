@@ -1,4 +1,7 @@
-use crate::{imports::*, utils};
+use crate::{
+    imports::*,
+    utils::{self},
+};
 
 pub async fn home_handler(req: Request<AppState>) -> tide::Result {
     let context = utils::common::get_context(&req).await?;

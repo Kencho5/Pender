@@ -1,18 +1,20 @@
-use crate::imports::*;
+use crate::{imports::*, utils::upload_struct};
 
-pub async fn posts_handler(req: Request<AppState>) -> tide::Result {
+pub async fn posts_handler(mut req: Request<AppState>) -> tide::Result {
     let session = req.session();
-    let lang = session.get::<String>("lang").unwrap_or("GEO".into());
+    let lang = session
+        .get::<String>("lang")
+        .unwrap_or_else(|| "GEO".into());
 
+    let posts = get_posts(&mut req).await?;
     let state = req.state();
     let translations = state.translations.get(&lang);
 
     let context = context! {
         "tr" => translations,
-        // "posts" => get_posts()
+        "posts" => posts,
     };
 
-    let state = req.state();
     let response = state
         .tera
         .render_response("components/posts.html", &context)?;
@@ -20,10 +22,12 @@ pub async fn posts_handler(req: Request<AppState>) -> tide::Result {
     Ok(response)
 }
 
-// async fn get_posts(req: &mut Request<AppState>) -> tide::Result {
-//     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
-//     let user = sqlx::query_as::<_, auth_struct::UserStruct>("SELECT * FROM posts WHERE")
-//         .fetch_one(pg_conn.acquire().await?)
-//         .await?;
-//     Ok(user)
-// }
+async fn get_posts(req: &mut Request<AppState>) -> tide::Result<Vec<upload_struct::PostStruct>> {
+    let mut pg_conn = req.sqlx_conn::<Postgres>().await;
+    let posts = sqlx::query_as::<_, upload_struct::PostStruct>(
+        "SELECT * FROM posts ORDER BY id DESC LIMIT 4",
+    )
+    .fetch_all(pg_conn.acquire().await?)
+    .await?;
+    Ok(posts)
+}

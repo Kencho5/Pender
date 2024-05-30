@@ -27,6 +27,14 @@ pub async fn get_cities(req: tide::Request<AppState>) -> tide::Result {
     Ok(response)
 }
 
+pub async fn get_city() -> tide::Result<serde_json::Value> {
+    let file_path = "./public/translations/cities.json";
+    let file = fs::read_to_string(&file_path).expect("Not Found");
+    let json: serde_json::Value = serde_json::from_str(&file)?;
+
+    Ok(json)
+}
+
 fn match_cities(
     cities: &serde_json::Map<String, serde_json::Value>,
     input: &Search,

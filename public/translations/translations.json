@@ -86,6 +86,7 @@
     },
     "POSTTYPE": {
       "buying": "Buying",
+      "selling_upload": "Selling",
       "selling": "Selling",
       "meeting": "Meeting",
       "adopting": "Adopting"
@@ -181,7 +182,8 @@
     },
     "POSTTYPE": {
       "buying": "ყიდვა",
-      "selling": "გაყიდვა",
+      "selling_upload": "გაყიდვა",
+      "selling": "იყიდება",
       "meeting": "შეჯვარება",
       "adopting": "შეფარება"
     },

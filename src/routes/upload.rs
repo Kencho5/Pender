@@ -1,6 +1,5 @@
 use crate::imports::*;
-use crate::utils::{self, common::logged_in, upload_struct};
-
+use crate::utils::{self, cities::get_city, common::logged_in, upload_struct};
 use std::fs::File;
 use std::io::Write;
 
@@ -22,7 +21,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     let post_id = Uuid::new_v4();
     let mut response = Response::builder(200).build();
 
-    let form_data: upload_struct::UploadForm = req.body_json().await?;
+    let mut form_data: upload_struct::UploadForm = req.body_json().await?;
 
     for (index, photo) in form_data.photos.iter().enumerate() {
         if let Err(_) = save_images(post_id, photo, index) {
@@ -32,6 +31,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
             return Ok(response);
         }
     }
+    form_data.city = get_city().await.unwrap()["GEO"][form_data.city].to_string();
 
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
     if !insert_post(&mut pg_conn, post_id, &form_data).await {
@@ -69,7 +69,7 @@ async fn insert_post(
     post: &upload_struct::UploadForm,
 ) -> bool {
     let insert_result = sqlx::query(
-        "INSERT INTO posts(id, user_id, animal, breed, post_type, price, age_type, age, sex, phone, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)",
+        "INSERT INTO posts(id, user_id, animal, breed, post_type, price, age_type, age, sex, phone, city, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)",
     )
     .bind(post_id.to_string())
     .bind(&post.user_id)
@@ -81,6 +81,7 @@ async fn insert_post(
     .bind(&post.age)
     .bind(&post.sex)
     .bind(&post.phone)
+    .bind(&post.city)
     .bind(&post.description)
     .execute(pg_conn)
     .await;
