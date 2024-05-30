@@ -1,6 +1,5 @@
 .home-content {
   width: 85%;
-  height: 1980px;
   background: var(--accent);
   border-radius: 26px;
   margin: auto;
@@ -309,18 +308,14 @@
         font-size: 14px !important;
       }
     }
-
-    .features-img {
-      width: 100% !important;
-    }
-  }
-
-  .home-content {
-    height: 2340px;
   }
 }
 
 @media (max-width: 768px) {
+  .features-img {
+    width: 100% !important;
+  }
+
   .category {
     font-size: 20px !important;
   }
@@ -349,7 +344,7 @@
 /* Placeholder Box */
 .placeholder-box {
   width: 280px;
-  height: 210px;
+  height: 363px;
   background-color: var(--background);
   position: relative;
   overflow: hidden;
