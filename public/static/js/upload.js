@@ -85,8 +85,10 @@ function validateForm() {
   }
 }
 
+var body = {};
 const fileInput = document.getElementById("fileInput");
-fileInput.addEventListener("change", (event) => {
+
+fileInput.addEventListener("change", async (event) => {
   const imagesDiv = document.getElementById("imagesDiv");
   const files = event.target.files;
 
@@ -108,6 +110,22 @@ fileInput.addEventListener("change", (event) => {
     imageContainer.appendChild(img2);
 
     imagesDiv.appendChild(imageContainer);
+
+    const compressed = await compressImage(file, {
+      quality: 0.6,
+      type: "image/jpeg",
+    });
+    if (!body["photos"]) body["photos"] = [compressed];
+    else body["photos"].push(compressed);
+
+    img2.addEventListener("click", () => {
+      imagesDiv.removeChild(imageContainer);
+
+      const index = body["photos"].indexOf(compressed);
+      if (index !== -1) {
+        body["photos"].splice(index, 1);
+      }
+    });
   }
 });
 
