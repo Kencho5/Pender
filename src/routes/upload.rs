@@ -1,5 +1,6 @@
 use crate::imports::*;
 use crate::utils::{self, cities::get_city, common::logged_in, upload_struct};
+use std::fs;
 use std::fs::File;
 use std::io::Write;
 use std::process::Command;
@@ -35,7 +36,12 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
         if index == form_data.photos.len() - 1 {
             let input_path = format!("/var/uploads/post-images/{}/0.jpg", post_id);
             let output_path = format!("/var/uploads/post-images/{}/mini.jpg", post_id);
-            let scale_filter = "scale=iw*0.3:ih*0.3";
+            let mut scale_filter = "scale=iw*0.3:ih*0.3";
+
+            let metadata = fs::metadata(&input_path)?;
+            if metadata.len() / 1024 <= 700 {
+                scale_filter = "scale=iw*0.8:ih*0.8"
+            }
 
             let output = Command::new("ffmpeg")
                 .args(&["-i", &input_path, "-vf", scale_filter, &output_path])
