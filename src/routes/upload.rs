@@ -39,7 +39,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
             let mut scale_filter = "scale=iw*0.3:ih*0.3";
 
             let metadata = fs::metadata(&input_path)?;
-            if metadata.len() / 1024 <= 700 {
+            if metadata.len() / 1024 <= 500 {
                 scale_filter = "scale=iw*0.8:ih*0.8"
             }
 
