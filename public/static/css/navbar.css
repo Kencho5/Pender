@@ -25,6 +25,7 @@
   padding: 0px 35px;
   background-color: var(--accent);
   box-shadow: 0px 4px 6px 2px #10182808;
+  max-width: 1620px;
 }
 
 .nav-right {
