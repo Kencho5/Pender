@@ -83,6 +83,7 @@ function validateForm() {
 
   if (!isValid) {
     msg.style.display = "block";
+    scrollIntoViewCenter(msg);
   } else {
     msg.style.display = "none";
     changeStep();

@@ -164,13 +164,13 @@
   -ms-transform: translateY(0);
   transform: translateY(0);
   -webkit-transition:
-    opacity 0.4s ease,
-    -webkit-transform 0.4s ease,
-    visibility 0.4s ease;
+    opacity 0.2s ease,
+    -webkit-transform 0.2s ease,
+    visibility 0.2s ease;
   transition:
-    opacity 0.4s ease,
-    transform 0.4s ease,
-    visibility 0.4s ease;
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
 }
 
 .nav-dropdown {
@@ -180,9 +180,7 @@
   max-height: 306px;
   background-color: var(--accent);
   border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: 0px 4px 6px -2px #10182808;
-  box-shadow: 0px 12px 16px -4px #10182814;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .user-info {
