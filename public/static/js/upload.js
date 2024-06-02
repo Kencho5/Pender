@@ -201,7 +201,6 @@ function upload() {
       msg.style.display = "block";
       msg.textContent = error;
     } else {
-      await delay(700);
       window.location.href = `/post/${post_id}`;
     }
   };
