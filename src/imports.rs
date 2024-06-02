@@ -1,5 +1,6 @@
 pub use crate::app_state::AppState;
 pub use crate::utils::auth_struct;
+pub use crate::utils::generate_id::generate_id;
 pub use hmac::{Hmac, Mac};
 pub use jwt::{SignWithKey, VerifyWithKey};
 pub use pwhash::{bcrypt, unix};
@@ -17,4 +18,3 @@ pub use tide::{Request, Response, StatusCode};
 pub use tide_governor::GovernorMiddleware;
 pub use tide_sqlx::{SQLxMiddleware, SQLxRequestExt};
 pub use tide_tera::prelude::*;
-pub use uuid::Uuid;

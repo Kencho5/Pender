@@ -20,13 +20,13 @@ pub async fn upload_handler(req: Request<AppState>) -> tide::Result {
 }
 
 pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
-    let post_id = Uuid::new_v4();
+    let post_id = generate_id();
     let mut response = Response::builder(200).build();
 
     let mut form_data: upload_struct::UploadForm = req.body_json().await?;
 
     for (index, photo) in form_data.photos.iter().enumerate() {
-        if let Err(_) = save_images(post_id, photo, index) {
+        if let Err(_) = save_images(&post_id, photo, index) {
             response.set_body(json!({
                 "error": r#"Failed to upload photos"#
             }));
@@ -56,7 +56,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     form_data.city = get_city().await.unwrap()["GEO"][form_data.city].to_string();
 
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
-    if !insert_post(&mut pg_conn, post_id, &form_data).await {
+    if !insert_post(&mut pg_conn, &post_id, &form_data).await {
         response.set_body(
             r#"
             Failed to upload
@@ -71,7 +71,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     Ok(response)
 }
 
-fn save_images(post_id: Uuid, photo: &String, index: usize) -> Result<(), std::io::Error> {
+fn save_images(post_id: &String, photo: &String, index: usize) -> Result<(), std::io::Error> {
     let image = image_base64::from_base64(photo.to_string());
 
     let post_path = format!("/var/uploads/post-images/{}/", post_id);
@@ -87,13 +87,13 @@ fn save_images(post_id: Uuid, photo: &String, index: usize) -> Result<(), std::i
 
 async fn insert_post(
     pg_conn: &mut sqlx::PgConnection,
-    post_id: Uuid,
+    post_id: &String,
     post: &upload_struct::UploadForm,
 ) -> bool {
     let insert_result = sqlx::query(
         "INSERT INTO posts(id, user_id, animal, breed, post_type, price, age_type, age, sex, phone, city, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)",
     )
-    .bind(post_id.to_string())
+    .bind(&post_id)
     .bind(&post.user_id)
     .bind(&post.animal)
     .bind(&post.breed)

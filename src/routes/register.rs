@@ -43,7 +43,7 @@ pub async fn register_post_handler(mut req: Request<AppState>) -> tide::Result {
         return Ok(response);
     }
 
-    let user_id = Uuid::new_v4();
+    let user_id = generate_id();
 
     if !register_user(&mut pg_conn, user_id, &user).await {
         response.set_body(
@@ -70,7 +70,7 @@ async fn email_already_exists(pg_conn: &mut sqlx::PgConnection, email: &str) -> 
 
 async fn register_user(
     pg_conn: &mut sqlx::PgConnection,
-    user_id: Uuid,
+    user_id: String,
     user: &auth_struct::RegisterData,
 ) -> bool {
     let pass_hash = bcrypt::hash(&user.password).unwrap();

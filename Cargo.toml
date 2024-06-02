@@ -16,7 +16,6 @@ hmac = "=0.12.1"
 sqlx = { version = "0.5.13", features = ["runtime-async-std-rustls", "postgres"] }
 tide-sqlx = "0.6.1"
 pwhash = "1"
-uuid = {version = "1.8.0", features = ["v4"]}
 tide-governor = "1.0.3"
 time = "0.2.0"
 lettre = "0.11.6"
