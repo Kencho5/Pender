@@ -5,6 +5,13 @@
   top: 0;
   height: 363px;
 
+  .blurred-img {
+    width: 280px;
+    height: 210px;
+    border-radius: 16px;
+    background: var(--background);
+  }
+
   img {
     width: 280px;
     height: 210px;
