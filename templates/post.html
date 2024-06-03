@@ -1,5 +1,4 @@
-{% extends "components/layout.html" %} 
-{% block content %}
+{% extends "components/layout.html" %} {% block content %}
 
 <style>
   {% include "post.css" %}
@@ -9,6 +8,24 @@
   {% if post == 'error' %}
   <h1 class="post-error">{{ tr.POST.error }}</h1>
   {% else %}
+  <div class="post-main">
+    <div class="post">
+      <!-- TITLE -->
+      <div class="title">
+        <h1 class="breed">{{ post.breed }}</h1>
+        <p>
+          <img src="/assets/icons/location.svg" alt="Location" />
+          {{ post.city | replace(from='"', to='') }}, საქართველო
+        </p>
+      </div>
+
+      <!-- IMAGES -->
+      <div class="images">
+        <img src="/var/uploads/post-images/{{post.id}}/0.jpg" alt="" />
+      </div>
+    </div>
+    <div class="user-details"></div>
+  </div>
   {% endif %}
 </body>
 {% endblock content %}
