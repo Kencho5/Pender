@@ -26,33 +26,29 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     let mut form_data: upload_struct::UploadForm = req.body_json().await?;
 
     for (index, photo) in form_data.photos.iter().enumerate() {
-        if let Err(_) = save_images(&post_id, photo, index) {
+        if let Err(_) = save_images(&post_id, photo, index).await {
             response.set_body(json!({
                 "error": r#"Failed to upload photos"#
             }));
             return Ok(response);
         }
 
-        if index == form_data.photos.len() - 1 {
-            let input_path = format!("/var/uploads/post-images/{}/0.jpg", post_id);
-            let output_path = format!("/var/uploads/post-images/{}/mini.jpg", post_id);
-            let mut scale_filter = "scale=iw*0.3:ih*0.3";
+        let input_path = format!("/var/uploads/post-images/{}/{}.jpg", post_id, index);
+        let mut scale_filter = "scale=iw*0.4:ih*0.4";
+        let metadata = fs::metadata(&input_path)?;
+        if metadata.len() / 1024 <= 500 {
+            scale_filter = "scale=iw*0.8:ih*0.8"
+        }
+        let output = Command::new("ffmpeg")
+            .args(&["-y", "-i", &input_path, "-vf", scale_filter, &input_path])
+            .output()
+            .expect("Failed to execute ffmpeg command");
 
-            let metadata = fs::metadata(&input_path)?;
-            if metadata.len() / 1024 <= 500 {
-                scale_filter = "scale=iw*0.8:ih*0.8"
-            }
-
-            let output = Command::new("ffmpeg")
-                .args(&["-i", &input_path, "-vf", scale_filter, &output_path])
-                .output()
-                .expect("Failed to execute ffmpeg command");
-
-            if !output.status.success() {
-                eprintln!("ffmpeg command failed with output: {:?}", output);
-            }
+        if !output.status.success() {
+            eprintln!("ffmpeg command failed with output: {:?}", output);
         }
     }
+
     form_data.city = get_city().await.unwrap()["GEO"][form_data.city].to_string();
 
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
@@ -71,7 +67,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     Ok(response)
 }
 
-fn save_images(post_id: &String, photo: &String, index: usize) -> Result<(), std::io::Error> {
+async fn save_images(post_id: &String, photo: &String, index: usize) -> Result<(), std::io::Error> {
     let image = image_base64::from_base64(photo.to_string());
 
     let post_path = format!("/var/uploads/post-images/{}/", post_id);
