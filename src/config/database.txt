@@ -25,5 +25,6 @@ CREATE TABLE posts (
     phone TEXT NOT NULL,
     city TEXT NOT NULL,
     description TEXT NOT NULL,
+    photos TEXT NOT NULL,
     time_posted TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );

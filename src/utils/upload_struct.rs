@@ -30,4 +30,5 @@ pub struct PostStruct {
     pub phone: String,
     pub city: String,
     pub description: String,
+    pub photos: String,
 }

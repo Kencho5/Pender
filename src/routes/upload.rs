@@ -86,7 +86,7 @@ async fn insert_post(
     post: &upload_struct::UploadForm,
 ) -> bool {
     let insert_result = sqlx::query(
-        "INSERT INTO posts(id, user_id, user_name, animal, breed, post_type, price, age_type, age, sex, phone, city, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)",
+        "INSERT INTO posts(id, user_id, user_name, animal, breed, post_type, price, age_type, age, sex, phone, city, description, photos) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)",
     )
     .bind(&post_id)
     .bind(&post.user_id)
@@ -101,6 +101,7 @@ async fn insert_post(
     .bind(&post.phone)
     .bind(&post.city)
     .bind(&post.description)
+    .bind(&post.photos.len().to_string())
     .execute(pg_conn)
     .await;
 
