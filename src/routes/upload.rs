@@ -22,23 +22,23 @@ pub async fn upload_handler(req: Request<AppState>) -> tide::Result {
 pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     let post_id = generate_id();
     let mut response = Response::builder(200).build();
-
     let mut form_data: upload_struct::UploadForm = req.body_json().await?;
 
     for (index, photo) in form_data.photos.iter().enumerate() {
-        if let Err(_) = save_images(&post_id, photo, index).await {
+        let save_result = save_images(&post_id, photo, index).await;
+        if let Err(_) = save_result {
             response.set_body(json!({
-                "error": r#"Failed to upload photos"#
+                "error": "Failed to upload photos"
             }));
             return Ok(response);
         }
 
         let input_path = format!("/var/uploads/post-images/{}/{}.jpg", post_id, index);
-        let mut scale_filter = "scale=iw*0.4:ih*0.4";
-        let metadata = fs::metadata(&input_path)?;
-        if metadata.len() / 1024 <= 500 {
-            scale_filter = "scale=iw*0.8:ih*0.8"
-        }
+        let scale_filter = match fs::metadata(&input_path)?.len() / 1024 {
+            size if size <= 500 => "scale=iw*0.8:ih*0.8",
+            _ => "scale=iw*0.4:ih*0.4",
+        };
+
         let output = Command::new("ffmpeg")
             .args(&["-y", "-i", &input_path, "-vf", scale_filter, &input_path])
             .output()
@@ -49,21 +49,20 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
         }
     }
 
-    form_data.city = get_city().await.unwrap()["GEO"][form_data.city].to_string();
+    let city_data = get_city().await.unwrap();
+    form_data.city = city_data["GEO"][form_data.city].to_string();
 
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
-    if !insert_post(&mut pg_conn, &post_id, &form_data).await {
-        response.set_body(
-            r#"
-            Failed to upload
-            "#,
-        );
+    let insert_result = insert_post(&mut pg_conn, &post_id, &form_data).await;
+    if !insert_result {
+        response.set_body("Failed to upload");
         return Ok(response);
     }
 
     response.set_body(json!({
         "post_id": post_id.to_string()
     }));
+
     Ok(response)
 }
 
@@ -87,10 +86,11 @@ async fn insert_post(
     post: &upload_struct::UploadForm,
 ) -> bool {
     let insert_result = sqlx::query(
-        "INSERT INTO posts(id, user_id, animal, breed, post_type, price, age_type, age, sex, phone, city, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)",
+        "INSERT INTO posts(id, user_id, user_name, animal, breed, post_type, price, age_type, age, sex, phone, city, description) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)",
     )
     .bind(&post_id)
     .bind(&post.user_id)
+    .bind(&post.user_name)
     .bind(&post.animal)
     .bind(&post.breed)
     .bind(&post.post_type)

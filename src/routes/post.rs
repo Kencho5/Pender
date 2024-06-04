@@ -23,7 +23,7 @@ pub async fn post_handler(req: Request<AppState>) -> tide::Result {
     Ok(response)
 }
 
-pub async fn get_post(
+async fn get_post(
     req: &Request<AppState>,
     post_id: String,
 ) -> tide::Result<upload_struct::PostStruct> {

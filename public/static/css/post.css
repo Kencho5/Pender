@@ -80,6 +80,14 @@
 
     .post {
       box-sizing: border-box;
+
+      .breed {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
     }
 
     .user-details {
