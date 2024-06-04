@@ -24,9 +24,24 @@
         <img
           src="/var/uploads/post-images/{{post.id}}/0.jpg"
           loading="lazy"
+          class="image active-image"
+          image-id="0"
           alt="Post Image"
         />
+
+        <!-- prettier-ignore -->
+        {% if post.photos != '1' %}
+        {% for x in range(start=1, end=post.photos | int) %}
+        <img
+          src="/var/uploads/post-images/{{post.id}}/{{x}}.jpg"
+          class="image"
+          alt="Post Image"
+          image-id="{{x}}"
+          loading="lazy"
+        />
+        {% endfor %} {% endif %}
       </div>
+      <button type="button" onmousedown="slideImage()">Next</button>
     </div>
     <div class="user-details-parent">
       <div class="user-details">
@@ -64,5 +79,6 @@
     </div>
   </div>
   {% endif %}
+  <script src="/static/js/post.js"></script>
 </body>
 {% endblock content %}
