@@ -26,6 +26,7 @@
     padding: 28px;
 
     .breed {
+      margin: 0;
       font-size: 24px;
     }
 
@@ -43,7 +44,7 @@
 
     .images {
       border-radius: 18px;
-      height: 400px;
+      max-height: 400px;
       background: var(--background);
 
       img {
@@ -54,13 +55,63 @@
         cursor: pointer;
       }
     }
+
+    .blurred-img.loaded {
+      background-color: var(--accent);
+    }
   }
 
   .user-details {
     background-color: var(--accent);
     border-radius: 26px;
     box-shadow: 0px 2px 12px 0px #0e0e0e0f;
-    width: 400px;
+    width: 500px;
     height: 300px;
+  }
+
+  .details-mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 120px;
+
+    .post {
+      box-sizing: border-box;
+    }
+
+    .user-details {
+      display: none;
+    }
+
+    .details-mobile {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      height: 80px;
+      box-sizing: border-box;
+      background-color: var(--accent);
+      border: 1px solid var(--border);
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      .phone {
+        font-size: 16px;
+        color: var(--accent);
+        background-color: var(--primary);
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    display: none;
   }
 }
