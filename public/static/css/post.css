@@ -42,6 +42,10 @@
       }
     }
 
+    .images-div {
+      position: relative;
+    }
+
     .images {
       border-radius: 18px;
       max-height: 400px;
@@ -63,6 +67,39 @@
 
     .blurred-img.loaded {
       background-color: var(--accent);
+    }
+
+    .arrows {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+
+      .arrow {
+        border-radius: 50px;
+        padding: 8px;
+        background-color: var(--accent);
+        border: 1px solid var(--border);
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .arrow:hover {
+        border-color: #83594b;
+      }
+
+      .arrow-right {
+        transform: rotate(180deg);
+      }
     }
   }
 
