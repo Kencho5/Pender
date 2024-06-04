@@ -39,15 +39,14 @@
             class="image"
             alt="Post Image"
             image-id="{{x}}"
-            loading="lazy"
           />
           {% endfor %} {% endif %}
         </div>
         <div class="arrows">
-          <div class="arrow">
+          <div class="arrow" onmousedown="changeImage('left')">
             <img src="/assets/icons/arrow.svg" alt="Arrow Left" />
           </div>
-          <div class="arrow">
+          <div class="arrow" onmousedown="changeImage('right')">
             <img
               src="/assets/icons/arrow.svg"
               class="arrow-right"
