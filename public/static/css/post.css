@@ -66,7 +66,65 @@
     border-radius: 26px;
     box-shadow: 0px 2px 12px 0px #0e0e0e0f;
     width: 500px;
-    height: 300px;
+    height: 280px;
+
+    .post-type {
+      padding: 16px;
+
+      .type {
+        margin: 0;
+        padding: 0px 8px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .price {
+        font-size: 24px;
+      }
+    }
+
+    .user-details-div {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+
+      p {
+        margin: 0;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .line {
+      height: 1px;
+      background-color: #e9e0d8;
+      width: 100%;
+    }
+
+    .selling {
+      color: #4ca30d;
+      background-color: #e4fbcc;
+    }
+    .adopting {
+      color: #d9625a;
+      background-color: #fae7e6;
+    }
+    .meeting {
+      color: #875bf7;
+      background-color: #ece9fe;
+    }
   }
 
   .details-mobile {
@@ -105,16 +163,16 @@
       width: 100%;
       justify-content: center;
       align-items: center;
-
-      .phone {
-        font-size: 16px;
-        color: var(--accent);
-        background-color: var(--primary);
-        padding: 12px 20px;
-        box-sizing: border-box;
-        border-radius: 50px;
-      }
     }
+  }
+  .phone {
+    font-size: 16px;
+    color: var(--accent);
+    background-color: var(--primary);
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    text-align: center;
   }
 }
 

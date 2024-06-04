@@ -28,7 +28,25 @@
         />
       </div>
     </div>
-    <div class="user-details"></div>
+    <div class="user-details">
+      <div class="post-type">
+        {% if post.price %}
+        <h1 class="price">{{ post.price }} ₾</h1>
+        {% endif %}
+        <p class="type {{ post.post_type }}">
+          {{ tr.POSTTYPE[post.post_type] }}
+        </p>
+      </div>
+      <div class="line"></div>
+
+      <div class="user-details-div">
+        <p class="phone">{{ post.phone }}</p>
+        <div class="user">
+          <img src="/assets/icons/avatar.svg" alt="Avatar" />
+          <p class="name">{{ post.user_name }}</p>
+        </div>
+      </div>
+    </div>
     <div class="details-mobile">
       <p class="phone">{{ post.phone }}</p>
     </div>
