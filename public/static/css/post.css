@@ -129,7 +129,7 @@
       position: absolute;
 
       background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
       border-radius: 17px;
 
       .dot {
@@ -237,15 +237,29 @@
         font-size: 14px;
       }
 
-      .arrow {
-        width: 35px !important;
-        height: 35px !important;
+      .arrows {
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+
+        .arrow {
+          height: 100%;
+        }
       }
 
       .images {
         img {
           border-radius: 18px;
           object-fit: cover;
+        }
+      }
+
+      .dots {
+        padding: 10px;
+
+        .dot {
+          width: 9px;
+          height: 9px;
         }
       }
     }

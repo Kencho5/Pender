@@ -22,3 +22,21 @@ function showNextImage() {
   let newIndex = (currentImageIndex + 1) % images.length;
   showImage(newIndex);
 }
+
+var touchstartX = 0;
+var touchendX = 0;
+
+function checkDirection() {
+  if (touchendX - touchstartX < -50) showNextImage();
+  if (touchendX - touchstartX > 50) showPreviousImage();
+}
+
+var imagesDiv = document.querySelector(".images-div");
+imagesDiv.addEventListener("touchstart", (e) => {
+  touchstartX = e.changedTouches[0].screenX;
+});
+
+imagesDiv.addEventListener("touchend", (e) => {
+  touchendX = e.changedTouches[0].screenX;
+  checkDirection();
+});

@@ -55,12 +55,14 @@
             />
           </div>
         </div>
+        {% if post.photos != '1' %}
         <div class="dots">
           <div class="dot active-dot"></div>
           {% for x in range(end=post.photos | int - 1) %}
           <div class="dot"></div>
           {% endfor %}
         </div>
+        {% endif %}
       </div>
     </div>
     <div class="user-details-parent">
