@@ -1,20 +1,20 @@
-var currentImg = 0;
-function changeImage(dir) {
-  const images = document.querySelectorAll(".image");
+var images = document.querySelectorAll(".image");
+var currentImageIndex = 0;
 
-  if (dir == "left" && currentImg == 0) currentImg = images.length;
-  else if (dir == "right" && currentImg >= images.length - 1) currentImg = -1;
+function showImage(index) {
+  images[currentImageIndex].classList.remove("active-image");
+  images[currentImageIndex].style.display = "none";
+  currentImageIndex = index;
+  images[currentImageIndex].classList.add("active-image");
+  images[currentImageIndex].style.display = "block";
+}
 
-  for (const image of images) {
-    if (image.classList.contains("active-image")) {
-      if (dir == "left") currentImg--;
-      else currentImg++;
+function showPreviousImage() {
+  let newIndex = (currentImageIndex - 1 + images.length) % images.length;
+  showImage(newIndex);
+}
 
-      const nextImg = document.querySelector(`[image-id="${currentImg}"]`);
-      image.classList.remove("active-image");
-      nextImg.classList.add("active-image");
-
-      break;
-    }
-  }
+function showNextImage() {
+  let newIndex = (currentImageIndex + 1) % images.length;
+  showImage(newIndex);
 }
