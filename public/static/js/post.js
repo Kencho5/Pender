@@ -1,5 +1,6 @@
 var images = document.querySelectorAll(".image");
 var dots = document.querySelectorAll(".dot");
+var overlay = document.getElementById("overlay");
 var currentImageIndex = 0;
 
 function showImage(index) {
