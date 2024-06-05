@@ -1,12 +1,15 @@
 var images = document.querySelectorAll(".image");
+var dots = document.querySelectorAll(".dot");
 var currentImageIndex = 0;
 
 function showImage(index) {
   images[currentImageIndex].classList.remove("active-image");
-  images[currentImageIndex].style.display = "none";
+  dots[currentImageIndex].classList.remove("active-dot");
+
   currentImageIndex = index;
+
   images[currentImageIndex].classList.add("active-image");
-  images[currentImageIndex].style.display = "block";
+  dots[currentImageIndex].classList.add("active-dot");
 }
 
 function showPreviousImage() {

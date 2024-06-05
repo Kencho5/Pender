@@ -12,7 +12,7 @@
 
 .post-main {
   display: flex;
-  width: 90%;
+  width: 80%;
   justify-content: space-between;
   margin: auto;
   gap: 28px;
@@ -102,6 +102,34 @@
         transform: rotate(180deg);
       }
     }
+
+    .dots {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+
+      padding: 12px;
+      left: 50%;
+      bottom: 0px;
+      transform: translate(-50%, -50%);
+      position: absolute;
+
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+      border-radius: 17px;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: var(--accent);
+        opacity: 35%;
+      }
+
+      .active-dot {
+        opacity: 100%;
+      }
+    }
   }
 
   .user-details-parent {
@@ -182,6 +210,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 120px;
+    width: 90%;
 
     .post {
       box-sizing: border-box;
@@ -192,6 +221,11 @@
 
       p {
         font-size: 14px;
+      }
+
+      .arrow {
+        width: 35px !important;
+        height: 35px !important;
       }
     }
 
