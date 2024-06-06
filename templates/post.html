@@ -20,7 +20,6 @@
       </div>
 
       <!-- IMAGES -->
-      <div id="overlay"></div>
       <div class="images-div">
         <div class="images blurred-img">
           <img
@@ -63,6 +62,44 @@
           {% endfor %}
         </div>
         {% endif %}
+      </div>
+      <div class="post-details">
+        <!-- ANIMAL -->
+        <div class="detail-div">
+          <img src="/assets/icons/paw.svg" alt="Paw" />
+          <div class="detail">
+            <h1>{{ tr.UPLOAD.animal }}</h1>
+            <p>{{ tr.ANIMALS[post.animal] }}</p>
+          </div>
+        </div>
+        <!-- AGE -->
+        <div class="detail-div">
+          <img src="/assets/icons/calendar.svg" alt="Calendar" />
+          <div class="detail">
+            <h1>{{ tr.UPLOAD.age }}</h1>
+            <p>{{ post.age }} {{ tr.FILTERS[post.age_type] }}</p>
+          </div>
+        </div>
+        <!-- GENDER -->
+        <div class="detail-div">
+          <img src="/assets/icons/gender.svg" alt="Gender" />
+          <div class="detail">
+            <h1>{{ tr.UPLOAD.gender }}</h1>
+            <p>{{ tr.UPLOAD[post.sex] }}</p>
+          </div>
+        </div>
+        <!-- BREED -->
+        <div class="detail-div">
+          <img src="/assets/icons/breed.svg" alt="Breed" />
+          <div class="detail">
+            <h1>{{ tr.UPLOAD.breed }}</h1>
+            <p>{{ post.breed }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        {{ post.description
+        }}asasdasdasdasduasuhduahdasudhaufuafuiaehfnuiehwfkuhfjfrrfeuerfjuejufjujurfjujadasdashduashdasiudhasdhuahdaudasuhduashdhuasudhuiasuhdhuasduasuisd
       </div>
     </div>
     <div class="user-details-parent">
