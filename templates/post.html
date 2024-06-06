@@ -101,6 +101,20 @@
         {{ post.description
         }}asasdasdasdasduasuhduahdasudhaufuafuiaehfnuiehwfkuhfjfrrfeuerfjuejufjujurfjujadasdashduashdasiudhasdhuahdaudasuhduashdhuasudhuiasuhdhuasduasuisd
       </div>
+      <div class="line second-line"></div>
+      <a
+        role="button"
+        hx-get="/profile/{{ post.user_id }}"
+        hx-boost="true"
+        hx-swap="outerHTML"
+        hx-target="body"
+        hx-push-url="true"
+        hx-trigger="mousedown"
+        class="user second-user"
+      >
+        <img src="/assets/icons/avatar.svg" alt="Avatar" />
+        <p class="name">{{ post.user_name }}</p>
+      </a>
     </div>
     <div class="user-details-parent">
       <div class="user-details">
