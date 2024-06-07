@@ -52,7 +52,8 @@
 }
 
 /* DETAILS CSS */
-.details-div {
+.details-div,
+.posts-div {
   position: relative;
   width: 969px;
   height: 664px;
@@ -85,7 +86,8 @@
     height: 80px;
   }
 
-  .details-div {
+  .details-div,
+  .posts-div {
     width: 70%;
     height: 684px;
     margin: auto;
@@ -214,5 +216,9 @@
 }
 
 .msg {
+  display: none;
+}
+
+.hide-tab {
   display: none;
 }

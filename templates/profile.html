@@ -6,11 +6,17 @@
 <body>
   <div class="profile-main">
     <div class="selector-div">
-      <p class="selector-item active-selector">
+      <p
+        class="selector-item active-selector profile-selector"
+        onmousedown="changeTab(this, 'details')"
+      >
         <img src="/assets/icons/user.svg" alt="User" />
         {{ tr.NAV.profile }}
       </p>
-      <p class="selector-item">
+      <p
+        class="selector-item posts-selector"
+        onmousedown="changeTab(this, 'posts')"
+      >
         <img
           src="/assets/icons/picture.svg"
           width="18"
@@ -37,7 +43,12 @@
             class="profile-input-icon"
             alt="User"
           />
-          <input type="text" name="name" value="{{ claims.name }}" aria-label="Name" />
+          <input
+            type="text"
+            name="name"
+            value="{{ claims.name }}"
+            aria-label="Name"
+          />
         </div>
 
         <!-- EMAIL INPUT -->
@@ -48,7 +59,12 @@
             class="profile-input-icon"
             alt="Email"
           />
-          <input type="text" name="email" value="{{ claims.email }}" aria-label="Email" />
+          <input
+            type="text"
+            name="email"
+            value="{{ claims.email }}"
+            aria-label="Email"
+          />
         </div>
 
         <!-- PHONE INPUT -->
@@ -59,7 +75,12 @@
             class="profile-input-icon"
             alt="Phone"
           />
-          <input type="text" name="phone" value="{{ claims.phone }}" aria-label="Phone" />
+          <input
+            type="text"
+            name="phone"
+            value="{{ claims.phone }}"
+            aria-label="Phone"
+          />
         </div>
 
         <!-- CITY INPUT -->
@@ -116,8 +137,8 @@
         <input type="hidden" name="id" value="{{claims.id}}" />
         <input type="hidden" name="password" value="" />
       </form>
-
     </div>
+    <div class="posts-div hide-tab">Test</div>
   </div>
   {% include "components/toast.html" %}
 
