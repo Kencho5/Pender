@@ -30,18 +30,19 @@
             alt="Post Image"
           />
         </div>
+        {% if post.photos != '1' %}
         <div class="images blurred-img">
           <!-- prettier-ignore -->
-          {% if post.photos != '1' %}
-        {% for x in range(start=1, end=post.photos | int) %}
+          {% for x in range(start=1, end=post.photos | int) %}
           <img
             src="/var/uploads/post-images/{{post.id}}/{{x}}.jpg"
             class="image"
             alt="Post Image"
             image-id="{{x}}"
           />
-          {% endfor %} {% endif %}
+          {% endfor %}
         </div>
+        {% endif %} {% if post.photos != '1' %}
         <div class="arrows">
           <div class="arrow" onmousedown="showPreviousImage()">
             <img src="/assets/icons/arrow.svg" alt="Arrow Left" />
@@ -54,7 +55,7 @@
             />
           </div>
         </div>
-        {% if post.photos != '1' %}
+        {% endif %} {% if post.photos != '1' %}
         <div class="dots">
           <div class="dot active-dot"></div>
           {% for x in range(end=post.photos | int - 1) %}
@@ -97,10 +98,7 @@
           </div>
         </div>
       </div>
-      <div class="description">
-        {{ post.description
-        }}
-      </div>
+      <div class="description">{{ post.description }}</div>
       <div class="line second-line"></div>
       <a
         role="button"
