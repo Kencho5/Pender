@@ -185,6 +185,9 @@
 
     .second-user {
       margin-top: 30px;
+      p {
+        font-weight: 500;
+      }
     }
   }
 
