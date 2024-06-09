@@ -4,5 +4,39 @@
   {% include "search.css" %}
 </style>
 
-<body></body>
+<body>
+  <div class="search-content">
+    <h1>მოიძებნა 1080 პოსტი</h1>
+    <form
+      class="search-actions"
+      hx-get="/search"
+      hx-params="*"
+      hx-push-url="true"
+      hx-boost="true"
+      hx-swap="outerHTML"
+      hx-trigger="submit[search(this)]"
+      hx-target="body"
+    >
+      <div class="input-div">
+        <img src="/assets/icons/search.svg" alt="Search" />
+        <input type="text" placeholder="მაგ: ცხოველის ჯიში" />
+      </div>
+
+      <input type="submit" value="ძებნა" />
+      <button type="button" onmousedown="toggleFilters()">
+        <img src="/assets/icons/filter.svg" alt="Filter" />
+        ფილტრი
+      </button>
+      <button type="button" onmousedown="toggleSort()">
+        <img src="/assets/icons/sort.svg" alt="Sort" />
+        სორტირება
+      </button>
+    </form>
+  </div>
+
+  <!-- FILTERS MODAL -->
+  {% include "components/filters.html" %}
+
+  <script async src="/static/js/home.js"></script>
+</body>
 {% endblock content %}

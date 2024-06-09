@@ -16,7 +16,7 @@
   aria-label="City"
   placeholder="{{ tr.AUTH.city }}"
   input-name="city"
-  {% if route not in ['/register', '/login', '/upload', '/'] %}
+  {% if route not in ['/register', '/login', '/upload', '/', '/search'] %}
   value="{{ claims.city }}"
   {% endif %}
 />
@@ -25,7 +25,7 @@
 <input type="hidden" name="city" 
   input-name="city"
   class="upload-input"
-  {% if route not in ['/register', '/login', '/upload', '/'] %}
+  {% if route not in ['/register', '/login', '/upload', '/', '/search'] %}
   value="{{claims.city_value}}" 
   {% endif %}
 />
