@@ -6,32 +6,41 @@
 
 <body>
   <div class="search-content">
-    <h1>მოიძებნა 1080 პოსტი</h1>
-    <form
-      class="search-actions"
-      hx-get="/search"
-      hx-params="*"
-      hx-push-url="true"
-      hx-boost="true"
-      hx-swap="outerHTML"
-      hx-trigger="submit[search(this)]"
-      hx-target="body"
-    >
-      <div class="input-div">
-        <img src="/assets/icons/search.svg" alt="Search" />
-        <input type="text" placeholder="მაგ: ცხოველის ჯიში" />
-      </div>
+    <div class="search-header">
+      <h1>მოიძებნა 1080 პოსტი</h1>
+      <form
+        class="search-actions"
+        hx-get="/search"
+        hx-params="*"
+        hx-push-url="true"
+        hx-boost="true"
+        hx-swap="outerHTML"
+        hx-trigger="submit[search(this)]"
+        hx-target="body"
+      >
+        <div class="search-input">
+          <div class="input-div">
+            <img src="/assets/icons/search.svg" alt="Search" />
+            <input type="text" placeholder="მაგ: ცხოველის ჯიში" />
+          </div>
 
-      <input type="submit" value="ძებნა" />
-      <button type="button" onmousedown="toggleFilters()">
-        <img src="/assets/icons/filter.svg" alt="Filter" />
-        ფილტრი
-      </button>
-      <button type="button" onmousedown="toggleSort()">
-        <img src="/assets/icons/sort.svg" alt="Sort" />
-        სორტირება
-      </button>
-    </form>
+          <input type="submit" value="ძებნა" />
+        </div>
+
+        <div class="search-filters">
+          <button type="button" onmousedown="toggleFilters()">
+            <img src="/assets/icons/filter.svg" alt="Filter" />
+            ფილტრი
+          </button>
+          <button type="button" onmousedown="toggleSort()">
+            <img src="/assets/icons/sort.svg" alt="Sort" />
+            სორტირება
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="search-line"></div>
+    <div class="posts"></div>
   </div>
 
   <!-- FILTERS MODAL -->
