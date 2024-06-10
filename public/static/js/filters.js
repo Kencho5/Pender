@@ -25,6 +25,15 @@ function toggleFilters() {
 function selectChip(event) {
   const chip = event.target;
 
+  if (chip.classList.contains("active-chip")) {
+    chip.classList.remove("active-chip");
+    return;
+  }
+
+  for (const el of chip.parentNode.children) {
+    el.classList.remove("active-chip");
+  }
+
   if (!chip.classList.contains("input-div")) {
     chip.classList.toggle("active-chip");
   }
@@ -71,7 +80,7 @@ function saveFilters() {
   });
 
   // Get age type
-  filters["ageType"] = document.querySelector(".age-selector").id;
+  filters["age_type"] = document.querySelector(".age-selector").id;
 
   localStorage.setItem("filters", JSON.stringify(filters));
 

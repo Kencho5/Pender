@@ -18,7 +18,7 @@ CREATE TABLE posts (
     animal TEXT NOT NULL,
     breed TEXT NOT NULL,
     post_type TEXT NOT NULL,
-    price TEXT,
+    price SMALLINT,
     age_type TEXT NOT NULL,
     age TEXT NOT NULL,
     sex TEXT NOT NULL,

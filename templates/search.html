@@ -2,6 +2,7 @@
 
 <style>
   {% include "search.css" %}
+  {% include "posts.css" %}
 </style>
 
 <body>
@@ -21,7 +22,7 @@
         <div class="search-input">
           <div class="input-div">
             <img src="/assets/icons/search.svg" alt="Search" />
-            <input type="text" placeholder="მაგ: ცხოველის ჯიში" />
+            <input type="text" name="breed" placeholder="მაგ: ცხოველის ჯიში" />
           </div>
 
           <input type="submit" value="ძებნა" />
@@ -40,12 +41,13 @@
       </form>
     </div>
     <div class="search-line"></div>
-    <div class="posts"></div>
+    <div class="posts">{% include "components/posts.html" %}</div>
   </div>
 
   <!-- FILTERS MODAL -->
   {% include "components/filters.html" %}
 
   <script async src="/static/js/home.js"></script>
+  <script src="/static/js/search.js"></script>
 </body>
 {% endblock content %}

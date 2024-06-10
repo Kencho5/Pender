@@ -156,7 +156,12 @@ function setValues() {
   });
 
   inputs.forEach((input) => {
-    body[input.getAttribute("input-name")] = input.value;
+    let value = input.value;
+
+    if (input.name == "price") {
+      value = parseInt(value);
+    }
+    body[input.getAttribute("input-name")] = value;
   });
 
   body["age_type"] = ageType.id;

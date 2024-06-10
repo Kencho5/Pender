@@ -1,13 +1,11 @@
 .search-content {
   width: 85%;
-  height: 900px;
   background: var(--accent);
   border-radius: 26px;
   margin: auto;
   padding: 28px;
   box-shadow: 0px 4px 6px 2px #10182808;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   position: relative;
 
@@ -105,10 +103,19 @@
 
   .posts {
     width: 100%;
-    height: 760px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    .post {
+      margin-top: 40px;
+    }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1160px) {
     width: 75%;
 
     .search-header {
@@ -145,6 +152,17 @@
 
     .search-line {
       top: 220px;
+    }
+
+    .post {
+      width: 100%;
+    }
+
+    .blurred-img {
+      width: 100% !important;
+      img {
+        width: 100% !important;
+      }
     }
   }
 }
