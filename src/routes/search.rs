@@ -39,7 +39,9 @@ async fn search_posts(
 
     // Build conditions based on filter values
     if let Some(animal) = &filters.animal {
-        conditions.push(format!("animal = '{}'", animal));
+        if animal != "all" {
+            conditions.push(format!("animal = '{}'", animal));
+        }
     }
     if let Some(breed) = &filters.breed {
         conditions.push(format!("breed = '{}'", breed));
