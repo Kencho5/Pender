@@ -34,7 +34,7 @@ async fn search_posts(
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
 
     // Base SQL query
-    let mut query = "SELECT *, ts_rank(to_tsvector('english', breed), plainto_tsquery('german shep')) AS rank FROM posts".to_string();
+    let mut query = "SELECT * FROM posts".to_string();
     let mut conditions = Vec::new();
 
     // Build conditions based on filter values
@@ -44,10 +44,7 @@ async fn search_posts(
         }
     }
     if let Some(breed) = &filters.breed {
-        conditions.push(format!(
-            "to_tsvector('english', breed) @@ plainto_tsquery('{}')",
-            breed
-        ));
+        conditions.push(format!("breed ILIKE '%{}%'", breed));
     }
     if let Some(age) = &filters.age {
         conditions.push(format!("age = '{}'", age));
@@ -78,7 +75,7 @@ async fn search_posts(
         query.push_str(&conditions.join(" AND "));
     }
 
-    query.push_str(" ORDER BY rank DESC LIMIT 8");
+    query.push_str(" ORDER BY time_posted DESC LIMIT 8");
 
     let posts = sqlx::query_as::<_, upload_struct::PostStruct>(&query)
         .fetch_all(pg_conn.acquire().await?)
