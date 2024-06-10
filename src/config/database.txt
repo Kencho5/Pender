@@ -28,3 +28,5 @@ CREATE TABLE posts (
     photos TEXT NOT NULL,
     time_posted TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE INDEX breed_tsvector_idx ON your_table USING GIN (to_tsvector('english', breed));
