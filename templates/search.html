@@ -8,7 +8,7 @@
 <body>
   <div class="search-content">
     <div class="search-header">
-      <h1>მოიძებნა 1080 პოსტი</h1>
+      <h1>{{ tr.SEARCH.found }} 1080 {{ tr.SEARCH.posts }}</h1>
       <form
         class="search-actions"
         hx-get="/search"
@@ -22,20 +22,20 @@
         <div class="search-input">
           <div class="input-div">
             <img src="/assets/icons/search.svg" alt="Search" />
-            <input type="text" name="breed" placeholder="მაგ: ცხოველის ჯიში" />
+            <input type="text" name="breed" placeholder="{{ tr.HOME.search_input }}" />
           </div>
 
-          <input type="submit" value="ძებნა" />
+        <input type="submit" value="{{ tr.HOME.search }}" />
         </div>
 
         <div class="search-filters">
           <button type="button" onmousedown="toggleFilters()">
             <img src="/assets/icons/filter.svg" alt="Filter" />
-            ფილტრი
+            {{ tr.HOME.filter }}
           </button>
           <button type="button" onmousedown="toggleSort()">
             <img src="/assets/icons/sort.svg" alt="Sort" />
-            სორტირება
+            {{ tr.SEARCH.sort }}
           </button>
         </div>
       </form>

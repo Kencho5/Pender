@@ -103,6 +103,11 @@
       "buy_text": "If you are looking for animals of a specific breed or characteristics, Pender will have trusted people to choose a new friend for you.",
       "adopt_text": "Give a family to a homeless animal, shelter a new four-legged friend.",
       "breed_text": "Find the perfect partner for your pet and breed with the help of Pender."
+    },
+    "SEARCH": {
+      "found": "Found",
+      "posts": "posts",
+      "sort": "Sort"
     }
   },
   "GEO": {
@@ -209,6 +214,11 @@
       "buy_text": "შეიძინე ახალი ოთხფეხა მეგობარი სანდო პირებისგან. იპოვე კონკრეტული ჯიშის ან მახასიათებლების ცხოველი Pender-ზე.",
       "adopt_text": "აჩუქე ოჯახი უსახლკარო ცხოველს, შეიფარე ახალი ოთხფეხა მეგობარი.",
       "breed_text": "აღმოაჩინე იდეალური პარტნიორი შენი შინაური ცხოველისთვის და შეაჯვარე Pender-ის დახმრებით."
+    },
+    "SEARCH": {
+      "found": "მოიძებნა",
+      "posts": "პოსტი",
+      "sort": "სორტირება"
     }
   }
 }
