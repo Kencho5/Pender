@@ -18,8 +18,9 @@ pub async fn search_handler(mut req: Request<AppState>) -> tide::Result {
     let mut context = utils::common::get_context(&req).await?;
 
     let filters: Filters = req.query()?;
-    let posts = search_posts(&mut req, filters).await?;
-    context.insert("posts", &posts);
+    let db_result = search_posts(&mut req, filters).await?;
+    context.insert("posts", &db_result.0);
+    context.insert("count", &db_result.1);
 
     let state = req.state();
     let response = state.tera.render_response("search.html", &context)?;
@@ -30,7 +31,7 @@ pub async fn search_handler(mut req: Request<AppState>) -> tide::Result {
 async fn search_posts(
     req: &mut Request<AppState>,
     filters: Filters,
-) -> tide::Result<Vec<upload_struct::PostStruct>> {
+) -> tide::Result<(Vec<upload_struct::PostStruct>, i64)> {
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
 
     // Base SQL query
@@ -79,5 +80,13 @@ async fn search_posts(
         .fetch_all(pg_conn.acquire().await?)
         .await?;
 
-    Ok(posts)
+    let count_query = query
+        .replace("SELECT *", "SELECT COUNT(*)")
+        .replace("ORDER BY time_posted DESC LIMIT 8", "");
+
+    let count: (i64,) = sqlx::query_as(&count_query)
+        .fetch_one(pg_conn.acquire().await?)
+        .await?;
+
+    Ok((posts, count.0))
 }
