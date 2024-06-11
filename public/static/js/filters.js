@@ -1,17 +1,20 @@
 var filters = JSON.parse(localStorage.getItem("filters"));
 if (filters) {
-  for (let [key, value] of Object.entries(filters)) {
+  filters["age_type"] = "all";
+
+  for (const [key, value] of Object.entries(filters)) {
     const input = document.querySelector(`[input-name="${key}"]`);
 
     if (input.classList.contains("input-div")) {
       for (const chip of input.children) {
-        if (value.includes(chip.id)) chip.classList.add("active-chip");
+        if (value.includes(chip.id)) {
+          chip.classList.add("active-chip");
+        }
       }
-    } else if (key == "city") {
-      const city = document.querySelectorAll(`[input-name="${key}"]`);
-
-      city[0].value = value.charAt(0).toUpperCase() + value.slice(1);
-      city[1].value = value;
+    } else if (key === "city") {
+      const cityInputs = document.querySelectorAll(`[input-name="${key}"]`);
+      cityInputs[0].value = value.charAt(0).toUpperCase() + value.slice(1);
+      cityInputs[1].value = value;
     } else if (key.includes("price")) {
       input.value = value;
     }

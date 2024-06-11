@@ -64,14 +64,10 @@
           <input
             type="text"
             name="age"
+            input-name="age"
             placeholder="{{ tr.FILTERS.max_age }}"
           />
-          <p
-            class="age-selector"
-            id="all"
-            onmousedown="toggleAgeDropdown()"
-            input-name="age"
-          >
+          <p class="age-selector" id="all" onmousedown="toggleAgeDropdown()">
             {{ tr.FILTERS.age_type }}
             <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
           </p>
