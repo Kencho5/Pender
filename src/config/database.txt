@@ -29,4 +29,6 @@ CREATE TABLE posts (
     time_posted TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE INDEX breed_tsvector_idx ON posts USING GIN (to_tsvector('english', breed));
+CREATE INDEX CONCURRENTLY breed_triagram
+ON posts
+USING gin (breed gin_trgm_ops);

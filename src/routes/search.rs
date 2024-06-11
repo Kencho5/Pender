@@ -47,7 +47,7 @@ async fn search_posts(
         conditions.push(format!("breed ILIKE '%{}%'", breed));
     }
     if let Some(age) = &filters.age {
-        conditions.push(format!("age = '{}'", age));
+        conditions.push(format!("age <= '{}'", age));
     }
     if let Some(age_type) = &filters.age_type {
         if age_type != "all" {
