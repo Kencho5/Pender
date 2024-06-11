@@ -107,7 +107,8 @@
     "SEARCH": {
       "found": "Found",
       "posts": "posts",
-      "sort": "Sort"
+      "sort": "Sort",
+      "not_found": "Not Found"
     }
   },
   "GEO": {
@@ -218,7 +219,8 @@
     "SEARCH": {
       "found": "მოიძებნა",
       "posts": "პოსტი",
-      "sort": "სორტირება"
+      "sort": "სორტირება",
+      "not_found": "პოსტები ვერ მოიძებნა"
     }
   }
 }

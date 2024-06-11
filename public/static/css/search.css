@@ -167,3 +167,9 @@
     }
   }
 }
+
+.not-found {
+  margin: auto;
+  margin-top: 34px;
+  font-size: 22px !important;
+}

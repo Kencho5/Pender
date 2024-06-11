@@ -1,7 +1,7 @@
 use crate::utils::upload_struct;
 use crate::{imports::*, utils};
 
-#[derive(serde::Deserialize, Debug)]
+#[derive(serde::Deserialize)]
 struct Filters {
     animal: Option<String>,
     breed: Option<String>,

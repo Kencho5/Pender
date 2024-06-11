@@ -2,7 +2,7 @@
   {% include "posts.css" %}
 </style>
 
-{% for i in range(end=posts | length) %}
+{% if posts | length > 0 %} {% for i in range(end=posts | length) %}
 <a
   role="button"
   hx-get="/post/{{posts[i].id}}"
@@ -54,3 +54,6 @@
     }
   });
 </script>
+{% else %}
+<h1 class="not-found">{{ tr.SEARCH.not_found }}</h1>
+{% endif %}
