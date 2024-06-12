@@ -109,6 +109,9 @@
       "posts": "posts",
       "sort": "Sort",
       "not_found": "The desired post was not found. Try searching for a different breed."
+    },
+    "USER": {
+      "fb": "Facebook profile"
     }
   },
   "GEO": {
@@ -221,6 +224,9 @@
       "posts": "პოსტი",
       "sort": "სორტირება",
       "not_found": "სასურველი პოსტი ვერ მოიძებნა, სცადე სხვა ჯიშის ძიება."
+    },
+    "USER": {
+      "fb": "Facebook პროფილი"
     }
   }
 }
