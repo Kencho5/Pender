@@ -7,7 +7,7 @@ pub async fn analytics_handler(req: Request<AppState>) -> tide::Result {
         .args(&[
             "/var/log/nginx/access.log",
             "-o",
-            "/templates/report.html",
+            "./templates/report.html",
             "--log-format=COMBINED",
         ])
         .output()
