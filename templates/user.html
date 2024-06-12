@@ -4,5 +4,34 @@
   {% include "user.css" %}
 </style>
 
-<body></body>
+<body>
+  <div class="user-profile-container">
+    <div class="user-container">
+      <img src="/assets/user-profile-img.webp" alt="User Img" />
+      <div class="user-info">
+        <h1>Giorgi Chikhladze</h1>
+        <p>557325325</p>
+      </div>
+      <div class="user-profile-line"></div>
+
+      <div class="details">
+        <div class="detail">
+          <img src="/assets/icons/user_location.svg" alt="Location" />
+          <div>
+            <p>ქალაქი</p>
+            <h1>თბილისი</h1>
+          </div>
+        </div>
+        <div class="detail">
+          <img src="/assets/icons/user_fb.svg" alt="Location" />
+          <div>
+            <p>ფეისბუქ პროფილი</p>
+            <a> https://www.facebook.com/profile.php?id=100000865953532 </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="posts-container"></div>
+  </div>
+</body>
 {% endblock content %}
