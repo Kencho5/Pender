@@ -26,8 +26,8 @@
 
 </p>
 
-![screenshot](https://i.imgur.com/rLzPcXA.png)
-![screenshot](https://i.imgur.com/kyW3l5g.png)
+![screenshot](https://i.imgur.com/lPiO1fe.png)
+![screenshot](https://i.imgur.com/u5kGG1n.png)
 
 ## Key Features
 
@@ -36,7 +36,7 @@
 - **Profile:** Manage your details and posts.
 - **Upload:** Upload your own post.
 - **Login/Register:** Register with email and receive confirmation code.
-- **Performance:** 99 Lighthouse Score with SPA navigation on route changes.
+- **Performance:** 100 Lighthouse Score with SPA navigation on route changes.
 
 ## Development
 
