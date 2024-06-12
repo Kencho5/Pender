@@ -108,7 +108,7 @@
       "found": "Found",
       "posts": "posts",
       "sort": "Sort",
-      "not_found": "Not Found"
+      "not_found": "The desired post was not found. Try searching for a different breed."
     }
   },
   "GEO": {
@@ -220,7 +220,7 @@
       "found": "მოიძებნა",
       "posts": "პოსტი",
       "sort": "სორტირება",
-      "not_found": "პოსტები ვერ მოიძებნა"
+      "not_found": "სასურველი პოსტი ვერ მოიძებნა, სცადე სხვა ჯიშის ძიება."
     }
   }
 }

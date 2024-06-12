@@ -1,5 +1,6 @@
 .search-content {
   width: 85%;
+  min-height: 70vh;
   background: var(--accent);
   border-radius: 26px;
   margin: auto;
@@ -170,6 +171,17 @@
 
 .not-found {
   margin: auto;
-  margin-top: 34px;
-  font-size: 22px !important;
+  margin-top: 15vh;
+  font-size: 16px !important;
+  font-weight: 400;
+  color: #83594b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+
+  img {
+    width: 146px;
+  }
 }

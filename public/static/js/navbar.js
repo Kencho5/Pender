@@ -22,7 +22,7 @@ async function changeLang(lang) {
     method: "POST",
   });
 
-  htmx.ajax("GET", window.location.pathname, {
+  htmx.ajax("GET", window.location.href, {
     target: "body",
     swap: "outerHTML",
   });

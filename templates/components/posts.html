@@ -56,5 +56,8 @@
   });
 </script>
 {% else %}
-<h1 class="not-found">{{ tr.SEARCH.not_found }}</h1>
+<div class="not-found">
+  <img src="/assets/icons/not_found.svg" alt="Not Found" />
+  {{ tr.SEARCH.not_found }}
+</div>
 {% endif %}
