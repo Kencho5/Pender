@@ -1,20 +1,24 @@
 use crate::imports::*;
+use std::fs::read_to_string;
 use std::process::Command;
+use tide::http::mime;
 
-pub async fn analytics_handler(req: Request<AppState>) -> tide::Result {
+pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
     Command::new("sudo")
         .arg("goaccess")
         .args(&[
             "/var/log/nginx/access.log",
             "-o",
-            "./templates/report.html",
+            "./report.html",
             "--log-format=COMBINED",
         ])
         .output()
         .expect("Failed to execute goaccess command");
 
-    let state = req.state();
-    let response = state.tera.render_response("report.html", &context! {})?;
+    let response = Response::builder(200)
+        .body(read_to_string("./report.html")?)
+        .content_type(mime::HTML)
+        .build();
 
     Ok(response)
 }
