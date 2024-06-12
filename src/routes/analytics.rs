@@ -2,7 +2,8 @@ use crate::imports::*;
 use std::process::Command;
 
 pub async fn analytics_handler(req: Request<AppState>) -> tide::Result {
-    Command::new("goaccess")
+    Command::new("sudo")
+        .arg("goaccess")
         .args(&[
             "/var/log/nginx/access.log",
             "-o",
