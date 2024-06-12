@@ -74,7 +74,7 @@ async fn search_posts(
         query.push_str(&conditions.join(" AND "));
     }
 
-    query.push_str(" ORDER BY time_posted DESC LIMIT 8");
+    query.push_str(" ORDER BY time_posted DESC LIMIT 16");
 
     let posts = sqlx::query_as::<_, upload_struct::PostStruct>(&query)
         .fetch_all(pg_conn.acquire().await?)
@@ -82,7 +82,7 @@ async fn search_posts(
 
     let count_query = query
         .replace("SELECT *", "SELECT COUNT(*)")
-        .replace("ORDER BY time_posted DESC LIMIT 8", "");
+        .replace("ORDER BY time_posted DESC LIMIT 16", "");
 
     let count: (i64,) = sqlx::query_as(&count_query)
         .fetch_one(pg_conn.acquire().await?)
