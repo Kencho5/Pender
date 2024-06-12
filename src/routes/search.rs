@@ -49,7 +49,9 @@ async fn search_posts(
     }
     if let Some(age_type) = &filters.age_type {
         if age_type != "all" {
-            conditions.push(format!("age <= '{}'", &filters.age.unwrap()));
+            if filters.age.is_some() {
+                conditions.push(format!("age <= '{}'", &filters.age.unwrap()));
+            }
             conditions.push(format!("age_type = '{}'", age_type));
         }
     }

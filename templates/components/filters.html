@@ -137,11 +137,20 @@
           <img src="/assets/icons/cancel.svg" alt="Cancel" />
           {{ tr.FILTERS.cancel }}
         </button>
+        <!-- prettier-ignore   -->
+        {% if route == '/search' %}
+        <input
+          type="submit"
+          onmousedown="saveFilters(); updateFiltersNum()"
+          value="{{ tr.FILTERS.save }}"
+        />
+        {% else %}
         <input
           type="submit"
           onmousedown="saveFilters()"
           value="{{ tr.FILTERS.save }}"
         />
+        {% endif%}
       </div>
     </div>
   </div>

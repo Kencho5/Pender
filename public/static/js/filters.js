@@ -15,7 +15,7 @@ if (filters) {
       const cityInputs = document.querySelectorAll(`[input-name="${key}"]`);
       cityInputs[0].value = value.charAt(0).toUpperCase() + value.slice(1);
       cityInputs[1].value = value;
-    } else if (key.includes("price")) {
+    } else if (key.includes("price") || key.includes("age")) {
       input.value = value;
     }
   }

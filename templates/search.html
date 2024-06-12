@@ -33,9 +33,14 @@
         </div>
 
         <div class="search-filters">
-          <button type="button" onmousedown="toggleFilters()">
+          <button
+            type="button"
+            class="filters-btn"
+            onmousedown="toggleFilters()"
+          >
             <img src="/assets/icons/filter.svg" alt="Filter" />
             {{ tr.HOME.filter }}
+            <div class="filters-num">1</div>
           </button>
           <button type="button" onmousedown="toggleSort()">
             <img src="/assets/icons/sort.svg" alt="Sort" />
