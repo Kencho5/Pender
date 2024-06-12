@@ -9,3 +9,4 @@ pub mod register;
 pub mod reset_password;
 pub mod search;
 pub mod upload;
+pub mod user;

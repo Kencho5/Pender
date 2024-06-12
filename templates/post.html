@@ -102,7 +102,7 @@
       <div class="line second-line"></div>
       <a
         role="button"
-        hx-get="/profile/{{ post.user_id }}"
+        hx-get="/user/{{ post.user_id }}"
         hx-boost="true"
         hx-swap="outerHTML"
         hx-target="body"
@@ -130,7 +130,7 @@
           <p class="phone">{{ post.phone }}</p>
           <a
             role="button"
-            hx-get="/profile/{{ post.user_id }}"
+            hx-get="/user/{{ post.user_id }}"
             hx-boost="true"
             hx-swap="outerHTML"
             hx-target="body"

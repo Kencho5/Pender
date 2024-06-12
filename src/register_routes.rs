@@ -24,6 +24,10 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_minute(30).unwrap())
         .get(search::search_handler);
 
+    app.at("/user/:user_id")
+        .with(GovernorMiddleware::per_minute(60).unwrap())
+        .get(user::user_handler);
+
     // AUTH ROUTES
     app.at("/login")
         .get(login::login_handler)
