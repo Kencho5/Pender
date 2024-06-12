@@ -37,3 +37,11 @@ pub struct UserStruct {
     pub facebook: String,
     pub password: String,
 }
+
+#[derive(Deserialize, sqlx::FromRow, Serialize)]
+pub struct UserPub {
+    pub name: String,
+    pub phone: String,
+    pub city: String,
+    pub facebook: String,
+}
