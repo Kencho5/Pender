@@ -111,7 +111,8 @@
       "not_found": "The desired post was not found. Try searching for a different breed."
     },
     "USER": {
-      "fb": "Facebook profile"
+      "fb": "Facebook profile",
+      "posts": "Posts"
     }
   },
   "GEO": {
@@ -226,7 +227,8 @@
       "not_found": "სასურველი პოსტი ვერ მოიძებნა, სცადე სხვა ჯიშის ძიება."
     },
     "USER": {
-      "fb": "Facebook პროფილი"
+      "fb": "Facebook პროფილი",
+      "posts": "პოსტი"
     }
   }
 }
