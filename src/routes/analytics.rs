@@ -6,16 +6,19 @@ use tide::http::mime;
 pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
     Command::new("sudo")
         .arg("goaccess")
-        .args(&[
-            "/var/log/nginx/access.log",
-            "--date-format=%Y-%m-%d",
-            "--date='2024-06-05'",
-            "-o",
-            "./report.html",
-            "--log-format=COMBINED",
-        ])
+        .arg("`ls")
+        .arg("/var/log/nginx/access.log*")
+        .arg("|")
+        .arg("grep")
+        .arg("-v")
+        .arg("'.gz'")
+        .arg("`")
+        .arg("-a")
+        .arg("-o")
+        .arg("report.html")
+        .arg("--log-format=COMBINED")
         .output()
-        .expect("Failed to execute goaccess command");
+        .expect("Failed to execute command");
 
     let response = Response::builder(200)
         .body(read_to_string("./report.html")?)
