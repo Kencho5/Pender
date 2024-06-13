@@ -11,27 +11,25 @@
 }
 
 @font-face {
-  font-family: "TBCXRegular";
-  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXRegular.ttf")
-    format("truetype");
+  font-family: "TBCXMedium";
+  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXMedium.ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "TBCXRegular";
-  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXBold.ttf")
-    format("truetype");
+  font-family: "TBCXMedium";
+  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXBold.ttf");
   font-weight: bold;
   font-style: normal;
 }
 
 body {
-  font-family: "TBCXRegular", sans-serif;
+  font-family: "TBCXMedium", sans-serif;
   font-weight: normal;
 
-  letter-spacing: 0.9px;
+  letter-spacing: 0.6px;
   line-height: 1.2;
 
   -webkit-tap-highlight-color: transparent;
