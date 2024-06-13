@@ -4,16 +4,14 @@ use std::process::Command;
 use tide::http::mime;
 
 pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
-    let output = Command::new("sudo")
-        .arg("goaccess")
-        .arg("-c")
-        .args(&[
-            r#"(zcat /var/log/nginx/access.log*.gz ; cat /var/log/nginx/access.log*) | goaccess -o report.html --log-format=COMBINED"#,
-        ])
+    Command::new("goaccess")
+        .arg("/var/log/nginx/access.log*")
+        .arg("-o")
+        .arg("report.html")
+        .arg("--log-format=COMBINED")
+        .arg("--load-from-disk")
         .output()
-        .expect("Failed to execute goaccess command");
-
-    println!("{:?}", output);
+        .expect("Failed to run command");
 
     let response = Response::builder(200)
         .body(read_to_string("./report.html")?)
