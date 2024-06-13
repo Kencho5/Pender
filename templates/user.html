@@ -7,7 +7,8 @@
 <body>
   <div class="user-profile-container">
     <div class="user-container">
-      <img src="/assets/user-profile-img.webp" alt="User Img" />
+      <img src="/assets/search-img.webp" alt="User Img" />
+      <div class="user-initials">GC</div>
       <div class="user-info">
         <h1>{{ user.name }}</h1>
         <p>{{ user.phone }}</p>
@@ -41,5 +42,13 @@
       <div class="posts">{% include "components/posts.html" %}</div>
     </div>
   </div>
+  <script>
+    var initialsDiv = htmx.find(".user-initials");
+    var name = "{{user.name}}";
+    var initials = name[0];
+    if (name.includes(" ")) initials += name.split(" ")[1][0];
+
+    initialsDiv.textContent = initials.toUpperCase();
+  </script>
 </body>
 {% endblock content %}
