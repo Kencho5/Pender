@@ -11,14 +11,14 @@
 }
 @font-face {
   font-family: "TBCXRegular";
-  src: url("/static/fonts/TBCXRegular.ttf") format("truetype");
+  src: url("/fonts/TBCXRegular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "TBCXRegular";
-  src: url("/static/fonts/TBCXBold.ttf") format("truetype");
+  src: url("/fonts/TBCXBold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
