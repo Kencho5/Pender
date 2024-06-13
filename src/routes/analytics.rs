@@ -5,7 +5,7 @@ use tide::http::mime;
 
 pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
     let output = Command::new("bash")
-        .arg("./report.sh")
+        .arg("report.sh")
         .output()
         .expect("Failed to execute script");
     println!("{:?}", output);
