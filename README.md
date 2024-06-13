@@ -37,6 +37,7 @@
 - **Upload:** Upload your own post.
 - **Login/Register:** Register with email and receive confirmation code.
 - **Performance:** 100 Lighthouse Score with SPA navigation on route changes.
+- **Usage:** Runs on 15MB ram. Executable size is 14MB.
 
 ## Development
 
