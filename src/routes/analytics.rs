@@ -19,9 +19,10 @@ pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
             .expect("Failed to convert current directory path"),
     );
 
-    // Execute the script using the `sh` command
+    // Execute the script using the `sh` command with the environment variables
     let output = Command::new("sh")
         .arg(script_path)
+        .env("HOME", current_dir.to_str().unwrap()) // Set HOME explicitly
         .output()
         .expect("Failed to execute script");
 

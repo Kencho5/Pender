@@ -9,16 +9,20 @@
   --disabled: #69423f;
   --border: #d5c2b3;
 }
+
 @font-face {
   font-family: "TBCXRegular";
-  src: url("/fonts/TBCXRegular.ttf") format("truetype");
+  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXRegular.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "TBCXRegular";
-  src: url("/fonts/TBCXBold.ttf") format("truetype");
+  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXBold.ttf")
+    format("truetype");
   font-weight: bold;
   font-style: normal;
 }

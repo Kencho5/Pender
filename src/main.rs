@@ -52,7 +52,6 @@ async fn main() -> tide::Result<()> {
 
     app.at("/assets").serve_dir("./public/assets/")?;
     app.at("/static").serve_dir("./public/static/")?;
-    app.at("/fonts").serve_dir("./public/fonts/")?;
     app.at("/var/uploads/post-images")
         .serve_dir("/var/uploads/post-images/")?;
 
