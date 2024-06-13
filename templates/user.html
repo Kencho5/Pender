@@ -27,13 +27,19 @@
           <img src="/assets/icons/user_fb.svg" alt="Location" />
           <div>
             <p>{{ tr.USER.fb }}</p>
-            <a href="{{ user.facebook }}" target="_blank">{{ user.facebook }}</a>
+            <a href="{{ user.facebook }}" target="_blank"
+              >{{ user.facebook }}</a
+            >
           </div>
         </div>
         {% endif %}
       </div>
     </div>
-    <div class="posts-container"></div>
+    <div class="posts-container">
+      <h1>{{ count }} {{ tr.SEARCH.posts }}</h1>
+      <div class="posts-line"></div>
+      <div class="posts">{% include "components/posts.html" %}</div>
+    </div>
   </div>
 </body>
 {% endblock content %}

@@ -49,7 +49,7 @@ async fn get_user_posts(
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
 
     let posts = sqlx::query_as::<_, upload_struct::PostStruct>(
-        "SELECT * FROM posts WHERE user_id = $1 LIMIT 16",
+        "SELECT * FROM posts WHERE user_id = $1 ORDER BY time_posted DESC LIMIT 15",
     )
     .bind(user_id)
     .fetch_all(pg_conn.acquire().await?)
