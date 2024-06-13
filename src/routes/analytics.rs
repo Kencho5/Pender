@@ -4,15 +4,7 @@ use std::process::Command;
 use tide::http::mime;
 
 pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
-    let output = Command::new("sudo")
-        .arg("goaccess")
-        .arg("/var/log/nginx/access.log*")
-        .arg("-o")
-        .arg("report.html")
-        .arg("--log-format=COMBINED")
-        .arg("--load-from-disk")
-        .output()
-        .expect("Failed to run command");
+    let output = Command::new("bash").arg("report.sh").output();
 
     println!("{:?}", output);
 
