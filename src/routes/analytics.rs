@@ -1,33 +1,16 @@
 use crate::imports::*;
-use std::env;
 use std::fs::read_to_string;
-use std::path::Path;
 use std::process::Command;
 use tide::http::mime;
 
 pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
-    let script_path = "./report.sh";
-
-    // Get the current directory path
-    let current_dir = env::current_dir().expect("Failed to get current directory");
-
-    // Set the HOME environment variable to the current directory
-    env::set_var(
-        "HOME",
-        current_dir
-            .to_str()
-            .expect("Failed to convert current directory path"),
-    );
-
-    // Execute the script using the `sh` command with the environment variables
     let output = Command::new("sh")
-        .arg(script_path)
-        .env("HOME", current_dir.to_str().unwrap()) // Set HOME explicitly
+        .arg("-c")
+        .arg("(zcat /var/log/nginx/access.log*.gz ; cat /var/log/nginx/access.log*) | goaccess -o ./report.html --log-format=COMBINED")
         .output()
-        .expect("Failed to execute script");
+        .expect("Failed to execute command");
 
-    // Print the output of the script if needed
-    println!("Script output: {}", String::from_utf8_lossy(&output.stdout));
+    println!("{:?}ASDASDASD", output);
 
     let response = Response::builder(200)
         .body(read_to_string("./report.html")?)
