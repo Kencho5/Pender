@@ -46,7 +46,18 @@
       </form>
     </div>
     <div class="search-line"></div>
-    <div class="posts">{% include "components/posts.html" %}</div>
+    <div class="posts">
+      <!-- prettier-ignore -->
+      {% if posts | length > 0 %}
+        {% include "components/posts.html" %}
+      {% else %}
+        <div class="not-found">
+          <img src="/assets/icons/not_found.svg" alt="Not Found" />
+          {{ tr.SEARCH.not_found }}
+        </div>
+      {% endif %}
+
+    </div>
   </div>
 
   <!-- FILTERS MODAL -->
