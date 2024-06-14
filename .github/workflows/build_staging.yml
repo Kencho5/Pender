@@ -81,4 +81,3 @@ jobs:
           git pull
           chmod +x target/release/pender-rust
           sudo systemctl restart pender-staging
-
