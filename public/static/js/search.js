@@ -30,11 +30,10 @@ function changePage(dir) {
 
   htmx.find(".pageNum").textContent = pageNum;
 
-  const params = new URLSearchParams({
-    page: pageNum,
-  }).toString();
+  let urlParams = new URLSearchParams(window.location.search);
+  urlParams.set("page", pageNum);
+  const urlWithParams = `${window.location.pathname}?${urlParams.toString()}`;
 
-  const urlWithParams = `${window.location.pathname}?${params}`;
   htmx.ajax("GET", urlWithParams, {
     target: "body",
     swap: "outerHTML",

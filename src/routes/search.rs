@@ -85,7 +85,7 @@ async fn search_posts(
 
     query.push_str(" ORDER BY time_posted DESC LIMIT 8");
     if let Some(page) = &filters.page {
-        query.push_str(format!(" OFFSET {}", page * 8).as_str());
+        query.push_str(format!(" OFFSET {}", (page - 1) * 8).as_str());
     }
 
     let posts = sqlx::query_as::<_, upload_struct::PostStruct>(&query)
