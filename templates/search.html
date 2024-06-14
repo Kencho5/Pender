@@ -57,6 +57,19 @@
       </div>
       {% endif %}
     </div>
+    <div class="pagination">
+      <button type="button" onmousedown="changePage('prev')">
+        <img src="/assets/icons/arrow.svg" alt="Arrow Left" />
+      </button>
+      <p class="pageNum">1</p>
+      <button
+        type="button"
+        class="arrow-right"
+        onmousedown="changePage('next')"
+      >
+        <img src="/assets/icons/arrow.svg" alt="Arrow Right" />
+      </button>
+    </div>
   </div>
 
   <!-- FILTERS MODAL -->

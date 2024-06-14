@@ -203,6 +203,41 @@
       gap: 24px;
     }
   }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: auto;
+    margin-top: 62px;
+    width: 120px;
+
+    button {
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 100%;
+
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      border-color: #83594b;
+    }
+
+    .arrow-right {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .not-found {

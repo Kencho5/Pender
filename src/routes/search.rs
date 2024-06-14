@@ -1,3 +1,4 @@
+use crate::utils::cities::get_city;
 use crate::utils::upload_struct;
 use crate::{imports::*, utils};
 
@@ -12,6 +13,7 @@ struct Filters {
     price_max: Option<i16>,
     post_type: Option<String>,
     sex: Option<String>,
+    page: Option<i16>,
 }
 
 pub async fn search_handler(mut req: Request<AppState>) -> tide::Result {
@@ -36,6 +38,7 @@ async fn search_posts(
 
     // Base SQL query
     let mut query = "SELECT * FROM posts".to_string();
+    let mut count_query = "SELECT COUNT(*) FROM posts".to_string();
     let mut conditions = Vec::new();
 
     // Build conditions based on filter values
@@ -56,7 +59,8 @@ async fn search_posts(
         }
     }
     if let Some(city) = &filters.city {
-        conditions.push(format!("city = '{}'", city));
+        let city_data = get_city().await.unwrap();
+        conditions.push(format!("city = '{}'", city_data["GEO"][city].to_string()));
     }
     if let Some(price_min) = &filters.price_min {
         conditions.push(format!("price >= {}", price_min));
@@ -74,17 +78,19 @@ async fn search_posts(
     if !conditions.is_empty() {
         query.push_str(" WHERE ");
         query.push_str(&conditions.join(" AND "));
+
+        count_query.push_str(" WHERE ");
+        count_query.push_str(&conditions.join(" AND "));
     }
 
-    query.push_str(" ORDER BY time_posted DESC LIMIT 16");
+    query.push_str(" ORDER BY time_posted DESC LIMIT 8");
+    if let Some(page) = &filters.page {
+        query.push_str(format!(" OFFSET {}", page * 8).as_str());
+    }
 
     let posts = sqlx::query_as::<_, upload_struct::PostStruct>(&query)
         .fetch_all(pg_conn.acquire().await?)
         .await?;
-
-    let count_query = query
-        .replace("SELECT *", "SELECT COUNT(*)")
-        .replace("ORDER BY time_posted DESC LIMIT 16", "");
 
     let count: (i64,) = sqlx::query_as(&count_query)
         .fetch_one(pg_conn.acquire().await?)
