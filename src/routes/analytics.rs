@@ -9,10 +9,11 @@ pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
     let current_dir_str = current_dir.to_string_lossy();
     env::set_var("HOME", &*current_dir_str);
 
-    Command::new("bash")
+    let output = Command::new("bash")
         .arg("report.sh")
         .output()
         .expect("Failed to execute script");
+    println!("{:?}", output);
 
     let response = Response::builder(200)
         .body(read_to_string("./report.html")?)
