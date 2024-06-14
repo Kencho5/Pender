@@ -23,7 +23,7 @@
             <h1>{{ user.city }}</h1>
           </div>
         </div>
-        {% if user.facebook %}
+        {% if user.facebook != '' and user.facebook != ' '%}
         <div class="detail">
           <img src="/assets/icons/user_fb.svg" alt="Location" />
           <div>
