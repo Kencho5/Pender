@@ -144,6 +144,11 @@
     }
   }
 
+  .posts-two {
+    justify-content: unset;
+    gap: 62px;
+  }
+
   @media (max-width: 1160px) {
     width: 75%;
 
@@ -192,6 +197,10 @@
       img {
         width: 100% !important;
       }
+    }
+
+    .posts-two {
+      gap: 24px;
     }
   }
 }
