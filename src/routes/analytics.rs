@@ -1,6 +1,6 @@
 use crate::imports::*;
 use std::env;
-use std::fs::read_to_string;
+use std::fs::read;
 use std::process::Command;
 use tide::http::mime;
 
@@ -15,10 +15,17 @@ pub async fn analytics_handler(_req: Request<AppState>) -> tide::Result {
         .expect("Failed to execute script");
     println!("{:?}", output);
 
-    let response = Response::builder(200)
-        .body(read_to_string("./report.html")?)
-        .content_type(mime::HTML)
-        .build();
-
-    Ok(response)
+    match read("./report.html") {
+        Ok(body) => {
+            let response = Response::builder(200)
+                .body(body)
+                .content_type(mime::HTML)
+                .build();
+            Ok(response)
+        }
+        Err(err) => {
+            tide::log::error!("Failed to read report.html: {:?}", err);
+            Ok(Response::builder(500).body("Internal Server Error").build())
+        }
+    }
 }
