@@ -36,7 +36,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
         let input_path = format!("/var/uploads/post-images/{}/{}.jpg", post_id, index);
         let scale_filter = match fs::metadata(&input_path)?.len() / 1024 {
             size if size <= 500 => "scale=iw*0.8:ih*0.8",
-            _ => "scale=iw*0.6:ih*0.6",
+            _ => "scale=iw*0.5:ih*0.5",
         };
 
         let output = Command::new("ffmpeg")

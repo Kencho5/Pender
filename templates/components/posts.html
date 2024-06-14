@@ -35,9 +35,7 @@
     <p class="breed">{{ posts[i].breed }}</p>
 
     <div class="chip-div">
-      {% if posts[i].age != '0' %}
       <p>{{ posts[i].age }} {{ tr.FILTERS[posts[i].age_type] }}</p>
-      {% endif %}
       <p>{{ tr.UPLOAD[posts[i].sex] }}</p>
     </div>
   </div>
