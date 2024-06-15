@@ -27,6 +27,7 @@ var touchstartX = 0;
 var touchendX = 0;
 
 function checkDirection() {
+  if (images.length == 1) return;
   if (touchendX - touchstartX < -50) showNextImage();
   if (touchendX - touchstartX > 50) showPreviousImage();
 }
