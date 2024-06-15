@@ -1,15 +1,24 @@
 use crate::routes::login::generate_token;
 use crate::{
     imports::*,
+    routes::user::get_user_posts,
     utils::{self, common::logged_in},
 };
 
-pub async fn profile_handler(req: Request<AppState>) -> tide::Result {
-    let context = utils::common::get_context(&req).await?;
+pub async fn profile_handler(mut req: Request<AppState>) -> tide::Result {
+    let mut context = utils::common::get_context(&req).await?;
 
     if !logged_in(&context).await? {
         return Ok(tide::Redirect::see_other("/login").into());
     }
+
+    let user_id = &context.get("claims").unwrap()["id"]
+        .to_string()
+        .replace('"', "");
+
+    let (posts, count) = get_user_posts(&mut req, &user_id).await?;
+    context.insert("posts", &posts);
+    context.insert("count", &count);
 
     let state = req.state();
     let response = state.tera.render_response("profile.html", &context)?;

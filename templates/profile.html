@@ -138,7 +138,11 @@
         <input type="hidden" name="password" value="" />
       </form>
     </div>
-    <div class="posts-div hide-tab">Coming soon...</div>
+    <div class="posts-div hide-tab">
+      <h1>{{ count }} {{ tr.USER.posts }}</h1>
+      <div class="posts-line"></div>
+      <div class="posts">{% include "components/posts.html" %}</div>
+    </div>
   </div>
   {% include "components/toast.html" %}
 

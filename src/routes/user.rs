@@ -42,14 +42,14 @@ async fn get_user(
     Ok(user)
 }
 
-async fn get_user_posts(
+pub async fn get_user_posts(
     req: &mut Request<AppState>,
     user_id: &String,
 ) -> tide::Result<(Vec<upload_struct::PostStruct>, i64)> {
     let mut pg_conn = req.sqlx_conn::<Postgres>().await;
 
     let posts = sqlx::query_as::<_, upload_struct::PostStruct>(
-        "SELECT * FROM posts WHERE user_id = $1 ORDER BY time_posted DESC LIMIT 15",
+        "SELECT * FROM posts WHERE user_id = $1 ORDER BY time_posted DESC LIMIT 21",
     )
     .bind(user_id)
     .fetch_all(pg_conn.acquire().await?)
