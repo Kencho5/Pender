@@ -3,7 +3,7 @@
   <head>
     {% include "components/imports.html" %}
   </head>
-  <body>
+  <body hx-history="true">
     <!-- NAVBAR -->
     {% include "components/navbar.html" %}
 
@@ -19,11 +19,6 @@
     {% include "components/footer.html" %}
 
     <script>
-      window.addEventListener("popstate", function (event) {
-        if (event.state) {
-          location.reload();
-        }
-      });
       window.addEventListener("load", async function () {
         const body = document.querySelector(".main-content");
         body.style.opacity = 1;
