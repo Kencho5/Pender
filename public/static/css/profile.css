@@ -52,8 +52,7 @@
 }
 
 /* DETAILS CSS */
-.details-div,
-.posts-div {
+.details-div {
   position: relative;
   width: 969px;
   height: 664px;
@@ -64,6 +63,9 @@
 }
 
 .posts-div {
+  background-color: var(--accent);
+  box-shadow: 0px 4px 6px 2px #10182808;
+  border-radius: 26px;
   width: 900px;
   max-height: 80vh;
   padding: 30px;
@@ -140,7 +142,8 @@
   }
 
   .posts-div {
-    width: 350px;
+    margin: auto;
+    width: 320px;
     height: unset;
     max-height: unset;
 
