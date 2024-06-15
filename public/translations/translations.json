@@ -97,7 +97,8 @@
       "adopting": "Adopting"
     },
     "POST": {
-      "error": "Failed to load post"
+      "error": "Failed to load post",
+      "views": "Views"
     },
     "FEATS": {
       "buy": "Buy",
@@ -216,7 +217,8 @@
       "adopting": "შეფარება"
     },
     "POST": {
-      "error": "პოსტი ვერ მოიძებნა"
+      "error": "პოსტი ვერ მოიძებნა",
+      "views": "ნახვა"
     },
     "FEATS": {
       "buy": "შეიძინე",
