@@ -11,3 +11,17 @@ function changeTab(clickedElement, targetDivId) {
   postsDiv.classList.toggle("hide-tab", !isPostsTab);
   detailsDiv.classList.toggle("hide-tab", isPostsTab);
 }
+
+var posts = htmx.findAll(".post");
+
+for (const post of posts) {
+  var deleteIcon = document.createElement("img");
+  deleteIcon.src = "/assets/icons/delete.svg";
+  deleteIcon.classList.add("delete-icon");
+  deleteIcon.alt = "Delete";
+
+  post.parentNode.appendChild(deleteIcon);
+  deleteIcon.addEventListener("click", () => {
+    console.log(1);
+  });
+}

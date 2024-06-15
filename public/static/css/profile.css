@@ -279,3 +279,23 @@
 .hide-tab {
   display: none;
 }
+
+.delete-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  width: 38px !important;
+  height: 38px !important;
+  background-color: #fae7e5;
+  padding: 8px;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 100%;
+
+  transition: 0.2s;
+}
+.delete-icon:hover {
+  scale: 1.05;
+}

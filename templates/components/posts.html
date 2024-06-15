@@ -3,43 +3,46 @@
 </style>
 
 {% for i in range(end=posts | length) %}
-<a
-  role="button"
-  hx-get="/post/{{posts[i].id}}"
-  hx-boost="true"
-  hx-swap="outerHTML"
-  hx-target="body"
-  hx-push-url="true"
-  hx-trigger="mousedown"
-  class="post"
->
-  <div class="blurred-img">
-    <img
-      src="/var/uploads/post-images/{{posts[i].id}}/0.jpg"
-      alt="Post image"
-      loading="lazy"
-    />
-  </div>
-
-  <div class="post-details">
-    <p class="city">{{posts[i].city | replace(from='"', to='') }}</p>
-    <div class="post-type">
-      <p class="type {{posts[i].post_type}}">
-        {{ tr.POSTTYPE[posts[i].post_type] }}
-      </p>
-      <!-- prettier-ignore -->
-      {% if posts[i].price %}
-      <p class="price">{{ posts[i].price }} ₾</p>
-      {% endif %}
+<div style="position: relative">
+  <a
+    role="button"
+    hx-get="/post/{{posts[i].id}}"
+    hx-boost="true"
+    hx-swap="outerHTML"
+    hx-target="body"
+    hx-push-url="true"
+    hx-trigger="mousedown"
+    class="post"
+  >
+    <div class="blurred-img">
+      <img
+        src="/var/uploads/post-images/{{posts[i].id}}/0.jpg"
+        alt="Post image"
+        loading="lazy"
+      />
     </div>
-    <p class="breed">{{ posts[i].breed }}</p>
 
-    <div class="chip-div">
-      <p>{{ posts[i].age }} {{ tr.FILTERS[posts[i].age_type] }}</p>
-      <p>{{ tr.UPLOAD[posts[i].sex] }}</p>
+    <div class="post-details">
+      <p class="city">{{posts[i].city | replace(from='"', to='') }}</p>
+      <div class="post-type">
+        <p class="type {{posts[i].post_type}}">
+          {{ tr.POSTTYPE[posts[i].post_type] }}
+        </p>
+        <!-- prettier-ignore -->
+        {% if posts[i].price %}
+        <p class="price">{{ posts[i].price }} ₾</p>
+        {% endif %}
+      </div>
+      <p class="breed">{{ posts[i].breed }}</p>
+
+      <div class="chip-div">
+        <p>{{ posts[i].age }} {{ tr.FILTERS[posts[i].age_type] }}</p>
+        <p>{{ tr.UPLOAD[posts[i].sex] }}</p>
+      </div>
     </div>
-  </div>
-</a>
+  </a>
+</div>
+
 {% endfor %}
 <script>
   var blurredImageDivs = document.querySelectorAll(".blurred-img");
