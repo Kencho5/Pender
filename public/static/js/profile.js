@@ -19,9 +19,10 @@ for (const post of posts) {
   deleteIcon.src = "/assets/icons/delete.svg";
   deleteIcon.classList.add("delete-icon");
   deleteIcon.alt = "Delete";
+  deleteIcon.setAttribute(
+    "hx-on:mousedown",
+    "htmx.find('#confirmModal').classList.toggle('show-confirm')",
+  );
 
   post.parentNode.appendChild(deleteIcon);
-  deleteIcon.addEventListener("click", () => {
-    console.log(1);
-  });
 }

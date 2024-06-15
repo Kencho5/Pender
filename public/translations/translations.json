@@ -64,7 +64,10 @@
       "save_changes": "Save",
       "posts": "Posts",
       "cancel": "Cancel",
-      "saved": "Changes saved"
+      "saved": "Changes saved",
+      "sure": "Are you sure?",
+      "action": "This action cannot be undone. Post data will be lost.",
+      "delete": "Delete"
     },
     "UPLOAD": {
       "animal": "Animal",
@@ -180,7 +183,10 @@
       "save_changes": "შენახვა",
       "posts": "პოსტები",
       "cancel": "გაუქმება",
-      "saved": "ცვლილებები შენახულია"
+      "saved": "ცვლილებები შენახულია",
+      "sure": "დარწმუნებული ხარ?",
+      "action": "ამ მოქმედების აღდგენა შეუძლებელია. პოსტის მონაცემები დაიკარგება.",
+      "delete": "წაშლა"
     },
     "UPLOAD": {
       "animal": "ცხოველი",

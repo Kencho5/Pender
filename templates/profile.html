@@ -144,6 +144,23 @@
       <div class="posts">{% include "components/posts.html" %}</div>
     </div>
   </div>
+  <div id="confirmModal" class="confirm-modal">
+    <div class="content">
+      <div class="alert-icon">
+        <img src="/assets/icons/alert.svg" alt="Alert" />
+      </div>
+      <h1>{{ tr.PROFILE.sure }}</h1>
+      <p>{{ tr.PROFILE.action }}</p>
+      <button type="button">{{ tr.PROFILE.delete }}</button>
+      <button
+        type="button"
+        class="cancel"
+        hx-on:mousedown="htmx.find('#confirmModal').classList.toggle('show-confirm')"
+      >
+        {{ tr.PROFILE.cancel }}
+      </button>
+    </div>
+  </div>
   {% include "components/toast.html" %}
 
   <script src="/static/js/profile.js"></script>

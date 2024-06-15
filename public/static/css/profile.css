@@ -66,9 +66,9 @@
   background-color: var(--accent);
   box-shadow: 0px 4px 6px 2px #10182808;
   border-radius: 26px;
-  width: 900px;
+  width: 1049px;
   max-height: 80vh;
-  padding: 30px;
+  padding: 50px;
   box-sizing: border-box;
   position: relative;
 
@@ -87,11 +87,11 @@
 
   .posts {
     margin-top: 29px;
-    padding-top: 31px;
+    padding-top: 12px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 32px;
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: calc(80vh - 138px);
@@ -100,6 +100,7 @@
 
     .post {
       width: 260px;
+      margin-top: 24px;
 
       .blurred-img {
         width: 260px;
@@ -137,7 +138,7 @@
 
   .details-div {
     width: 70%;
-    height: 684px;
+    height: 700px;
     margin: auto;
   }
 
@@ -146,6 +147,7 @@
     width: 320px;
     height: unset;
     max-height: unset;
+    padding: 30px;
 
     .posts {
       max-height: unset;
@@ -285,7 +287,7 @@
 
 .delete-icon {
   position: absolute;
-  top: 10px;
+  top: 34px;
   left: 10px;
 
   width: 38px !important;
@@ -301,4 +303,82 @@
 }
 .delete-icon:hover {
   scale: 1.05;
+}
+
+.confirm-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  .content {
+    width: 450px;
+    padding: 30px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #fff;
+    box-shadow: 0px 4px 6px 2px #10182808;
+    border-radius: 26px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 22px;
+    }
+
+    p {
+      color: #83594b;
+      width: 80%;
+      text-align: center;
+    }
+
+    .alert-icon {
+      width: 32px;
+      height: 32px;
+      background-color: #fae7e5;
+      padding: 8px;
+      border-radius: 100%;
+    }
+
+    button {
+      border: none;
+      background-color: var(--primary);
+      border-radius: 12px;
+      color: #fff;
+      width: 80%;
+      margin: 8px;
+      padding: 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .cancel {
+      background-color: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+  }
+  @media (max-width: 764px) {
+    .content {
+      width: 75%;
+    }
+  }
+}
+
+.show-confirm {
+  display: block;
+  opacity: 1;
 }
