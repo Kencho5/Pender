@@ -39,6 +39,7 @@ async fn main() -> tide::Result<()> {
         MemoryStore::new(),
         config.tide_secret.as_bytes(),
     ));
+    app.with(tide_compress::CompressMiddleware::new());
 
     let connection_url = format!(
         "postgres://{}:{}@{}:{}/{}",
