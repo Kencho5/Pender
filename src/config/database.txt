@@ -26,6 +26,7 @@ CREATE TABLE posts (
     city TEXT NOT NULL,
     description TEXT NOT NULL,
     photos TEXT NOT NULL,
+    views INTEGER DEFAULT 0,
     time_posted TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
