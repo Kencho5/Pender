@@ -1,5 +1,6 @@
 use crate::imports::*;
 use sqlx::postgres::PgQueryResult;
+use std::fs;
 
 pub async fn delete_handler(mut req: tide::Request<AppState>) -> tide::Result {
     let post_id = req.param("post_id").unwrap().to_string();
@@ -20,5 +21,8 @@ async fn delete_post(
         .bind(post_id)
         .execute(pg_conn.acquire().await?)
         .await?;
+
+    fs::remove_dir_all(format!("/var/uploads/post-images/{}", post_id))?;
+
     Ok(result)
 }
