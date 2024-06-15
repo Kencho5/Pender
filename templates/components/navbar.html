@@ -32,7 +32,13 @@
       {% if claims %}
       <a role="button" class="user-div dropdownBtn" onmousedown="toggleMenu()">
         <div class="user-icon-div">
-          <img src="/assets/icons/user_nav.svg" class="user-icon" alt="User" />
+          <img
+            src="/assets/icons/user_nav.svg"
+            width="16"
+            height="18"
+            class="user-icon"
+            alt="User"
+          />
         </div>
         <p>{{ claims.name | split(pat=" ") | first }}</p>
         <img
