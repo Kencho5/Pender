@@ -1,4 +1,5 @@
 pub mod analytics;
+pub mod delete;
 pub mod home;
 pub mod load_posts;
 pub mod login;

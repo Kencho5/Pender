@@ -298,11 +298,6 @@
   cursor: pointer;
   box-sizing: border-box;
   border-radius: 100%;
-
-  transition: 0.2s;
-}
-.delete-icon:hover {
-  scale: 1.05;
 }
 
 .confirm-modal {

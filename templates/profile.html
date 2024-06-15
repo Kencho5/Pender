@@ -26,7 +26,7 @@
         {{ tr.PROFILE.posts }}
       </p>
     </div>
-    <div class="details-div">
+    <div class="details-div hide-tab">
       <h1>{{ tr.PROFILE.edit_details }}</h1>
       <p>{{ tr.PROFILE.title_helper }}</p>
       <form
@@ -110,6 +110,7 @@
             {% else %}
             placeholder="{{ tr.PROFILE.facebook_ex }}"
             {% endif %}
+            aria-label="Facebook"
           />
         </div>
 
@@ -151,7 +152,9 @@
       </div>
       <h1>{{ tr.PROFILE.sure }}</h1>
       <p>{{ tr.PROFILE.action }}</p>
-      <button type="button">{{ tr.PROFILE.delete }}</button>
+      <button type="button" hx-on:mousedown="deletePost()">
+        {{ tr.PROFILE.delete }}
+      </button>
       <button
         type="button"
         class="cancel"

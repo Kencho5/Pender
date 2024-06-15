@@ -76,4 +76,8 @@ pub fn register_routes(app: &mut Server<AppState>) {
     app.at("/api/analytics")
         .with(GovernorMiddleware::per_minute(5).unwrap())
         .get(analytics::analytics_handler);
+
+    app.at("/api/delete-post/:post_id")
+        .with(GovernorMiddleware::per_minute(15).unwrap())
+        .post(delete::delete_handler);
 }
