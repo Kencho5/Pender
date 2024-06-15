@@ -67,6 +67,22 @@
       }
     }
 
+    /* .views { */
+    /*   display: flex; */
+    /*   align-items: center; */
+    /*   gap: 8px; */
+    /**/
+    /*   color: #6a453e; */
+    /*   padding: 2px 10px; */
+    /*   border: 1px solid #e9e0d8; */
+    /*   border-radius: 16px; */
+    /**/
+    /*   img { */
+    /*     width: 16px; */
+    /*     height: 16px; */
+    /*   } */
+    /* } */
+
     .breed {
       font-weight: 400;
       overflow: hidden;

@@ -349,6 +349,34 @@
     text-align: center;
     text-decoration: none;
   }
+
+  .views {
+    background-color: #f6f3f0;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  }
+
+  .views-mobile {
+    display: none !important;
+  }
+
+  @media screen and (max-width: 800px) {
+    .views-mobile {
+      display: flex !important;
+      border-radius: 12px;
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {

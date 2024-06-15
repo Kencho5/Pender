@@ -64,6 +64,11 @@
         </div>
         {% endif %}
       </div>
+      <p class="views-mobile views">
+        <img src="/assets/icons/eye.svg" alt="Eye" />
+        {{ post.views }} ნახვა
+      </p>
+
       <div class="post-details">
         <!-- ANIMAL -->
         <div class="detail-div">
@@ -122,6 +127,10 @@
           {% endif %}
           <p class="type {{ post.post_type }}">
             {{ tr.POSTTYPE[post.post_type] }}
+          </p>
+          <p class="views">
+            <img src="/assets/icons/eye.svg" alt="Eye" />
+            {{ post.views }} ნახვა
           </p>
         </div>
         <div class="line"></div>

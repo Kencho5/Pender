@@ -31,4 +31,5 @@ pub struct PostStruct {
     pub city: String,
     pub description: String,
     pub photos: String,
+    pub views: i16,
 }
