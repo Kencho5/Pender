@@ -63,9 +63,7 @@
         {% endif %}
       </div>
 
-      <div
-        class="type-mobile {{ post.post_type }} {% if not post.price %} full {% endif %}"
-      >
+      <div class="type-mobile {{ post.post_type }}">
         <!-- prettier-ignore -->
         {% if post.price %}
            {{ post.price }} ₾
