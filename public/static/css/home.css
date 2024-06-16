@@ -314,10 +314,6 @@
 }
 
 @media (max-width: 768px) {
-  .features-img {
-    width: 100% !important;
-  }
-
   .category {
     font-size: 20px !important;
   }
