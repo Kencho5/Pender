@@ -62,6 +62,15 @@
         </div>
         {% endif %}
       </div>
+      {% if post.price %}
+      <p class="price-mobile views-mobile views">{{ post.price }} ₾</p>
+      {% else %}
+      <div class="post-type type-mobile {{ post.post_type }}">
+        {{ tr.POSTTYPE[post.post_type] }}
+      </div>
+
+      {% endif %}
+
       <p class="views-mobile views">
         <img src="/assets/icons/eye.svg" alt="Eye" />
         {{ post.views }} {{ tr.POST.views }}

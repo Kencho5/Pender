@@ -5,7 +5,8 @@ CREATE TABLE users (
     phone VARCHAR NOT NULL CHECK (LENGTH(phone) > 0),
     city VARCHAR NOT NULL CHECK (LENGTH(city) > 0),
     facebook VARCHAR,
-    password VARCHAR NOT NULL CHECK (LENGTH(password) > 0)
+    password VARCHAR NOT NULL CHECK (LENGTH(password) > 0),
+    time_registered TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE INDEX email_index
