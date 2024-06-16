@@ -232,18 +232,6 @@
       }
     }
   }
-  .selling {
-    color: #4ca30d;
-    background-color: #e4fbcc;
-  }
-  .adopting {
-    color: #d9625a;
-    background-color: #fae7e6;
-  }
-  .meeting {
-    color: #875bf7;
-    background-color: #ece9fe;
-  }
 
   .user {
     display: flex;
@@ -367,31 +355,30 @@
     }
   }
 
-  .views-mobile {
+  .views-mobile,
+  .type-mobile {
     display: none !important;
-  }
-
-  .price-mobile {
-    color: #4ca30d !important;
-    background-color: #e4fbcc;
-    font-weight: bold !important;
+    border-radius: 12px;
   }
 
   .type-mobile {
+    justify-content: center;
+    align-items: center;
+
     margin-top: 16px;
     padding: 0px 8px;
-    box-sizing: border-box;
+
+    width: 100%;
     height: 36px;
-    align-items: center;
-    justify-content: center;
-    display: none;
+    box-sizing: border-box;
+
+    border-radius: 12px;
   }
 
   @media screen and (max-width: 1200px) {
     .views-mobile,
     .type-mobile {
       display: flex !important;
-      border-radius: 12px;
     }
   }
 }
@@ -400,4 +387,17 @@
   .footer {
     display: none;
   }
+}
+
+.selling {
+  color: #4ca30d !important;
+  background-color: #e4fbcc;
+}
+.adopting {
+  color: #d9625a !important;
+  background-color: #fae7e6;
+}
+.meeting {
+  color: #875bf7 !important;
+  background-color: #ece9fe;
 }

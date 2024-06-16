@@ -62,14 +62,17 @@
         </div>
         {% endif %}
       </div>
-      {% if post.price %}
-      <p class="price-mobile views-mobile views">{{ post.price }} ₾</p>
-      {% else %}
-      <div class="post-type type-mobile {{ post.post_type }}">
-        {{ tr.POSTTYPE[post.post_type] }}
-      </div>
 
-      {% endif %}
+      <div
+        class="type-mobile {{ post.post_type }} {% if not post.price %} full {% endif %}"
+      >
+        <!-- prettier-ignore -->
+        {% if post.price %}
+           {{ post.price }} ₾
+          {% else %}
+            {{ tr.POSTTYPE[post.post_type] }}
+          {% endif %}
+      </div>
 
       <p class="views-mobile views">
         <img src="/assets/icons/eye.svg" alt="Eye" />
