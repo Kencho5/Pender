@@ -1,6 +1,6 @@
 <div class="header" style="cursor: pointer">
   <a
-    role="button"
+    role="link"
     hx-get="/"
     hx-boost="true"
     hx-swap="outerHTML"
@@ -12,7 +12,7 @@
     <img src="/assets/logo.svg" alt="Logo" />
     <h1>Pender</h1>
   </a>
-  <a role="button" onmousedown="changeLang('{{ lang }}')" class="header-lang">
+  <a role="link" onmousedown="changeLang('{{ lang }}')" class="header-lang">
     <img src="/assets/icons/{{lang}}.svg" alt="Flag" />
     <p>{{lang}}</p>
   </a>

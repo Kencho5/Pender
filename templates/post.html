@@ -114,7 +114,7 @@
       <div class="description">{{ post.description }}</div>
       <div class="line second-line"></div>
       <a
-        role="button"
+        role="link"
         hx-get="/user/{{ post.user_id }}"
         hx-boost="true"
         hx-swap="outerHTML"
@@ -146,7 +146,7 @@
         <div class="user-details-div">
           <p class="phone">{{ post.phone }}</p>
           <a
-            role="button"
+            role="link"
             hx-get="/user/{{ post.user_id }}"
             hx-boost="true"
             hx-swap="outerHTML"

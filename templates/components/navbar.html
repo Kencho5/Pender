@@ -1,7 +1,7 @@
 <div class="navbar-div">
   <nav class="navbar">
     <a
-      role="button"
+      role="link"
       hx-get="/"
       hx-boost="true"
       hx-swap="outerHTML"
@@ -16,7 +16,7 @@
 
     <div class="nav-right">
       <a
-        role="button"
+        role="link"
         hx-get="/upload"
         hx-boost="true"
         hx-swap="outerHTML"
@@ -52,7 +52,7 @@
       </a>
       {% else %}
       <a
-        role="button"
+        role="link"
         hx-get="/login"
         hx-boost="true"
         hx-swap="outerHTML"
@@ -84,7 +84,7 @@
         <div class="dropdown-actions">
           {% if claims %}
           <a
-            role="button"
+            role="link"
             hx-get="/profile"
             hx-boost="true"
             hx-swap="outerHTML"
@@ -98,7 +98,7 @@
           </a>
           {% else %}
           <a
-            role="button"
+            role="link"
             hx-get="/login"
             hx-boost="true"
             hx-swap="outerHTML"
@@ -112,7 +112,7 @@
           </a>
           {% endif %}
           <a
-            role="button"
+            role="link"
             hx-get="/search?animal=all"
             hx-boost="true"
             hx-swap="outerHTML"
@@ -125,7 +125,7 @@
             {{ tr.PROFILE.posts }}
           </a>
           <a
-            role="button"
+            role="link"
             hx-get="/upload"
             hx-boost="true"
             hx-swap="outerHTML"
@@ -143,7 +143,7 @@
         <div class="dropdown-line"></div>
         <div class="dropdown-actions logout-action">
           <a
-            role="button"
+            role="link"
             hx-get="/login"
             hx-boost="true"
             hx-swap="outerHTML"
@@ -160,11 +160,7 @@
         {% endif %}
       </div>
 
-      <a
-        role="button"
-        onmousedown="changeLang('{{ lang }}')"
-        class="navbar-lang"
-      >
+      <a role="link" onmousedown="changeLang('{{ lang }}')" class="navbar-lang">
         <img src="/assets/icons/{{lang}}.svg" alt="Flag" />
       </a>
 
