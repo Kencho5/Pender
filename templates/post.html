@@ -1,6 +1,6 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/post.css" />
+<link rel="stylesheet" href="/static/css/post.css?v={{ ver }}" />
 
 <body>
   {% if post == 'error' %}
@@ -167,6 +167,6 @@
     </div>
   </div>
   {% endif %}
-  <script src="/static/js/post.js"></script>
+  <script src="/static/js/post.js?v={{ ver }}"></script>
 </body>
 {% endblock content %}

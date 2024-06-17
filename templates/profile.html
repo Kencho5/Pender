@@ -1,6 +1,6 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/profile.css" />
+<link rel="stylesheet" href="/static/css/profile.css?v={{ ver }}" />
 
 <body>
   <div class="profile-main">
@@ -165,6 +165,6 @@
   </div>
   {% include "components/toast.html" %}
 
-  <script src="/static/js/profile.js"></script>
+  <script src="/static/js/profile.js?v={{ ver }}"></script>
 </body>
 {% endblock content %}

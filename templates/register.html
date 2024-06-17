@@ -1,6 +1,6 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/register.css" />
+<link rel="stylesheet" href="/static/css/register.css?v={{ ver }}" />
 
 <body>
   <div class="form-div">
@@ -145,6 +145,6 @@
     </div>
   </div>
 
-  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/auth.js?v={{ ver }}"></script>
 </body>
 {% endblock content %}

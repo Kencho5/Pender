@@ -13,6 +13,7 @@ pub async fn posts_handler(mut req: Request<AppState>) -> tide::Result {
     let context = context! {
         "tr" => translations,
         "posts" => posts,
+        "ver" => state.version
     };
 
     let response = state
