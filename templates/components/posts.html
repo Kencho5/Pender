@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="/static/css/posts.css?v={{ ver }}" />
 
 {% for i in range(end=posts | length) %}
+<!-- prettier-ignore -->
+{% if route == '/profile' %}
 <div style="position: relative">
+  {% endif %}
   <a
     role="button"
     hx-get="/post/{{posts[i].id}}"
@@ -41,9 +44,9 @@
       </div>
     </div>
   </a>
+  {% if route == '/profile' %}
 </div>
-
-{% endfor %}
+{% endif %} {% endfor %}
 <script>
   var blurredImageDivs = document.querySelectorAll(".blurred-img");
   blurredImageDivs.forEach(function (blurredImageDiv) {
