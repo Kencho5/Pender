@@ -6,10 +6,13 @@ mod routes;
 mod utils;
 use crate::imports::*;
 use std::fs;
+use std::fs::File;
+use std::io::Read;
+use std::process::Command;
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
-    // tide::log::start();
+    tide::log::start();
     let config = config::config_manager::load_config().expect("Config Error.");
 
     let mut tera = Tera::new("./templates/**/*")?;
@@ -29,10 +32,20 @@ async fn main() -> tide::Result<()> {
         .await
         .unwrap();
 
+    Command::new("bash")
+        .arg("./scripts/gen_version.sh")
+        .output()
+        .expect("Failed to run Bash script");
+
+    let mut file = File::open("./scripts/version.txt")?;
+    let mut version = String::new();
+    file.read_to_string(&mut version)?;
+
     let mut app = tide::with_state(AppState {
         tera,
         translations,
         config: config.clone(),
+        version: version,
     });
 
     app.with(tide::sessions::SessionMiddleware::new(
