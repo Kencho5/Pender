@@ -1,6 +1,12 @@
 use crate::imports::*;
+use std::time::{SystemTime, UNIX_EPOCH};
 
 pub async fn get_context(req: &Request<AppState>) -> tide::Result<tera::Context> {
+    let now = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .expect("Time went backwards")
+        .as_secs();
+
     let session = req.session();
     let lang = session.get::<String>("lang").unwrap_or("GEO".into());
 
@@ -11,7 +17,8 @@ pub async fn get_context(req: &Request<AppState>) -> tide::Result<tera::Context>
         "tr" => translations,
         "lang" => lang,
         "route" => req.url().path(),
-        "claims" => get_claims(req).await?
+        "claims" => get_claims(req).await?,
+        "now" => now
     };
 
     Ok(context)
