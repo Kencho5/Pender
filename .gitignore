@@ -45,4 +45,4 @@ Cargo.lock
 config.json
 report.html
 scripts/version.txt
-public/static/css
+public/static/css/*
