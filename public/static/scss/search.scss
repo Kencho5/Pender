@@ -1,0 +1,258 @@
+.search-content {
+  width: 85%;
+  min-height: 70vh;
+  background: var(--accent);
+  border-radius: 26px;
+  margin: auto;
+  padding: 28px;
+  box-shadow: 0px 4px 6px 2px #10182808;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .search-actions {
+    display: flex;
+    gap: 12px;
+
+    .search-input,
+    .search-filters {
+      display: flex;
+      gap: 12px;
+
+      .filters-num {
+        position: absolute;
+        right: -4px;
+        top: -8px;
+        z-index: 9;
+        background: var(--text);
+        padding: 2px 8px;
+        box-sizing: border-box;
+        color: #fff;
+        border-radius: 100%;
+        height: 22px;
+        width: 22px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      .active-num {
+        border-color: var(--text);
+      }
+
+      .active-num:hover {
+        border-color: var(--text);
+      }
+    }
+
+    .input-div {
+      position: relative;
+    }
+
+    input {
+      width: 280px;
+      height: 48px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      box-sizing: border-box;
+      border-radius: 70px;
+      padding-left: 40px;
+      font-size: 16px;
+      transition: 0.2s;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: var(--placeholder);
+    }
+
+    input:hover,
+    button:hover {
+      border-color: #83594b;
+    }
+
+    img {
+      position: absolute;
+      left: 14px;
+      top: 28%;
+      width: 18px;
+      height: 18px;
+    }
+
+    input[type="submit"] {
+      outline: none;
+      border: none;
+      color: #fff;
+      background-color: var(--primary);
+      cursor: pointer;
+      width: 100px;
+      text-align: center;
+      padding: 12px 20px;
+    }
+
+    button {
+      color: var(--text);
+      font-size: 16px;
+      position: relative;
+      outline: none;
+      border-radius: 70px;
+      background-color: #fff;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      padding: 12px 20px;
+      padding-left: 40px;
+      transition: 0.2s;
+
+      img {
+        top: 32%;
+      }
+    }
+  }
+  .search-line {
+    height: 1px;
+    background-color: #e9e0d8;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 120px;
+  }
+
+  .posts {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    .post {
+      margin-top: 40px;
+    }
+  }
+
+  .posts-two {
+    justify-content: unset;
+    gap: 62px;
+  }
+
+  @media (max-width: 1160px) {
+    width: 75%;
+
+    .search-header {
+      flex-direction: column;
+      gap: 16px;
+
+      .search-actions {
+        flex-direction: column;
+      }
+
+      img {
+        width: 15px;
+        height: 15px;
+        top: 24%;
+      }
+
+      .input-div input {
+        width: 210px;
+        height: 40px;
+      }
+
+      input[type="submit"] {
+        width: 80px;
+        height: 40px;
+        font-size: 14px;
+      }
+
+      button {
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .search-line {
+      top: 220px;
+    }
+
+    .post {
+      width: 100%;
+    }
+
+    .blurred-img {
+      width: 100% !important;
+      img {
+        width: 100% !important;
+      }
+    }
+
+    .posts-two {
+      gap: 24px;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: auto;
+    margin-top: 62px;
+    width: 120px;
+
+    button {
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 100%;
+
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      border-color: #83594b;
+    }
+
+    .arrow-right {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.not-found {
+  margin: auto;
+  margin-top: 15vh;
+  font-size: 16px !important;
+  font-weight: 400;
+  color: #83594b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+
+  img {
+    width: 146px;
+  }
+}
