@@ -9,6 +9,8 @@
   background-color: rgba(0, 0, 0, 0.2);
   display: none;
   animation: fadeInModal 0.2s ease-in;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .modal.show-modal {
@@ -41,7 +43,7 @@
   margin: 20px auto;
   width: 80%;
   max-width: 600px;
-  border-radius: 20px;
+  border-radius: 26px;
   animation: scaleUpModal 0.2s ease-in;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
