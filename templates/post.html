@@ -21,7 +21,7 @@
       <div class="images-div">
         <div class="images blurred-img">
           <img
-            src="/var/uploads/post-images/{{post.id}}/0.jpg"
+            src="/post-images/{{post.id}}/0.jpg"
             loading="lazy"
             class="image active-image"
             image-id="0"
@@ -33,7 +33,7 @@
           <!-- prettier-ignore -->
           {% for x in range(start=1, end=post.photos | int) %}
           <img
-            src="/var/uploads/post-images/{{post.id}}/{{x}}.jpg"
+            src="/post-images/{{post.id}}/{{x}}.jpg"
             class="image"
             alt="Post Image"
             image-id="{{x}}"
