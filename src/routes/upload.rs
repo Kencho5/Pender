@@ -48,6 +48,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
             eprintln!("ffmpeg command failed with output: {:?}", output);
         }
     }
+    upload_images(&post_id).await?;
 
     let city_data = get_city().await.unwrap();
     form_data.city = city_data["GEO"][form_data.city].to_string();
@@ -106,4 +107,17 @@ async fn insert_post(
     .await;
 
     insert_result.is_ok()
+}
+
+async fn upload_images(post_id: &String) -> tide::Result<()> {
+    Command::new("aws")
+        .arg("s3")
+        .arg("cp")
+        .arg(format!("/var/uploads/post-images/{}", post_id))
+        .arg(format!("s3://pender-assets/post-images/{}", post_id))
+        .arg("--recursive")
+        .output()
+        .expect("Failed to execute script");
+
+    Ok(())
 }
