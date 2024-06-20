@@ -41,5 +41,7 @@ for (const post of posts) {
 
 function deletePost() {
   const postID = htmx.find(".confirm-modal").getAttribute("postid");
+
+  htmx.find(".deleteBtn").disabled = true;
   htmx.ajax("POST", `/api/delete-post/${postID}`, {});
 }

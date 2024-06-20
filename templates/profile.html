@@ -151,7 +151,12 @@
       </div>
       <h1>{{ tr.PROFILE.sure }}</h1>
       <p>{{ tr.PROFILE.action }}</p>
-      <button type="button" hx-on:mousedown="deletePost()">
+      <button
+        type="button"
+        hx-on:mousedown="deletePost()"
+        hx-indicator="#spinner"
+        class="deleteBtn"
+      >
         {{ tr.PROFILE.delete }}
       </button>
       <button
@@ -161,6 +166,7 @@
       >
         {{ tr.PROFILE.cancel }}
       </button>
+      <div id="spinner" class="loader loader-indicator"></div>
     </div>
   </div>
   {% include "components/toast.html" %}
