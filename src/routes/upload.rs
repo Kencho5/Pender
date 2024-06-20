@@ -112,10 +112,11 @@ async fn insert_post(
 async fn upload_images(post_id: &String) -> tide::Result<()> {
     Command::new("aws")
         .arg("s3")
-        .arg("cp")
+        .arg("sync")
         .arg(format!("/var/uploads/post-images/{}", post_id))
         .arg(format!("s3://pender-assets/post-images/{}", post_id))
-        .arg("--recursive")
+        .arg("--cache-control")
+        .arg("max-age=31536000")
         .output()
         .expect("Failed to execute script");
 
