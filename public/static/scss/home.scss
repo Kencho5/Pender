@@ -1,3 +1,5 @@
+@import "variables";
+
 .home-content {
   width: 85%;
   background: var(--accent);
@@ -163,6 +165,60 @@
     flex-direction: column;
     display: flex;
     gap: 12px;
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      div {
+        display: none;
+        gap: 16px;
+      }
+
+      button {
+        background-color: $accent;
+        border: 1px solid $border;
+        border-radius: 100%;
+
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 14px;
+          height: 20px;
+        }
+
+        .arrow-right {
+          transform: rotate(180deg);
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1430px) {
+        div {
+          display: flex;
+        }
+        // div {
+        //   gap: 12px;
+        // }
+        // button {
+        //   width: 36px;
+        //   height: 36px;
+        //   padding: 6px;
+        //
+        //   img {
+        //     width: 10px;
+        //     height: 16px;
+        //   }
+        // }
+      }
+    }
 
     .images {
       display: flex;

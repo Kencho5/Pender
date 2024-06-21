@@ -78,7 +78,21 @@
 
     <!-- CATEGORIES -->
     <div class="categories-div">
-      <p class="category">{{ tr.HOME.categories }}</p>
+      <div class="category-title">
+        <p class="category">{{ tr.HOME.categories }}</p>
+        <div>
+          <button type="button" onmousedown="scrollCategories('left')">
+            <img src="/assets/icons/arrow.svg" alt="Arrow Left" />
+          </button>
+          <button type="button" onmousedown="scrollCategories('right')">
+            <img
+              src="/assets/icons/arrow.svg"
+              class="arrow-right"
+              alt="Arrow Left"
+            />
+          </button>
+        </div>
+      </div>
 
       <div class="images">
         <a
