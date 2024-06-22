@@ -110,7 +110,7 @@ async fn insert_post(
 }
 
 async fn upload_images(post_id: &String) -> tide::Result<()> {
-    Command::new("aws")
+    let output = Command::new("aws")
         .arg("s3")
         .arg("sync")
         .arg(format!("/var/uploads/post-images/{}", post_id))
@@ -119,6 +119,7 @@ async fn upload_images(post_id: &String) -> tide::Result<()> {
         .arg("max-age=31536000")
         .output()
         .expect("Failed to execute script");
+    println!("{:?}", output);
 
     Ok(())
 }
