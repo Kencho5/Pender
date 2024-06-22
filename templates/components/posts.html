@@ -6,13 +6,8 @@
 <div style="position: relative">
   {% endif %}
   <a
-    role="link"
-    hx-get="/post/{{posts[i].id}}"
+    href="/post/{{posts[i].id}}"
     hx-boost="true"
-    hx-swap="outerHTML"
-    hx-target="body"
-    hx-push-url="true"
-    hx-trigger="mousedown"
     class="post"
     id="{{posts[i].id}}"
   >
