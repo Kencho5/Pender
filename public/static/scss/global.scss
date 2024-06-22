@@ -50,10 +50,11 @@ body {
   color: var(--text);
 
   margin: 0;
-  margin-top: 120px;
+  padding-top: 120px;
 }
 
 a {
+  color: var(--text);
   text-decoration: none;
   cursor: pointer;
 }

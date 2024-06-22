@@ -1,15 +1,6 @@
 <div class="navbar-div">
   <nav class="navbar">
-    <a
-      role="link"
-      hx-get="/"
-      hx-boost="true"
-      hx-swap="outerHTML"
-      hx-target="body"
-      hx-push-url="true"
-      hx-trigger="mousedown"
-      class="logo-box"
-    >
+    <a href="/" class="logo-box">
       <img
         src="/assets/logo.svg?v={{ ver }}"
         width="59"
@@ -20,16 +11,7 @@
     </a>
 
     <div class="nav-right">
-      <a
-        role="link"
-        hx-get="/upload"
-        hx-boost="true"
-        hx-swap="outerHTML"
-        hx-target="body"
-        hx-push-url="true"
-        hx-trigger="mousedown"
-        class="upload"
-      >
+      <a href="/upload" class="upload">
         <img src="/assets/icons/upload_nav.svg" alt="Upload" />
         {{ tr.NAV.upload }}
       </a>
@@ -56,16 +38,7 @@
         />
       </a>
       {% else %}
-      <a
-        role="link"
-        hx-get="/login"
-        hx-boost="true"
-        hx-swap="outerHTML"
-        hx-target="body"
-        hx-push-url="true"
-        hx-trigger="mousedown"
-        class="user-div login-div"
-      >
+      <a href="/login" class="user-div login-div">
         <div class="user-icon-div">
           <img
             src="/assets/icons/login.svg"
@@ -88,57 +61,21 @@
         {% endif %}
         <div class="dropdown-actions">
           {% if claims %}
-          <a
-            role="link"
-            hx-get="/profile"
-            hx-boost="true"
-            hx-swap="outerHTML"
-            hx-target="body"
-            hx-push-url="true"
-            hx-trigger="mousedown"
-            class="dropdown-action"
-          >
+          <a href="/profile" class="dropdown-action">
             <img src="/assets/icons/user.svg" alt="User" />
             {{ tr.NAV.profile }}
           </a>
           {% else %}
-          <a
-            role="link"
-            hx-get="/login"
-            hx-boost="true"
-            hx-swap="outerHTML"
-            hx-target="body"
-            hx-push-url="true"
-            hx-trigger="mousedown"
-            class="dropdown-action"
-          >
+          <a href="/login" class="dropdown-action">
             <img src="/assets/icons/login.svg" alt="Log In" />
             {{ tr.NAV.login }}
           </a>
           {% endif %}
-          <a
-            role="link"
-            hx-get="/search?animal=all"
-            hx-boost="true"
-            hx-swap="outerHTML"
-            hx-target="body"
-            hx-push-url="true"
-            hx-trigger="mousedown"
-            class="dropdown-action"
-          >
+          <a href="/search?animal=all" class="dropdown-action">
             <img src="/assets/icons/picture.svg" alt="Picture" />
             {{ tr.PROFILE.posts }}
           </a>
-          <a
-            role="link"
-            hx-get="/upload"
-            hx-boost="true"
-            hx-swap="outerHTML"
-            hx-target="body"
-            hx-push-url="true"
-            hx-trigger="mousedown"
-            class="dropdown-action"
-          >
+          <a href="/upload" class="dropdown-action">
             <img src="/assets/icons/upload.svg" alt="Upload" />
             {{ tr.NAV.upload }}
           </a>
@@ -150,13 +87,11 @@
           <a
             role="link"
             hx-get="/login"
-            hx-boost="true"
             hx-swap="outerHTML"
             hx-target="body"
             hx-push-url="true"
             hx-trigger="mousedown"
             hx-on::before-request="logout()"
-            hx-boost="true"
           >
             <img src="/assets/icons/logout.svg" alt="Logout" />
             {{ tr.NAV.logout }}

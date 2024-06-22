@@ -14,7 +14,6 @@
         hx-get="/search"
         hx-params="*"
         hx-push-url="true"
-        hx-boost="true"
         hx-swap="outerHTML"
         hx-trigger="submit[search(this)]"
         hx-target="body"
@@ -53,7 +52,6 @@
       hx-get="/search"
       hx-params="*"
       hx-push-url="true"
-      hx-boost="true"
       hx-swap="outerHTML"
       hx-trigger="submit[search(this)]"
       hx-target="body"
@@ -96,13 +94,7 @@
 
       <div class="images">
         <a
-          role="link"
-          hx-get="/search?animal=dog"
-          hx-boost="true"
-          hx-swap="outerHTML"
-          hx-target="body"
-          hx-push-url="true"
-          hx-trigger="mousedown"
+          href="/search?animal=dog"
           class="image blurred-img"
           style="background-image: url(/assets/categories/dog-min.webp)"
         >
@@ -110,13 +102,7 @@
           <p>{{ tr.ANIMALS.dog }}</p>
         </a>
         <a
-          role="link"
-          hx-get="/search?animal=cat"
-          hx-boost="true"
-          hx-swap="outerHTML"
-          hx-target="body"
-          hx-push-url="true"
-          hx-trigger="mousedown"
+          href="/search?animal=cat"
           class="image blurred-img"
           style="background-image: url(/assets/categories/cat-min.webp)"
         >
@@ -124,13 +110,7 @@
           <p>{{ tr.ANIMALS.cat }}</p>
         </a>
         <a
-          role="link"
-          hx-get="/search?animal=bird"
-          hx-boost="true"
-          hx-swap="outerHTML"
-          hx-target="body"
-          hx-push-url="true"
-          hx-trigger="mousedown"
+          href="/search?animal=bird"
           class="image blurred-img"
           style="background-image: url(/assets/categories/bird-min.webp)"
         >
@@ -138,13 +118,7 @@
           <p>{{ tr.ANIMALS.bird }}</p>
         </a>
         <a
-          role="link"
-          hx-get="/search?animal=fish"
-          hx-boost="true"
-          hx-swap="outerHTML"
-          hx-target="body"
-          hx-push-url="true"
-          hx-trigger="mousedown"
+          href="/search?animal=fish"
           class="image blurred-img"
           style="background-image: url(/assets/categories/fish-min.webp)"
         >
@@ -152,13 +126,7 @@
           <p>{{ tr.ANIMALS.fish }}</p>
         </a>
         <a
-          role="link"
-          hx-get="/search?animal=other"
-          hx-boost="true"
-          hx-swap="outerHTML"
-          hx-target="body"
-          hx-push-url="true"
-          hx-trigger="mousedown"
+          href="/search?animal=other"
           class="image blurred-img"
           style="background-image: url(/assets/categories/other-min.webp)"
         >
@@ -172,13 +140,7 @@
       <div class="posts-title">
         <p class="category">{{ tr.HOME.posts }}</p>
         <a
-          role="link"
-          hx-get="/search?animal=all"
-          hx-boost="true"
-          hx-swap="outerHTML"
-          hx-target="body"
-          hx-push-url="true"
-          hx-trigger="mousedown"
+          href="/search?animal=all"
           class="all-posts"
           >{{ tr.HOME.all_posts }}</a
         >

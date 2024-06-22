@@ -114,13 +114,7 @@
       <div class="description">{{ post.description }}</div>
       <div class="line second-line"></div>
       <a
-        role="link"
-        hx-get="/user/{{ post.user_id }}"
-        hx-boost="true"
-        hx-swap="outerHTML"
-        hx-target="body"
-        hx-push-url="true"
-        hx-trigger="mousedown"
+        href="/user/{{ post.user_id }}"
         class="user second-user"
       >
         <img src="/assets/icons/avatar.svg" alt="Avatar" />
@@ -146,13 +140,7 @@
         <div class="user-details-div">
           <p class="phone">{{ post.phone }}</p>
           <a
-            role="link"
-            hx-get="/user/{{ post.user_id }}"
-            hx-boost="true"
-            hx-swap="outerHTML"
-            hx-target="body"
-            hx-push-url="true"
-            hx-trigger="mousedown"
+            href="/user/{{ post.user_id }}"
             class="user"
           >
             <img src="/assets/icons/avatar.svg" alt="Avatar" />
