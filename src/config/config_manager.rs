@@ -8,6 +8,7 @@ pub struct Config {
     pub smtp: SmtpConfig,
     pub tide_secret: String,
     pub port: String,
+    pub aws: AwsConfig,
 }
 
 #[derive(Deserialize, Clone)]
@@ -23,6 +24,12 @@ pub struct DatabaseConfig {
 pub struct SmtpConfig {
     pub username: String,
     pub password: String,
+}
+
+#[derive(Deserialize, Clone)]
+pub struct AwsConfig {
+    pub access_key_id: String,
+    pub secret_access_key: String,
 }
 
 pub fn load_config() -> Result<Config, Box<dyn std::error::Error>> {

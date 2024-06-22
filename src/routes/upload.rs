@@ -1,5 +1,7 @@
+use crate::config::config_manager::Config;
 use crate::imports::*;
 use crate::utils::{self, cities::get_city, common::logged_in, upload_struct};
+use std::env;
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -23,6 +25,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     let post_id = generate_id();
     let mut response = Response::builder(200).build();
     let mut form_data: upload_struct::UploadForm = req.body_json().await?;
+    let config = &req.state().config;
 
     for (index, photo) in form_data.photos.iter().enumerate() {
         let save_result = save_images(&post_id, photo, index).await;
@@ -48,7 +51,7 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
             eprintln!("ffmpeg command failed with output: {:?}", output);
         }
     }
-    upload_images(&post_id).await?;
+    upload_images(&post_id, config).await?;
 
     let city_data = get_city().await.unwrap();
     form_data.city = city_data["GEO"][form_data.city].to_string();
@@ -109,7 +112,10 @@ async fn insert_post(
     insert_result.is_ok()
 }
 
-async fn upload_images(post_id: &String) -> tide::Result<()> {
+async fn upload_images(post_id: &String, config: &Config) -> tide::Result<()> {
+    env::set_var("AWS_ACCESS_KEY_ID", &config.aws.access_key_id);
+    env::set_var("AWS_SECRET_ACCESS_KEY", &config.aws.secret_access_key);
+
     let output = Command::new("aws")
         .arg("s3")
         .arg("sync")
