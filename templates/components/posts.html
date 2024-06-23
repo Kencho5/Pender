@@ -5,12 +5,7 @@
 {% if route == '/profile' %}
 <div style="position: relative">
   {% endif %}
-  <a
-    href="/post/{{posts[i].id}}"
-    hx-trigger="click"
-    class="post"
-    id="{{posts[i].id}}"
-  >
+  <a href="/post/{{posts[i].id}}" hx-disable class="post" id="{{posts[i].id}}">
     <div class="blurred-img">
       <img
         src="/post-images/{{posts[i].id}}/0.jpg"
