@@ -2,7 +2,7 @@ document.body.addEventListener("htmx:afterSwap", function (evt) {
   if (evt.target.tagName != "BODY") {
     return;
   }
-  window.scrollTo(0, 0);
+  window.scrollTo(0, -100);
   // const mainContent = document.querySelector(".main-content");
   // mainContent.style.opacity = 0;
   //
