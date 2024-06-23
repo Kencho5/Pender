@@ -83,31 +83,31 @@ a {
   }
 }
 
-// .blurred-img::before {
-//   /* content: ""; */
-//   position: absolute;
-//   inset: 0;
-//   opacity: 0;
-//   animation: pulse 1s infinite;
-//   background-color: white;
-// }
-//
-// @keyframes pulse {
-//   0% {
-//     opacity: 0;
-//   }
-//   50% {
-//     opacity: 0.2;
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// }
-//
-// .blurred-img.loaded::before {
-//   animation: none;
-// }
-//
-// .blurred-img.loaded img {
-//   opacity: 1;
-// }
+.blurred-img::before {
+  /* content: ""; */
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: pulse 1s infinite;
+  background-color: white;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blurred-img.loaded::before {
+  animation: none;
+}
+
+.blurred-img.loaded img {
+  opacity: 1;
+}
