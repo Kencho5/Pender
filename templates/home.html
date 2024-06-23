@@ -147,14 +147,14 @@
       <div
         class="posts"
         hx-get="/api/load-posts"
-        hx-trigger="revealed"
+        hx-trigger="load"
         hx-swap="innerHTML"
         hx-on::after-swap="this.classList.add('fade-in')"
       >
         {% for i in range(end=8) %}
-        <a role="link">
+        <div>
           <div class="placeholder-box"></div>
-        </a>
+        </div>
 
         {% endfor %}
       </div>
