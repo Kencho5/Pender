@@ -1,10 +1,8 @@
 .post {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 0;
   height: 363px;
-  touch-action: manipulation;
+  cursor: pointer;
 
   .blurred-img {
     width: 280px;

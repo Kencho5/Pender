@@ -5,7 +5,7 @@
 {% if route == '/profile' %}
 <div style="position: relative">
   {% endif %}
-  <a href="/post/{{posts[i].id}}" class="post" id="{{posts[i].id}}">
+  <a href="/post/{{posts[i].id}}" class="post">
     <div class="blurred-img">
       <img
         src="/post-images/{{posts[i].id}}/0.jpg"
@@ -38,6 +38,28 @@
 </div>
 {% endif %} {% endfor %}
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a.post");
+    let touchStartY;
+
+    links.forEach((link) => {
+      link.addEventListener("touchstart", (e) => {
+        touchStartY = e.touches[0].clientY;
+      });
+
+      link.addEventListener("touchend", (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        const yDiff = touchStartY - touchEndY;
+
+        if (Math.abs(yDiff) < 5) {
+          // Adjust this threshold as needed
+          e.preventDefault();
+          window.location.href = link.getAttribute("href");
+        }
+      });
+    });
+  });
+
   var blurredImageDivs = document.querySelectorAll(".blurred-img");
   blurredImageDivs.forEach(function (blurredImageDiv) {
     var img = blurredImageDiv.querySelector("img");
