@@ -3,16 +3,15 @@ document.body.addEventListener("htmx:afterSwap", function (evt) {
     return;
   }
   window.scrollTo(0, 0);
-
-  const mainContent = document.querySelector(".main-content");
-  mainContent.style.opacity = 0;
-
-  mainContent.style.transition = "none";
-
-  mainContent.offsetHeight;
-
-  mainContent.style.transition = "opacity 0.15s ease-in";
-  mainContent.style.opacity = 1;
+  // const mainContent = document.querySelector(".main-content");
+  // mainContent.style.opacity = 0;
+  //
+  // mainContent.style.transition = "none";
+  //
+  // mainContent.offsetHeight;
+  //
+  // mainContent.style.transition = "opacity 0.15s ease-in";
+  // mainContent.style.opacity = 1;
 });
 
 async function changeLang(lang) {
