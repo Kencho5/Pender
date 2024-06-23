@@ -5,7 +5,7 @@
 {% if route == '/profile' %}
 <div style="position: relative">
   {% endif %}
-  <a role="link" id="/post/{{posts[i].id}}" class="post">
+  <a href="/post/{{posts[i].id}}" class="post" id="{{posts[i].id}}">
     <div class="blurred-img">
       <img
         src="/post-images/{{posts[i].id}}/0.jpg"
@@ -38,16 +38,6 @@
 </div>
 {% endif %} {% endfor %}
 <script>
-  var posts = htmx.findAll(".post");
-  posts.forEach(function (post) {
-    post.addEventListener("click", function (event) {
-      var anchor = event.target.closest("a");
-      if (anchor) {
-        window.location.href = anchor.id;
-      }
-    });
-  });
-
   var blurredImageDivs = document.querySelectorAll(".blurred-img");
   blurredImageDivs.forEach(function (blurredImageDiv) {
     var img = blurredImageDiv.querySelector("img");
