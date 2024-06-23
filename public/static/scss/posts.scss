@@ -4,6 +4,7 @@
   position: relative;
   top: 0;
   height: 363px;
+  touch-action: manipulation;
 
   .blurred-img {
     width: 280px;
