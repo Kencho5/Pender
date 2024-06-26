@@ -8,7 +8,7 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .get(home::home_handler);
 
     app.at("/profile")
-        .with(GovernorMiddleware::per_hour(240).unwrap())
+        // .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(profile::profile_handler);
 
     app.at("/upload")
