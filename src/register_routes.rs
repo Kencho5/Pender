@@ -3,6 +3,9 @@ use crate::routes::*;
 use crate::utils::*;
 
 pub fn register_routes(app: &mut Server<AppState>) {
+    app.at("/loaderio-d38c6f9011f994bed6edda5277b15bbf")
+        .get(verification_handler);
+
     app.at("/")
         .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(home::home_handler);
@@ -80,4 +83,12 @@ pub fn register_routes(app: &mut Server<AppState>) {
     app.at("/api/delete-post/:post_id")
         .with(GovernorMiddleware::per_minute(15).unwrap())
         .post(delete::delete_handler);
+}
+
+pub async fn verification_handler(req: Request<AppState>) -> tide::Result {
+    let response = Response::builder(200)
+        .body("loaderio-d38c6f9011f994bed6edda5277b15bbf")
+        .build();
+
+    Ok(response)
 }
