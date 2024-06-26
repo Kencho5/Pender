@@ -3,7 +3,7 @@ use crate::routes::*;
 use crate::utils::*;
 
 pub fn register_routes(app: &mut Server<AppState>) {
-    app.at("/loaderio-d38c6f9011f994bed6edda5277b15bbf")
+    app.at("/loaderio-d38c6f9011f994bed6edda5277b15bbf/")
         .get(verification_handler);
 
     app.at("/")
