@@ -4,7 +4,7 @@ use crate::utils::*;
 
 pub fn register_routes(app: &mut Server<AppState>) {
     app.at("/")
-        .with(GovernorMiddleware::per_hour(240).unwrap())
+        // .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(home::home_handler);
 
     app.at("/profile")
@@ -17,7 +17,7 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .post(upload::upload_post_handler);
 
     app.at("/post/:post_id")
-        .with(GovernorMiddleware::per_hour(240).unwrap())
+        // .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(post::post_handler);
 
     app.at("/search")
@@ -70,7 +70,7 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .post(reset_password::reset_code_handler);
 
     app.at("/api/load-posts")
-        .with(GovernorMiddleware::per_hour(240).unwrap())
+        // .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(load_posts::posts_handler);
 
     app.at("/api/analytics")
