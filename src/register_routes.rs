@@ -4,11 +4,11 @@ use crate::utils::*;
 
 pub fn register_routes(app: &mut Server<AppState>) {
     app.at("/")
-        // .with(GovernorMiddleware::per_hour(240).unwrap())
+        .with(GovernorMiddleware::per_hour(600).unwrap())
         .get(home::home_handler);
 
     app.at("/profile")
-        // .with(GovernorMiddleware::per_hour(240).unwrap())
+        .with(GovernorMiddleware::per_hour(240).unwrap())
         .get(profile::profile_handler);
 
     app.at("/upload")
@@ -17,11 +17,11 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .post(upload::upload_post_handler);
 
     app.at("/post/:post_id")
-        // .with(GovernorMiddleware::per_hour(240).unwrap())
+        .with(GovernorMiddleware::per_hour(600).unwrap())
         .get(post::post_handler);
 
     app.at("/search")
-        // .with(GovernorMiddleware::per_minute(30).unwrap())
+        .with(GovernorMiddleware::per_minute(60).unwrap())
         .get(search::search_handler);
 
     app.at("/user/:user_id")
@@ -31,7 +31,7 @@ pub fn register_routes(app: &mut Server<AppState>) {
     // AUTH ROUTES
     app.at("/login")
         .get(login::login_handler)
-        // .with(GovernorMiddleware::per_minute(10).unwrap())
+        .with(GovernorMiddleware::per_minute(10).unwrap())
         .post(login::login_post_handler);
 
     app.at("/register")
@@ -70,7 +70,7 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .post(reset_password::reset_code_handler);
 
     app.at("/api/load-posts")
-        // .with(GovernorMiddleware::per_hour(240).unwrap())
+        .with(GovernorMiddleware::per_hour(600).unwrap())
         .get(load_posts::posts_handler);
 
     app.at("/api/analytics")
