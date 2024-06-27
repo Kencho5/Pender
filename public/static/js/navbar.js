@@ -3,15 +3,6 @@ document.body.addEventListener("htmx:afterSwap", function (evt) {
     return;
   }
   window.scrollTo(0, -100);
-  // const mainContent = document.querySelector(".main-content");
-  // mainContent.style.opacity = 0;
-  //
-  // mainContent.style.transition = "none";
-  //
-  // mainContent.offsetHeight;
-  //
-  // mainContent.style.transition = "opacity 0.15s ease-in";
-  // mainContent.style.opacity = 1;
 });
 
 async function changeLang(lang) {
@@ -26,38 +17,6 @@ async function changeLang(lang) {
     swap: "outerHTML",
   });
 }
-
-// var menu = document.querySelector(".nav-dropdown");
-// var icon = document.querySelector("#hidden");
-//
-// function toggleMenu() {
-//   menu.classList.toggle("hide-menu");
-//   menu.classList.toggle("show-menu");
-//
-//   toggleIcon();
-// }
-
-// function toggleIcon() {
-//   const isHidden = icon.id === "hidden";
-//   if (icon.classList.contains("arrow-down")) {
-//     icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
-//   } else {
-//     icon.src = isHidden
-//       ? "/assets/icons/close.svg"
-//       : "/assets/icons/hamburger.svg";
-//   }
-//   icon.id = isHidden ? "open" : "hidden";
-// }
-
-// document.addEventListener("mousedown", (event) => {
-//   const target = event.target;
-//   const menuBtn = document.querySelector(".dropdownBtn");
-//   const isClickInside = menu.contains(target) || menuBtn.contains(target);
-//
-//   if (!isClickInside && !menu.classList.contains("hide-menu")) {
-//     toggleMenu();
-//   }
-// });
 
 function logout() {
   fetch("/logout", {

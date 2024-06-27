@@ -3,18 +3,20 @@
 <link rel="stylesheet" href="/static/css/profile.css?v={{ ver }}" />
 
 <body>
-  <div class="profile-main">
+  <div class="profile-main" x-data="tabManager()">
     <div class="selector-div">
       <p
-        class="selector-item active-selector profile-selector"
-        onmousedown="changeTab(this, 'details')"
+        class="selector-item profile-selector"
+        :class="{ 'active-selector': activeTab === 'details' }"
+        @mousedown="setActiveTab('details')"
       >
         <img src="/assets/icons/user.svg" alt="User" loading="lazy" />
         {{ tr.NAV.profile }}
       </p>
       <p
         class="selector-item posts-selector"
-        onmousedown="changeTab(this, 'posts')"
+        @mousedown="setActiveTab('posts')"
+        :class="{ 'active-selector': activeTab === 'posts' }"
       >
         <img
           src="/assets/icons/picture.svg"
@@ -26,7 +28,7 @@
         {{ tr.PROFILE.posts }}
       </p>
     </div>
-    <div class="details-div hide-tab">
+    <div class="details-div" x-cloak x-show="activeTab === 'details'">
       <h1>{{ tr.PROFILE.edit_details }}</h1>
       <p>{{ tr.PROFILE.title_helper }}</p>
       <form
@@ -144,7 +146,7 @@
         <input type="hidden" name="password" value="" />
       </form>
     </div>
-    <div class="posts-div hide-tab">
+    <div class="posts-div" x-show="activeTab === 'posts'">
       <h1>{{ count }} {{ tr.USER.posts }}</h1>
       <div class="posts-line"></div>
       <div class="posts">{% include "components/posts.html" %}</div>

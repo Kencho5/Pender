@@ -1,27 +1,16 @@
-var profileUrl = new URLSearchParams(window.location.search);
-var tab = profileUrl.get("tab") || "profile-selector";
-var target = tab == "profile-selector" ? "details" : "posts";
-changeTab(htmx.find(`.${tab}`), target);
+function tabManager() {
+  return {
+    activeTab: localStorage.getItem("activeTab") || "details",
 
-function changeTab(clickedElement, targetDivId) {
-  const selectorItems = document.querySelectorAll(".selector-item");
-  const detailsDiv = document.querySelector(".details-div");
-  const postsDiv = document.querySelector(".posts-div");
+    setActiveTab(tab) {
+      this.activeTab = tab;
+      localStorage.setItem("activeTab", tab);
+    },
 
-  selectorItems.forEach((item) => item.classList.remove("active-selector"));
-
-  clickedElement.classList.add("active-selector");
-
-  const isPostsTab = targetDivId === "posts";
-  postsDiv.classList.toggle("hide-tab", !isPostsTab);
-  detailsDiv.classList.toggle("hide-tab", isPostsTab);
-
-  profileUrl.set("tab", isPostsTab ? "posts-selector" : "profile-selector");
-  window.history.replaceState(
-    {},
-    "",
-    `${window.location.pathname}?${profileUrl.toString()}`,
-  );
+    isActiveTab(tab) {
+      return this.activeTab === tab;
+    },
+  };
 }
 
 var posts = htmx.findAll(".post");
