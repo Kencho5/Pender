@@ -3,19 +3,19 @@
 <link rel="stylesheet" href="/static/css/profile.css?v={{ ver }}" />
 
 <body>
-  <div class="profile-main" x-data="tabManager()">
+  <div class="profile-main" x-data="{ activeTab: 'details' }">
     <div class="selector-div">
       <p
         class="selector-item profile-selector"
         :class="{ 'active-selector': activeTab === 'details' }"
-        @mousedown="setActiveTab('details')"
+        @mousedown="activeTab = 'details'"
       >
         <img src="/assets/icons/user.svg" alt="User" loading="lazy" />
         {{ tr.NAV.profile }}
       </p>
       <p
         class="selector-item posts-selector"
-        @mousedown="setActiveTab('posts')"
+        @mousedown="activeTab = 'posts'"
         :class="{ 'active-selector': activeTab === 'posts' }"
       >
         <img
@@ -28,7 +28,7 @@
         {{ tr.PROFILE.posts }}
       </p>
     </div>
-    <div class="details-div" x-cloak x-show="activeTab === 'details'">
+    <div class="details-div" x-show="activeTab === 'details'">
       <h1>{{ tr.PROFILE.edit_details }}</h1>
       <p>{{ tr.PROFILE.title_helper }}</p>
       <form

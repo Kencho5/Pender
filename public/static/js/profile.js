@@ -1,18 +1,3 @@
-function tabManager() {
-  return {
-    activeTab: localStorage.getItem("activeTab") || "details",
-
-    setActiveTab(tab) {
-      this.activeTab = tab;
-      localStorage.setItem("activeTab", tab);
-    },
-
-    isActiveTab(tab) {
-      return this.activeTab === tab;
-    },
-  };
-}
-
 var posts = htmx.findAll(".post");
 for (const post of posts) {
   var deleteIcon = document.createElement("img");
