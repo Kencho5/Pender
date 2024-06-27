@@ -10,7 +10,13 @@
         :class="{ 'active-selector': activeTab === 'details' }"
         @mousedown="activeTab = 'details'"
       >
-        <img src="/assets/icons/user.svg" alt="User" loading="lazy" />
+        <img
+          src="/assets/icons/user.svg"
+          alt="User"
+          loading="lazy"
+          width="18"
+          height="18"
+        />
         {{ tr.NAV.profile }}
       </p>
       <p
@@ -45,6 +51,8 @@
             class="profile-input-icon"
             alt="User"
             loading="lazy"
+            width="18"
+            height="18"
           />
           <input
             type="text"
@@ -62,6 +70,8 @@
             class="profile-input-icon"
             alt="Email"
             loading="lazy"
+            width="18"
+            height="18"
           />
           <input
             type="text"
@@ -79,6 +89,8 @@
             class="profile-input-icon"
             alt="Phone"
             loading="lazy"
+            width="18"
+            height="18"
           />
           <input
             type="text"
@@ -96,6 +108,8 @@
             class="profile-input-icon"
             alt="City"
             loading="lazy"
+            width="18"
+            height="18"
           />
           {% include "components/cities.html" %}
         </div>
@@ -108,6 +122,8 @@
             class="profile-input-icon"
             alt="Facebook"
             loading="lazy"
+            width="18"
+            height="18"
           />
 
           <!-- prettier-ignore -->
@@ -146,7 +162,7 @@
         <input type="hidden" name="password" value="" />
       </form>
     </div>
-    <div class="posts-div" x-show="activeTab === 'posts'">
+    <div class="posts-div" x-show="activeTab === 'posts'" x-cloak>
       <h1>{{ count }} {{ tr.USER.posts }}</h1>
       <div class="posts-line"></div>
       <div class="posts">{% include "components/posts.html" %}</div>
