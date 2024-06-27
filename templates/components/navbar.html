@@ -1,5 +1,5 @@
 <div class="navbar-div">
-  <nav class="navbar">
+  <nav class="navbar" x-data="{ dropdownOpen: false }">
     <a href="/" class="logo-box">
       <img
         src="/assets/logo.svg?v={{ ver }}"
@@ -17,7 +17,11 @@
       </a>
 
       {% if claims %}
-      <a role="button" class="user-div dropdownBtn" onmousedown="toggleMenu()">
+      <a
+        role="button"
+        class="user-div dropdownBtn"
+        @mousedown="dropdownOpen = ! dropdownOpen"
+      >
         <div class="user-icon-div">
           <img
             src="/assets/icons/user_nav.svg"
@@ -35,6 +39,7 @@
           alt="Arrow"
           width="13"
           height="7"
+          :class="{ 'rotate-180': dropdownOpen }"
         />
       </a>
       {% else %}
@@ -50,7 +55,18 @@
       </a>
       {% endif %}
 
-      <div class="nav-dropdown hide-menu">
+      <div
+        class="nav-dropdown"
+        x-cloak
+        x-show="dropdownOpen"
+        @mousedown.outside="dropdownOpen = false"
+        x-transition:enter="dropdown-enter"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="dropdown-leave"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
         {% if claims %}
         <div class="user-info">
           <p class="user-name">{{ claims.name }}</p>
@@ -109,13 +125,13 @@
 
       <div class="hamburger-div">
         <img
-          src="/assets/icons/hamburger.svg"
+          x-bind:src="dropdownOpen ? '/assets/icons/close.svg' : '/assets/icons/hamburger.svg'"
           alt="Menu"
           width="32"
           height="32"
           class="menu-icon dropdownBtn"
           id="hidden"
-          onmousedown="toggleMenu()"
+          @mousedown="dropdownOpen = !dropdownOpen"
         />
       </div>
       {% endif %}

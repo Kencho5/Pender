@@ -27,37 +27,37 @@ async function changeLang(lang) {
   });
 }
 
-var menu = document.querySelector(".nav-dropdown");
-var icon = document.querySelector("#hidden");
+// var menu = document.querySelector(".nav-dropdown");
+// var icon = document.querySelector("#hidden");
+//
+// function toggleMenu() {
+//   menu.classList.toggle("hide-menu");
+//   menu.classList.toggle("show-menu");
+//
+//   toggleIcon();
+// }
 
-function toggleMenu() {
-  menu.classList.toggle("hide-menu");
-  menu.classList.toggle("show-menu");
+// function toggleIcon() {
+//   const isHidden = icon.id === "hidden";
+//   if (icon.classList.contains("arrow-down")) {
+//     icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
+//   } else {
+//     icon.src = isHidden
+//       ? "/assets/icons/close.svg"
+//       : "/assets/icons/hamburger.svg";
+//   }
+//   icon.id = isHidden ? "open" : "hidden";
+// }
 
-  toggleIcon();
-}
-
-function toggleIcon() {
-  const isHidden = icon.id === "hidden";
-  if (icon.classList.contains("arrow-down")) {
-    icon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
-  } else {
-    icon.src = isHidden
-      ? "/assets/icons/close.svg"
-      : "/assets/icons/hamburger.svg";
-  }
-  icon.id = isHidden ? "open" : "hidden";
-}
-
-document.addEventListener("mousedown", (event) => {
-  const target = event.target;
-  const menuBtn = document.querySelector(".dropdownBtn");
-  const isClickInside = menu.contains(target) || menuBtn.contains(target);
-
-  if (!isClickInside && !menu.classList.contains("hide-menu")) {
-    toggleMenu();
-  }
-});
+// document.addEventListener("mousedown", (event) => {
+//   const target = event.target;
+//   const menuBtn = document.querySelector(".dropdownBtn");
+//   const isClickInside = menu.contains(target) || menuBtn.contains(target);
+//
+//   if (!isClickInside && !menu.classList.contains("hide-menu")) {
+//     toggleMenu();
+//   }
+// });
 
 function logout() {
   fetch("/logout", {
