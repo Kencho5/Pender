@@ -9,7 +9,7 @@
         class="selector-item active-selector profile-selector"
         onmousedown="changeTab(this, 'details')"
       >
-        <img src="/assets/icons/user.svg" alt="User" />
+        <img src="/assets/icons/user.svg" alt="User" loading="lazy" />
         {{ tr.NAV.profile }}
       </p>
       <p
@@ -20,7 +20,8 @@
           src="/assets/icons/picture.svg"
           width="18"
           height="18"
-          alt="User"
+          alt="Posts"
+          loading="lazy"
         />
         {{ tr.PROFILE.posts }}
       </p>
@@ -41,6 +42,7 @@
             src="/assets/icons/user.svg"
             class="profile-input-icon"
             alt="User"
+            loading="lazy"
           />
           <input
             type="text"
@@ -57,6 +59,7 @@
             src="/assets/icons/email.svg"
             class="profile-input-icon"
             alt="Email"
+            loading="lazy"
           />
           <input
             type="text"
@@ -73,6 +76,7 @@
             src="/assets/icons/phone.svg"
             class="profile-input-icon"
             alt="Phone"
+            loading="lazy"
           />
           <input
             type="text"
@@ -89,6 +93,7 @@
             src="/assets/icons/location.svg"
             class="profile-input-icon"
             alt="City"
+            loading="lazy"
           />
           {% include "components/cities.html" %}
         </div>
@@ -100,6 +105,7 @@
             src="/assets/icons/facebook.svg"
             class="profile-input-icon"
             alt="Facebook"
+            loading="lazy"
           />
 
           <!-- prettier-ignore -->
