@@ -31,13 +31,13 @@
 
 ## 🚀 Key Features
 
-- 🐾 **Home:** Discover the latest user-uploaded posts.
-- 🔍 **Search:** Explore pets using filters.
-- 👤 **Profile:** Manage your details and posts.
-- 📸 **Upload:** Upload your own post.
-- 🔐 **Login/Register:** Register with email and receive confirmation code.
-- ⚡ **Performance:** 100 Lighthouse Score with SPA navigation on route changes.
-- 💻 **Usage:** Runs on 15MB ram. Executable size is 14MB.
+- **Home:** Discover the latest user-uploaded posts.
+- **Search:** Explore pets using filters.
+- **Profile:** Manage your details and posts.
+- **Upload:** Upload your own post.
+- **Login/Register:** Register with email and receive confirmation code.
+- **Performance:** 100 Lighthouse Score with SPA navigation on route changes.
+- **Usage:** Runs on 15MB ram. Executable size is 14MB.
 
 ## ⚙️ Development
 
