@@ -29,17 +29,17 @@
 ![screenshot](https://i.imgur.com/lPiO1fe.png)
 ![screenshot](https://i.imgur.com/u5kGG1n.png)
 
-## Key Features
+## 🚀 Key Features
 
-- **Home:** Discover the latest user-uploaded posts.
-- **Search:** Explore pets using filters.
-- **Profile:** Manage your details and posts.
-- **Upload:** Upload your own post.
-- **Login/Register:** Register with email and receive confirmation code.
-- **Performance:** 100 Lighthouse Score with SPA navigation on route changes.
-- **Usage:** Runs on 15MB ram. Executable size is 14MB.
+- 🐾 **Home:** Discover the latest user-uploaded posts.
+- 🔍 **Search:** Explore pets using filters.
+- 👤 **Profile:** Manage your details and posts.
+- 📸 **Upload:** Upload your own post.
+- 🔐 **Login/Register:** Register with email and receive confirmation code.
+- ⚡ **Performance:** 100 Lighthouse Score with SPA navigation on route changes.
+- 💻 **Usage:** Runs on 15MB ram. Executable size is 14MB.
 
-## Development
+## ⚙️ Development
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and
 [Cargo](https://crates.io/). From your command line:
@@ -55,7 +55,7 @@ $ cd Pender
 $ cargo run
 ```
 
-## Contact
+## 💬 Contact
 
 For any inquiries or suggestions regarding this project, feel free to reach out:
 
