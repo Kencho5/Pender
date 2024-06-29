@@ -23,13 +23,19 @@
     box-sizing: border-box;
     border-radius: 22px;
     padding: 38px;
-    background: url("/assets/search-img.avif") no-repeat center/cover;
+    background: url("/assets/search-img.webp") no-repeat center/cover;
     z-index: 1;
 
     .search-title {
       font-size: 36px;
       text-align: center;
       color: var(--accent);
+    }
+  }
+
+  @supports (background-image: url("/assets/search-img.avif")) {
+    .search-content {
+      background: url("/assets/search-img.avif") no-repeat center/cover;
     }
   }
   .search-form {
