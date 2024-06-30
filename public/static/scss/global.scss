@@ -76,27 +76,15 @@ a {
 .blurred-img {
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-}
 
-.blurred-img img {
-  opacity: 0;
-  animation: scaleIn 0.3s ease-out forwards;
-}
-
-@keyframes scaleIn {
-  from {
+  img {
     opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
+    transition: opacity 200ms ease-in;
   }
 }
 
 .blurred-img::before {
-  content: "";
+  /* content: ""; */
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -116,14 +104,10 @@ a {
   }
 }
 
-.blurred-img[x-cloak] {
-  display: none;
-}
-
-.blurred-img[x-bind\:class]::before {
+.blurred-img.loaded::before {
   animation: none;
 }
 
-.blurred-img[x-bind\:class] img {
+.blurred-img.loaded img {
   opacity: 1;
 }
