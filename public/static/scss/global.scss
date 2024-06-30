@@ -11,8 +11,8 @@
 }
 
 @font-face {
-  font-family: "TBCXMedium";
-  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXMedium.woff2");
+  font-family: "GEOMedium";
+  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/GEOMedium.woff2");
 
   font-weight: 500;
   font-style: normal;
@@ -20,23 +20,23 @@
 }
 
 @font-face {
-  font-family: "TBCXMedium";
-  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXBold.woff2");
+  font-family: "GEOMedium";
+  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/GEOBold.woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "TBCXMedium";
-  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/TBCXRegular.woff2");
+  font-family: "GEOMedium";
+  src: url("https://pender-assets.s3.eu-central-1.amazonaws.com/fonts/GEORegular.woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: "TBCXMedium", sans-serif;
+  font-family: "GEOMedium", sans-serif;
   font-weight: 500;
 
   letter-spacing: 0.6px;
