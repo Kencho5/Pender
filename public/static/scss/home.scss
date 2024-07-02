@@ -33,11 +33,6 @@
     }
   }
 
-  @supports (background-image: url("/assets/search-img.avif")) {
-    .search-content {
-      background: url("/assets/search-img.avif") no-repeat center/cover;
-    }
-  }
   .search-form {
     position: relative;
   }
