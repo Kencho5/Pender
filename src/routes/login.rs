@@ -35,6 +35,7 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
                         Cookie::build("_jwt", token)
                             .max_age(time::Duration::days(7))
                             .same_site(tide::http::cookies::SameSite::Lax)
+                            .secure(true)
                             .path("/")
                             .finish(),
                     );
