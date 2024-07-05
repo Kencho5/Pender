@@ -166,7 +166,7 @@
         class="posts"
         hx-get="/api/load-posts"
         hx-trigger="load"
-        hx-swap="innerHTML"
+        hx-swap="innerHTML transition:false"
         hx-on::after-swap="this.classList.add('fade-in')"
       >
         {% for i in range(end=8) %}

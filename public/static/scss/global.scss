@@ -111,3 +111,78 @@ a {
 .blurred-img.loaded img {
   opacity: 1;
 }
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8); /* Start with a scaled-down size */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Scale up to normal size */
+  }
+}
+
+@keyframes scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1); /* Start at normal size */
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8); /* Scale down */
+  }
+}
+
+/* define animations for the old and new content */
+::view-transition-old(slide-it) {
+  animation: 100ms cubic-bezier(0.4, 0, 1, 1) both scale-out;
+}
+
+::view-transition-new(slide-it) {
+  animation: 100ms cubic-bezier(0, 0, 0.2, 1) 90ms both scale-in;
+}
+
+/* tie the view transition to a given CSS class */
+.page-transition {
+  view-transition-name: slide-it;
+}
+
+/* @keyframes fade-in { */
+/*   from { */
+/*     opacity: 0; */
+/*   } */
+/* } */
+/**/
+/* @keyframes fade-out { */
+/*   to { */
+/*     opacity: 0; */
+/*   } */
+/* } */
+/**/
+/* @keyframes slide-from-right { */
+/*   from { */
+/*     transform: translateX(90px); */
+/*   } */
+/* } */
+/**/
+/* @keyframes slide-to-left { */
+/*   to { */
+/*     transform: translateX(-90px); */
+/*   } */
+/* } */
+/**/
+/* ::view-transition-old(slide-it) { */
+/*   animation: */
+/*     100ms cubic-bezier(0.4, 0, 1, 1) both fade-out, */
+/*     200ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left; */
+/* } */
+/* ::view-transition-new(slide-it) { */
+/*   animation: */
+/*     100ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in, */
+/*     200ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right; */
+/* } */
+/**/
+/* .page-transition { */
+/*   view-transition-name: slide-it; */
+/* } */
