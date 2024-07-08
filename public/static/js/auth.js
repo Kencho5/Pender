@@ -36,7 +36,8 @@ async function loginStatus() {
   });
 }
 
-function registerStatus() {
+async function registerStatus() {
+  await delay(50);
   const form = document.querySelector(".auth-form");
   const successDiv = document.querySelector(".success-div");
   const state = document.querySelector(".msg").firstChild;
