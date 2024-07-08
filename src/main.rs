@@ -87,6 +87,7 @@ async fn cloudfront_redirect(req: Request<AppState>) -> tide::Result {
 
     let cloudfront_url = format!("https://d19qt7p7fni613.cloudfront.net{}", branch);
     let redirect_url = format!("{}{}", cloudfront_url, path);
+    // println!("{:?}", redirect_url);
 
     let mut response = Response::new(302);
     response.insert_header("Location", redirect_url);
