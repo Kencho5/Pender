@@ -8,11 +8,17 @@ use crate::imports::*;
 use std::fs::File;
 use std::io::Read;
 use std::process::Command;
+use std::str;
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
     // tide::log::start();
     let config = config::config_manager::load_config().expect("Config Error.");
+    let output = Command::new("git")
+        .args(&["rev-parse", "--abbrev-ref", "HEAD"])
+        .output()
+        .expect("Failed to execute command");
+    let branch = str::from_utf8(&output.stdout).unwrap().trim();
 
     let mut tera = Tera::new("./templates/**/*")?;
 
@@ -34,7 +40,8 @@ async fn main() -> tide::Result<()> {
         tera,
         translations,
         config: config.clone(),
-        version: version,
+        version,
+        branch: branch.to_string(),
     });
 
     app.with(tide::sessions::SessionMiddleware::new(
@@ -52,13 +59,37 @@ async fn main() -> tide::Result<()> {
     );
     app.with(SQLxMiddleware::<Postgres>::new(&connection_url).await?);
 
-    app.at("/assets").serve_dir("./public/assets/")?;
-    app.at("/static").serve_dir("./public/static/")?;
-    app.at("/post-images")
-        .serve_dir("/var/uploads/post-images/")?;
+    if config.enviorement == "local" {
+        // Serve static files locally during development
+        app.at("/assets").serve_dir("./public/assets/")?;
+        app.at("/static").serve_dir("./public/static/")?;
+        app.at("/post-images")
+            .serve_dir("/var/uploads/post-images/")?;
+    } else {
+        // Serve static files from CloudFront URLs in production
+        app.at("/assets/*").get(cloudfront_redirect);
+        app.at("/static/*").get(cloudfront_redirect);
+        app.at("/post-images/*").get(cloudfront_redirect);
+    }
 
     register_routes::register_routes(&mut app);
 
     app.listen(format!("127.0.0.1:{}", config.port)).await?;
     Ok(())
+}
+
+async fn cloudfront_redirect(req: Request<AppState>) -> tide::Result {
+    let path = req.url().path();
+    let mut branch = format!("/{}", req.state().branch.clone());
+    if path.contains("post-images") {
+        branch = "".to_string();
+    }
+
+    let cloudfront_url = format!("https://d19qt7p7fni613.cloudfront.net{}", branch);
+    let redirect_url = format!("{}{}", cloudfront_url, path);
+
+    let mut response = Response::new(302);
+    response.insert_header("Location", redirect_url);
+
+    Ok(response)
 }

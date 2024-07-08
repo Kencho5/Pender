@@ -9,6 +9,7 @@ pub struct Config {
     pub tide_secret: String,
     pub port: String,
     pub aws: AwsConfig,
+    pub enviorement: String,
 }
 
 #[derive(Deserialize, Clone)]
