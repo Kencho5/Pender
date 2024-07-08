@@ -23,7 +23,8 @@ inputs.forEach((input) => {
   });
 });
 
-function loginStatus() {
+async function loginStatus() {
+  await delay(50);
   const state = document.querySelector(".msg").childNodes[0].classList[0];
   if (state != "success") return;
 

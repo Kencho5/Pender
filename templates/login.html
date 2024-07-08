@@ -9,7 +9,7 @@
     <form
       hx-post="/login"
       hx-target=".msg"
-      hx-on:htmx:after-request="loginStatus()"
+      hx-on:htmx:after-request="loginStatus(event)"
       hx-trigger="submit[validateForm('loginForm')]"
       class="auth-form"
       name="loginForm"
