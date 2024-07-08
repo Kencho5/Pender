@@ -41,6 +41,7 @@ async fn main() -> tide::Result<()> {
         translations,
         config: config.clone(),
         version,
+        branch: branch.to_string(),
         content_url: format!("https://d19qt7p7fni613.cloudfront.net/{}", branch),
     });
 

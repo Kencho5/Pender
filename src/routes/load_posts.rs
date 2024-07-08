@@ -9,7 +9,9 @@ pub async fn posts_handler(mut req: Request<AppState>) -> tide::Result {
     let posts = get_posts(&mut req).await?;
     let state = req.state();
     let translations = state.translations.get(&lang);
-    let mut content_url = state.content_url.clone();
+
+    let branch = format!("/{}", &state.branch);
+    let mut content_url = state.content_url.clone().replace(&branch, "");
     if state.config.enviorement == "local" {
         content_url = "".to_string();
     }

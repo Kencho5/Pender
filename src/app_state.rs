@@ -7,5 +7,6 @@ pub struct AppState {
     pub translations: serde_json::Value,
     pub config: Config,
     pub version: String,
+    pub branch: String,
     pub content_url: String,
 }
