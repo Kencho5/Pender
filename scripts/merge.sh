@@ -5,4 +5,4 @@ git p
 git checkout staging
 
 . ./scripts/sync_aws.sh staging
-. ./scripts/sync_aws.sh prod
+. ./scripts/sync_aws.sh main 

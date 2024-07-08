@@ -60,12 +60,10 @@ async fn main() -> tide::Result<()> {
     );
     app.with(SQLxMiddleware::<Postgres>::new(&connection_url).await?);
 
-    if config.enviorement == "local" {
-        app.at("/assets").serve_dir("./public/assets/")?;
-        app.at("/static").serve_dir("./public/static/")?;
-        app.at("/post-images")
-            .serve_dir("/var/uploads/post-images/")?;
-    }
+    app.at("/assets").serve_dir("./public/assets/")?;
+    app.at("/static").serve_dir("./public/static/")?;
+    app.at("/post-images")
+        .serve_dir("/var/uploads/post-images/")?;
 
     register_routes::register_routes(&mut app);
 
