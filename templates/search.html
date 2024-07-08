@@ -1,7 +1,13 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/search.css?v={{ ver }}" />
-<link rel="stylesheet" href="/static/css/posts.css?v={{ ver }}" />
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/search.css?v={{ ver }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/posts.css?v={{ ver }}"
+/>
 
 <body>
   <div class="search-content">
@@ -18,7 +24,7 @@
       >
         <div class="search-input">
           <div class="input-div">
-            <img src="/assets/icons/search.svg" alt="Search" />
+            <img src="{{content_url}}/assets/icons/search.svg" alt="Search" />
             <input
               type="text"
               name="breed"
@@ -35,7 +41,7 @@
             class="filters-btn"
             onmousedown="toggleFilters()"
           >
-            <img src="/assets/icons/filter.svg" alt="Filter" />
+            <img src="{{content_url}}/assets/icons/filter.svg" alt="Filter" />
             {{ tr.HOME.filter }}
             <div class="filters-num">1</div>
           </button>
@@ -49,14 +55,14 @@
         {% include "components/posts.html" %}
       {% else %}
       <div class="not-found">
-        <img src="/assets/icons/not_found.svg" alt="Not Found" />
+        <img src="{{content_url}}/assets/icons/not_found.svg" alt="Not Found" />
         {{ tr.SEARCH.not_found }}
       </div>
       {% endif %}
     </div>
     <div class="pagination">
       <button type="button" onmousedown="changePage('prev')">
-        <img src="/assets/icons/arrow.svg" alt="Arrow Left" />
+        <img src="{{content_url}}/assets/icons/arrow.svg" alt="Arrow Left" />
       </button>
       <p class="pageNum">1</p>
       <button
@@ -64,7 +70,7 @@
         class="arrow-right"
         onmousedown="changePage('next')"
       >
-        <img src="/assets/icons/arrow.svg" alt="Arrow Right" />
+        <img src="{{content_url}}/assets/icons/arrow.svg" alt="Arrow Right" />
       </button>
     </div>
   </div>
@@ -72,7 +78,7 @@
   <!-- FILTERS MODAL -->
   {% include "components/filters.html" %}
 
-  <script async src="/static/js/home.js?v={{ ver }}"></script>
-  <script src="/static/js/search.js?v={{ ver }}"></script>
+  <script async src="{{content_url}}/static/js/home.js?v={{ ver }}"></script>
+  <script src="{{content_url}}/static/js/search.js?v={{ ver }}"></script>
 </body>
 {% endblock content %}

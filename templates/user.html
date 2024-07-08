@@ -1,11 +1,11 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/user.css?v={{ ver }}" />
+<link rel="stylesheet" href="{{content_url}}/static/css/user.css?v={{ ver }}" />
 
 <body>
   <div class="user-profile-container">
     <div class="user-container">
-      <img src="/assets/search-img.webp" alt="User Img" />
+      <img src="{{content_url}}/assets/search-img.webp" alt="User Img" />
       <div class="user-initials">GC</div>
       <div class="user-info">
         <h1>{{ user.name }}</h1>
@@ -15,7 +15,10 @@
 
       <div class="details">
         <div class="detail">
-          <img src="/assets/icons/user_location.svg" alt="Location" />
+          <img
+            src="{{content_url}}/assets/icons/user_location.svg"
+            alt="Location"
+          />
           <div>
             <p>{{ tr.AUTH.city }}</p>
             <h1>{{ user.city }}</h1>
@@ -23,7 +26,7 @@
         </div>
         {% if user.facebook != '' and user.facebook != ' '%}
         <div class="detail">
-          <img src="/assets/icons/user_fb.svg" alt="Location" />
+          <img src="{{content_url}}/assets/icons/user_fb.svg" alt="Location" />
           <div>
             <p>{{ tr.USER.fb }}</p>
             <a href="{{ user.facebook }}" target="_blank"

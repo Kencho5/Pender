@@ -1,6 +1,9 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/profile.css?v={{ ver }}" />
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/profile.css?v={{ ver }}"
+/>
 
 <body>
   <div class="profile-main" x-data="{ activeTab: 'details' }">
@@ -11,7 +14,7 @@
         @mousedown="activeTab = 'details'"
       >
         <img
-          src="/assets/icons/user.svg"
+          src="{{content_url}}/assets/icons/user.svg"
           alt="User"
           loading="lazy"
           width="18"
@@ -25,7 +28,7 @@
         :class="{ 'active-selector': activeTab === 'posts' }"
       >
         <img
-          src="/assets/icons/picture.svg"
+          src="{{content_url}}/assets/icons/picture.svg"
           width="18"
           height="18"
           alt="Posts"
@@ -47,7 +50,7 @@
         <div class="input-div">
           <label for="name">{{ tr.AUTH.name }}</label>
           <img
-            src="/assets/icons/user.svg"
+            src="{{content_url}}/assets/icons/user.svg"
             class="profile-input-icon"
             alt="User"
             loading="lazy"
@@ -66,7 +69,7 @@
         <div class="input-div">
           <label for="email">{{ tr.AUTH.email }}</label>
           <img
-            src="/assets/icons/email.svg"
+            src="{{content_url}}/assets/icons/email.svg"
             class="profile-input-icon"
             alt="Email"
             loading="lazy"
@@ -85,7 +88,7 @@
         <div class="input-div">
           <label for="phone">{{ tr.AUTH.phone }}</label>
           <img
-            src="/assets/icons/phone.svg"
+            src="{{content_url}}/assets/icons/phone.svg"
             class="profile-input-icon"
             alt="Phone"
             loading="lazy"
@@ -104,7 +107,7 @@
         <div class="input-div">
           <label for="city">{{ tr.AUTH.city }}</label>
           <img
-            src="/assets/icons/location.svg"
+            src="{{content_url}}/assets/icons/location.svg"
             class="profile-input-icon"
             alt="City"
             loading="lazy"
@@ -118,7 +121,7 @@
         <div class="input-div">
           <label for="facebook">{{ tr.PROFILE.facebook }}</label>
           <img
-            src="/assets/icons/facebook.svg"
+            src="{{content_url}}/assets/icons/facebook.svg"
             class="profile-input-icon"
             alt="Facebook"
             loading="lazy"
@@ -171,7 +174,7 @@
   <div id="confirmModal" class="confirm-modal">
     <div class="content">
       <div class="alert-icon">
-        <img src="/assets/icons/alert.svg" alt="Alert" />
+        <img src="{{content_url}}/assets/icons/alert.svg" alt="Alert" />
       </div>
       <h1>{{ tr.PROFILE.sure }}</h1>
       <p>{{ tr.PROFILE.action }}</p>
@@ -195,6 +198,6 @@
   </div>
   {% include "components/toast.html" %}
 
-  <script src="/static/js/profile.js?v={{ ver }}"></script>
+  <script src="{{content_url}}/static/js/profile.js?v={{ ver }}"></script>
 </body>
 {% endblock content %}

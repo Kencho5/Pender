@@ -1,11 +1,14 @@
-<link rel="stylesheet" href="/static/css/filters.css?v={{ ver }}" />
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/filters.css?v={{ ver }}"
+/>
 
 <div id="filtersModal" class="modal">
   <div class="modal-content">
     <div class="modal-title">
       <h1>{{ tr.FILTERS.additional }}</h1>
       <img
-        src="/assets/icons/close.svg"
+        src="{{content_url}}/assets/icons/close.svg"
         alt="Close"
         class="close"
         onmousedown="toggleFilters()"
@@ -55,7 +58,7 @@
 
         <div class="input-div">
           <img
-            src="/assets/icons/calendar.svg"
+            src="{{content_url}}/assets/icons/calendar.svg"
             class="input-icon"
             alt="Calendar"
           />
@@ -67,7 +70,10 @@
           />
           <p class="age-selector" id="all" onmousedown="toggleAgeDropdown()">
             {{ tr.FILTERS.age_type }}
-            <img src="/assets/icons/dropdown-age.svg" alt="Arrow Down" />
+            <img
+              src="{{content_url}}/assets/icons/dropdown-age.svg"
+              alt="Arrow Down"
+            />
           </p>
 
           <div
@@ -84,7 +90,7 @@
         <p>{{ tr.FILTERS.location }}</p>
         <div class="input-div">
           <img
-            src="/assets/icons/location.svg"
+            src="{{content_url}}/assets/icons/location.svg"
             alt="Location"
             class="input-icon"
           />
@@ -98,7 +104,7 @@
         <div class="input-div price-div">
           <div class="price-input">
             <img
-              src="/assets/icons/lari.svg"
+              src="{{content_url}}/assets/icons/lari.svg"
               width="12"
               height="16"
               alt="Price"
@@ -112,7 +118,7 @@
           </div>
           <div class="price-input">
             <img
-              src="/assets/icons/lari.svg"
+              src="{{content_url}}/assets/icons/lari.svg"
               width="12"
               height="16"
               alt="Price"
@@ -132,7 +138,7 @@
     <div class="filter-row">
       <div class="input-div submit-div">
         <button type="button" onmousedown="clearFilters()">
-          <img src="/assets/icons/cancel.svg" alt="Cancel" />
+          <img src="{{content_url}}/assets/icons/cancel.svg" alt="Cancel" />
           {{ tr.FILTERS.cancel }}
         </button>
         <!-- prettier-ignore   -->
@@ -154,4 +160,4 @@
   </div>
 </div>
 
-<script async src="/static/js/filters.js?v={{ ver }}"></script>
+<script async src="{{content_url}}/static/js/filters.js?v={{ ver }}"></script>

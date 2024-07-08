@@ -9,12 +9,17 @@ pub async fn posts_handler(mut req: Request<AppState>) -> tide::Result {
     let posts = get_posts(&mut req).await?;
     let state = req.state();
     let translations = state.translations.get(&lang);
+    let mut content_url = state.content_url.clone();
+    if state.config.enviorement == "local" {
+        content_url = "".to_string();
+    }
 
     let context = context! {
         "tr" => translations,
         "posts" => posts,
         "ver" => state.version,
         "route" => req.url().path(),
+        "content_url" => content_url
     };
 
     let response = state

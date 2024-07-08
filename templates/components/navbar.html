@@ -2,7 +2,7 @@
   <nav class="navbar" x-data="{ dropdownOpen: false }">
     <a href="/" class="logo-box">
       <img
-        src="/assets/logo.svg?v={{ ver }}"
+        src="{{content_url}}/assets/logo.svg?v={{ ver }}"
         width="59"
         height="42"
         alt="Logo"
@@ -12,7 +12,7 @@
 
     <div class="nav-right">
       <a href="/upload" class="upload">
-        <img src="/assets/icons/upload_nav.svg" alt="Upload" />
+        <img src="{{content_url}}/assets/icons/upload_nav.svg" alt="Upload" />
         {{ tr.NAV.upload }}
       </a>
 
@@ -24,7 +24,7 @@
       >
         <div class="user-icon-div">
           <img
-            src="/assets/icons/user_nav.svg"
+            src="{{content_url}}/assets/icons/user_nav.svg"
             width="16"
             height="18"
             class="user-icon"
@@ -33,7 +33,7 @@
         </div>
         <p>{{ claims.name | split(pat=" ") | first }}</p>
         <img
-          src="/assets/icons/dropdown.svg"
+          src="{{content_url}}/assets/icons/dropdown.svg"
           class="arrow-down"
           id="hidden"
           alt="Arrow"
@@ -46,7 +46,7 @@
       <a href="/login" class="user-div login-div">
         <div class="user-icon-div">
           <img
-            src="/assets/icons/login.svg"
+            src="{{content_url}}/assets/icons/login.svg"
             class="user-icon login-icon"
             alt="User"
           />
@@ -78,21 +78,21 @@
         <div class="dropdown-actions">
           {% if claims %}
           <a href="/profile" class="dropdown-action">
-            <img src="/assets/icons/user.svg" alt="User" />
+            <img src="{{content_url}}/assets/icons/user.svg" alt="User" />
             {{ tr.NAV.profile }}
           </a>
           {% else %}
           <a href="/login" class="dropdown-action">
-            <img src="/assets/icons/login.svg" alt="Log In" />
+            <img src="{{content_url}}/assets/icons/login.svg" alt="Log In" />
             {{ tr.NAV.login }}
           </a>
           {% endif %}
           <a href="/search?animal=all" class="dropdown-action">
-            <img src="/assets/icons/picture.svg" alt="Picture" />
+            <img src="{{content_url}}/assets/icons/picture.svg" alt="Picture" />
             {{ tr.PROFILE.posts }}
           </a>
           <a href="/upload" class="dropdown-action">
-            <img src="/assets/icons/upload.svg" alt="Upload" />
+            <img src="{{content_url}}/assets/icons/upload.svg" alt="Upload" />
             {{ tr.NAV.upload }}
           </a>
         </div>
@@ -109,7 +109,7 @@
             hx-trigger="mousedown"
             hx-on::before-request="logout()"
           >
-            <img src="/assets/icons/logout.svg" alt="Logout" />
+            <img src="{{content_url}}/assets/icons/logout.svg" alt="Logout" />
             {{ tr.NAV.logout }}
           </a>
         </div>
@@ -117,7 +117,7 @@
       </div>
 
       <a role="link" onmousedown="changeLang('{{ lang }}')" class="navbar-lang">
-        <img src="/assets/icons/{{lang}}.svg" alt="Flag" />
+        <img src="{{content_url}}/assets/icons/{{lang}}.svg" alt="Flag" />
       </a>
 
       {% if not claims %}
@@ -125,7 +125,7 @@
 
       <div class="hamburger-div">
         <img
-          x-bind:src="dropdownOpen ? '/assets/icons/close.svg' : '/assets/icons/hamburger.svg'"
+          x-bind:src="{{content_url}}dropdownOpen ? '/assets/icons/close.svg' : '/assets/icons/hamburger.svg'"
           alt="Menu"
           width="32"
           height="32"

@@ -1,6 +1,6 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/auth.css?v={{ ver }}" />
+<link rel="stylesheet" href="{{content_url}}/static/css/auth.css?v={{ ver }}" />
 
 <body>
   <div class="form-div">
@@ -21,7 +21,11 @@
 
       <!-- EMAIL INPUT -->
       <div class="input-group">
-        <img src="/assets/icons/email.svg" alt="Email" class="icon-svg icon" />
+        <img
+          src="{{content_url}}/assets/icons/email.svg"
+          alt="Email"
+          class="icon-svg icon"
+        />
         <input
           type="text"
           name="email"
@@ -33,7 +37,7 @@
       <!-- PASSWORD INPUT -->
       <div class="input-group">
         <img
-          src="/assets/icons/password.svg"
+          src="{{content_url}}/assets/icons/password.svg"
           alt="Password"
           class="icon-svg icon"
         />
@@ -76,6 +80,6 @@
     </form>
   </div>
 
-  <script src="/static/js/auth.js?v={{ ver }}"></script>
+  <script src="{{content_url}}/static/js/auth.js?v={{ ver }}"></script>
 </body>
 {% endblock content %}

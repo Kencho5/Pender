@@ -1,6 +1,6 @@
 {% extends "components/layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="/static/css/post.css?v={{ ver }}" />
+<link rel="stylesheet" href="{{content_url}}/static/css/post.css?v={{ ver }}" />
 
 <body>
   {% if post == 'error' %}
@@ -12,7 +12,7 @@
       <div class="title">
         <h1 class="breed">{{ post.breed }}</h1>
         <p>
-          <img src="/assets/icons/location.svg" alt="Location" />
+          <img src="{{content_url}}/assets/icons/location.svg" alt="Location" />
           {{ post.city | replace(from='"', to='') }}, საქართველო
         </p>
       </div>
@@ -21,7 +21,7 @@
       <div class="images-div">
         <div class="images blurred-img">
           <img
-            src="/post-images/{{post.id}}/0.jpg"
+            src="{{content_url}}/post-images/{{post.id}}/0.jpg"
             loading="lazy"
             class="image active-image"
             image-id="0"
@@ -33,7 +33,7 @@
           <!-- prettier-ignore -->
           {% for x in range(start=1, end=post.photos | int) %}
           <img
-            src="/post-images/{{post.id}}/{{x}}.jpg"
+            src="{{content_url}}/post-images/{{post.id}}/{{x}}.jpg"
             class="image"
             alt="Post Image"
             image-id="{{x}}"
@@ -43,11 +43,14 @@
         {% endif %} {% if post.photos != '1' %}
         <div class="arrows">
           <div class="arrow" onmousedown="showPreviousImage()">
-            <img src="/assets/icons/arrow.svg" alt="Arrow Left" />
+            <img
+              src="{{content_url}}/assets/icons/arrow.svg"
+              alt="Arrow Left"
+            />
           </div>
           <div class="arrow" onmousedown="showNextImage()">
             <img
-              src="/assets/icons/arrow.svg"
+              src="{{content_url}}/assets/icons/arrow.svg"
               class="arrow-right"
               alt="Arrow Right"
             />
@@ -73,14 +76,14 @@
       </div>
 
       <p class="views-mobile views">
-        <img src="/assets/icons/eye.svg" alt="Eye" />
+        <img src="{{content_url}}/assets/icons/eye.svg" alt="Eye" />
         {{ post.views }} {{ tr.POST.views }}
       </p>
 
       <div class="post-details">
         <!-- ANIMAL -->
         <div class="detail-div">
-          <img src="/assets/icons/paw.svg" alt="Paw" />
+          <img src="{{content_url}}/assets/icons/paw.svg" alt="Paw" />
           <div class="detail">
             <h1>{{ tr.UPLOAD.animal }}</h1>
             <p>{{ tr.ANIMALS[post.animal] }}</p>
@@ -88,7 +91,7 @@
         </div>
         <!-- AGE -->
         <div class="detail-div">
-          <img src="/assets/icons/calendar.svg" alt="Calendar" />
+          <img src="{{content_url}}/assets/icons/calendar.svg" alt="Calendar" />
           <div class="detail">
             <h1>{{ tr.UPLOAD.age }}</h1>
             <p>{{ post.age }} {{ tr.FILTERS[post.age_type] }}</p>
@@ -96,7 +99,7 @@
         </div>
         <!-- GENDER -->
         <div class="detail-div">
-          <img src="/assets/icons/gender.svg" alt="Gender" />
+          <img src="{{content_url}}/assets/icons/gender.svg" alt="Gender" />
           <div class="detail">
             <h1>{{ tr.UPLOAD.gender }}</h1>
             <p>{{ tr.UPLOAD[post.sex] }}</p>
@@ -104,7 +107,7 @@
         </div>
         <!-- BREED -->
         <div class="detail-div">
-          <img src="/assets/icons/breed.svg" alt="Breed" />
+          <img src="{{content_url}}/assets/icons/breed.svg" alt="Breed" />
           <div class="detail">
             <h1>{{ tr.UPLOAD.breed }}</h1>
             <p>{{ post.breed }}</p>
@@ -113,11 +116,8 @@
       </div>
       <div class="description">{{ post.description }}</div>
       <div class="line second-line"></div>
-      <a
-        href="/user/{{ post.user_id }}"
-        class="user second-user"
-      >
-        <img src="/assets/icons/avatar.svg" alt="Avatar" />
+      <a href="/user/{{ post.user_id }}" class="user second-user">
+        <img src="{{content_url}}/assets/icons/avatar.svg" alt="Avatar" />
         <p class="name">{{ post.user_name }}</p>
       </a>
     </div>
@@ -131,7 +131,7 @@
             {{ tr.POSTTYPE[post.post_type] }}
           </p>
           <p class="views">
-            <img src="/assets/icons/eye.svg" alt="Eye" />
+            <img src="{{content_url}}/assets/icons/eye.svg" alt="Eye" />
             {{ post.views }} {{ tr.POST.views }}
           </p>
         </div>
@@ -139,11 +139,8 @@
 
         <div class="user-details-div">
           <p class="phone">{{ post.phone }}</p>
-          <a
-            href="/user/{{ post.user_id }}"
-            class="user"
-          >
-            <img src="/assets/icons/avatar.svg" alt="Avatar" />
+          <a href="/user/{{ post.user_id }}" class="user">
+            <img src="{{content_url}}/assets/icons/avatar.svg" alt="Avatar" />
             <p class="name">{{ post.user_name }}</p>
           </a>
         </div>
@@ -155,6 +152,6 @@
     </div>
   </div>
   {% endif %}
-  <script src="/static/js/post.js?v={{ ver }}"></script>
+  <script src="{{content_url}}/static/js/post.js?v={{ ver }}"></script>
 </body>
 {% endblock content %}

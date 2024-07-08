@@ -1,4 +1,7 @@
-<link rel="stylesheet" href="/static/css/posts.css?v={{ ver }}" />
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/posts.css?v={{ ver }}"
+/>
 
 {% for i in range(end=posts | length) %}
 <!-- prettier-ignore -->
@@ -8,7 +11,7 @@
   <a href="/post/{{posts[i].id}}" class="post" id="{{posts[i].id}}">
     <div class="blurred-img">
       <img
-        src="/post-images/{{posts[i].id}}/0.jpg"
+        src="{{content_url}}/post-images/{{posts[i].id}}/0.jpg"
         alt="Post image"
         loading="lazy"
       />
