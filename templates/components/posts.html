@@ -11,7 +11,7 @@
   <a href="/post/{{posts[i].id}}" class="post" id="{{posts[i].id}}">
     <div class="blurred-img">
       <img
-        src="{{content_url}}/post-images/{{posts[i].id}}/0.jpg"
+        src="{{ content_url | replace(from="/" ~ branch, to="") }}/post-images/{{posts[i].id}}/0.jpg"
         alt="Post image"
         loading="lazy"
       />
