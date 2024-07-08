@@ -41,7 +41,7 @@ async fn main() -> tide::Result<()> {
         translations,
         config: config.clone(),
         version,
-        branch: branch.to_string(),
+        content_url: format!("https://d19qt7p7fni613.cloudfront.net/{}", branch),
     });
 
     app.with(tide::sessions::SessionMiddleware::new(
@@ -59,38 +59,16 @@ async fn main() -> tide::Result<()> {
     );
     app.with(SQLxMiddleware::<Postgres>::new(&connection_url).await?);
 
-    if config.enviorement == "local" {
+    if config.enviorement == "locall" {
         // Serve static files locally during development
         app.at("/assets").serve_dir("./public/assets/")?;
         app.at("/static").serve_dir("./public/static/")?;
         app.at("/post-images")
             .serve_dir("/var/uploads/post-images/")?;
-    } else {
-        // Serve static files from CloudFront URLs in production
-        app.at("/assets/*").get(cloudfront_redirect);
-        app.at("/static/*").get(cloudfront_redirect);
-        app.at("/post-images/*").get(cloudfront_redirect);
     }
 
     register_routes::register_routes(&mut app);
 
     app.listen(format!("127.0.0.1:{}", config.port)).await?;
     Ok(())
-}
-
-async fn cloudfront_redirect(req: Request<AppState>) -> tide::Result {
-    let path = req.url().path();
-    let mut branch = format!("/{}", req.state().branch.clone());
-    if path.contains("post-images") {
-        branch = "".to_string();
-    }
-
-    let cloudfront_url = format!("https://d19qt7p7fni613.cloudfront.net{}", branch);
-    let redirect_url = format!("{}{}", cloudfront_url, path);
-    // println!("{:?}", redirect_url);
-
-    let mut response = Response::new(302);
-    response.insert_header("Location", redirect_url);
-
-    Ok(response)
 }

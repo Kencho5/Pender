@@ -6,13 +6,18 @@ pub async fn get_context(req: &Request<AppState>) -> tide::Result<tera::Context>
 
     let state = req.state();
     let translations = state.translations.get(&lang);
+    let mut content_url = state.content_url.clone();
+    if state.config.enviorement == "locall" {
+        content_url = "".to_string();
+    }
 
     let context = context! {
         "tr" => translations,
         "lang" => lang,
         "route" => req.url().path(),
         "claims" => get_claims(req).await?,
-        "ver" => state.version
+        "ver" => state.version,
+        "content_url" => content_url
     };
 
     Ok(context)
