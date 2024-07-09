@@ -45,7 +45,21 @@ body {
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
 
-  background-color: var(--background);
+  background-image: linear-gradient(
+    to right bottom,
+    #fffbfa,
+    #fff8f6,
+    #fff5f3,
+    #fff1f0,
+    #ffeeed,
+    #ffeeed,
+    #ffeeed,
+    #ffeeed,
+    #fff1f0,
+    #fff5f3,
+    #fff8f6,
+    #fffbfa
+  );
   color: var(--text);
 
   margin: 0;

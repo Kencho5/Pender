@@ -5,7 +5,8 @@
   width: 100%;
   height: 92px;
   z-index: 100;
-  background-color: var(--background);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   border-radius: 0px 0px 45px 45px;
 }
 
