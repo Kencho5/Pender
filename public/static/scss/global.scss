@@ -10,37 +10,20 @@
 }
 
 @font-face {
-  font-family: "GEOMedium";
-  src: url("https://d19qt7p7fni613.cloudfront.net/fonts/GEOMedium.woff2");
+  font-family: "SF-Geo";
+  src: url("https://d19qt7p7fni613.cloudfront.net/fonts/SF-Geo.woff2");
 
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: "SF-Geo", sans-serif !important;
   font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "GEOMedium";
-  src: url("https://d19qt7p7fni613.cloudfront.net/fonts/GEOBold.woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "GEOMedium";
-  src: url("https://d19qt7p7fni613.cloudfront.net/fonts/GEORegular.woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  letter-spacing: 1.2px;
 }
 
 body {
-  font-family: "GEOMedium", sans-serif;
-  font-weight: 500;
-
-  letter-spacing: 0.6px;
-  line-height: 1.3;
-
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
