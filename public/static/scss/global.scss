@@ -17,10 +17,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "GEOMedium";
+  src: url("https://d19qt7p7fni613.cloudfront.net/fonts/GEOMedium.woff2");
+
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
-  font-family: "SF-Geo", sans-serif !important;
+  font-family: "SF-Geo", "GEOMedium" !important;
   font-weight: 500;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
 }
 
 body {
@@ -47,6 +55,10 @@ body {
 
   margin: 0;
   padding-top: 120px;
+}
+
+h1 {
+  font-weight: 700;
 }
 
 a {
