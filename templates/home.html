@@ -5,7 +5,7 @@
   rel="stylesheet"
   href="{{content_url}}/static/css/posts.css?v={{ ver }}"
 />
-<!-- <link rel="preload" href="{{content_url}}/assets/pets.avif" as="image" /> -->
+<link rel="preload" href="{{content_url}}/assets/bg-pattern.webp" as="image" />
 
 <body>
   <div class="home-content">
@@ -15,7 +15,6 @@
           src="{{content_url}}/assets/bg-pattern.webp"
           alt="Pattern"
           class="top-container__pattern"
-          loading="lazy"
         />
       </div>
 
@@ -27,9 +26,7 @@
               <br />
               <span> {{ tr.HOME.search_title_bottom }} </span>
             </h1>
-            <p class="search__paragraph">
-              adshhasdhhasdhashhadshhasdhjashjhashjasdhjsahjdhahsjdh
-            </p>
+            <p class="search__paragraph">{{ tr.HOME.search_paragraph }}</p>
           </div>
 
           <form
@@ -93,13 +90,26 @@
       <div class="top-container__line"></div>
       <div class="top-container__popular-title">
         <p class="category">{{ tr.HOME.popular_posts }}</p>
-        <a href="/search?animal=all" class="all-posts"
-          >{{ tr.HOME.all_posts }} ({{count}})</a
-        >
+        <div class="arrows-div">
+          <button type="button" onmousedown="slide('left', '.popular-posts')">
+            <img
+              src="{{content_url}}/assets/icons/arrow_red.svg"
+              alt="Arrow Left"
+            />
+          </button>
+
+          <button type="button" onmousedown="slide('right', '.popular-posts')">
+            <img
+              src="{{content_url}}/assets/icons/arrow_red.svg"
+              class="arrow-right"
+              alt="Arrow Right"
+            />
+          </button>
+        </div>
       </div>
 
       <div
-        class="posts"
+        class="posts popular-posts"
         hx-get="/api/popular-posts"
         hx-trigger="load"
         hx-swap="innerHTML transition:false"
@@ -118,18 +128,19 @@
     <div class="categories-div">
       <div class="category-title">
         <p class="category">{{ tr.HOME.categories }}</p>
-        <div>
-          <button type="button" onmousedown="scrollCategories('left')">
+        <div class="arrows-div">
+          <button type="button" onmousedown="slide('left', '.images')">
             <img
-              src="{{content_url}}/assets/icons/arrow.svg"
+              src="{{content_url}}/assets/icons/arrow_red.svg"
               alt="Arrow Left"
             />
           </button>
-          <button type="button" onmousedown="scrollCategories('right')">
+
+          <button type="button" onmousedown="slide('right', '.images')">
             <img
-              src="{{content_url}}/assets/icons/arrow.svg"
+              src="{{content_url}}/assets/icons/arrow_red.svg"
               class="arrow-right"
-              alt="Arrow Left"
+              alt="Arrow Right"
             />
           </button>
         </div>

@@ -8,8 +8,8 @@ function search(form) {
   return true;
 }
 
-function scrollCategories(dir) {
-  const images = htmx.find(".images");
+function slide(dir, el) {
+  const images = htmx.find(el);
   let scrollValue = (dir === "left")
     ? -(images.scrollWidth - images.clientWidth)
     : images.scrollWidth - images.clientWidth;
