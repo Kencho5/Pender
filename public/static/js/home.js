@@ -10,9 +10,14 @@ function search(form) {
 
 function slide(dir, el) {
   const images = htmx.find(el);
-  let scrollValue = (dir === "left")
-    ? -(images.scrollWidth - images.clientWidth)
-    : images.scrollWidth - images.clientWidth;
+  const scrollAmount = images.clientWidth / 2;
+  let scrollValue;
+
+  if (dir === "left") {
+    scrollValue = images.scrollLeft - scrollAmount;
+  } else {
+    scrollValue = images.scrollLeft + scrollAmount;
+  }
 
   images.scrollTo({
     left: scrollValue,

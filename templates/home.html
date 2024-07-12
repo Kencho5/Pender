@@ -253,17 +253,14 @@
             >{{ tr.HOME.all_posts }} ({{count}})</a
           >
           <div class="arrows-div">
-            <button type="button" onmousedown="slide('left', '.popular-posts')">
+            <button type="button" onmousedown="slide('left', '.new-posts')">
               <img
                 src="{{content_url}}/assets/icons/arrow_red.svg"
                 alt="Arrow Left"
               />
             </button>
 
-            <button
-              type="button"
-              onmousedown="slide('right', '.popular-posts')"
-            >
+            <button type="button" onmousedown="slide('right', '.new-posts')">
               <img
                 src="{{content_url}}/assets/icons/arrow_red.svg"
                 class="arrow-right"
@@ -275,7 +272,7 @@
       </div>
 
       <div
-        class="posts"
+        class="posts new-posts"
         hx-get="/api/load-posts"
         hx-trigger="load"
         hx-swap="innerHTML transition:false"
