@@ -73,6 +73,10 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_hour(600).unwrap())
         .get(load_posts::posts_handler);
 
+    app.at("/api/popular-posts")
+        .with(GovernorMiddleware::per_hour(600).unwrap())
+        .get(load_posts::posts_handler);
+
     app.at("/api/analytics")
         .with(GovernorMiddleware::per_minute(5).unwrap())
         .get(analytics::analytics_handler);

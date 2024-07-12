@@ -47,7 +47,8 @@
     var initialsDiv = htmx.find(".user-initials");
     var name = "{{user.name}}";
     var initials = name[0];
-    if (name.includes(" ")) initials += name.split(" ")[1][0];
+    if (name.includes(" ") && name.split(" ")[1][0])
+      initials += name.split(" ")[1][0];
 
     initialsDiv.textContent = initials.toUpperCase();
   </script>

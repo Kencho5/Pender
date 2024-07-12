@@ -21,6 +21,16 @@
   font-family: "GEOMedium";
   src: url("https://d19qt7p7fni613.cloudfront.net/fonts/GEOMedium.woff2");
 
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GEOMedium";
+  src: url("https://d19qt7p7fni613.cloudfront.net/fonts/GEORegular.woff2");
+
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -35,6 +45,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
+  font-size: 1.1rem;
 
   background-image: linear-gradient(
     to right bottom,
@@ -42,10 +53,10 @@ body {
     #fff8f6,
     #fff5f3,
     #fff1f0,
-    #ffeeed,
-    #ffeeed,
-    #ffeeed,
-    #ffeeed,
+    #fff8f8,
+    #fff8f8,
+    #fff8f8,
+    #fff8f8,
     #fff1f0,
     #fff5f3,
     #fff8f6,

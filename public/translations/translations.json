@@ -1,7 +1,9 @@
 {
   "ENG": {
     "HOME": {
-      "search_title": "Find a new friend for your family",
+      "search_title_top": "Find a new friend",
+      "search_title_bottom": "for your family",
+      "popular_posts": "Popular Posts",
       "search_input": "Animal Breed",
       "filter": "Filter",
       "search": "Search",
@@ -121,7 +123,9 @@
   },
   "GEO": {
     "HOME": {
-      "search_title": "იპოვე ოჯახის ახალი მეგობარი",
+      "search_title_top": "იპოვე ოჯახის",
+      "search_title_bottom": "ახალი მეგობარი",
+      "popular_posts": "პოპულარული პოსტები",
       "search_input": "ცხოველის ჯიში",
       "filter": "ფილტრი",
       "search": "ძებნა",

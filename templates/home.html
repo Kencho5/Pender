@@ -5,87 +5,114 @@
   rel="stylesheet"
   href="{{content_url}}/static/css/posts.css?v={{ ver }}"
 />
-<link rel="preload" href="{{content_url}}/assets/search-img.webp" as="image" />
+<!-- <link rel="preload" href="{{content_url}}/assets/pets.avif" as="image" /> -->
 
 <body>
   <div class="home-content">
-    <div
-      class="search-content"
-      style="background: url({{content_url}}/assets/search-img.webp) no-repeat center/cover"
-    >
-      <h1 class="search-title">{{ tr.HOME.search_title }}</h1>
-      <form
-        class="search-form"
-        hx-get="/search"
-        hx-params="*"
-        hx-push-url="true"
-        hx-swap="outerHTML"
-        hx-trigger="submit[search(this)]"
-        hx-target="body"
-      >
+    <div class="top-container">
+      <div class="blurred-img">
         <img
-          src="{{content_url}}/assets/icons/search.svg"
-          class="search-icon"
-          alt="Search"
+          src="{{content_url}}/assets/bg-pattern.webp"
+          alt="Pattern"
+          class="top-container__pattern"
+          loading="lazy"
         />
-        <input
-          type="text"
-          name="breed"
-          class="search-input"
-          placeholder="{{ tr.HOME.search_input }}"
-        />
-        <button
-          type="button"
-          class="search-button"
-          onmousedown="toggleFilters()"
-        >
-          <img
-            src="{{content_url}}/assets/icons/filter.svg"
-            width="18"
-            height="12"
-            alt="Filter"
-          />
-          {{ tr.HOME.filter }}
-        </button>
-        <input
-          type="submit"
-          class="search-submit"
-          value="{{ tr.HOME.search }}"
-        />
-      </form>
-    </div>
+      </div>
 
-    <!-- MOBILE FORM -->
-    <form
-      class="mobile-search-form"
-      hx-get="/search"
-      hx-params="*"
-      hx-push-url="true"
-      hx-swap="outerHTML"
-      hx-trigger="submit[search(this)]"
-      hx-target="body"
-    >
-      <img
-        src="{{content_url}}/assets/icons/search.svg"
-        class="search-icon"
-        alt="Search"
-      />
-      <input
-        type="text"
-        name="breed"
-        class="search-input"
-        placeholder="{{ tr.HOME.search_input }}"
-      />
-      <button type="button" class="search-button" onmousedown="toggleFilters()">
-        <img
-          src="{{content_url}}/assets/icons/filter.svg"
-          width="18"
-          height="12"
-          alt="Filter"
-        />
-      </button>
-      <input type="submit" class="search-submit" value="{{ tr.HOME.search }}" />
-    </form>
+      <div class="search">
+        <div class="search__form-container">
+          <div>
+            <h1 class="search__title">
+              {{ tr.HOME.search_title_top }}
+              <br />
+              <span> {{ tr.HOME.search_title_bottom }} </span>
+            </h1>
+            <p class="search__paragraph">
+              adshhasdhhasdhashhadshhasdhjashjhashjasdhjsahjdhahsjdh
+            </p>
+          </div>
+
+          <form
+            hx-get="/search"
+            hx-params="*"
+            hx-push-url="true"
+            hx-swap="outerHTML"
+            hx-trigger="submit[search(this)]"
+            hx-target="body"
+            class="search__form"
+          >
+            <div class="search__form__input-container">
+              <img
+                src="{{content_url}}/assets/icons/search.svg"
+                alt="Search"
+                class="search__form__search-icon"
+              />
+              <input
+                type="text"
+                name="breed"
+                placeholder="{{ tr.HOME.search_input }}"
+                class="search__form__breed"
+              />
+
+              <button
+                type="button"
+                class="search__form__filter"
+                onmousedown="toggleFilters()"
+              >
+                <img
+                  src="{{content_url}}/assets/icons/filter.svg"
+                  alt="Filter"
+                />
+                <span class="filter-text">{{ tr.HOME.filter }}</span>
+              </button>
+            </div>
+
+            <input
+              type="submit"
+              value="{{ tr.HOME.search }}"
+              class="search__form__submit"
+            />
+          </form>
+        </div>
+
+        <div class="search__pets-div blurred-img">
+          <picture>
+            <source
+              srcset="{{content_url}}/assets/pets.avif"
+              type="image/avif"
+            />
+            <img
+              src="{{content_url}}/assets/pets.webp"
+              loading="lazy"
+              alt="Pets"
+              class="search__pets-img"
+            />
+          </picture>
+        </div>
+      </div>
+      <div class="top-container__line"></div>
+      <div class="top-container__popular-title">
+        <p class="category">{{ tr.HOME.popular_posts }}</p>
+        <a href="/search?animal=all" class="all-posts"
+          >{{ tr.HOME.all_posts }} ({{count}})</a
+        >
+      </div>
+
+      <div
+        class="posts"
+        hx-get="/api/popular-posts"
+        hx-trigger="load"
+        hx-swap="innerHTML transition:false"
+        hx-on::after-swap="this.classList.add('fade-in')"
+      >
+        {% for i in range(end=4) %}
+        <div>
+          <div class="placeholder-box"></div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
 
     <!-- CATEGORIES -->
     <div class="categories-div">
@@ -271,7 +298,7 @@
         />
       </div>
     </div>
-    <div class="circle circle1"></div>
+    <!-- <div class="circle circle1"></div> -->
     <div class="circle circle2"></div>
     <div class="circle circle3"></div>
   </div>
