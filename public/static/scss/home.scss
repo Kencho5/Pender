@@ -91,6 +91,10 @@
       border-radius: 16px;
 
       padding: 8px;
+
+      img {
+        border-radius: 12px;
+      }
     }
 
     @media (max-width: 1100px) {
@@ -236,12 +240,16 @@
       }
 
       @media (max-width: 768px) {
+        &__title-div {
+          margin: 0px -20px 0px -20px;
+        }
+
         &__pets-div {
           height: auto;
         }
 
         &__title {
-          font-size: 32px;
+          font-size: 28px;
         }
 
         &__paragraph {
@@ -308,9 +316,14 @@
       height: 280px;
       overflow-x: auto;
       gap: 30px;
-      -ms-overflow-style: none; /* IE and Edge */
+      -ms-overflow-style: none;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
       user-select: none;
+    }
+
+    .images::-webkit-scrollbar {
+      display: none;
     }
 
     img,
@@ -441,7 +454,7 @@
 
     @media (max-width: 1200px) {
       &.circle2 {
-        top: 2300px !important;
+        top: 2300px;
       }
     }
 
@@ -460,7 +473,7 @@
       &.circle2 {
         height: 230px;
 
-        top: 1800px;
+        top: 1500px;
         left: -200px;
         opacity: 0.3;
       }
