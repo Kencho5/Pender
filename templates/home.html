@@ -109,7 +109,7 @@
       </div>
 
       <div
-        class="posts popular-posts"
+        class="top-container__posts popular-posts"
         hx-get="/api/popular-posts"
         hx-trigger="load"
         hx-swap="innerHTML transition:false"
@@ -243,9 +243,31 @@
     <div class="posts-div">
       <div class="posts-title">
         <p class="category">{{ tr.HOME.posts }}</p>
-        <a href="/search?animal=all" class="all-posts"
-          >{{ tr.HOME.all_posts }} ({{count}})</a
-        >
+
+        <div class="actions-div">
+          <a href="/search?animal=all" class="all-posts"
+            >{{ tr.HOME.all_posts }} ({{count}})</a
+          >
+          <div class="arrows-div">
+            <button type="button" onmousedown="slide('left', '.popular-posts')">
+              <img
+                src="{{content_url}}/assets/icons/arrow_red.svg"
+                alt="Arrow Left"
+              />
+            </button>
+
+            <button
+              type="button"
+              onmousedown="slide('right', '.popular-posts')"
+            >
+              <img
+                src="{{content_url}}/assets/icons/arrow_red.svg"
+                class="arrow-right"
+                alt="Arrow Right"
+              />
+            </button>
+          </div>
+        </div>
       </div>
 
       <div
@@ -302,7 +324,7 @@
         <img
           width="500"
           height="500"
-          src="{{content_url}}/assets/features-img.webp"
+          src="{{content_url}}/assets/features-img.webp?v={{ ver }}"
           class="features-img"
           alt="Features"
           loading="lazy"
