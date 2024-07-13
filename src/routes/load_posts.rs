@@ -38,7 +38,7 @@ async fn get_posts(
 ) -> tide::Result<Vec<upload_struct::PostStruct>> {
     let query: &str;
     if url.contains("popular") {
-        query = "SELECT * FROM posts ORDER BY views DESC LIMIT 4";
+        query = "SELECT * FROM posts WHERE post_type = 'adopting' OR post_type = 'selling' ORDER BY views DESC LIMIT 4";
     } else {
         query = "SELECT * FROM posts ORDER BY time_posted DESC LIMIT 8";
     }
