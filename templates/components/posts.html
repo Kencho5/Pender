@@ -13,7 +13,7 @@
       <img
         src="{{ content_url | replace(from="/" ~ branch, to="") }}/post-images/{{posts[i].id}}/0.jpg"
         alt="Post image"
-        loading="lazy"
+        hx-trigger="load"
       />
     </div>
 
