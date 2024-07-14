@@ -1,4 +1,16 @@
-{% extends "components/layout.html" %} {% block content %}
+{% extends "components/layout.html" %} 
+<!-- prettier-ignore -->
+{% block title %}
+{% if post.post_type == "breeding" %}
+  💜 {{ post.breed }} - {{ post.age }} {{ tr.FILTERS[post.age_type] }} | {{ tr.POSTTYPE[post.post_type] }}
+{% elif post.post_type == "adopting" %}
+  🩷 {{ post.breed }} - {{ post.age }} {{ tr.FILTERS[post.age_type] }} | {{ tr.POSTTYPE[post.post_type] }}
+{% elif post.post_type == "selling" %}
+  💚 {{ post.breed }} - {{ post.age }} {{ tr.FILTERS[post.age_type] }} | {{ tr.POSTTYPE[post.post_type] }}
+{% endif %}
+{% endblock title %}
+
+{% block content %}
 
 <link rel="stylesheet" href="{{content_url}}/static/css/post.css?v={{ ver }}" />
 
