@@ -431,6 +431,8 @@
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
 
     .line {
       height: 1px;
@@ -464,6 +466,8 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
     .features-img {
       max-width: 100%;
@@ -478,6 +482,11 @@
     border-radius: 50%;
     filter: blur(120px);
     z-index: 0;
+    will-change: filter;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    backface-visibility: hidden;
+    perspective: 1000;
 
     /* &.circle1 { */
     /*   background-color: #e78882; */
@@ -529,7 +538,6 @@
 
       &.circle3 {
         width: 300px;
-
         bottom: 300px;
         left: unset;
         opacity: 0.3;
