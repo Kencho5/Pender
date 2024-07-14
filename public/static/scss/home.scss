@@ -72,6 +72,7 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
       user-select: none;
+
       &::-webkit-scrollbar {
         display: none; /* Chrome, Safari */
       }
@@ -327,6 +328,12 @@
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
       user-select: none;
+      scroll-snap-type: x mandatory;
+
+      .image {
+        scroll-snap-align: center;
+      }
+
       @media (min-width: 769px) and (max-width: 1420px) {
         padding: 0 24px;
         width: calc(100% + 58px);
@@ -557,6 +564,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     user-select: none;
+    scroll-snap-type: x mandatory;
+    .post {
+      scroll-snap-align: center;
+    }
   }
 
   .all-posts {
