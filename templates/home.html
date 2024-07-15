@@ -5,14 +5,14 @@
   rel="stylesheet"
   href="{{content_url}}/static/css/posts.css?v={{ ver }}"
 />
-<link rel="preload" href="{{content_url}}/assets/bg-pattern.webp" as="image" />
+<link rel="preload" href="{{content_url}}/assets/bg-pattern.svg" as="image" />
 
 <body>
   <div class="home-content">
     <div class="top-container">
       <div class="blurred-img">
         <img
-          src="{{content_url}}/assets/bg-pattern.webp"
+          src="{{content_url}}/assets/bg-pattern.svg"
           alt="Pattern"
           class="top-container__pattern"
         />
@@ -244,6 +244,56 @@
       </div>
     </div>
 
+    <!-- UPLOAD -->
+    <div class="upload-div">
+      <img
+        src="{{content_url}}/assets/bg-pattern-blue.svg"
+        alt="Pattern"
+        class="upload-div__pattern"
+        hx-trigger="load"
+      />
+
+      <div class="upload-div__text">
+        <div>
+          <h1 class="upload-div__text__title">
+            <span>{{ tr.HOME.upload_post }}</span>
+            {{ tr.HOME.upload_post_helper }}
+          </h1>
+          <p class="upload-div__text__paragraph">
+            {{ tr.HOME.upload_post_paragraph}}
+          </p>
+        </div>
+
+        <div class="upload-div__text__action-div">
+          <a href="/upload" class="upload-div__text__button">
+            <img
+              src="/assets/icons/upload_white.svg"
+              alt="Upload"
+              hx-trigger="load"
+            />
+            {{ tr.NAV.upload }}
+          </a>
+          <img
+            src="/assets/icons/arrow_curly.svg"
+            alt="Arrow"
+            class="upload-div__text__arrow"
+            hx-trigger="load"
+            width="97"
+            height="84"
+          />
+        </div>
+      </div>
+      <div class="blurred-img">
+        <img
+          src="/assets/upload-img.webp"
+          alt="Upload Image"
+          class="upload-div__image"
+          hx-trigger="load"
+        />
+      </div>
+    </div>
+
+    <!-- NEW POSTS -->
     <div class="posts-div">
       <div class="posts-title">
         <p class="category">{{ tr.HOME.posts }}</p>

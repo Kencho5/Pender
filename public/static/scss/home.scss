@@ -1,11 +1,11 @@
 @import "variables";
 
 .home-content {
-  width: 85%;
+  width: 82%;
   background: $accent;
   border-radius: 26px;
   margin: auto;
-  padding: 28px;
+  padding: 50px;
   box-shadow: 0px 1px 2px 0px #0c0c0d1a;
   display: flex;
   flex-direction: column;
@@ -21,8 +21,8 @@
       #fae7e6 92%,
       transparent 100%
     );
-    margin: -28px;
-    padding: 28px;
+    margin: -50px;
+    padding: 50px;
     padding-bottom: 60px;
 
     &__pattern {
@@ -66,9 +66,12 @@
 
     &__posts {
       display: flex;
-      flex-wrap: wrap;
+      width: calc(100% + 24px);
+      margin: 0 -10px;
+
+      /* flex-wrap: wrap; */
       justify-content: space-between;
-      gap: 22px;
+      gap: 24px;
       overflow-x: auto;
       -ms-overflow-style: none;
       scrollbar-width: none;
@@ -92,15 +95,16 @@
       }
 
       @media (max-width: 1490px) {
-        padding: 0 30px;
-        width: calc(100% + 58px);
-        margin: 0 -30px;
+        padding: 0 50px;
+        width: unset;
+        /* width: calc(100% + 38px); */
+        margin: 0 -50px;
         box-sizing: border-box;
         flex-wrap: unset !important;
       }
 
       @media (max-width: 400px) {
-        gap: 32px;
+        gap: 48px;
 
         .post {
           flex: 0 0 90%;
@@ -137,7 +141,7 @@
         gap: 30px;
         width: 520px;
         margin-top: 30px;
-        padding: 20px;
+        /* padding: 20px; */
         word-wrap: break-word;
       }
 
@@ -344,16 +348,16 @@
       }
 
       @media (min-width: 769px) and (max-width: 1420px) {
-        padding: 0 30px;
-        width: calc(100% + 58px);
-        margin: 0 -30px;
+        padding: 0 50px;
+        /* width: calc(100% + 38px); */
+        margin: 0 -50px;
       }
 
       @media (max-width: 768px) {
-        padding: 0 24px;
-        width: calc(100% + 56px);
+        padding: 0 50px;
+        /* width: calc(100% + 56px); */
         height: 170px;
-        margin: 0 -28px;
+        margin: 0 -50px;
         box-sizing: border-box;
         gap: 20px;
 
@@ -458,8 +462,9 @@
     perspective: 1000;
 
     &.circle2 {
-      background-color: $lime-300;
-      opacity: 0.4;
+      height: 350px;
+      background-color: $indigo-300;
+      opacity: 0.6;
       top: 1500px;
       left: 40px;
     }
@@ -533,7 +538,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     overflow-x: auto;
-    gap: 36px;
+    gap: 34px;
     -ms-overflow-style: none;
     scrollbar-width: none;
     user-select: none;
@@ -543,10 +548,17 @@
 
     .post {
       scroll-snap-align: center;
+
+      .blurred-img {
+        width: 100%;
+      }
+      .blurred-img.loaded {
+        background-color: $accent;
+      }
     }
 
     @media (max-width: 400px) {
-      gap: 38px;
+      gap: 50px;
 
       .post {
         flex: 0 0 100%;
@@ -560,6 +572,181 @@
     color: #4f3534;
     font-size: 18px;
     font-weight: 400;
+  }
+
+  .upload-div {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    position: relative;
+
+    margin-top: 42px;
+    /* padding: 20px; */
+
+    background-color: $indigo-100;
+
+    border: 1px solid $indigo-300;
+    border-radius: 16px;
+
+    z-index: 1;
+
+    &__text {
+      max-width: 660px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      padding: 20px 30px;
+      position: relative;
+      z-index: 1;
+
+      &__title {
+        font-weight: 400;
+        font-size: 28px;
+
+        span {
+          font-weight: 700;
+          color: $indigo-500;
+        }
+      }
+      &__paragraph {
+        width: 500px;
+        word-wrap: break-word;
+        margin: 0;
+
+        font-weight: 400;
+        color: $neutral-600;
+      }
+
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 10px 16px;
+        gap: 8px;
+
+        width: 180px;
+        height: 44px;
+        box-sizing: border-box;
+        font-size: 14px;
+
+        color: $accent;
+        background: rgb(236, 126, 114);
+        background: linear-gradient(
+          132deg,
+          rgba(236, 126, 114, 1) 0%,
+          rgba(229, 97, 84, 1) 50%,
+          rgba(236, 126, 114, 1) 100%
+        );
+        border-radius: 40px;
+
+        transition: 0.2s;
+        &:hover {
+          scale: 1.03;
+        }
+      }
+
+      &__action-div {
+        max-width: 300px;
+
+        display: flex;
+        gap: 20px;
+      }
+
+      &__arrow {
+        position: relative;
+        top: -15px;
+      }
+    }
+
+    &__pattern {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      object-fit: fill;
+      pointer-events: none;
+    }
+
+    &__image {
+      height: 220px;
+      top: 30px;
+      position: relative;
+      display: block;
+      mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 70%,
+        transparent 100%
+      );
+    }
+
+    @media (min-width: 1000px) and (max-width: 1200px) {
+      height: 270px;
+
+      &__image {
+        top: 50px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      height: 390px;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      &__image {
+        height: 140px;
+      }
+
+      &__text {
+        padding: 10px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        &__title {
+          font-size: 22px;
+        }
+
+        &__paragraph {
+          width: unset;
+          font-size: 14px;
+        }
+
+        &__arrow {
+          display: none;
+        }
+
+        &__action-div {
+          margin: 0 auto;
+        }
+      }
+      &__image {
+        padding-right: 30px;
+        margin: auto;
+      }
+    }
+
+    @media (max-width: 650px) {
+      &__image {
+        top: 10px;
+        mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          black 65%,
+          transparent 100%
+        );
+      }
+    }
   }
 }
 
@@ -595,9 +782,9 @@
 
 @media (max-width: 1490px) {
   .posts {
-    padding: 0 30px;
-    width: calc(100% + 58px);
-    margin: 0 -30px;
+    padding: 0 50px;
+    /* width: calc(100% + 58px); */
+    margin: 0 -50px;
     box-sizing: border-box;
     flex-wrap: unset !important;
   }

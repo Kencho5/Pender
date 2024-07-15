@@ -11,7 +11,10 @@
       "categories": "Categories",
       "posts": "New Posts",
       "all_posts": "View All",
-      "features": "Features"
+      "features": "Features",
+      "upload_post": "Upload a post",
+      "upload_post_helper": "about your pet",
+      "upload_post_paragraph": "With Pender, you can easily upload any post about your pet"
     },
     "FILTERS": {
       "additional": "Additional Filter",
@@ -134,7 +137,10 @@
       "categories": "კატეგორიები",
       "posts": "ახალი პოსტები",
       "all_posts": "ყველას ნახვა",
-      "features": "სერვისები"
+      "features": "სერვისები",
+      "upload_post": "ატვირთე პოსტი",
+      "upload_post_helper": "შენი მეგობრის შესახებ",
+      "upload_post_paragraph": "Pender-ის საშუალებით მარტივად შეძლებ ატვირთო ნებიმისმიერი პოსტი შენი მეგობრის შესახებ"
     },
     "FILTERS": {
       "additional": "დამატებითი ფილტრი",
