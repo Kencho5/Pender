@@ -397,6 +397,10 @@
     }
   }
 
+  .features-container {
+    z-index: 1;
+  }
+
   .features-div {
     margin-top: 60px;
     display: flex;
@@ -470,6 +474,17 @@
     }
 
     &.circle3 {
+      filter: blur(80px);
+
+      width: 700px;
+      height: 100px;
+      background-color: $lime-400;
+      opacity: 0.4;
+      top: 1950px;
+      right: 40px;
+    }
+
+    &.circle4 {
       width: 550px;
       background-color: #ffcc00;
       opacity: 0.4;
@@ -494,6 +509,12 @@
       }
 
       &.circle3 {
+        height: 150px;
+        top: 2500px;
+        opacity: 0.3;
+      }
+
+      &.circle4 {
         width: 300px;
         bottom: 300px;
         left: unset;
@@ -797,6 +818,7 @@
 
   .home-content {
     width: 75%;
+    padding: 30px;
   }
 
   .posts-title {
