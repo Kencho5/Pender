@@ -121,7 +121,11 @@
       </a>
 
       {% if not claims %}
-      <link rel="preload" href="/assets/icons/close.svg" as="image" />
+      <link
+        rel="preload"
+        href="{{content_url}}/assets/icons/close.svg"
+        as="image"
+      />
 
       <div class="hamburger-div">
         <img
