@@ -22,7 +22,6 @@
     {% include "components/footer.html" %}
 
     <script>
-      htmx.config.globalViewTransitions = true;
       var blurredImageDivs = document.querySelectorAll(".blurred-img");
 
       blurredImageDivs.forEach(function (blurredImageDiv) {
@@ -40,5 +39,6 @@
       });
     </script>
     <script src="{{content_url}}/static/js/navbar.js?v={{ ver }}"></script>
+    <script src="{{content_url}}/static/js/animations.js?v={{ ver }}"></script>
   </body>
 </html>
