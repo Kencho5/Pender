@@ -1,9 +1,12 @@
-document.body.addEventListener("htmx:afterSwap", function (event) {
-  if (event.target.tagName != "BODY") {
-    return;
-  }
-  window.scrollTo(0, -100);
-});
+if (!window.afterSwapListenerAdded) {
+  document.body.addEventListener("htmx:afterSwap", function (event) {
+    if (event.target.tagName != "BODY") {
+      return;
+    }
+    window.scrollTo(0, -100);
+  });
+  window.afterSwapListenerAdded = true;
+}
 
 async function changeLang(lang) {
   lang = lang === "GEO" ? "ENG" : "GEO";
