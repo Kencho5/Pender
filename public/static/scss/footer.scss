@@ -1,3 +1,5 @@
+@import "variables";
+
 /* Footer styles */
 .footer {
   color: var(--text);
@@ -41,6 +43,9 @@
 
 .footer-contact img {
   margin-right: 10px;
+  background-color: #e758371a;
+  padding: 8px;
+  border-radius: 100%;
 }
 
 /* Responsive styles */
