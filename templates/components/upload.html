@@ -10,31 +10,115 @@ Pender - ატვირთე!
   rel="stylesheet"
   href="{{content_url}}/static/css/upload.css?v={{ ver }}"
 />
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/upload_step1.css?v={{ ver }}"
+/>
+
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/upload_step2.css?v={{ ver }}"
+  media="print"
+  onload="this.media='all'"
+/>
 
 <body>
-  <div class="form-div">
-    <h1 class="form-title">{{ tr.NAV.upload }}</h1>
-    <div class="modal-line"></div>
-
-    <form name="uploadForm">
-      <!-- STEP 1 -->
-      <div class="step-div" id="step1">
-        {% include "components/upload_steps/upload_step1.html" %}
+  <form>
+    <!-- STEPS -->
+    <div class="steps">
+      <div class="steps__step steps__active">
+        <div class="steps__circle" id="step1">
+          <div class="steps__circle__line"></div>
+          <img
+            src="{{content_url}}/assets/icons/upload/upload_picture.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+          />
+          <img
+            src="{{content_url}}/assets/icons/upload/circle_check.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+            class="hidden"
+          />
+        </div>
+        <p>პოსტის ტიპი</p>
       </div>
-
-      <!-- STEP 2 -->
-      <div class="step-div" id="step2">
-        {% include "components/upload_steps/upload_step2.html" %}
+      <div class="steps__step">
+        <div class="steps__circle" id="step2">
+          <div class="steps__circle__line"></div>
+          <img
+            src="{{content_url}}/assets/icons/upload/upload_paw.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+          />
+          <img
+            src="{{content_url}}/assets/icons/upload/circle_check.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+            class="hidden"
+          />
+        </div>
+        <p>ცხოველის შესახებ</p>
       </div>
-
-      <!-- STEP 3 -->
-      <div class="step-div" id="step3">
-        {% include "components/upload_steps/upload_step3.html" %}
+      <div class="steps__step">
+        <div class="steps__circle" id="step3">
+          <div class="steps__circle__line"></div>
+          <img
+            src="{{content_url}}/assets/icons/upload/upload_file.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+          />
+          <img
+            src="{{content_url}}/assets/icons/upload/circle_check.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+            class="hidden"
+          />
+        </div>
+        <p>პოსტის დეტალები</p>
       </div>
+      <div class="steps__step">
+        <div class="steps__circle" id="step4">
+          <img
+            src="{{content_url}}/assets/icons/upload/upload_eye.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+          />
+          <img
+            src="{{content_url}}/assets/icons/upload/circle_check.svg"
+            alt=""
+            width="32"
+            height="32"
+            hx-trigger="load"
+            class="hidden"
+          />
+        </div>
+        <p>განხილვა</p>
+      </div>
+    </div>
 
-      <div class="msg">შეავსეთ ფორმა</div>
-    </form>
-  </div>
+    <!-- INFO -->
+    <div class="info-wrapper">
+      <div class="info" hx-get="/api/upload_steps/1" hx-trigger="load"></div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions" id="actions"></div>
+  </form>
 
   <script src="{{content_url}}/static/js/upload.js?v={{ ver }}"></script>
 </body>

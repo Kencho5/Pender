@@ -1,0 +1,108 @@
+@import "variables";
+
+form {
+  .info {
+    &__chips {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+
+      &__chip {
+        width: 100%;
+        height: 110px;
+        padding: 20px;
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background-color: $neutral-50;
+
+        border-radius: 16px;
+        border: 1px solid $neutral-100;
+        outline: 2px solid transparent;
+
+        cursor: pointer;
+        transition:
+          background-color 0.3s,
+          outline-color 0.3s ease,
+          transform 0.2s;
+
+        &:hover {
+          transform: scale(1.02);
+          background-color: $neutral-100;
+        }
+
+        &__text {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          height: 46px;
+
+          h1 {
+            font-size: 18px;
+            font-weight: 590;
+            margin: 0;
+          }
+
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            color: $neutral-600;
+
+            margin: 0;
+          }
+        }
+        &__icon {
+          width: 48px;
+          height: 48px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+
+          border-radius: 100%;
+
+          background-color: $accent;
+          box-shadow: 0px 1px 4px 0px #0c0c0d0d;
+          box-shadow: 0px 1px 4px 0px #0c0c0d1a;
+
+          img {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      &__chips {
+        &__chip {
+          height: 100px;
+
+          &__text {
+            h1 {
+              font-size: 16px;
+            }
+            p {
+              width: 200px;
+              font-size: 12px;
+            }
+          }
+
+          &__icon {
+            width: 40px;
+            height: 40px;
+
+            img {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -57,6 +57,10 @@ pub fn register_routes(app: &mut Server<AppState>) {
         .with(GovernorMiddleware::per_minute(100).unwrap())
         .get(cities::get_cities);
 
+    app.at("/api/upload_steps/:step")
+        .with(GovernorMiddleware::per_minute(100).unwrap())
+        .get(upload_steps::steps_handler);
+
     app.at("/api/edit-profile")
         .with(GovernorMiddleware::per_minute(10).unwrap())
         .post(profile::edit_profile);
