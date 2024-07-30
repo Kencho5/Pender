@@ -1,52 +1,70 @@
+<style>
+  .info__chips__chip__text {
+    height: unset !important;
+  }
+</style>
+
+<div class="info__title">
+  <h1>გვითხარი შენი ცხოველის სქესი</h1>
+  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+</div>
+
 <div
-  class="upload-row"
-  onmousedown="document.getElementById('fileInput').click()"
+  class="info__chips"
+  x-data="{ activeChip: null }"
+  x-init="$watch('activeChip', value => setData('sex', value))"
 >
-  <div class="input-div">
-    <img
-      src="{{content_url}}/assets/icons/picture.svg"
-      class="input-icon"
-      alt="Picture"
-    />
-    <div class="photos-div">{{ tr.UPLOAD.photos }}</div>
-
-    <input
-      type="file"
-      name="photos"
-      aria-label="Photos"
-      accept="image/*"
-      id="fileInput"
-      multiple
-    />
+  <div
+    class="info__chips__chip"
+    @mousedown="activeChip = 'girl'"
+    :class="{ 'active-chip': activeChip === 'girl' }"
+    input-data="girl"
+  >
+    <div class="info__chips__chip__text">
+      <h1>გოგო</h1>
+    </div>
+    <div class="info__chips__chip__icon">
+      <img src="{{content_url}}/assets/icons/upload/girl.svg" alt="" />
+    </div>
   </div>
+  <div
+    class="info__chips__chip"
+    @mousedown="activeChip = 'boy'"
+    :class="{ 'active-chip': activeChip === 'boy' }"
+    input-data="boy"
+  >
+    <div class="info__chips__chip__text">
+      <h1>ბიჭი</h1>
+    </div>
+    <div class="info__chips__chip__icon">
+      <img src="{{content_url}}/assets/icons/upload/boy.svg" alt="" />
+    </div>
+  </div>
+
+  <!-- INPUT -->
+  <input type="hidden" input-data="sex" x-bind:value="activeChip" />
 </div>
 
-<div class="images-div" id="imagesDiv"></div>
-
-<div class="progress-div">
-  <div class="progress-bar">
-    <div class="progress"></div>
-  </div>
-  <div class="progress-info">
-    <p class="progress-status">Uploading...</p>
-    <p class="progress-percentage"></p>
-  </div>
+<div class="actions" id="actions" hx-swap-oob="true">
+  <button
+    type="button"
+    hx-get="/api/upload_steps/2"
+    hx-target=".info"
+    hx-trigger="mousedown"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="changeStep('prev')"
+  >
+    უკან
+  </button>
+  <button
+    type="button"
+    class="actions__next"
+    hx-get="/api/upload_steps/4"
+    hx-target=".info"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
+  >
+    გაგრძელება
+  </button>
 </div>
-
-<button
-  type="button"
-  onmousedown="upload()"
-  class="upload-btn"
-  id="final-btn"
-  aria-label="Submit"
->
-  <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M4 16.2422c-1.20599-.8072-2-2.182-2-3.7422 0-2.3436 1.79151-4.26871 4.07974-4.48063C6.54781 5.17213 9.02024 3 12 3c2.9798 0 5.4522 2.17213 5.9203 5.01937C20.2085 8.23129 22 10.1564 22 12.5c0 1.5602-.794 2.935-2 3.7422M8 16l4-4m0 0 4 4m-4-4v9"
-      stroke="#fff"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-</button>

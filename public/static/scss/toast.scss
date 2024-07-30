@@ -1,0 +1,87 @@
+.hidden {
+  display: none;
+}
+#toast {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  color: var(--accent);
+  text-align: center;
+  border-radius: 40px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 124px;
+  font-size: 18px;
+  font-weight: normal;
+  p {
+    margin: 0;
+  }
+  img {
+    margin-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation:
+    fadein 0.5s,
+    fadeout 0.5s 2.5s;
+  animation:
+    fadein 0.5s,
+    fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 124px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 124px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 124px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 124px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}

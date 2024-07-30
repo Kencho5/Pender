@@ -1,0 +1,119 @@
+<div class="info__title">
+  <h1>გვითხარი შენი ცხოველის შესახებ</h1>
+  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+</div>
+
+<div class="info__inputs">
+  <!-- BREED -->
+  <div class="info__inputs__input">
+    <p>ჯიში</p>
+    <div>
+      <img
+        src="{{content_url}}/assets/icons/badge.svg"
+        alt=""
+        class="info__inputs__icon"
+      />
+      <input
+        type="text"
+        input-data="breed"
+        placeholder="..."
+        onchange="setData('breed', this.value)"
+      />
+    </div>
+  </div>
+
+  <!-- AGE -->
+  <div
+    class="info__inputs__input"
+    x-data="{ ...dropdown(), age_type: null, age_type_text: 'ასაკის ტიპი' }"
+  >
+    <p>ასაკი</p>
+    <div>
+      <img
+        src="{{content_url}}/assets/icons/gender.svg"
+        alt=""
+        class="info__inputs__icon"
+      />
+      <input
+        type="number"
+        input-data="age"
+        placeholder="..."
+        pattern="\d*"
+        onchange="setData('age', this.value)"
+      />
+      <button type="button" @mousedown="toggle">
+        <span x-text="age_type_text"></span>
+        <img src="{{content_url}}/assets/icons/dropdown-age.svg" alt="" />
+      </button>
+      <div
+        x-show="open"
+        @mousedown.outside="open = false"
+        class="info__inputs__age-drop"
+        x-transition
+      >
+        <p
+          @mousedown="
+          age_type = 'years'; 
+          age_type_text = 'წლის';
+          setData('age_type', 'years');
+          open=false"
+        >
+          წლის
+        </p>
+        <p
+          @mousedown="
+          age_type = 'months'; 
+          age_type_text = 'თვის';
+          setData('age_type', 'months');
+          open=false"
+        >
+          თვის
+        </p>
+      </div>
+    </div>
+    <!-- INPUT -->
+    <input type="hidden" input-data="age_type" x-model="age_type" />
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="info__inputs__input">
+    <p>აღწერა</p>
+    <div class="info__inputs__desc-icon">
+      <img
+        src="{{content_url}}/assets/icons/description.svg"
+        alt=""
+        class="info__inputs__icon"
+      />
+      <textarea
+        type="text"
+        input-data="description"
+        placeholder="..."
+        onchange="setData('description', this.value)"
+      ></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="actions" id="actions" hx-swap-oob="true">
+  <button
+    type="button"
+    hx-get="/api/upload_steps/3"
+    hx-target=".info"
+    hx-trigger="mousedown"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="changeStep('prev')"
+  >
+    უკან
+  </button>
+  <button
+    type="button"
+    class="actions__next"
+    hx-get="/api/upload_steps/5"
+    hx-target=".info"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
+  >
+    გაგრძელება
+  </button>
+</div>

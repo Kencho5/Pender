@@ -1,50 +1,80 @@
-<div class="upload-row">
-  <p>{{ tr.FILTERS.type }}</p>
-  <div class="input-div" input-name="post_type" onmousedown="selectChip(event)">
-    <div class="chip" id="selling">{{ tr.POSTTYPE.selling_upload }}</div>
-    <div class="chip" id="adopting">{{ tr.POSTTYPE.adopting }}</div>
-    <div class="chip" id="meeting">{{ tr.POSTTYPE.meeting }}</div>
-  </div>
+<div class="info__title">
+  <h1>რომელი არის შენი პოსტის ტიპი?</h1>
+  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
 </div>
 
-<div class="upload-row">
-  <p>{{ tr.UPLOAD.animal }}</p>
-  <div class="input-div" input-name="animal" onmousedown="selectChip(event)">
-    <div class="chip" id="dog">{{ tr.ANIMALS.dog }}</div>
-    <div class="chip" id="cat">{{ tr.ANIMALS.cat }}</div>
-    <div class="chip" id="bird">{{ tr.ANIMALS.bird }}</div>
-    <div class="chip" id="fish">{{ tr.ANIMALS.fish }}</div>
-    <div class="chip" id="other">{{ tr.ANIMALS.other }}</div>
-  </div>
-</div>
-
-<div class="upload-row">
-  <p>{{ tr.UPLOAD.gender }}</p>
-  <div class="input-div" input-name="sex" onmousedown="selectChip(event)">
-    <div class="chip" id="girl">{{ tr.UPLOAD.girl }}</div>
-    <div class="chip" id="boy">{{ tr.UPLOAD.boy }}</div>
-  </div>
-</div>
-
-<button
-  type="button"
-  onmousedown="validateForm()"
-  class="upload-btn"
-  aria-label="Submit"
+<div
+  class="info__chips"
+  x-data="{ activeChip: null }"
+  x-init="$watch('activeChip', value => setData('post_type', value))"
 >
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    class="info__chips__chip"
+    @mousedown="activeChip = 'selling'"
+    :class="{ 'active-chip': activeChip === 'selling' }"
+    input-data="selling"
   >
-    <path
-      d="M4 12H20M20 12L14 6M20 12L14 18"
-      stroke="#fff"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-</button>
+    <div class="info__chips__chip__text">
+      <h1>გაყიდვა</h1>
+      <p>გაასხვისე შენი ცხოველი სანდო პირთან.</p>
+    </div>
+    <div class="info__chips__chip__icon">
+      <img
+        src="{{content_url}}/assets/icons/upload/upload_selling.svg"
+        alt=""
+      />
+    </div>
+  </div>
+  <div
+    class="info__chips__chip"
+    @mousedown="activeChip = 'adopting'"
+    :class="{ 'active-chip': activeChip === 'adopting' }"
+    input-data="adopting"
+  >
+    <div class="info__chips__chip__text">
+      <h1>შეფარება/გაჩუქება</h1>
+      <p>მოუძებნე შენს მეგობარს ახალი ოჯახი.</p>
+    </div>
+    <div class="info__chips__chip__icon">
+      <img
+        src="{{content_url}}/assets/icons/upload/upload_adopting.svg"
+        alt=""
+      />
+    </div>
+  </div>
+  <div
+    class="info__chips__chip"
+    @mousedown="activeChip = 'breeding'"
+    :class="{ 'active-chip': activeChip === 'breeding' }"
+    input-data="breeding"
+  >
+    <div class="info__chips__chip__text">
+      <h1>შეჯვარება</h1>
+      <p>მოუძებნე იდეალური პარტნიორი შენს მეგობარს.</p>
+    </div>
+    <div class="info__chips__chip__icon">
+      <img
+        src="{{content_url}}/assets/icons/upload/upload_breeding.svg"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <!-- INPUT -->
+  <input type="hidden" input-data="post_type" x-bind:value="activeChip" />
+</div>
+
+<div class="actions" id="actions" hx-swap-oob="true">
+  <button type="button" onmousedown="changeStep('prev')">უკან</button>
+  <button
+    type="button"
+    class="actions__next"
+    hx-get="/api/upload_steps/2"
+    hx-target=".info"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
+  >
+    გაგრძელება
+  </button>
+</div>

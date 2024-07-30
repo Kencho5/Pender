@@ -1,0 +1,184 @@
+@import "../variables";
+
+form {
+  .info {
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+
+    &__upload-container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    &__upload-info {
+      width: 100%;
+      height: 50px;
+      box-sizing: border-box;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 14px;
+
+      background-color: $violet-50;
+      border-radius: 16px;
+
+      font-size: 14px;
+      font-weight: 400;
+      color: $violet-500;
+    }
+
+    &__file-box {
+      width: 100%;
+      height: 286px;
+      box-sizing: border-box;
+      padding: 16px 24px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      background-color: $rose-50;
+
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23E56154FF' stroke-width='3' stroke-dasharray='4%2c 10' stroke-dashoffset='8' stroke-linecap='square'/%3e%3c/svg%3e");
+      border-radius: 16px;
+
+      color: $neutral-600;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+
+      &:hover {
+        background-color: $rose-100;
+      }
+
+      h1 {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+        font-weight: 590;
+        color: $primary;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      div {
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 100%;
+        background-color: $accent;
+        box-shadow: 0px 1px 4px 0px #0c0c0d0d;
+
+        margin-bottom: 12px;
+      }
+
+      input {
+        display: none;
+      }
+    }
+
+    &__images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      &__container {
+        position: relative;
+      }
+
+      &__image {
+        width: 317px;
+        height: 200px;
+        border-radius: 16px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          border-radius: 16px;
+        }
+      }
+
+      &__delete {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        width: 32px;
+        height: 32px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $accent;
+        border-radius: 100%;
+
+        cursor: pointer;
+      }
+
+      &__add-box {
+        width: 317px;
+        height: 200px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $rose-50;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23E56154FF' stroke-width='3' stroke-dasharray='4%2c 10' stroke-dashoffset='8' stroke-linecap='square'/%3e%3c/svg%3e");
+
+        border-radius: 16px;
+
+        color: $primary;
+        font-size: 14px;
+
+        cursor: pointer;
+
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $rose-100;
+        }
+
+        span {
+          font-size: 36px !important;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      &__upload-info {
+        height: 70px;
+        line-height: 21px;
+      }
+
+      &__images {
+        gap: 13px;
+
+        &__image,
+        &__add-box {
+          width: 143px;
+          height: 144px;
+        }
+      }
+    }
+  }
+}

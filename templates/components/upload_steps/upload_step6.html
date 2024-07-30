@@ -1,0 +1,109 @@
+<div class="info__title">
+  <h1>გვითხარი შენი ცხოველის შესახებ</h1>
+  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+</div>
+
+<div class="info__inputs">
+  <!-- CITY -->
+  <div class="info__inputs__input">
+    <p>ქალაქი</p>
+    <div>
+      <img
+        src="{{content_url}}/assets/icons/location.svg"
+        alt=""
+        class="info__inputs__icon"
+      />
+      <input
+        type="text"
+        name="city_dummy"
+        hx-get="/api/get-cities"
+        hx-trigger="keyup delay:100ms changed"
+        hx-params="*"
+        hx-target=".cities-div"
+        onkeyup="showCities(this)"
+        form="dummy-form"
+        autocomplete="off"
+        aria-label="City"
+        input-data="city"
+        placeholder="..."
+      />
+      <input
+        type="hidden"
+        name="city"
+        input-data="city"
+        onchange="setData('city', this.value)"
+      />
+
+      <div class="cities-dropdown" style="display: none">
+        <div class="cities-div"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHONE -->
+  <div class="info__inputs__input">
+    <p>ტელ. ნომერი</p>
+    <div>
+      <img
+        src="{{content_url}}/assets/icons/badge.svg"
+        alt=""
+        class="info__inputs__icon"
+      />
+      <input
+        type="number"
+        input-data="phone"
+        placeholder="..."
+        pattern="\d*"
+        onchange="setData('phone', this.value)"
+      />
+    </div>
+  </div>
+
+  <!-- PRICE -->
+  <div class="info__inputs__input" id="price">
+    <p>ფასი</p>
+    <div>
+      <img
+        src="{{content_url}}/assets/icons/lari.svg"
+        alt=""
+        class="info__inputs__icon"
+      />
+      <input
+        type="number"
+        input-data="price"
+        placeholder="..."
+        pattern="\d*"
+        onchange="setData('price', this.value)"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="actions" id="actions" hx-swap-oob="true">
+  <button
+    type="button"
+    hx-get="/api/upload_steps/5"
+    hx-target=".info"
+    hx-trigger="mousedown"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="changeStep('prev')"
+  >
+    უკან
+  </button>
+  <button
+    type="button"
+    class="actions__next actions__last snake-border"
+    hx-get="/api/upload_steps/7"
+    hx-target=".info"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
+  >
+    გამოქვეყნება
+  </button>
+</div>
+
+<script src="{{content_url}}/static/js/cities.js?v={{ ver }}"></script>
+<script>
+  if (form.post_type != "selling") htmx.find("#price").remove();
+</script>

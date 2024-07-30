@@ -1,0 +1,92 @@
+<div class="info__title">
+  <h1>განიხილე შენი პოსტი</h1>
+  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+</div>
+
+<div class="info__post">
+  <div class="info__top">
+    <div class="info__post-img">
+      <img
+        src="https://d19qt7p7fni613.cloudfront.net/post-images/87915270/0.jpg"
+        alt=""
+      />
+    </div>
+    <div class="info__top__details">
+      <h1 form-data="breed">ოქროსფერი რეტრივერის ლეკვები</h1>
+      <p class="info__top__location" form-data="city">
+        <img src="{{content_url}}/assets/icons/location.svg" alt="" />
+        თბილისი
+      </p>
+      <div class="info__top__type">
+        <p class="type selling">იყიდება</p>
+        <h1>930 ₾</h1>
+      </div>
+      <div class="info__top__line"></div>
+      <p class="info__top__description">
+        დარჩა 3 დღე! ფასი 2,000 ლარამდე. საუკეთესო გენეტიკით, საბუთებით,
+        საგამოფენო პერსპექტივით, აცრილი, ვეტ პასპორტით, სრულიად ჯანმრთელი.
+      </p>
+    </div>
+  </div>
+  <div class="info__bottom">
+    <!-- ANIMAL -->
+    <div class="info__bottom__item">
+      <img src="{{content_url}}/assets/icons/paw.svg" alt="" />
+      <div>
+        <p>ცხოველი</p>
+        <span> ძაღლი</span>
+      </div>
+    </div>
+
+    <!-- AGE -->
+    <div class="info__bottom__item">
+      <img src="{{content_url}}/assets/icons/calendar.svg" alt="" />
+      <div>
+        <p>ასაკი</p>
+        <span> 3 თვის </span>
+      </div>
+    </div>
+
+    <!-- GENDER -->
+    <div class="info__bottom__item">
+      <img src="{{content_url}}/assets/icons/gender.svg" alt="" />
+      <div>
+        <p>სქესი</p>
+        <span> გოგო </span>
+      </div>
+    </div>
+
+    <!-- BREED -->
+    <div class="info__bottom__item">
+      <img src="{{content_url}}/assets/icons/breed.svg" alt="" />
+      <div>
+        <p>ჯიში</p>
+        <span> ოქროს რეტრივერი </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="actions" id="actions" hx-swap-oob="true">
+  <button
+    type="button"
+    hx-get="/api/upload_steps/5"
+    hx-target=".info"
+    hx-trigger="mousedown"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="changeStep('prev')"
+  >
+    უკან
+  </button>
+  <button
+    type="button"
+    class="actions__next"
+    hx-get="/api/upload_steps/7"
+    hx-target=".info"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
+  >
+    გამოქვეყნება
+  </button>
+</div>

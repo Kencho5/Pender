@@ -1,100 +1,36 @@
-<style>
-  #toast {
-    visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 300px;
-    background-color: #a48afb;
-    color: var(--accent);
-    text-align: center;
-    border-radius: 40px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 124px;
-    font-size: 18px;
-    font-weight: normal;
-  }
-
-  #toast img {
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-
-  #toast.show {
-    visibility: visible;
-    -webkit-animation:
-      fadein 0.5s,
-      fadeout 0.5s 2.5s;
-    animation:
-      fadein 0.5s,
-      fadeout 0.5s 2.5s;
-  }
-
-  @-webkit-keyframes fadein {
-    from {
-      top: 0;
-      opacity: 0;
-    }
-    to {
-      top: 124px;
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadein {
-    from {
-      top: 0;
-      opacity: 0;
-    }
-    to {
-      top: 124px;
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes fadeout {
-    from {
-      top: 124px;
-      opacity: 1;
-    }
-    to {
-      top: 0;
-      opacity: 0;
-    }
-  }
-
-  @keyframes fadeout {
-    from {
-      top: 124px;
-      opacity: 1;
-    }
-    to {
-      top: 0;
-      opacity: 0;
-    }
-  }
-</style>
+<link
+  rel="stylesheet"
+  href="{{content_url}}/static/css/toast.css?v={{ ver }}"
+/>
 
 <div id="toast">
   <img
-    src="{{content_url}}/assets/icons/check.svg"
-    alt="Check"
+    src="{{content_url}}/assets/icons/close_circle.svg"
+    alt=""
     width="24"
     height="24"
+    class="hidden close"
   />
-  {{ tr.PROFILE.saved }}
+  <img
+    src="{{content_url}}/assets/icons/check.svg"
+    alt=""
+    width="24"
+    height="24"
+    class="hidden check"
+  />
+  <p></p>
 </div>
 
 <script>
-  function triggerToast() {
-    var x = document.getElementById("toast");
-    x.className = "show";
+  function triggerToast(message, color, type) {
+    htmx.find(`.${type}`).classList.remove("hidden");
+    var toast = htmx.find("#toast");
+    toast.children[2].textContent = message;
+
+    toast.className = "show";
+    toast.style.backgroundColor = color;
     setTimeout(function () {
-      x.className = x.className.replace("show", "");
+      toast.className = toast.classList.remove("show");
     }, 3000);
   }
 </script>

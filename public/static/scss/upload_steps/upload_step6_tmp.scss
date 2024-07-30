@@ -1,0 +1,174 @@
+@import "../variables";
+
+form {
+  .info {
+    &__post {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &__top {
+      display: flex;
+      gap: 24px;
+
+      &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        margin: 10px;
+      }
+
+      h1 {
+        font-weight: 510;
+        font-size: 20px;
+        margin: 0;
+      }
+
+      &__location {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        color: $neutral-600;
+        font-weight: 400;
+        font-size: 14px;
+
+        margin: 0;
+
+        img {
+          width: 16px;
+          height: 18px;
+        }
+      }
+
+      &__type {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        p {
+          font-size: 16px;
+        }
+
+        h1 {
+          margin: 0;
+          font-weight: 700;
+          font-size: 18px;
+        }
+      }
+      &__line {
+        width: 100%;
+        height: 1px;
+        background-color: $neutral-100;
+      }
+
+      &__description {
+        max-width: 330px;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+
+    &__post-img {
+      width: 283px;
+      height: 256px;
+      border-radius: 16px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        border-radius: 16px;
+      }
+    }
+
+    &__bottom {
+      width: 100%;
+      height: 71px;
+      box-sizing: border-box;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      padding: 17px;
+
+      border-radius: 16px;
+
+      background-color: $neutral-50;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        div {
+          white-space: nowrap;
+
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          span {
+            max-width: 120px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 12px;
+            font-weight: 400;
+            color: $neutral-600;
+          }
+
+          p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 14px;
+            color: $neutral-800;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      &__top {
+        flex-direction: column;
+      }
+
+      &__post-img {
+        width: 100%;
+      }
+
+      &__bottom {
+        flex-direction: column;
+        height: auto;
+      }
+    }
+  }
+}
+
+.type {
+  height: 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0px 8px;
+  border-radius: 6px;
+  font-weight: 400;
+}
+.selling {
+  color: #4ca30d;
+  background-color: #e4fbcc;
+}
+.adopting {
+  color: #e56154;
+  background-color: #fae7e6;
+}
+.meeting {
+  color: #875bf7;
+  background-color: #ece9fe;
+}

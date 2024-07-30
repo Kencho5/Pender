@@ -4,7 +4,7 @@
 }
 
 .cities-div {
-  position: absolute;
+  position: absolute !important;
   background-color: var(--background);
   border-radius: 0px 0px 25px 25px;
   width: 100%;
@@ -31,4 +31,3 @@
 .cities-div p:first-child {
   margin-top: 20px;
 }
-
