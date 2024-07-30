@@ -1,11 +1,11 @@
 use crate::config::config_manager::Config;
 use crate::imports::*;
 use crate::utils::{self, cities::get_city, common::logged_in, upload_struct};
+use image_base64::from_base64;
 use std::env;
 use std::fs;
-use std::fs::File;
 use std::io::Write;
-use std::process::Command;
+use std::process::{Command, Stdio};
 
 pub async fn upload_handler(req: Request<AppState>) -> tide::Result {
     let context = utils::common::get_context(&req).await?;
@@ -27,28 +27,20 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     let mut form_data: upload_struct::UploadForm = req.body_json().await?;
     let config = &req.state().config;
 
+    fs::create_dir(format!("/var/uploads/post-images/{}", post_id))?;
+
     for (index, photo) in form_data.photos.iter().enumerate() {
-        let save_result = save_images(&post_id, photo, index).await;
-        if let Err(_) = save_result {
-            response.set_body(json!({
-                "error": "Failed to upload photos"
-            }));
-            return Ok(response);
-        }
-
+        let image_data = from_base64(photo.to_string());
         let input_path = format!("/var/uploads/post-images/{}/{}.jpg", post_id, index);
-        let scale_filter = match fs::metadata(&input_path)?.len() / 1024 {
-            size if size <= 500 => "scale=iw*0.8:ih*0.8",
-            _ => "scale=iw*0.5:ih*0.5",
-        };
+        let scale_filter = "scale=iw*0.8:ih*0.8";
 
-        let output = Command::new("ffmpeg")
-            .args(&["-y", "-i", &input_path, "-vf", scale_filter, &input_path])
-            .output()
-            .expect("Failed to execute ffmpeg command");
+        let ffmpeg = Command::new("ffmpeg")
+            .args(&["-i", "pipe:0", "-vf", scale_filter, &input_path])
+            .stdin(Stdio::piped())
+            .spawn();
 
-        if !output.status.success() {
-            eprintln!("ffmpeg command failed with output: {:?}", output);
+        if let Some(mut stdin) = ffmpeg.unwrap().stdin.take() {
+            stdin.write_all(&image_data)?;
         }
     }
     upload_images(&post_id, config).await?;
@@ -68,20 +60,6 @@ pub async fn upload_post_handler(mut req: Request<AppState>) -> tide::Result {
     }));
 
     Ok(response)
-}
-
-async fn save_images(post_id: &String, photo: &String, index: usize) -> Result<(), std::io::Error> {
-    let image = image_base64::from_base64(photo.to_string());
-
-    let post_path = format!("/var/uploads/post-images/{}/", post_id);
-    let img_path = format!("{}{}.jpg", post_path, index);
-
-    std::fs::create_dir_all(&post_path)?;
-
-    let mut file = File::create(&img_path)?;
-    file.write_all(&image)?;
-
-    Ok(())
 }
 
 async fn insert_post(
