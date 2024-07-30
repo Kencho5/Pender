@@ -12,7 +12,7 @@ use std::str;
 
 #[async_std::main]
 async fn main() -> tide::Result<()> {
-    tide::log::start();
+    // tide::log::start();
     let config = config::config_manager::load_config().expect("Config Error.");
     let output = Command::new("git")
         .args(&["rev-parse", "--abbrev-ref", "HEAD"])
