@@ -76,7 +76,7 @@ form {
       }
       &__desc-icon {
         textarea {
-          height: 90px !important;
+          height: 100px !important;
           border-radius: 16px !important;
         }
         img {
@@ -112,6 +112,12 @@ form {
       }
 
       @media (max-width: 768px) {
+        &__desc-icon {
+          textarea {
+            height: 80px !important;
+          }
+        }
+
         &__input {
           input {
             height: 44px !important;
