@@ -2,10 +2,6 @@
 
 form {
   .info {
-    overflow-y: scroll;
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-
     &__upload-container {
       display: flex;
       flex-direction: column;
