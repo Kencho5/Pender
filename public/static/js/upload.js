@@ -121,9 +121,15 @@ function fileUpload() {
 
     handleFileChange(event) {
       const files = event.target.files;
+      const hasHeif = Array.from(files).some(
+        (file) => file.type === "image/heif" || file.type === "image/heic",
+      );
 
       if (form.photos.length + files.length > 3) {
         triggerToast("აირჩიეთ მხოლოდ 3 ფოტო", "#e78882", "close");
+        return;
+      } else if (hasHeif) {
+        triggerToast("მხოლოდ JPG ან PNG ფოტოები", "#e78882", "close");
         return;
       }
       this.showInfo = files.length === 0;
