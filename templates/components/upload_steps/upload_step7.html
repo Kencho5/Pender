@@ -1,0 +1,30 @@
+<div class="progress-div">
+  <div class="progress-info">
+    <h1 class="progress-percentage"></h1>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+</div>
+
+<div class="info__finish" id="finishElement">
+  <img src="{{content_url}}/assets/icons/upload/finish.svg" alt="" />
+  <div class="info__finish__text">
+    <h1>მადლობა, <span x-text="'{{claims.name}}'.split(' ')[0]"></span></h1>
+    <p>
+      პოსტი წარმატებით აიტვირთა! ახლა უკვე ხელმისაწვდომია, რომ ნახონ სხვებმა
+    </p>
+  </div>
+  <div class="info__finish__links">
+    <a id="postId">პოსტის ნახვა</a>
+    <a href="/">მთავარი გვერდი</a>
+  </div>
+</div>
+
+<div
+  class="actions"
+  id="actions"
+  hx-swap-oob="true"
+  style="display: none"
+></div>

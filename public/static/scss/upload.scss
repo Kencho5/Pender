@@ -55,10 +55,11 @@ form {
       position: relative;
 
       &__line {
-        width: 162px;
+        width: 260px;
         height: 2px;
 
-        background-color: $indigo-100;
+        background-color: $indigo-500;
+        opacity: 0.3;
 
         position: absolute;
         top: 15px;
@@ -72,7 +73,7 @@ form {
 
       &__circle {
         &__line {
-          width: 56px;
+          width: 87px;
         }
       }
 
@@ -95,11 +96,12 @@ form {
     border-radius: 26px;
     @media (max-width: 768px) {
       width: 340px;
-      height: 516px;
+      height: 536px;
     }
   }
 
   .info {
+    position: relative;
     width: 750px;
     height: 564px;
     padding: 50px;
@@ -107,7 +109,7 @@ form {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 36px;
 
     background-color: $accent;
@@ -130,15 +132,19 @@ form {
 
       p {
         color: $neutral-600;
+
         font-weight: 400;
+        font-size: 16px;
+
         margin: 0;
       }
     }
 
     @media (max-width: 768px) {
       width: 340px;
-      height: 516px;
+      height: 536px;
       padding: 30px 20px;
+      gap: 24px;
 
       &__title {
         h1 {
@@ -160,7 +166,7 @@ form {
 
   .info.htmx-swapping {
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.1s;
   }
 
   .actions {
@@ -205,6 +211,37 @@ form {
 
       &:hover {
         scale: 1.02;
+      }
+    }
+
+    &__last {
+      /* box-shadow: 0 4px 15px rgba($indigo-400, 0.4); */
+      background: linear-gradient(
+        45deg,
+        $violet-500,
+        $violet-400,
+        $indigo-400,
+        $indigo-500
+      );
+      background-size: 150% 150%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow:
+          0 0 8px rgba($violet-400, 0.7),
+          0 0 12px rgba($indigo-300, 0.5);
+      }
+      50% {
+        box-shadow:
+          0 0 14px rgba($violet-400, 0.9),
+          0 0 20px rgba($indigo-300, 0.7);
+      }
+      100% {
+        box-shadow:
+          0 0 8px rgba($violet-400, 0.7),
+          0 0 12px rgba($indigo-300, 0.5);
       }
     }
 

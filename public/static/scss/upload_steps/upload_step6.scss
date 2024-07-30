@@ -1,0 +1,135 @@
+@import "../variables";
+
+form {
+  .info {
+    &__finish {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 32px;
+
+      img {
+        width: 150px;
+        height: 150px;
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+
+        h1 {
+          font-size: 20px;
+          margin: 0;
+        }
+
+        span {
+          font-weight: 700;
+        }
+
+        p {
+          max-width: 350px;
+          margin: 0;
+
+          font-size: 16px;
+          font-weight: 400;
+          color: $neutral-600;
+        }
+      }
+
+      &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        width: 100%;
+        max-width: 436px;
+
+        & > a {
+          width: 100%;
+          height: 48px;
+          box-sizing: border-box;
+          padding: 12px 20px;
+          text-align: center;
+          border-radius: 50px;
+        }
+
+        & :nth-child(1) {
+          background-color: $primary;
+          color: $accent;
+        }
+
+        & :nth-child(2) {
+          background-color: $accent;
+          color: $neutral-800;
+          border: 1px solid $neutral-200;
+        }
+      }
+    }
+
+    &__finish.fade-in {
+      display: flex;
+      opacity: 0;
+      transition: opacity 0.4s ease-in;
+    }
+    &__finish.fade-in.show {
+      opacity: 1;
+    }
+
+    /* PROGRESS BAR */
+    .progress-div {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+
+      width: 85%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .progress-div.fade-out {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .progress-bar {
+      margin: auto;
+      margin-top: 16px;
+      width: 100%;
+      height: 20px;
+      background-color: $indigo-100;
+      border-radius: 26px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        $violet-400,
+        $violet-300,
+        $indigo-300,
+        $indigo-400
+      );
+      background-size: 150% 150%;
+      border-radius: 26px;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-percentage {
+      font-size: 22px;
+      margin: 0;
+    }
+  }
+}

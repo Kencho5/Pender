@@ -27,6 +27,10 @@ if (citiesDiv) {
       cityInput.value = cityName;
       document.getElementsByName("city")[0].value = cityValue;
 
+      // Trigger the onchange event
+      const customEvent = new Event("change", { bubbles: true });
+      document.getElementsByName("city")[0].dispatchEvent(customEvent);
+
       cityInput.style.borderRadius = "40px";
       document.getElementsByClassName("cities-dropdown")[0].style.display =
         "none";

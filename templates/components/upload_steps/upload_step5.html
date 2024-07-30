@@ -1,0 +1,85 @@
+<link rel="preload" href="{{content_url}}/assets/icons/delete.svg" as="image" />
+
+<div class="info__title">
+  <h1>ატვირთე ცხოველის სურათები</h1>
+  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+</div>
+
+<div x-data="fileUpload()">
+  <div class="info__upload-container">
+    <!-- UPLOAD INFO -->
+    <div class="info__upload-info">
+      <img src="{{content_url}}/assets/icons/upload/info.svg" alt="" />
+      სწორად შერჩეული ფოტოებით მეტ ადამიანს დააინტერესებ.
+    </div>
+
+    <!-- FILE BOX -->
+    <div
+      class="info__file-box"
+      @click="$refs.fileInput.click()"
+      x-show="showInfo"
+    >
+      <div>
+        <img src="{{content_url}}/assets/icons/upload/upload_red.svg" alt="" />
+      </div>
+      <h1>ასატვირთად დააჭირე</h1>
+      <p>3 ფოტო მაქს.</p>
+
+      <input
+        type="file"
+        accept="image/*"
+        multiple
+        x-ref="fileInput"
+        input-data="photos"
+        @change="handleFileChange"
+      />
+    </div>
+
+    <!-- IMAGES -->
+    <div class="info__images">
+      <template x-for="image in images">
+        <div class="info__images__container">
+          <div class="info__images__image">
+            <img :src="image.url" alt="" />
+          </div>
+
+          <div class="info__images__delete" @click="deleteImage(image.name)">
+            <img src="{{content_url}}/assets/icons/delete.svg" alt="" />
+          </div>
+        </div>
+      </template>
+      <div
+        class="info__images__add-box"
+        x-show="!showInfo"
+        @click="$refs.fileInput.click()"
+      >
+        <span>+</span>
+        დამატება
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="actions" id="actions" hx-swap-oob="true">
+  <button
+    type="button"
+    hx-get="/api/upload_steps/4"
+    hx-target=".info"
+    hx-trigger="mousedown"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="changeStep('prev')"
+  >
+    უკან
+  </button>
+  <button
+    type="button"
+    class="actions__next"
+    hx-get="/api/upload_steps/6"
+    hx-target=".info"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
+  >
+    გაგრძელება
+  </button>
+</div>

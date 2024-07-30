@@ -7,14 +7,13 @@
   class="info__animals"
   x-data="{ activeChip: null }"
   x-init="$watch('activeChip', value => setData('animal', value))"
-  id="animal"
 >
   <!-- DOG -->
   <div
     class="info__animals__chip"
     @mousedown="activeChip = 'dog'"
     :class="{ 'active-chip': activeChip === 'dog' }"
-    id="dog"
+    input-data="dog"
   >
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/dog.webp" alt="" />
@@ -27,7 +26,7 @@
     class="info__animals__chip"
     @mousedown="activeChip = 'cat'"
     :class="{ 'active-chip': activeChip === 'cat' }"
-    id="cat"
+    input-data="cat"
   >
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/cat.webp" alt="" />
@@ -40,7 +39,7 @@
     class="info__animals__chip"
     @mousedown="activeChip = 'bird'"
     :class="{ 'active-chip': activeChip === 'bird' }"
-    id="bird"
+    input-data="bird"
   >
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/bird.webp" alt="" />
@@ -53,7 +52,7 @@
     class="info__animals__chip"
     @mousedown="activeChip = 'fish'"
     :class="{ 'active-chip': activeChip === 'fish' }"
-    id="fish"
+    input-data="fish"
   >
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/fish.webp" alt="" />
@@ -66,7 +65,7 @@
     class="info__animals__chip"
     @mousedown="activeChip = 'other'"
     :class="{ 'active-chip': activeChip === 'other' }"
-    id="other"
+    input-data="other"
   >
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/other.webp" alt="" />
@@ -75,7 +74,7 @@
   </div>
 
   <!-- INPUT -->
-  <input type="hidden" name="animal" x-bind:value="activeChip" />
+  <input type="hidden" input-data="animal" x-bind:value="activeChip" />
 </div>
 
 <div class="actions" id="actions" hx-swap-oob="true">
@@ -84,7 +83,7 @@
     hx-get="/api/upload_steps/1"
     hx-target=".info"
     hx-trigger="mousedown"
-    hx-swap="innerHTML swap:200ms"
+    hx-swap="innerHTML swap:100ms"
     onmousedown="changeStep('prev')"
   >
     უკან
@@ -94,9 +93,9 @@
     class="actions__next"
     hx-get="/api/upload_steps/3"
     hx-target=".info"
-    hx-trigger="mousedown"
-    hx-swap="innerHTML swap:200ms"
-    onmousedown="changeStep('next')"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
   >
     გაგრძელება
   </button>

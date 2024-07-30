@@ -7,13 +7,12 @@
   class="info__chips"
   x-data="{ activeChip: null }"
   x-init="$watch('activeChip', value => setData('post_type', value))"
-  id="post_type"
 >
   <div
     class="info__chips__chip"
     @mousedown="activeChip = 'selling'"
     :class="{ 'active-chip': activeChip === 'selling' }"
-    id="selling"
+    input-data="selling"
   >
     <div class="info__chips__chip__text">
       <h1>გაყიდვა</h1>
@@ -30,7 +29,7 @@
     class="info__chips__chip"
     @mousedown="activeChip = 'adopting'"
     :class="{ 'active-chip': activeChip === 'adopting' }"
-    id="adopting"
+    input-data="adopting"
   >
     <div class="info__chips__chip__text">
       <h1>შეფარება/გაჩუქება</h1>
@@ -47,7 +46,7 @@
     class="info__chips__chip"
     @mousedown="activeChip = 'breeding'"
     :class="{ 'active-chip': activeChip === 'breeding' }"
-    id="breeding"
+    input-data="breeding"
   >
     <div class="info__chips__chip__text">
       <h1>შეჯვარება</h1>
@@ -62,7 +61,7 @@
   </div>
 
   <!-- INPUT -->
-  <input type="hidden" name="post_type" x-bind:value="activeChip" />
+  <input type="hidden" input-data="post_type" x-bind:value="activeChip" />
 </div>
 
 <div class="actions" id="actions" hx-swap-oob="true">
@@ -72,9 +71,9 @@
     class="actions__next"
     hx-get="/api/upload_steps/2"
     hx-target=".info"
-    hx-trigger="mousedown"
-    hx-swap="innerHTML swap:200ms"
-    onmousedown="changeStep('next')"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
   >
     გაგრძელება
   </button>

@@ -1,12 +1,12 @@
 {% extends "components/layout.html" %} 
 <!-- prettier-ignore -->
 {% block title %}
-{% if post.post_type == "breeding" %}
+{% if post.post_type == "meeting" %}
   💜 {{ post.breed }} - {{ post.age }} {{ tr.FILTERS[post.age_type] }} {{ tr.UPLOAD[post.sex] }}
 {% elif post.post_type == "adopting" %}
   🩷 {{ post.breed }} - {{ post.age }} {{ tr.FILTERS[post.age_type] }} {{ tr.UPLOAD[post.sex] }}
 {% elif post.post_type == "selling" %}
-💚 {{ post.breed }} - {{ post.age }} {{ tr.FILTERS[post.age_type] }} {{ tr.UPLOAD[post.sex] }}
+  💚 {{ post.breed }} - {{ post.age }} {{ tr.FILTERS[post.age_type] }} {{ tr.UPLOAD[post.sex] }}
 {% endif %}
 {% endblock title %}
 

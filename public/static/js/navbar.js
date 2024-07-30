@@ -28,3 +28,13 @@ function logout() {
 }
 
 var delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+document.addEventListener("alpine:init", () => {
+  Alpine.data("dropdown", () => ({
+    open: false,
+
+    toggle() {
+      this.open = !this.open;
+    },
+  }));
+});

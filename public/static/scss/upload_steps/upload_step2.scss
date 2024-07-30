@@ -1,21 +1,17 @@
-@import "variables";
+@import "../variables";
 
 form {
   .info {
-    &__chips {
+    &__animals {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 14px;
 
       &__chip {
-        width: 100%;
+        width: 318px;
         height: 110px;
-        padding: 20px;
+        padding: 16px 20px;
         box-sizing: border-box;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
 
         background-color: $neutral-50;
 
@@ -27,6 +23,7 @@ form {
         transition:
           background-color 0.3s,
           outline-color 0.3s ease,
+          color 0.3s,
           transform 0.2s;
 
         &:hover {
@@ -34,27 +31,6 @@ form {
           background-color: $neutral-100;
         }
 
-        &__text {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-
-          height: 46px;
-
-          h1 {
-            font-size: 18px;
-            font-weight: 590;
-            margin: 0;
-          }
-
-          p {
-            font-size: 14px;
-            font-weight: 400;
-            color: $neutral-600;
-
-            margin: 0;
-          }
-        }
         &__icon {
           width: 48px;
           height: 48px;
@@ -75,22 +51,17 @@ form {
             height: 22px;
           }
         }
-      }
-    }
-    @media (max-width: 768px) {
-      &__chips {
-        &__chip {
-          height: 100px;
 
-          &__text {
-            h1 {
-              font-size: 16px;
-            }
-            p {
-              width: 200px;
-              font-size: 12px;
-            }
-          }
+        h1 {
+          font-size: 18px;
+          font-weight: 590;
+        }
+      }
+      @media (max-width: 768px) {
+        &__chip {
+          width: 142px;
+          height: 100px;
+          padding: 16px 18px;
 
           &__icon {
             width: 40px;
@@ -103,6 +74,9 @@ form {
           }
         }
       }
+    }
+    .active-chip {
+      color: $primary;
     }
   }
 }

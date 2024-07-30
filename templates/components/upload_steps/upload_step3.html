@@ -1,4 +1,49 @@
-test3
+<style>
+  .info__chips__chip__text {
+    height: unset !important;
+  }
+</style>
+
+<div class="info__title">
+  <h1>გვითხარი შენი ცხოველის სქესი</h1>
+  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+</div>
+
+<div
+  class="info__chips"
+  x-data="{ activeChip: null }"
+  x-init="$watch('activeChip', value => setData('sex', value))"
+>
+  <div
+    class="info__chips__chip"
+    @mousedown="activeChip = 'girl'"
+    :class="{ 'active-chip': activeChip === 'girl' }"
+    input-data="girl"
+  >
+    <div class="info__chips__chip__text">
+      <h1>გოგო</h1>
+    </div>
+    <div class="info__chips__chip__icon">
+      <img src="{{content_url}}/assets/icons/upload/girl.svg" alt="" />
+    </div>
+  </div>
+  <div
+    class="info__chips__chip"
+    @mousedown="activeChip = 'boy'"
+    :class="{ 'active-chip': activeChip === 'boy' }"
+    input-data="boy"
+  >
+    <div class="info__chips__chip__text">
+      <h1>ბიჭი</h1>
+    </div>
+    <div class="info__chips__chip__icon">
+      <img src="{{content_url}}/assets/icons/upload/boy.svg" alt="" />
+    </div>
+  </div>
+
+  <!-- INPUT -->
+  <input type="hidden" input-data="sex" x-bind:value="activeChip" />
+</div>
 
 <div class="actions" id="actions" hx-swap-oob="true">
   <button
@@ -6,7 +51,7 @@ test3
     hx-get="/api/upload_steps/2"
     hx-target=".info"
     hx-trigger="mousedown"
-    hx-swap="innerHTML swap:200ms"
+    hx-swap="innerHTML swap:100ms"
     onmousedown="changeStep('prev')"
   >
     უკან
@@ -16,9 +61,9 @@ test3
     class="actions__next"
     hx-get="/api/upload_steps/4"
     hx-target=".info"
-    hx-trigger="mousedown"
-    hx-swap="innerHTML swap:200ms"
-    onmousedown="changeStep('next')"
+    hx-trigger="validated"
+    hx-swap="innerHTML swap:100ms"
+    onmousedown="validateStep('next')"
   >
     გაგრძელება
   </button>

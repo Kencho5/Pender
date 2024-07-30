@@ -6,21 +6,7 @@ Pender - ატვირთე!
 
 {% block content %}
 
-<link
-  rel="stylesheet"
-  href="{{content_url}}/static/css/upload.css?v={{ ver }}"
-/>
-<link
-  rel="stylesheet"
-  href="{{content_url}}/static/css/upload_step1.css?v={{ ver }}"
-/>
-
-<link
-  rel="stylesheet"
-  href="{{content_url}}/static/css/upload_step2.css?v={{ ver }}"
-  media="print"
-  onload="this.media='all'"
-/>
+{% include "components/upload_imports.html" %}
 
 <body>
   <form>
@@ -70,7 +56,6 @@ Pender - ატვირთე!
       </div>
       <div class="steps__step">
         <div class="steps__circle" id="step3">
-          <div class="steps__circle__line"></div>
           <img
             src="{{content_url}}/assets/icons/upload/upload_file.svg"
             alt=""
@@ -87,27 +72,7 @@ Pender - ატვირთე!
             class="hidden"
           />
         </div>
-        <p>პოსტის დეტალები</p>
-      </div>
-      <div class="steps__step">
-        <div class="steps__circle" id="step4">
-          <img
-            src="{{content_url}}/assets/icons/upload/upload_eye.svg"
-            alt=""
-            width="32"
-            height="32"
-            hx-trigger="load"
-          />
-          <img
-            src="{{content_url}}/assets/icons/upload/circle_check.svg"
-            alt=""
-            width="32"
-            height="32"
-            hx-trigger="load"
-            class="hidden"
-          />
-        </div>
-        <p>განხილვა</p>
+        <p>დეტალები</p>
       </div>
     </div>
 
@@ -120,6 +85,15 @@ Pender - ატვირთე!
     <div class="actions" id="actions"></div>
   </form>
 
+  <!-- TOAST -->
+  {% include "components/toast.html" %}
+
   <script src="{{content_url}}/static/js/upload.js?v={{ ver }}"></script>
+  <script>
+    setTimeout(function () {
+      form.user_id = "{{claims.id}}";
+      form.user_name = "{{claims.name}}";
+    }, 200);
+  </script>
 </body>
 {% endblock content %}
