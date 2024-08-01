@@ -8,8 +8,8 @@
 <link rel="preload" href="{{content_url}}/assets/icons/delete.svg" as="image" />
 
 <div class="info__title">
-  <h1>ატვირთე ცხოველის სურათები</h1>
-  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+  <h1>{{ tr.UPLOAD.STEP_5.title }}</h1>
+  <p>{{ tr.UPLOAD.title_helper }}</p>
 </div>
 
 <div x-data="fileUpload()">
@@ -17,7 +17,7 @@
     <!-- UPLOAD INFO -->
     <div class="info__upload-info">
       <img src="{{content_url}}/assets/icons/upload/info.svg" alt="" />
-      სწორად შერჩეული ფოტოებით მეტ ადამიანს დააინტერესებ.
+      {{ tr.UPLOAD.STEP_5.info }}
     </div>
 
     <!-- FILE BOX -->
@@ -29,8 +29,8 @@
       <div>
         <img src="{{content_url}}/assets/icons/upload/upload_red.svg" alt="" />
       </div>
-      <h1>ასატვირთად დააჭირე</h1>
-      <p>3 ფოტო მაქს.</p>
+      <h1>{{ tr.UPLOAD.STEP_5.click_here }}</h1>
+      <p>{{ tr.UPLOAD.STEP_5.photo_limit }}</p>
 
       <input
         type="file"
@@ -61,7 +61,7 @@
         @click="$refs.fileInput.click()"
       >
         <span>+</span>
-        დამატება
+        {{ tr.UPLOAD.STEP_5.add }}
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="changeStep('prev')"
   >
-    უკან
+    {{ tr.UPLOAD.actions_back }}
   </button>
   <button
     type="button"
@@ -87,6 +87,6 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="validateStep('next')"
   >
-    გაგრძელება
+    {{ tr.UPLOAD.actions_next }}
   </button>
 </div>

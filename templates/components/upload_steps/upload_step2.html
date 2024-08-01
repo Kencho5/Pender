@@ -1,6 +1,6 @@
 <div class="info__title">
-  <h1>რომელი არის შენი ცხოველის ტიპი?</h1>
-  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+  <h1>{{ tr.UPLOAD.STEP_2.title }}</h1>
+  <p>{{ tr.UPLOAD.title_helper }}</p>
 </div>
 
 <div
@@ -18,7 +18,7 @@
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/dog.webp" alt="" />
     </div>
-    <h1>ძაღლი</h1>
+    <h1>{{ tr.ANIMALS.dog }}</h1>
   </div>
 
   <!-- CAT -->
@@ -31,7 +31,7 @@
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/cat.webp" alt="" />
     </div>
-    <h1>კატა</h1>
+    <h1>{{ tr.ANIMALS.cat }}</h1>
   </div>
 
   <!-- BIRD -->
@@ -44,7 +44,7 @@
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/bird.webp" alt="" />
     </div>
-    <h1>ფრინველი</h1>
+    <h1>{{ tr.ANIMALS.bird }}</h1>
   </div>
 
   <!-- FISH -->
@@ -57,7 +57,7 @@
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/fish.webp" alt="" />
     </div>
-    <h1>თევზი</h1>
+    <h1>{{ tr.ANIMALS.fish }}</h1>
   </div>
 
   <!-- OTHER -->
@@ -70,7 +70,7 @@
     <div class="info__animals__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/other.webp" alt="" />
     </div>
-    <h1>სხვა</h1>
+    <h1>{{ tr.ANIMALS.other }}</h1>
   </div>
 
   <!-- INPUT -->
@@ -86,7 +86,7 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="changeStep('prev')"
   >
-    უკან
+    {{ tr.UPLOAD.actions_back }}
   </button>
   <button
     type="button"
@@ -97,6 +97,6 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="validateStep('next')"
   >
-    გაგრძელება
+    {{ tr.UPLOAD.actions_next }}
   </button>
 </div>

@@ -34,6 +34,7 @@ var stepsArr = {
   2: [1, 2],
   5: [3],
   6: [3],
+  7: [3],
 };
 
 function setData(key, value) {

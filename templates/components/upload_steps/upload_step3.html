@@ -5,8 +5,8 @@
 </style>
 
 <div class="info__title">
-  <h1>გვითხარი შენი ცხოველის სქესი</h1>
-  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+  <h1>{{ tr.UPLOAD.STEP_3.title }}</h1>
+  <p>{{ tr.UPLOAD.title_helper }}</p>
 </div>
 
 <div
@@ -21,7 +21,7 @@
     input-data="girl"
   >
     <div class="info__chips__chip__text">
-      <h1>გოგო</h1>
+      <h1>{{ tr.UPLOAD.girl }}</h1>
     </div>
     <div class="info__chips__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/girl.svg" alt="" />
@@ -34,7 +34,7 @@
     input-data="boy"
   >
     <div class="info__chips__chip__text">
-      <h1>ბიჭი</h1>
+      <h1>{{ tr.UPLOAD.boy }}</h1>
     </div>
     <div class="info__chips__chip__icon">
       <img src="{{content_url}}/assets/icons/upload/boy.svg" alt="" />
@@ -54,7 +54,7 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="changeStep('prev')"
   >
-    უკან
+    {{ tr.UPLOAD.actions_back }}
   </button>
   <button
     type="button"
@@ -65,6 +65,6 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="validateStep('next')"
   >
-    გაგრძელება
+    {{ tr.UPLOAD.actions_next }}
   </button>
 </div>

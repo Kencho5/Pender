@@ -1,6 +1,6 @@
 <div class="info__title">
-  <h1>რომელი არის შენი პოსტის ტიპი?</h1>
-  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+  <h1>{{ tr.UPLOAD.STEP_1.title }}</h1>
+  <p>{{ tr.UPLOAD.title_helper }}</p>
 </div>
 
 <div
@@ -15,8 +15,8 @@
     input-data="selling"
   >
     <div class="info__chips__chip__text">
-      <h1>გაყიდვა</h1>
-      <p>გაასხვისე შენი ცხოველი სანდო პირთან.</p>
+      <h1>{{ tr.POSTTYPE.selling }}</h1>
+      <p>{{ tr.UPLOAD.STEP_1.selling_helper }}</p>
     </div>
     <div class="info__chips__chip__icon">
       <img
@@ -32,8 +32,8 @@
     input-data="adopting"
   >
     <div class="info__chips__chip__text">
-      <h1>შეფარება/გაჩუქება</h1>
-      <p>მოუძებნე შენს მეგობარს ახალი ოჯახი.</p>
+      <h1>{{ tr.POSTTYPE.adopting_gifting }}</h1>
+      <p>{{ tr.UPLOAD.STEP_1.adopting_helper }}</p>
     </div>
     <div class="info__chips__chip__icon">
       <img
@@ -49,8 +49,8 @@
     input-data="breeding"
   >
     <div class="info__chips__chip__text">
-      <h1>შეჯვარება</h1>
-      <p>მოუძებნე იდეალური პარტნიორი შენს მეგობარს.</p>
+      <h1>{{ tr.POSTTYPE.meeting }}</h1>
+      <p>{{ tr.UPLOAD.STEP_1.meeting_helper }}</p>
     </div>
     <div class="info__chips__chip__icon">
       <img
@@ -65,7 +65,9 @@
 </div>
 
 <div class="actions" id="actions" hx-swap-oob="true">
-  <button type="button" onmousedown="changeStep('prev')">უკან</button>
+  <button type="button" onmousedown="changeStep('prev')">
+    {{ tr.UPLOAD.actions_back }}
+  </button>
   <button
     type="button"
     class="actions__next"
@@ -75,6 +77,6 @@
     hx-swap="innerHTML swap:0.3s"
     onmousedown="validateStep('next')"
   >
-    გაგრძელება
+    {{ tr.UPLOAD.actions_next }}
   </button>
 </div>

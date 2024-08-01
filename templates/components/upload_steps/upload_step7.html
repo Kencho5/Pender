@@ -11,14 +11,15 @@
 <div class="info__finish" id="finishElement">
   <img src="{{content_url}}/assets/icons/upload/finish.svg" alt="" />
   <div class="info__finish__text">
-    <h1>მადლობა, <span x-text="'{{claims.name}}'.split(' ')[0]"></span></h1>
-    <p>
-      პოსტი წარმატებით აიტვირთა! ახლა უკვე ხელმისაწვდომია, რომ ნახონ სხვებმა
-    </p>
+    <h1>
+      {{ tr.UPLOAD.STEP_7.thanks }}
+      <span x-text="'{{claims.name}}'.split(' ')[0]"></span>
+    </h1>
+    <p>{{ tr.UPLOAD.STEP_7.title_helper }}</p>
   </div>
   <div class="info__finish__links">
-    <a id="postId">პოსტის ნახვა</a>
-    <a href="/">მთავარი გვერდი</a>
+    <a id="postId">{{ tr.UPLOAD.STEP_7.view_post }}</a>
+    <a href="/">{{ tr.UPLOAD.STEP_7.home }}</a>
   </div>
 </div>
 

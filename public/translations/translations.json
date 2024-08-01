@@ -86,7 +86,56 @@
       "girl": "Girl",
       "description": "Description",
       "photos": "Photos (Max 3)",
-      "select_photos": "Select Photos"
+      "select_photos": "Select Photos",
+
+      "STEPS": {
+        "post_type": "Post Type",
+        "pet_details": "Pet Info",
+        "details": "Details"
+      },
+
+      "STEP_1": {
+        "title": "Which is your post type?",
+        "selling_helper": "Sell your pet to a trustworthy person.",
+        "adopting_helper": "Find a new family for your pet.",
+        "meeting_helper": "Find an ideal partner for your pet"
+      },
+
+      "STEP_2": {
+        "title": "Which is your pet type?"
+      },
+
+      "STEP_3": {
+        "title": "Tell us your pet's gender"
+      },
+
+      "STEP_4": {
+        "title": "Tell us about your pet"
+      },
+
+      "STEP_5": {
+        "title": "Upload pet photos",
+        "info": "High quality photos attract more viewers.",
+        "click_here": "Click here",
+        "photo_limit": "3 Photos max.",
+        "add": "Add"
+      },
+
+      "STEP_6": {
+        "title": "Add more details"
+      },
+
+      "STEP_7": {
+        "thanks": "Thanks, ",
+        "title_helper": "The post was uploaded successfully and is now visible to others",
+        "view_post": "View Post",
+        "home": "Home Page"
+      },
+
+      "title_helper": "Update your personal information here",
+      "actions_back": "Back",
+      "actions_next": "Continue",
+      "actions_publish": "Publish"
     },
     "ANIMALS": {
       "dog": "Dog",
@@ -100,7 +149,8 @@
       "selling_upload": "Selling",
       "selling": "Selling",
       "meeting": "Meeting",
-      "adopting": "Adopting"
+      "adopting": "Adopting",
+      "adopting_gifting": "Adopt/Gift"
     },
     "POST": {
       "error": "Failed to load post",
@@ -212,7 +262,56 @@
       "girl": "გოგო",
       "description": "აღწერა",
       "photos": "ფოტოები (მაქს. 3)",
-      "select_photos": "აირჩიეთ ფოტოები"
+      "select_photos": "აირჩიეთ ფოტოები",
+
+      "STEPS": {
+        "post_type": "პოსტის ტიპი",
+        "pet_details": "ცხოველის შესახებ",
+        "details": "დეტალები"
+      },
+
+      "STEP_1": {
+        "title": "რომელი არის შენი პოსტის ტიპი?",
+        "selling_helper": "გაასხვისე შენი ცხოველი სანდო პირთან.",
+        "adopting_helper": "მოუძებნე შენს მეგობარს ახალი ოჯახი.",
+        "meeting_helper": "მოუძებნე იდეალური პარტნიორი შენს მეგობარს."
+      },
+
+      "STEP_2": {
+        "title": "რომელი არის შენი ცხოველის ტიპი?"
+      },
+
+      "STEP_3": {
+        "title": "გვითხარი შენი ცხოველის სქესი"
+      },
+
+      "STEP_4": {
+        "title": "გვითხარი შენი ცხოველის შესახებ"
+      },
+
+      "STEP_5": {
+        "title": "ატვირთე ცხოველის სურათები",
+        "info": "სწორად შერჩეული ფოტოებით მეტ ადამიანს დააინტერესებ.",
+        "click_here": "ასატვირთად დააჭირე",
+        "photo_limit": "3 ფოტო მაქს.",
+        "add": "დამატება"
+      },
+
+      "STEP_6": {
+        "title": "დამატებითი დეტალები"
+      },
+
+      "STEP_7": {
+        "thanks": "მადლობა, ",
+        "title_helper": "პოსტი წარმატებით აიტვირთა! ახლა უკვე ხელმისაწვდომია, რომ ნახონ სხვებმა",
+        "view_post": "პოსტის ნახვა",
+        "home": "მთავარი გვერდი"
+      },
+
+      "title_helper": "განაახლეთ თქვენი პერსონალური ინფორმაცია აქ",
+      "actions_back": "უკან",
+      "actions_next": "გაგრძელება",
+      "actions_publish": "გამოქვეყნება"
     },
     "ANIMALS": {
       "dog": "ძაღლი",
@@ -226,7 +325,8 @@
       "selling_upload": "გაყიდვა",
       "selling": "იყიდება",
       "meeting": "შეჯვარება",
-      "adopting": "შეფარება"
+      "adopting": "შეფარება",
+      "adopting_gifting": "შეფარება/გაჩუქება"
     },
     "POST": {
       "error": "პოსტი ვერ მოიძებნა",

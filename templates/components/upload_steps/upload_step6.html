@@ -1,12 +1,12 @@
 <div class="info__title">
-  <h1>გვითხარი შენი ცხოველის შესახებ</h1>
-  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+  <h1>{{ tr.UPLOAD.STEP_6.title }}</h1>
+  <p>{{ tr.UPLOAD.title_helper }}</p>
 </div>
 
 <div class="info__inputs">
   <!-- CITY -->
   <div class="info__inputs__input">
-    <p>ქალაქი</p>
+    <p>{{ tr.AUTH.city }}</p>
     <div>
       <img
         src="{{content_url}}/assets/icons/location.svg"
@@ -42,7 +42,7 @@
 
   <!-- PHONE -->
   <div class="info__inputs__input">
-    <p>ტელ. ნომერი</p>
+    <p>{{ tr.AUTH.phone }}</p>
     <div>
       <img
         src="{{content_url}}/assets/icons/badge.svg"
@@ -61,7 +61,7 @@
 
   <!-- PRICE -->
   <div class="info__inputs__input" id="price">
-    <p>ფასი</p>
+    <p>{{ tr.UPLOAD.price }}</p>
     <div>
       <img
         src="{{content_url}}/assets/icons/lari.svg"
@@ -88,7 +88,7 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="changeStep('prev')"
   >
-    უკან
+    {{ tr.UPLOAD.actions_back }}
   </button>
   <button
     type="button"
@@ -99,7 +99,7 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="validateStep('next')"
   >
-    გამოქვეყნება
+    {{ tr.UPLOAD.actions_publish }}
   </button>
 </div>
 

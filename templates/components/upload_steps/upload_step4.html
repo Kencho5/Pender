@@ -1,12 +1,12 @@
 <div class="info__title">
-  <h1>გვითხარი შენი ცხოველის შესახებ</h1>
-  <p>განაახლეთ თქვენი პერსონალური ინფორმაცია აქ</p>
+  <h1>{{ tr.UPLOAD.STEP_4.title }}</h1>
+  <p>{{ tr.UPLOAD.title_helper }}</p>
 </div>
 
 <div class="info__inputs">
   <!-- BREED -->
   <div class="info__inputs__input">
-    <p>ჯიში</p>
+    <p>{{ tr.UPLOAD.breed }}</p>
     <div>
       <img
         src="{{content_url}}/assets/icons/badge.svg"
@@ -25,12 +25,12 @@
   <!-- AGE -->
   <div
     class="info__inputs__input"
-    x-data="{ ...dropdown(), age_type: null, age_type_text: 'ასაკის ტიპი' }"
+    x-data="{ ...dropdown(), age_type: null, age_type_text: '{{ tr.FILTERS.age_type }}' }"
   >
-    <p>ასაკი</p>
+    <p>{{ tr.UPLOAD.age }}</p>
     <div>
       <img
-        src="{{content_url}}/assets/icons/gender.svg"
+        src="{{content_url}}/assets/icons/calendar.svg"
         alt=""
         class="info__inputs__icon"
       />
@@ -54,20 +54,20 @@
         <p
           @mousedown="
           age_type = 'years'; 
-          age_type_text = 'წლის';
+          age_type_text = '{{ tr.FILTERS.years }}';
           setData('age_type', 'years');
           open=false"
         >
-          წლის
+          {{ tr.FILTERS.years }}
         </p>
         <p
           @mousedown="
           age_type = 'months'; 
-          age_type_text = 'თვის';
+          age_type_text = '{{ tr.FILTERS.months }}';
           setData('age_type', 'months');
           open=false"
         >
-          თვის
+          {{ tr.FILTERS.months }}
         </p>
       </div>
     </div>
@@ -77,7 +77,7 @@
 
   <!-- DESCRIPTION -->
   <div class="info__inputs__input">
-    <p>აღწერა</p>
+    <p>{{ tr.UPLOAD.description }}</p>
     <div class="info__inputs__desc-icon">
       <img
         src="{{content_url}}/assets/icons/description.svg"
@@ -103,7 +103,7 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="changeStep('prev')"
   >
-    უკან
+    {{ tr.UPLOAD.actions_back }}
   </button>
   <button
     type="button"
@@ -114,6 +114,6 @@
     hx-swap="innerHTML swap:100ms"
     onmousedown="validateStep('next')"
   >
-    გაგრძელება
+    {{ tr.UPLOAD.actions_next }}
   </button>
 </div>
