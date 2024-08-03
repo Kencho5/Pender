@@ -53,34 +53,20 @@ body {
 .header-lang {
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  gap: 8px;
   justify-content: space-around;
   border: 1px solid var(--border);
   border-radius: 40px;
   height: 40px;
-  width: 84px;
   cursor: pointer;
-  padding: 0px 8px;
+  padding: 8px 12px;
   transition: 0.2s;
 }
 
 .header-lang img {
   width: 24px;
   height: 24px;
-}
-
-@media (max-width: 600px) {
-  .auth-form,
-  .success-div {
-    width: 270px;
-  }
-
-  .header {
-    width: 330px;
-  }
-
-  .title-div {
-    text-align: center;
-  }
 }
 
 .title-div {
@@ -136,6 +122,7 @@ body {
 }
 
 .auth-form input[type="text"],
+input[type="number"],
 input[type="password"] {
   padding-left: 50px;
 }
@@ -220,19 +207,53 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 2px 1px var(--primary);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .auth-form,
   .success-div {
-    width: 250px;
-    padding: 40px;
+    width: 339px;
+    padding: 30px 20px;
+  }
+
+  .title-div {
+    h1 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .input-group {
+    input {
+      font-size: 14px;
+    }
   }
 
   .header {
-    width: 330px;
+    width: 360px;
+
+    a {
+      font-size: 16px;
+    }
+
+    .header-logo {
+      img {
+        width: 64px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+    }
   }
 
   .forgot-password {
     font-size: 14px;
+  }
+
+  .success-div {
+    &__paragraph {
+      font-size: 14px;
+    }
   }
 }
 

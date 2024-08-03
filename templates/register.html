@@ -58,7 +58,8 @@
           class="icon-svg icon"
         />
         <input
-          type="text"
+          type="number"
+          pattern="\d*"
           name="phone"
           placeholder="{{ tr.AUTH.phone }}"
           aria-label="Phone"
@@ -122,7 +123,9 @@
       />
       <div>
         <h1>{{ tr.AUTH.register_success }}</h1>
-        <p>{{ tr.AUTH.register_success_second }}</p>
+        <p class="success-div__paragraph">
+          {{ tr.AUTH.register_success_second }}
+        </p>
       </div>
       <div class="actions">
         <a
