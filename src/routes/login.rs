@@ -33,7 +33,7 @@ pub async fn login_post_handler(mut req: Request<AppState>) -> tide::Result {
                 if let Some(token) = generate_token(&req.state().config, &user_db, lang).await? {
                     response.insert_cookie(
                         Cookie::build("_jwt", token)
-                            .max_age(time::Duration::days(7))
+                            .max_age(time::Duration::days(14))
                             .same_site(tide::http::cookies::SameSite::Lax)
                             .secure(true)
                             .path("/")
